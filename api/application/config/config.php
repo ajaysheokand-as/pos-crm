@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   |
  */
 
-$config['base_url'] = 'http://crm.tejasloan.com/';
+$config['base_url'] = 'https://crm.tejasloan.com/';
 // $config['base_url'] = 'https://api.sotcrm.com/';
 
 // define("UPLOAD_PATH", "/var/www/html/tejasloan-backend/uploads/");
