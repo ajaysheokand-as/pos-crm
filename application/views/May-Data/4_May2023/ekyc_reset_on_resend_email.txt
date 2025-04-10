@@ -1,0 +1,5 @@
+Controller 
+
+https://devmunitech.com/application/controllers/CAMController.php
+
+Method name - resentEkycEmail($lead_id);

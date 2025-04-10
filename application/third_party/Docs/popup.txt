@@ -1,0 +1,13 @@
+
+Controller :
+
+/var/www/html/uat_bharatloan_lms/application/controllers/PerformanceController.php
+
+Model :
+
+/var/www/html/uat_bharatloan_lms/application/models/Performance_Model.php
+
+View :
+
+/var/www/html/uat_bharatloan_lms/application/views/Tasks/main_js.php
+/var/www/html/uat_bharatloan_lms/application/views/Layouts/footer.php (<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>)

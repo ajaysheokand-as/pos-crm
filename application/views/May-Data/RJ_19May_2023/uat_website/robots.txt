@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+Disallow: /terms-and-conditions
+Sitemap: https://uat-website.devmunitech.com/sitemap.xml
