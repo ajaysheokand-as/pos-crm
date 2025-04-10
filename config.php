@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //$config['base_url']    = ''.$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'];
 // $config['base_url'] = 'https://sametimeloan.com/';
-$config['base_url'] = 'http://tejasloan.local';//'https://crm.tejasloan.com/';
+$config['base_url'] = 'http://crm.tejasloan.com/';//'https://crm.tejasloan.com/';
 
 /*
   |--------------------------------------------------------------------------
