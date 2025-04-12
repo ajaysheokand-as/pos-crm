@@ -60,7 +60,7 @@ class InstantJourneyController extends REST_Controller {
 
                 $current_version = '2.0.0';
 
-                if (in_array($app_name, array("SPEEDO"))) {
+                if (in_array($app_name, array("Speedoloan"))) {
 
                     if ($version == $current_version) { // || $version == '3.0.0'
                         return json_encode($this->response(['Status' => 1, 'Message' => "Success", 'version' => $version, "app_store_id" => $app_store_id, "company_name" => COMPANY_NAME], REST_Controller::HTTP_OK));

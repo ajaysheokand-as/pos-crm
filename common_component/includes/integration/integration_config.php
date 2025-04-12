@@ -387,7 +387,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['ApiPassword'] = "";
 
             // $config_arr['ApiToken'] = "Basic MTExMzI0MzM6SWdUMXNZckJiQUlleVRJTUR6OEdtRU1zVXRrUEhmQ2s=";
-            $config_arr['ApiToken'] = "Basic MzUxNzY3NjU6REpYNVdVNmtlQkV6dUZTYVdpUEdBSmpYUURyYnptRHQ=";
+            $config_arr['ApiToken'] = "MTE2MzU3MjY6eFh2OTZlNGdoOW9OdHlxbXRLcmw1NFdTalFXOHVjQkQ=";
 
             // if ($envSet == "production") {
             //     $config_arr['ApiToken'] = "";
@@ -431,15 +431,19 @@ function integration_config($api_type = "", $api_sub_type = "") {
                 }
             } else if ($api_sub_type == "UPLOAD_ESIGN_DOCUMENT_DIGITAP") {
                 if ($envSet == "development") {
-                    $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/generate-esign";
+                    // $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/generate-esign";
+                    $config_arr['ApiUrl'] = "https://api.digitap.ai/clickwrap/v1/intiate";
                 } else if ($envSet == "production") {
-                    $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/generate-esign";
+                    // $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/generate-esign";
+                    $config_arr['ApiUrl'] = "https://api.digitap.ai/clickwrap/v1/intiate";
                 }
             } else if ($api_sub_type == "DOWNLOAD_ESIGN_DOCUMENT_DIGITAP") {
                 if ($envSet == "development") {
-                    $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/get-esign-doc";
+                    $config_arr['ApiUrl'] = "https://api.digitap.ai/clickwrap/v1/get-doc-url";
+                    // $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/get-esign-doc";
                 } else if ($envSet == "production") {
-                    $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/get-esign-doc";
+                    $config_arr['ApiUrl'] = "https://api.digitap.ai/clickwrap/v1/get-doc-url";
+                    // $config_arr['ApiUrl'] = "https://api.digitap.ai/ent/v1/get-esign-doc";
                 }
             }
             break;

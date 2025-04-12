@@ -140,7 +140,7 @@ define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
 define("COMPANY_NAME", "NAMAN FINLEASE PRIVATE LIMITED");
 define("RBI_LICENCE_NUMBER", "14.01466");
-define('CONTACT_PERSON', 'AMIT MITTAL');
+define('CONTACT_PERSON', 'AJAY SINGH');
 define("REGISTED_ADDRESS", "S-370, Panchsheel Park, New Delhi - 110017");
 define("REGISTED_MOBILE", "+91-9319322114");
 define("BRAND_NAME", "TEJASLOAN");
@@ -216,16 +216,6 @@ define("COLLECTION_WEB_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/co
 
 // *********SOCIAL MEDIA LINK ********
 
-define("ANDROID_STORE_LINK", "https://play.google.com/store/apps/details?id=com.speedoloan.speedoloan");
-define("APPLE_STORE_LINK", "https://apps.apple.com/in/app/speedoloan/id6503283983");
-define("LINKEDIN_LINK", "https://www.linkedin.com/company/speedo-loan/");
-define("INSTAGRAM_LINK", "https://www.instagram.com/speedo.loan/");
-define("FACEBOOK_LINK", "https://www.facebook.com/profile.php?id=61567546377871");
-define("YOUTUBE_LINK", "https://www.youtube.com/@SpeedoLoan");
-define("TWITTER_LINK", "https://x.com/speedo_loan");
-
-// ******* SOCIAL MEDIA ICONS ***********
-
 define("ANDROID_STORE_LINK", "#");
 define("APPLE_STORE_LINK", "#");
 define("LINKEDIN_LINK", "#");
@@ -270,13 +260,13 @@ const NBFC_LOGO      = 'namanfinlease.png';
 const NBFC_NAME      = 'NAMAN FINLEASE PRIVATE LIMITED';
 const NBFC_CIN       = 'Reg No.14.01466';
 const NBFC_ADDRESS   = 'S-370, Panchsheel Park, New Delhi - 110017';
-const NBFC_MOBILE    = '9319322114';
-const NBFC_EMAIL     = 'Info@agrimfin.com';
+const NBFC_MOBILE    = '8282824633';
+const NBFC_EMAIL     = 'info@salarywalle.com';
 const NBFC_WEBSITE   = 'https://namanfinlease.com/';
 const NBFC_AUTHORIZED_SIGN   = LMS_URL . 'emailimages/Authorised-Signatory.jpg';
 
 const NBFC_NODEL_GRIEVANCE_REDRESSAL_OFFICER_NAME  = 'Sachin Sharma';
-const NBFC_NODEL_GRIEVANCE_REDRESSAL_OFFICER_NUMBER = '9319322114';
+const NBFC_NODEL_GRIEVANCE_REDRESSAL_OFFICER_NUMBER = '8282824633';
 
 // Portal redirection page url
 const PORTAL_REDIRECTION_URL = [

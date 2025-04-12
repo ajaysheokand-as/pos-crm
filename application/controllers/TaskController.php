@@ -597,7 +597,7 @@ class TaskController extends CI_Controller {
                                 <p style="color:#000;">TO ,<br>SHRI/SMT <b> ' . $firstname . ' </b><br>R/O - <b>' . $current_house . ' </b></p><br/>
                                 <h2 style="color:#000;">Legal Notice (without prejudice)</h2>
                                 <p style="color:#000;">Sir/Ma\'am</p>
-                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Salarywalle”</strong> having its office G-51 Ground Floor Krishna Apra Business Square Netaji Subhash Palace Pitampura New Delhi-110034, I address you as under.</p>
+                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Tejasloan</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
                                 <ol>
                                     <li style="color:#000;">That you had approached my client for a short-term loan as you were in dire need of money on <strong>' . date('d, M Y', strtotime($final_disbursed_date)) . '</strong>.</li>
                                     <li style="color:#000;">That pursuant to the terms and conditions of the Loan agreement form as agreed by you, you were provided the short-term loan of Rs. <strong>' . $loan_recommended . '</strong> with Loan No.<strong> ' . $loan_no . '</strong> at a mutually agreed rate of interest.</li>
@@ -1940,7 +1940,7 @@ class TaskController extends CI_Controller {
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0;
         $user_labels = !empty($_SESSION['isUserSession']['labels']) ? $_SESSION['isUserSession']['labels'] : "";
         $cam_blacklist_removed_flag = 0;
-        $allow_sanction_head = array(65, 2, 3, 116, 45, 166);
+        $allow_sanction_head = array(65, 2, 3, 116, 45, 166, 505, 506);
 
         if ($this->input->server('REQUEST_METHOD') == 'POST') {
 
@@ -4358,12 +4358,40 @@ class TaskController extends CI_Controller {
             //     }
             // }
 
-            $leadCustomerDetails = $this->Tasks->select(['customer_lead_id' => $lead_id], 'customer_bre_run_flag, alternate_mobile', 'lead_customer');
+            $leadCustomerDetails = $this->Tasks->select(['customer_lead_id' => $lead_id], 'customer_bre_run_flag, alternate_mobile, customer_digital_ekyc_flag', 'lead_customer');
 
             $leadCustomerDetails = $leadCustomerDetails->row();
 
             if ($leadCustomerDetails->customer_bre_run_flag == 0) {
                 $json['err'] = "Please run the BRE.";
+                echo json_encode($json);
+                return false;
+            }
+            // print_r($leadCustomerDetails);
+            // exit;
+
+            // if ($leadCustomerDetails->customer_digital_ekyc_flag == 0) {
+            //     $json['err'] = "Digital E-KYC is not done.";
+            //     echo json_encode($json);
+            //     return false;
+            // }
+
+            // $bankVerificationDetails = $this->Tasks->select(['bav_lead_id' => $lead_id], 'bav_api_status_id,bav_errors', 'api_bank_account_verification_logs');
+
+            // $bankVerificationDetails = $bankVerificationDetails->row();
+
+            // if ($bankVerificationDetails->bav_api_status_id != 1) {
+            //     $json['err'] = "Run penny drop before recommending.";
+            //     echo json_encode($json);
+            //     return false;
+            // }
+
+            $bankStatementDetails = $this->Tasks->select(['cart_lead_id' => $lead_id], 'cart_api_status_id,cart_errors', 'api_banking_cart_log');
+
+            $bankStatementDetails = $bankStatementDetails->row();
+
+            if ($bankStatementDetails->cart_api_status_id != 1) {
+                $json['err'] = "Run bank statement analyser before recommending.";
                 echo json_encode($json);
                 return false;
             }
@@ -4396,6 +4424,9 @@ class TaskController extends CI_Controller {
                     return false;
                 } else if (empty($camDetails->repayment_date)) {
                     $json['err'] = "Missing Loan Repayment Date";
+                    echo json_encode($json);
+                } else if ($leadCustomerDetails->customer_digital_ekyc_flag = 0) {
+                    $json['err'] = "Missing Digital E-KYC";
                     echo json_encode($json);
                 } else if ($breRuleResult->num_rows() <= 0 && false) {
                     $json['err'] = "Please run bre to process the case.";
@@ -4608,7 +4639,7 @@ class TaskController extends CI_Controller {
             $firstname = $return_sms['first_name'];
             $lead_id = $return_sms['lead_id'];
             //$email_to = $return_sms['email'];
-            // $email_to = 'tech.lead@tejasloan.com';
+            // $email_to = 'tech.lead@salarywalle.com';
             $email_to = 'sunny@fintechbasket.com';
             $mobile = $return_sms['mobile'];
             $address = $return_sms['current_house'];

@@ -95,6 +95,117 @@ class DisbursalController extends CI_Controller {
     }
 
 
+    // public function resendDisbursalMail() {
+
+    //     if (empty($_SESSION['isUserSession']['user_id'])) {
+    //         $json['errSession'] = 'Session Expired';
+    //         echo json_encode($json);
+    //     } else if ($this->input->server('REQUEST_METHOD') == 'POST') {
+    //         $this->form_validation->set_rules('lead_id', 'Lead ID', 'required|trim');
+    //         if ($this->form_validation->run() == FALSE) {
+    //             $json['err'] = validation_errors();
+    //             echo json_encode($json);
+    //         } else {
+
+    //             $lead_id = intval($this->encrypt->decode($this->input->post('lead_id')));
+
+    //             $sql = $this->Tasks->select(['lead_id' => $lead_id], 'lead_status_id', 'leads');
+
+    //             $getLeadDetails = $sql->row();
+
+
+
+    //             if (!empty($getLeadDetails->lead_status_id)) {
+
+    //                 if ($getLeadDetails->lead_status_id == 12) {
+
+    //                     $loanDataReturnArr = $this->IntegrationModel->getLeadLoanDetails($lead_id);
+
+    //                     if ($loanDataReturnArr['status'] === 1) {
+
+    //                         $loanDetails = $loanDataReturnArr['loan_data'];
+
+    //                         $loan_id = $loanDetails['loan_id'];
+
+
+    //                         $status = 'DISBURSAL-NEW';
+    //                         $stage = 'S20';
+    //                         $lead_status_id = 25;
+
+    //                         $dataLoan = [
+    //                             "status" => $status,
+    //                             "loan_status_id" => $lead_status_id,
+    //                             "loanAgreementResponse" => 1,
+    //                             "mail" => $email,
+    //                             "agrementUserIP" => $_SERVER['REMOTE_ADDR'],
+    //                             "agrementResponseDate" => date("Y-m-d H:i:s"),
+    //                         ];
+
+    //                         $conditions = ['loan_id' => $loan_id];
+
+    //                         $result = $this->db->where($conditions)->update('loan', $dataLoan);
+
+    //                         if ($result) {
+
+    //                             $dataLeads = [
+    //                                 'status' => $status,
+    //                                 'stage' => $stage,
+    //                                 'lead_status_id' => $lead_status_id,
+    //                                 'updated_on' => date("Y-m-d H:i:s")
+    //                             ];
+
+    //                             $conditions = ['lead_id' => $lead_id];
+
+    //                             $result = $this->db->where($conditions)->update('leads', $dataLeads);
+    //                             if ($result) {
+
+    //                                 $lead_followup_insert_array = [
+    //                                     'lead_id' => $lead_id,
+    //                                     'customer_id' => $applicationDetails['customer_id'],
+    //                                     'user_id' => $user_id,
+    //                                     'status' => $status,
+    //                                     'stage' => $stage,
+    //                                     'lead_followup_status_id' => $lead_status_id,
+    //                                     'remarks' => "Sanction letter acceptance given by user.",
+    //                                     'created_on' => date("Y-m-d H:i:s")
+    //                                 ];
+
+    //                                 $this->IntegrationModel->insert('lead_followup', $lead_followup_insert_array);
+
+    //                                 $return_status = 1;
+    //                                 $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/thumb.PNG" style=" width: 400px; height: 300px;" alt="thumb"></p>
+    //                         <p style="text-align : center;">Thanks For Your Response.</p>';
+    //                             } else {
+    //                                 $message = "Unable to update lead details of application.";
+    //                             }
+    //                         } else {
+    //                             $message = "Unable to update loan details of application.";
+    //                         }
+    //                     }
+    //                 } else if ($getLeadDetails->lead_status_id == 14) {
+    //                     $this->Tasks->sendDisbursalMail($lead_id);
+    //                     $json['msg'] = "Disbursal successfully.";
+    //                     echo json_encode($json);
+
+    //                     // if ($sendLetter == 1) {
+    //                     //     $json['msg'] = "Disbursal email sent successfully.";
+    //                     //     echo json_encode($json);
+    //                     // } else {
+    //                     //     $json['err'] = "Disbursal failed to sent email. try again!";
+    //                     //     echo json_encode($json);
+    //                     // }
+    //                 } else {
+    //                     $json['err'] = "Application has been move to next step.";
+    //                     echo json_encode($json);
+    //                 }
+    //             } else {
+    //                 $json['err'] = "Lead id is not valid.";
+    //                 echo json_encode($json);
+    //             }
+    //         }
+    //     }
+    // }
+
     public function resendDisbursalMail() {
 
         if (empty($_SESSION['isUserSession']['user_id'])) {
@@ -119,81 +230,35 @@ class DisbursalController extends CI_Controller {
 
                     if ($getLeadDetails->lead_status_id == 12) {
 
-                        $loanDataReturnArr = $this->IntegrationModel->getLeadLoanDetails($lead_id);
+                        $sendLetter = $this->Tasks->sendSanctionMail($lead_id);
 
-                        if ($loanDataReturnArr['status'] === 1) {
+                        if ($sendLetter['status'] == 1) {
 
-                            $loanDetails = $loanDataReturnArr['loan_data'];
-
-                            $loan_id = $loanDetails['loan_id'];
-
-
-                            $status = 'DISBURSAL-NEW';
-                            $stage = 'S20';
-                            $lead_status_id = 25;
-
-                            $dataLoan = [
-                                "status" => $status,
-                                "loan_status_id" => $lead_status_id,
-                                "loanAgreementResponse" => 1,
-                                "mail" => $email,
-                                "agrementUserIP" => $_SERVER['REMOTE_ADDR'],
-                                "agrementResponseDate" => date("Y-m-d H:i:s"),
+                            $loan_data = [
+                                'loanAgreementRequest' => 1,
+                                'agrementRequestedDate' => date("Y-m-d H:i:s")
                             ];
 
-                            $conditions = ['loan_id' => $loan_id];
+                            $conditions = ['lead_id' => $lead_id];
+                            $this->Tasks->updateLeads($conditions, $loan_data, 'loan');
 
-                            $result = $this->db->where($conditions)->update('loan', $dataLoan);
-
-                            if ($result) {
-
-                                $dataLeads = [
-                                    'status' => $status,
-                                    'stage' => $stage,
-                                    'lead_status_id' => $lead_status_id,
-                                    'updated_on' => date("Y-m-d H:i:s")
-                                ];
-
-                                $conditions = ['lead_id' => $lead_id];
-
-                                $result = $this->db->where($conditions)->update('leads', $dataLeads);
-                                if ($result) {
-
-                                    $lead_followup_insert_array = [
-                                        'lead_id' => $lead_id,
-                                        'customer_id' => $applicationDetails['customer_id'],
-                                        'user_id' => $user_id,
-                                        'status' => $status,
-                                        'stage' => $stage,
-                                        'lead_followup_status_id' => $lead_status_id,
-                                        'remarks' => "Sanction letter acceptance given by user.",
-                                        'created_on' => date("Y-m-d H:i:s")
-                                    ];
-
-                                    $this->IntegrationModel->insert('lead_followup', $lead_followup_insert_array);
-
-                                    $return_status = 1;
-                                    $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/thumb.PNG" style=" width: 400px; height: 300px;" alt="thumb"></p>
-                            <p style="text-align : center;">Thanks For Your Response.</p>';
-                                } else {
-                                    $message = "Unable to update lead details of application.";
-                                }
-                            } else {
-                                $message = "Unable to update loan details of application.";
-                            }
+                            $json['msg'] = "Sanction Letter email sent successfully.";
+                            echo json_encode($json);
+                        } else {
+                            $json['err'] = $sendLetter['error'];
+                            echo json_encode($json);
                         }
                     } else if ($getLeadDetails->lead_status_id == 14) {
-                        $this->Tasks->sendDisbursalMail($lead_id);
-                        $json['msg'] = "Disbursal successfully.";
-                        echo json_encode($json);
 
-                        // if ($sendLetter == 1) {
-                        //     $json['msg'] = "Disbursal email sent successfully.";
-                        //     echo json_encode($json);
-                        // } else {
-                        //     $json['err'] = "Disbursal failed to sent email. try again!";
-                        //     echo json_encode($json);
-                        // }
+                        $sendLetter = $this->Tasks->sendDisbursalMail($lead_id);
+
+                        if ($sendLetter == 1) {
+                            $json['msg'] = "Disbursal email sent successfully.";
+                            echo json_encode($json);
+                        } else {
+                            $json['err'] = "Disbursal failed to sent email. try again!";
+                            echo json_encode($json);
+                        }
                     } else {
                         $json['err'] = "Application has been move to next step.";
                         echo json_encode($json);

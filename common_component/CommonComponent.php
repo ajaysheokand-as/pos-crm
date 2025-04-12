@@ -137,11 +137,22 @@ class CommonComponent {
 
         require_once(COMP_PATH . '/includes/integration/payday_aadhaar_esign_api.php');
 
-        $return_array = aadhaar_esign_api_call('UPLOAD_ESIGN_FILE', $lead_id, $request_array);
-        // $return_array = aadhaar_esign_api_call('UPLOAD_ESIGN_FILE_DIGITAP', $lead_id, $request_array);
+        // $return_array = aadhaar_esign_api_call('UPLOAD_ESIGN_FILE', $lead_id, $request_array);
+        $return_array = aadhaar_esign_api_call('UPLOAD_ESIGN_FILE_DIGITAP', $lead_id, $request_array);
 
         return $return_array;
     }
+
+    public function call_signin_api($lead_id, $request_array = array()) {
+
+        require_once(COMP_PATH . '/includes/integration/payday_aadhaar_esign_api.php');
+
+        // $return_array = aadhaar_esign_api_call('UPLOAD_ESIGN_FILE', $lead_id, $request_array);
+        $return_array = aadhaar_esign_api_call('SIGNIN_ESIGN_FILE_DIGITAP', $lead_id, $request_array);
+
+        return $return_array;
+    }
+    
 
     public function download_esign_document_api($lead_id, $request_array = array()) {
 

@@ -897,9 +897,9 @@ where a.disb_trans_lead_id = " . $lead_id;
                                                 redressal officer designated specifically to deal with FinTech/ digital lending related complaints/ issues
                                             </td>
                                             <td bgcolor = "#FFFFFF">
-                                                <p>AMIT MITTAL</p>
-                                                <p>Mobile: +91-9810780460</p>
-                                                <p>Address: 276, First Floor, Gagan Vihar, Shahdara, Delhi - 110051</p>
+                                                <p>' . CONTACT_PERSON . '</p>
+                                                <p>Mobile: ' . REGISTED_MOBILE . '</p>
+                                                <p>Address: ' . REGISTED_ADDRESS . '</p>
                                             </td>
                                         </tr>
 
@@ -909,10 +909,10 @@ where a.disb_trans_lead_id = " . $lead_id;
                                     <br/><br/><br/><br/><br/><br/>
                                     <table width="667" border="0" cellpadding="1" cellspacing="1" align="center" style="font-family:Arial, Helvetica, sans-serif; line-height:17px; font-size:13px; border:solid 1px #ddd; padding:0px 7px;">
                                         <tr>
-                                            <td colspan="2" valign="middle"><p style="font-size: 18px; color: #fa6900; font-size:18px;"><img src="' . SANCTION_LETTER_HEADER . '" width="760" height="123" border="0" usemap="#Map" /></td>
+                                            <td colspan="2" valign="middle"><p style="font-size: 18px; color: #00455E; font-size:18px;"><img src="' . SANCTION_LETTER_HEADER . '" width="760" height="123" border="0" usemap="#Map" /></td>
                                         </tr>
                                         <tr>
-                                            <td align="right"><span style="color: #fa6900; font-size:16px;">Date : ' . $sanction_date . '</span></td>
+                                            <td align="right"><span style="color: #00455E; font-size:16px;">Date : ' . $sanction_date . '</span></td>
                                         </tr>
                                         <tr>
                                             <td><strong>To,</strong></td>
@@ -1024,13 +1024,13 @@ where a.disb_trans_lead_id = " . $lead_id;
                                             <td colspan = "2">Kindly request you to go through above mentioned terms and conditions and provide your kind acceptance over E-mail so that we can process your loan for final disbursement. </td>
                                         </tr>
                                         <tr>
-                                            <td colspan = "2"><strong style = "color:#fa6900;">Best Regards</strong></td>
+                                            <td colspan = "2"><strong style = "color:#00455E;">Best Regards</strong></td>
                                         </tr>
                                         <tr>
-                                            <td colspan = "2"><strong style = "color:#fa6900;">Team ' . BRAND_NAME . '</strong></td>
+                                            <td colspan = "2"><strong style = "color:#00455E;">Team ' . BRAND_NAME . '</strong></td>
                                         </tr>
                                         <tr>
-                                            <td colspan = "2"><strong style = "color:#fa6900;">(Brand Name for ' . COMPANY_NAME . ')</strong></td>
+                                            <td colspan = "2"><strong style = "color:#00455E;">(Brand Name for ' . COMPANY_NAME . ')</strong></td>
                                         </tr>
                                         <tr>
                                             <td colspan = "2"><strong>Kindly Note:</strong></td>
@@ -1045,7 +1045,7 @@ where a.disb_trans_lead_id = " . $lead_id;
                                             <td colspan = "2">This Sanction letter is valid for 24 Hours only.</td>
                                         </tr>
                                         <tr>
-                                            <td colspan = "2">You can Prepay/Repay the loan amount using our link <a href = "' . LOAN_REPAY_LINK . '" target = "_blank" style = "color:#fa6900; text-decoration:blink;">' . LOAN_REPAY_LINK . '</a></td>
+                                            <td colspan = "2">You can Prepay/Repay the loan amount using our link <a href = "' . LOAN_REPAY_LINK . '" target = "_blank" style = "color:#00455E; text-decoration:blink;">' . LOAN_REPAY_LINK . '</a></td>
                                         </tr>
                                         <tr>
                                             <td colspan = "2"><img src = "' . SANCTION_LETTER_FOOTER . '" width="760" height="44"/></td>
@@ -1064,7 +1064,7 @@ where a.disb_trans_lead_id = " . $lead_id;
                     <p style="line-height: 107%; font-size:18pt;text-align: center;font-family: Arial, Helvetica, sans-serif;">FOR</p>
 <h1 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;color:#c9211e">FDSPL</h1>
                     <h2 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;">(Fintelligence Data Science Private Limited)</h2>
-                    <p style="text-align: center"><img style="width:25%" src="https://crm.tejasloan.com/public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
+                    <p style="text-align: center"><img style="width:25%" src="https://crm.salarywalle.com/public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
                 </b>
 
             </p>
@@ -4417,12 +4417,12 @@ Capitalized terms used herein but not defined shall have the same meanings given
         $num1 = (int) filter_var($pre_loan->loan_no, FILTER_SANITIZE_NUMBER_INT);
         $num1 = $num1 + 1;
 
-        $prefix_loan_no = "SPEEDO";
+        $prefix_loan_no = "TEJAS";
 
         $envSet = ENVIRONMENT;
 
         if ($envSet == "production") {
-            $prefix_loan_no = "SPEEDO";
+            $prefix_loan_no = "TEJAS";
         }
 
         $loan_no = $prefix_loan_no . str_pad(($num1), 11, "0", STR_PAD_LEFT); //16 chars
@@ -5455,15 +5455,16 @@ $pdf->Output($file_path_with_name, 'F');
 
         $acceptance_button = '';
         // $link_value = base_url('sanction-esign-request') . "?lead_id=$lead_id";
-        $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
-        $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #fa6900; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
-        $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
+        // $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
+        // $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #00455E; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
+        // $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
 
-        if (in_array($lead_data_source_id, array(21, 27))) {
-            $link_value = base_url('loanAgreementLetterResponse') . "?lead_id=$lead_id";
+        // if (in_array($lead_data_source_id, array(21, 27))) {
+            // $link_value = base_url('loanAgreementLetterResponse') . "?lead_id=$lead_id";
+            $link_value = base_url('loanAgreementLetterResponse') . "?refstr=$enc_lead_id";
             $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #e52255; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">Accept Sanction Letter</a></center><br/><br/>';
             $acceptance_button_link = "If you are not able to click on the accept button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
-        }
+        // }
 
         $total_interest = round(($camDetails->repayment_amount), 2) - round(($camDetails->loan_recommended), 2);
 
@@ -5543,7 +5544,7 @@ $pdf->Output($file_path_with_name, 'F');
                             ">
                             <tr>
                                 <td colspan="2" valign="middle">
-                                <p style="color:#font-size: 18px; color: #fa6900; font-size:18px;">
+                                <p style="color:#font-size: 18px; color: #00455E; font-size:18px;">
                                     <img
                                     src=" ' . SANCTION_LETTER_HEADER . ' "
                                     alt="Sanctionletter-header"
@@ -5557,7 +5558,7 @@ $pdf->Output($file_path_with_name, 'F');
                             </tr>
                             <tr>
                                 <td align="right">
-                                <span style="color:#font-size: 18px; color: #fa6900; font-size:18px;">Date : ' . $sanction_date . '</span>
+                                <span style="color:#font-size: 18px; color: #00455E; font-size:18px;">Date : ' . $sanction_date . '</span>
                                 </td>
                             </tr>
                             <tr>
@@ -5813,25 +5814,25 @@ $pdf->Output($file_path_with_name, 'F');
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                <strong style="color: #fa6900">Best Regards</strong>
+                                <strong style="color: #00455E">Best Regards</strong>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                <strong style="color: #fa6900">Team ' . BRAND_NAME . '</strong>
+                                <strong style="color: #00455E">Team ' . BRAND_NAME . '</strong>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                <strong style="color: #fa6900">(Brand Name for ' . COMPANY_NAME . ')</strong>
+                                <strong style="color: #00455E">(Brand Name for ' . COMPANY_NAME . ')</strong>
                                 </td>
                             </tr>';
-                            // $message .= '<tr>
-                            //     <td>' . $acceptance_button . '</td>
-                            // </tr>
-                            // <tr>
-                            //     <td>' . $acceptance_button_link . '</td>
-                            // </tr>';
+                            $message .= '<tr>
+                                <td>' . $acceptance_button . '</td>
+                            </tr>
+                            <tr>
+                                <td>' . $acceptance_button_link . '</td>
+                            </tr>';
 
                             $message .= '</table>
 
@@ -6128,13 +6129,13 @@ $pdf->Output($file_path_with_name, 'F');
                                     <tr>
                                         <td>XVII</td>
                                         <td>Name, designation, Address and phone number of nodal grievance redressal officer designated specifically to deal with FinTech/ digital lending related complaints/ issues</td>
-                                        <td>Amit Mittal <br>Mobile: +91-9810780460 <br>Address: 276, First Floor, Gagan Vihar, Shahdara, Delhi - 110051</td>
+                                        <td>' . CONTACT_PERSON .' <br>Mobile: ' . REGISTED_MOBILE . '<br>Address: ' . REGISTED_ADDRESS . '</td>
                                     </tr>
                                 </table>
                                 <div class="address">
-                                    <p><strong>Agrim Fincap Pvt. Ltd.</strong><br>
-                                    276, First Floor, Gagan Vihar, Shahdara, Delhi - 110051<br>
-                                    +91-9810780460,<br>
+                                    <p><strong>' . COMPANY_NAME . '</strong><br>
+                                    ' . REGISTED_ADDRESS . '<br>
+                                    ' . REGISTED_MOBILE . ',<br>
                                     info@salarywalle.com,<br>
                                     <a href="https://tejasloan.com">https://www.tejasloan.com</a><br>
                                     Date : ' . $sanction_date . ' </p>
@@ -6147,7 +6148,7 @@ $pdf->Output($file_path_with_name, 'F');
                             <div class="details">
                                 <h2>Subject: Sanction Letter for Loan Approval</h2>
                                 <p>Dear ' . $fullname . ',</p>
-                                <p>We are pleased to inform you that your application for a loan with Agrim Fincap Pvt. Ltd. has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
+                                <p>We are pleased to inform you that your application for a loan with Naman Finlease Private Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
                                 <h3>Loan Details:</h3>
                                 <ul>
                                     <li>Loan Amount:' . number_format(round($loan_recommended, 2)) . '</li>
@@ -6158,15 +6159,15 @@ $pdf->Output($file_path_with_name, 'F');
                                 <p>Your loan has been sanctioned with the above-mentioned terms and conditions. The loan amount will be disbursed directly to your designated bank account within ' . $sanction_date . ', subject to the completion of any remaining formalities.</p>
                                 <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@salarywalle.com .</p>
                                 <p>Kindly ensure that you adhere to the repayment schedule to avoid any unnecessary penalties or charges. Timely repayment will also help you maintain a positive credit history with our institution.</p>
-                                <p>We appreciate your trust in Agrim Fincap Pvt. Ltd., and we assure you of our dedicated support in meeting your financial requirements.</p>
-                                <p>Thank you for choosing Agrim Fincap Pvt. Ltd.. We look forward to a mutually beneficial relationship.</p>
+                                <p>We appreciate your trust in Naman Finlease Private Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
+                                <p>Thank you for choosing Naman Finlease Private Limited. We look forward to a mutually beneficial relationship.</p>
                                 <p>Best regards,</p>
-                                <p>Agrim Fincap Pvt. Ltd.</p>
+                                <p>Naman Finlease Private Limited</p>
                             </div>
                             <div class="loan-agreement">
                                 <h2 >Loan Agreement</h2>
                                 <p>This Loan Agreement is entered into on ' . $sanction_date . ', between:</p>
-                                <p>Agrim Fincap Pvt. Ltd., a company duly registered under the laws of India, having its registered office at G -51, Krishna Apra Business Square,Netaji Subhash Place,New Delhi - 110034 (hereinafter referred to as the "Lender"), on one part and</p>
+                                <p>Naman Finlease Private Limited, a company duly registered under the laws of India, having its registered office at S-370, Panchsheel Park, New Delhi - 110017 (hereinafter referred to as the "Lender"), on one part and</p>
                                 <p> ' . $fullname . ', an individual/legal entity, residing at address ' . $residence_address . '(hereinafter referred to as the "Borrower"), on the other part.</p>
                                 <h3>Background:</h3>
                                 <p>The Borrower has approached the Lender for a loan to meet its financial requirements, and the Lender has agreed to provide the loan on the terms and conditions set forth in this Agreement.</p>
@@ -6230,7 +6231,7 @@ $pdf->Output($file_path_with_name, 'F');
                             <div class="loan-terms">
                                 <p>Kindly Note:</p>
                                 <p>Non-payment of loan on time will adversely affect your Credit score, further reducing your chances of getting Re loan again. Upon approval, the processing fee will be deducted from your Sanction amount and the balance amount will be disbursed to your account.</p>
-                                <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://tejasloan.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
+                                <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://salarywalle.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
                                 </td>.</p>
 
                                 <h2>Agreed Terms and Conditions:</h2>
@@ -6280,7 +6281,7 @@ $pdf->Output($file_path_with_name, 'F');
                                 </ol>
 
                                 <p><strong>IN WITNESS WHEREOF</strong>, the parties hereto have executed this Agreement on the date first above written.</p>
-                                <p><strong>For Agrim Fincap Pvt. Ltd.:</strong></p><br>
+                                <p><strong>For Naman Finlease Private Limited:</strong></p><br>
                                 <p><strong>For the Borrower:</strong></p>
                                 <p>' . $fullname . '<br>' . $sanction_date . '</p>
 
@@ -7381,7 +7382,7 @@ $pdf->Output($file_path_with_name, 'F');
                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
                   <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Dear Sir/Madam,</p>
                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
-                  <p style="padding-left: 5pt;text-indent: 98pt;line-height: 150%;text-align: justify;">Under the instructions received from and on behalf of my client (<u><b>"' . COMPANY_NAME . '" WITH THE</b></u><b> </b><u><b>BRAND NAME "' . BRAND_NAME . '" (SPEEDO), </b></u><u>(HEREINAFTER CALLED AS</u></p>
+                  <p style="padding-left: 5pt;text-indent: 98pt;line-height: 150%;text-align: justify;">Under the instructions received from and on behalf of my client (<u><b>"' . COMPANY_NAME . '" WITH THE</b></u><b> </b><u><b>BRAND NAME "' . BRAND_NAME . '" (TEJASLOAN), </b></u><u>(HEREINAFTER CALLED AS</u></p>
                   <p style="padding-left: 5pt;text-indent: 0pt;line-height: 149%;text-align: left;"><u>MY CLIENT),</u> through its AR/ authorized signatory, I hereby serve/call upon you through this legal notice as following: -</p>
                   <ol id="l1">
                      <li data-list-text="1.">
@@ -7843,7 +7844,7 @@ $pdf->Output($file_path_with_name, 'F');
                                     <title>Customer Feedback</title>
                                 </head>
                                 <body>
-                                    <table width = "550" border = "0" align = "center" cellpadding = "0" cellspacing = "0" style = "padding:10px 10px 2px 10px; border:solid 2px #fa6900; font-family:Arial, Helvetica, sans-serif;border-radius:3px;">
+                                    <table width = "550" border = "0" align = "center" cellpadding = "0" cellspacing = "0" style = "padding:10px 10px 2px 10px; border:solid 2px #00455E; font-family:Arial, Helvetica, sans-serif;border-radius:3px;">
                                         <tr>
                                             <td align = "left"><table width = "100%" border = "0" style = "height:270px; padding:30px 0px; background:url(' . FEEDBACK_HEADER . ');">
                                                 </table>
@@ -7984,13 +7985,13 @@ $pdf->Output($file_path_with_name, 'F');
                                         <tr>
                                             <td colspan = "2" valign = "top"><table width = "100%" border = "0" cellpadding = "0" cellspacing = "0" style = "padding:0px 10px;">
                                                     <tr>
-                                                        <td width = "50%" rowspan = "10" valign = "top" style = "border-right:solid 1px #fa6900;"><table width = "100%" border = "0">
+                                                        <td width = "50%" rowspan = "10" valign = "top" style = "border-right:solid 1px #00455E;"><table width = "100%" border = "0">
                                                                 <tr>
                                                                     <td align = "center" valign = "middle">&nbsp;
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td valign = "middle"><span style = "font-weight:bold; font-size:25px; color:#fa6900;">Dear ' . $customer_name . ' </span></td>
+                                                                    <td valign = "middle"><span style = "font-weight:bold; font-size:25px; color:#00455E;">Dear ' . $customer_name . ' </span></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td align = "center">&nbsp;
@@ -8025,7 +8026,7 @@ $pdf->Output($file_path_with_name, 'F');
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td align = "center"><a href = "' . $digital_ekyc_url . '" style = "background: #fa6900;color: #fff;padding: 7px 15px;border-radius: 3px;text-decoration: blink;">Digital E-KYC</a></td>
+                                                                    <td align = "center"><a href = "' . $digital_ekyc_url . '" style = "background: #00455E;color: #fff;padding: 7px 15px;border-radius: 3px;text-decoration: blink;">Digital E-KYC</a></td>
                                                                 </tr>
                                                                 <!-- <tr>
                                                                     <td align = "center"><img src = "' . EKYC_LINES . '" alt = "line" width = "26" height = "10" /></td>
@@ -8040,7 +8041,7 @@ $pdf->Output($file_path_with_name, 'F');
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan = "2" align = "center"><span style = "font-weight:bold; font-size:25px; color:#fa6900;">How it Works</span></td>
+                                                        <td colspan = "2" align = "center"><span style = "font-weight:bold; font-size:25px; color:#00455E;">How it Works</span></td>
                                                     </tr>
 
                                                     <!-- <tr>
@@ -8050,7 +8051,7 @@ $pdf->Output($file_path_with_name, 'F');
                                                     <tr>
                                                         <!-- <td width = "23%" align = "left"><a href = "' . EKYC_IMAGES_1_SHOW . '" target = "_blank"><img src = "' . EKYC_IMAGES_1 . '" alt = "1st" width = "172" height = "103" /></a></td> -->
                                                         <td width = "35%" valign = "top">
-                                                            <p style = "color: #fa6900;font-size:18px;margin: 0px;padding-left: 10px;"><strong>First Step</strong></p>
+                                                            <p style = "color: #00455E;font-size:18px;margin: 0px;padding-left: 10px;"><strong>First Step</strong></p>
                                                             <p style = "font-size: 14px;margin: 0px;padding-left: 10px;line-height: 20px;">Please enter your 12 digits Aadhaar No. and press next.</p>
                                                         </td>
                                                     </tr>
@@ -8060,7 +8061,7 @@ $pdf->Output($file_path_with_name, 'F');
                                                     <tr>
                                                         <!-- <td align = "left"><a href = "' . EKYC_IMAGES_2_SHOW . '" target = "_blank"><img src = "' . EKYC_IMAGES_2 . '" alt = "2nd" width = "171" height = "103" /></a></td> -->
                                                         <td align = "left" valign = "top">
-                                                            <p style = "color: #fa6900;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Second Step</strong></p>
+                                                            <p style = "color: #00455E;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Second Step</strong></p>
                                                             <p style = "font-size: 14px;margin: 0px;padding-left: 10px;line-height: 20px;">Please enter the OTP received in your registered mobile no. with Aadhaar and press continue.</p>
                                                         </td>
                                                     </tr>
@@ -8069,7 +8070,7 @@ $pdf->Output($file_path_with_name, 'F');
                                                     </tr> -->
                                                     <tr>
                                                         <!-- <td align = "left"><a href = "' . EKYC_IMAGES_3_SHOW . '" target = "_blank"><img src = "' . EKYC_IMAGES_3 . '" alt = "3rd" width = "173" height = "103" /></a></td> -->
-                                                        <td align = "left" valign = "top"><p style = "color: #fa6900;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Third Step</strong></p>
+                                                        <td align = "left" valign = "top"><p style = "color: #00455E;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Third Step</strong></p>
                                                             <p style = "font-size: 14px;margin: 0px;padding-left: 10px;line-height: 20px;">Press allow to give access of your DigiLocker account for documents verification.</p></td>
                                                     </tr>
                                                     <!-- <tr>
@@ -8077,11 +8078,11 @@ $pdf->Output($file_path_with_name, 'F');
                                                     </tr> -->
                                                     <tr>
                                                         <!-- <td align = "left"><a href = "' . EKYC_IMAGES_4_SHOW . '" target = "_blank"><img src = "' . EKYC_IMAGES_4 . '" alt = "4th" width = "173" height = "102" /></a></td> -->
-                                                        <td align = "left" valign = "top"><p style = "color: #fa6900;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Thank You</strong></p>
+                                                        <td align = "left" valign = "top"><p style = "color: #00455E;font-size:18px;margin: 0px;padding-left: 10px;"><strong>Thank You</strong></p>
                                                             <p style = "font-size: 14px;margin: 0px;padding-left: 10px;line-height: 20px;">Your approval to access DigiLocker account for E-KYC has been successfully submitted.</p></td>
                                                     </tr>
                                                     <tr>
-                                                        <td valign = "top" style = "border-right:solid 1px #fa6900;">&nbsp;
+                                                        <td valign = "top" style = "border-right:solid 1px #00455E;">&nbsp;
                                                         </td>
                                                         <td align = "center">&nbsp;
                                                         </td>
@@ -8106,7 +8107,7 @@ $pdf->Output($file_path_with_name, 'F');
                                         </tr>
 
                                         <tr>
-                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#fa6900" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.tejasloan.com/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.tejasloan.com/public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "https://crm.tejasloan.com/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
+                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#00455E" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.salarywalle.com/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.salarywalle.com/public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "https://crm.salarywalle.com/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
                                         </tr>
                                     </table>
                                 </body>
@@ -8581,7 +8582,7 @@ $pdf->Output($file_path_with_name, 'F');
                                             <a href="' . WEBSITE_URL . "termsandconditions" . '" target="_blank"  style="color: #4CAF50; text-decoration: none; margin-right: 15px;">Terms of Service</a>
                                             <a href="' . WEBSITE_URL . "contact" . '" target="_blank"  style="color: #4CAF50; text-decoration: none;">Contact Us</a>
                                         </p>
-                                        <div style="text-align: center; margin: 20px 0;">
+                                        <!--<div style="text-align: center; margin: 20px 0;">
                                             <p style="font-size: 14px; color: #777; margin: 10px;">Follow us on:</p>
                                             <a href="' . FACEBOOK_LINK . '" target="_blank" style="text-decoration: none; margin: 0 5px;">
                                                 <img src="' . FACEBOOK_ICON . '" alt="facebook" style="width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
@@ -8598,7 +8599,7 @@ $pdf->Output($file_path_with_name, 'F');
                                             <a href="' . YOUTUBE_LINK . '" target="_blank" style="text-decoration: none; margin: 0 5px;">
                                                 <img src="' . YOUTUBE_ICON . '" alt="youtube" style="width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
                                             </a>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </body>

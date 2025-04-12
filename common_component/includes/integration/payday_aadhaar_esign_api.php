@@ -11,7 +11,8 @@ function aadhaar_esign_api_call($method_name = "", $lead_id = 0, $request_array 
         "AADHAAR_ESIGN" => 2,
         "DOWNLOAD_ESIGN_FILE" => 3,
         "UPLOAD_ESIGN_FILE_DIGITAP" => 4,
-        "DOWNLOAD_ESIGN_FILE_DIGITAP" => 5
+        "SIGNIN_ESIGN_FILE_DIGITAP" => 5,
+        "DOWNLOAD_ESIGN_FILE_DIGITAP" => 6
     );
 
     $method_id = $opertion_array[$method_name];
@@ -25,6 +26,8 @@ function aadhaar_esign_api_call($method_name = "", $lead_id = 0, $request_array 
     } elseif ($method_id == 4) {
         $responseArray = esign_document_upload_digitap_api_call($method_id, $lead_id, $request_array);
     } else if ($method_id == 5) {
+        $responseArray = call_signin_api($method_id, $lead_id, $request_array);
+    } else if ($method_id == 6) {
         $responseArray = esign_aadhaar_download_digitap_api_call($method_id, $lead_id, $request_array);
     } else {
         $responseArray["errors"] = "invalid opertation called";
@@ -1095,7 +1098,11 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
     $token_string = "";
     $redirect_url = COMP_CRM_URL . 'sanction-esign-response';
 
-    $esignUrl = "https://sdk.digitap.ai/e-sign/templateesignprocess.html?docId=return_docId&redirect_url=" . $redirect_url;
+
+    // $esignUrl = "https://sdk.digitap.ai/e-sign/templateesignprocess.html?docId=return_docId&redirect_url=" . $redirect_url;
+    $esignUrl = "https://sdk.digitap.ai/clickwrap/clickwrap.html?txnid=entTransactionId";
+    // $esignUrl = "https://api.digitap.ai/clickwrap/v1/send/sign-in-link";
+    // $esignUrl = COMP_CRM_URL."sign-in-link/$lead_id";
 
     $uploadURL = "";
     try {
@@ -1125,6 +1132,8 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
         }
 
         $app_data = !empty($LeadDetails['app_data']) ? $LeadDetails['app_data'] : "";
+        // print_r($app_data);
+        // exit;
 
         $lead_status_id = !empty($app_data['lead_status_id']) ? $app_data['lead_status_id'] : "";
 
@@ -1178,36 +1187,54 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
             echo "<br/><br/>=======Request JSON=========<br/><br/>";
             echo $apiRequestJson;
         }
-
-
+        
         $curl = curl_init();
+        // $requestData = array(
+        //     "uniqueId" => "sanction_letter_" . $lead_id . "_" . time(),
+        //     "signers" => array(
+        //         array(
+        //             "email" => $email,
+        //             "location" => $location,
+        //             "mobile" => $mobile,
+        //             "name" => $customer_full_name
+        //         )
+        //     ),
+        //     "reason" => "Loan agreement",
+        //     "templateId" => "ESIG35625073",
+        //     "fileName" => $cam_sanction_letter_file_name,
+        //     "multiSignerDocId" => $aadhar_no_last_4_digit
+        // );
         $requestData = array(
-            "uniqueId" => "sanction_letter_" . $lead_id . "_" . time(),
-            "signers" => array(
+            "docClassId" => "EI358OTPESIG24561",//"sanction_letter_" . $lead_id . "_" . time(),// "EI358OTPESIG58568",
+            "reason" => "Loan agreement",
+            "signersInfo" => array(
                 array(
                     "email" => $email,
                     "location" => $location,
                     "mobile" => $mobile,
-                    "name" => $customer_full_name
+                    // "name" => $customer_full_name,
+                    "fname" => $first_name,
+                    "lname" => $sur_name,
+                    "signerType" => "signer1"
                 )
             ),
-            "reason" => "Loan agreement",
-            "templateId" => "ESIG35625073",
-            "fileName" => $cam_sanction_letter_file_name,
-            "multiSignerDocId" => $aadhar_no_last_4_digit
         );
 
         $apiRequestJson = json_encode($requestData);
         $apiRequestJson = preg_replace("!\s+!", " ", $apiRequestJson);
+        // print_r($apiRequestJson);
 
         if ($debug == 1) {
             echo "<br/><br/> =======Request JSON======<br/><br/>" . $apiRequestJson;
         }
 
         $apiHeaders = array(
-            'authorization: ' . ltrim($apiToken, 'Basic '),
+            // 'authorization: ' . ltrim($apiToken, 'Basic '),
+            'ent_authorization: ' . $apiToken,
             'Content-Type: application/json'
         );
+
+        // print_r($apiRequestJson);
 
         if ($debug) {
             echo "<br/><br/>=======Request Header=========<br/><br/>";
@@ -1233,6 +1260,8 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
         if ($debug == 1) {
             echo "<br/><br/> =======Response======<br/><br/>" . $apiResponseJson;
         }
+        // print_r($apiResponseJson);
+        // exit;
 
         $apiResponseJson = preg_replace("!\s+!", " ", $apiResponseJson);
 
@@ -1257,15 +1286,31 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
                 if (!empty($apiResponseData)) {
 
                     if (!empty($apiResponseData)) {
+                        
 
-                        if (!empty($apiResponseData['model']['url']) && !empty($apiResponseData['model']['docId']) && $apiResponseData['code'] == "200") {
-                            $uploadURL = $apiResponseData['model']['url'];
-                            $docId = $apiResponseData['model']['docId'];
+                        // if (!empty($apiResponseData['model']['url']) && !empty($apiResponseData['model']['docId']) && $apiResponseData['code'] == "200") {
+                        //     $uploadURL = $apiResponseData['model']['url'];
+                        //     $docId = $apiResponseData['model']['docId'];
+                        //     $response_upload = esign_upload_sanction_letter_digitap_api_call($fileUrl, $uploadURL);
+
+                        //     if ($response_upload['status'] == 1) {
+                        //         $apiStatusId = 1;
+                        //         $esignUrl = str_replace("return_docId", $docId, $esignUrl);
+                        //     } else {
+                        //         throw new ErrorException("Uploaded document details does not received from API[2].");
+                        //     }
+                        if (!empty($apiResponseData['model']['uploadUrl']) && !empty($apiResponseData['model']['docTransactionId']) && !empty($apiResponseData['model']['entTransactionId']) && $apiResponseData['code'] == "200") {
+                            $uploadURL = $apiResponseData['model']['uploadUrl'];
+                            $docId = $apiResponseData['model']['docTransactionId'];
+                            $entTransactionId = $apiResponseData['model']['entTransactionId'];
                             $response_upload = esign_upload_sanction_letter_digitap_api_call($fileUrl, $uploadURL);
-
+    
                             if ($response_upload['status'] == 1) {
                                 $apiStatusId = 1;
-                                $esignUrl = str_replace("return_docId", $docId, $esignUrl);
+                                // $esignUrl = str_replace("return_docId", $docId, $esignUrl);
+                                // $esignUrl = str_replace("entTransactionId", $docId, $esignUrl);
+                                $esignUrl = str_replace("entTransactionId", $entTransactionId, $esignUrl);
+
                             } else {
                                 throw new ErrorException("Uploaded document details does not received from API[2].");
                             }
@@ -1326,6 +1371,7 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
     $response_array['request_json'] = $requestData;
     $response_array['response_json'] = $apiResponseJson;
     $response_array['nsdl_url'] = $esignUrl;
+
     return $response_array;
 }
 
@@ -1347,7 +1393,7 @@ function esign_upload_sanction_letter_digitap_api_call($fileUrl, $apiUrl) {
         if (empty($apiUrl)) {
             throw new Exception("API URL does not exist.");
         }
-
+        
         if ($debug == 1) {
             echo "<br/><br/> =======File URL======<br/><br/>" . $fileUrl;
         }
@@ -1374,6 +1420,7 @@ function esign_upload_sanction_letter_digitap_api_call($fileUrl, $apiUrl) {
         ));
 
         $apiResponseJson = curl_exec($curl);
+
 
         if ($debug == 1) {
             echo "<br/><br/> =======Response======<br/><br/>" . $apiResponseJson;
@@ -1415,6 +1462,111 @@ function esign_upload_sanction_letter_digitap_api_call($fileUrl, $apiUrl) {
     $response_array['errors'] = !empty($errorMessage) ? "Upload error : " . $errorMessage : "";
 
     return $response_array;
+}
+
+function call_signin_api($method_id, $lead_id, $request_array) {
+    error_reporting(E_ALL);
+               ini_set('display_errors', 1); 
+    $response_array = array("status" => 0, "errors" => "");
+
+$lead_id = (int) $lead_id; // Sanitize input to prevent SQL injection
+$leadModelObj = new LeadModel();
+$esignLogResult = $leadModelObj->getesignLogResult($lead_id);
+$esignLogRow = $esignLogResult['items'][0];
+$esign_response = json_decode($esignLogRow['esign_response'], true);
+$esign_response_model = $esign_response['model'];
+$docTransactionId = $esign_response_model['docTransactionId'];
+// $esignLogRow[];
+
+$apiResponseData = array(
+    "docTransactionId" => $docTransactionId,
+    "sendNotification" => true
+);
+
+$apiRequestJson = json_encode($apiResponseData);
+$apiRequestJson = preg_replace("!\s+!", " ", $apiRequestJson);
+
+// if ($debug == 1) {
+//     echo "<br/><br/> =======Request JSON======<br/><br/>" . $apiRequestJson;
+// }
+
+$apiHeaders = array(
+    // 'ent_authorization: ' . ltrim($apiToken, 'Basic '),
+    'ent_authorization: MTE2MzU3MjY6eFh2OTZlNGdoOW9OdHlxbXRLcmw1NFdTalFXOHVjQkQ=',
+    // 'authorization: ' . ltrim($apiToken, 'Basic '),
+    'Content-Type: application/json'
+);
+
+// if ($debug) {
+//     echo "<br/><br/>=======Request Header=========<br/><br/>";
+//     echo json_encode($apiHeaders);
+// }
+
+$apiUrl = "https://api.digitap.ai/clickwrap/v1/send/sign-in-link";
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_URL => $apiUrl,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS => $apiRequestJson,
+    CURLOPT_HTTPHEADER => $apiHeaders,
+));
+
+$apiResponseJson = curl_exec($curl);
+
+curl_close($curl);
+
+// if ($debug == 1) {
+//     echo "<br/><br/> =======Response======<br/><br/>" . $apiResponseJson;
+// }
+
+// print_r($apiResponseJson);
+// exit;
+
+$apiResponseJson = preg_replace("!\s+!", " ", $apiResponseJson);
+$apiResponseDateTime = date("Y-m-d H:i:s");
+// if (isset($curl)) {
+//     curl_close($curl);
+// }
+
+$apiResponseData = json_decode($apiResponseJson, true);
+
+if (!empty($apiResponseData)) {
+
+    $apiResponseData = common_trim_data_array($apiResponseData);
+
+    if (!empty($apiResponseData)) {
+
+        if ($apiResponseData['code'] == "200") {
+            $apiStatusId = 1;
+            // echo $apiResponseData["model"]["msg"];
+            // $this->load->library('encrypt');
+            // echo $enc_lead_id = $this->encrypt->encode($lead_id);
+            // exit;
+
+echo '
+<script>
+    setTimeout(function() {
+        window.location.href = "' . COMP_CRM_URL . 'sanction-esign-response?lead_id=' . $lead_id . '";
+    }, 100);
+</script>';
+            // redirect('ApiCallBackController/eSignSanctionLetterResponse');
+        } else {
+            $tmp_error_msg = "Some error occurred. Please try again.";
+            throw new ErrorException($tmp_error_msg);
+        }
+    } else {
+        throw new ErrorException("Please check raw response for error details");
+    }
+} else {
+    throw new ErrorException("Empty response from eSign Request API");
+}
 }
 
 function esign_aadhaar_download_digitap_api_call($method_id, $lead_id = 0, $request_array = array()) {
@@ -1523,8 +1675,11 @@ function esign_aadhaar_download_digitap_api_call($method_id, $lead_id = 0, $requ
             echo $esign_contract_id;
         }
 
+        // $apiResponseData = array(
+        //     "docId" => $esign_contract_id
+        // );
         $apiResponseData = array(
-            "docId" => $esign_contract_id
+            "transactionId" => $esign_contract_id
         );
 
         $apiRequestJson = json_encode($apiResponseData);
@@ -1535,7 +1690,9 @@ function esign_aadhaar_download_digitap_api_call($method_id, $lead_id = 0, $requ
         }
 
         $apiHeaders = array(
-            'authorization: ' . ltrim($apiToken, 'Basic '),
+            // 'ent_authorization: ' . ltrim($apiToken, 'Basic '),
+            'ent_authorization:'. $apiToken,
+            // 'authorization: ' . ltrim($apiToken, 'Basic '),
             'Content-Type: application/json'
         );
 

@@ -289,8 +289,13 @@ function bre_rule_engine($lead_id, $request_array = array()) {
             $bank_account_data = $pennyDropDetails['bank_acc_data'];
             $bank_account_data = str_replace('\"', '"', $bank_account_data['bav_response']);
             $bank_account_data = json_decode($bank_account_data, true, 512, JSON_INVALID_UTF8_IGNORE);
-            $bank_account_number = trim($bank_account_data['essentials']['beneficiaryAccount']);
-            $bank_account_ifsc_code = strtoupper(trim($bank_account_data['essentials']['beneficiaryIFSC']));
+            $bank_account_request_db = $pennyDropDetails['bank_acc_data'];
+            $bank_account_request_data = str_replace('\"', '"', $bank_account_request_db['bav_request']);
+            $bank_account_request_data = json_decode($bank_account_request_data, true, 512, JSON_INVALID_UTF8_IGNORE);
+            // $bank_account_number = trim($bank_account_data['essentials']['beneficiaryAccount']);
+            $bank_account_number = trim($bank_account_request_data['beneficiaryAccount']);
+            // $bank_account_ifsc_code = strtoupper(trim($bank_account_data['essentials']['beneficiaryIFSC']));
+            $bank_account_ifsc_code = strtoupper(trim($bank_account_data['result']['bankTransfer']['beneIFSC']));
             $bank_account_status = strtoupper($bank_account_data['result']['active']);
             $bank_account_name_match_status = strtoupper($bank_account_data['result']['nameMatch']);
             $bank_account_name_match_score = strtoupper($bank_account_data['result']['nameMatchScore']);
@@ -1139,32 +1144,32 @@ function bre_rule_engine($lead_id, $request_array = array()) {
 
         insertBreRuleResult($lead_id, $bureau_inquiry_rule_id, $bureau_inquiry_rule_name, $bureau_inquiry_rule_cutoff_value, $bureau_inquiry_rule_actual_value, $bureau_inquiry_rule_relevant_inputs, $bureau_inquiry_rule_system_decision_id, $bureau_inquiry_rule_manual_decision_id);
 
-        $bureau_inquiry_rule_id = 39;
-        $bureau_inquiry_rule_name = "Account Aggregator";
-        $bureau_inquiry_rule_cutoff_value = "Account Details Matched";
-        $bureau_inquiry_rule_actual_value = "";
-        $bureau_inquiry_rule_relevant_inputs = ["name" => $aa_name, "account" => $account, "ifsc_code" => $aa_ifscCode, "bank_name" => $aa_fipName, "current_balance" => $aa_current_balance];
-        $bureau_inquiry_rule_system_decision_id = 0;
-        $bureau_inquiry_rule_manual_decision_id = 0;
+        // $bureau_inquiry_rule_id = 39;
+        // $bureau_inquiry_rule_name = "Account Aggregator";
+        // $bureau_inquiry_rule_cutoff_value = "Account Details Matched";
+        // $bureau_inquiry_rule_actual_value = "";
+        // $bureau_inquiry_rule_relevant_inputs = ["name" => $aa_name, "account" => $account, "ifsc_code" => $aa_ifscCode, "bank_name" => $aa_fipName, "current_balance" => $aa_current_balance];
+        // $bureau_inquiry_rule_system_decision_id = 0;
+        // $bureau_inquiry_rule_manual_decision_id = 0;
 
-        if (!empty($bankAggregatorDetails) && !empty($aa_ifscCode) && !empty($aa_fipName) && !empty($aa_current_balance) && $aa_ifscCode == $ifsc_code && $aa_name == $beneficiary_name) {
-            $bureau_inquiry_rule_system_decision_id = 1;
-            $bureau_inquiry_rule_manual_decision_id = 1;
-            $bureau_inquiry_rule_actual_value = ["Account details matched"];
-        } else if (!empty($bankAggregatorDetails) && $aa_ifscCode != $ifsc_code) {
-            $bureau_inquiry_rule_system_decision_id = 2;
-            $bureau_inquiry_rule_manual_decision_id = 2;
-            $bureau_inquiry_rule_actual_value = ["IFSC Code does not match"];
-        } else if (!empty($bankAggregatorDetails) && $aa_fipName != $beneficiary_name) {
-            $bureau_inquiry_rule_system_decision_id = 2;
-            $bureau_inquiry_rule_manual_decision_id = 2;
-            $bureau_inquiry_rule_actual_value = ["Beneficiary Name does not match"];
-        } else {
-            $bureau_inquiry_rule_system_decision_id = 0;
-            $bureau_inquiry_rule_manual_decision_id = 0;
-        }
+        // if (!empty($bankAggregatorDetails) && !empty($aa_ifscCode) && !empty($aa_fipName) && !empty($aa_current_balance) && $aa_ifscCode == $ifsc_code && $aa_name == $beneficiary_name) {
+        //     $bureau_inquiry_rule_system_decision_id = 1;
+        //     $bureau_inquiry_rule_manual_decision_id = 1;
+        //     $bureau_inquiry_rule_actual_value = ["Account details matched"];
+        // } else if (!empty($bankAggregatorDetails) && $aa_ifscCode != $ifsc_code) {
+        //     $bureau_inquiry_rule_system_decision_id = 2;
+        //     $bureau_inquiry_rule_manual_decision_id = 2;
+        //     $bureau_inquiry_rule_actual_value = ["IFSC Code does not match"];
+        // } else if (!empty($bankAggregatorDetails) && $aa_fipName != $beneficiary_name) {
+        //     $bureau_inquiry_rule_system_decision_id = 2;
+        //     $bureau_inquiry_rule_manual_decision_id = 2;
+        //     $bureau_inquiry_rule_actual_value = ["Beneficiary Name does not match"];
+        // } else {
+        //     $bureau_inquiry_rule_system_decision_id = 0;
+        //     $bureau_inquiry_rule_manual_decision_id = 0;
+        // }
 
-        insertBreRuleResult($lead_id, $bureau_inquiry_rule_id, $bureau_inquiry_rule_name, $bureau_inquiry_rule_cutoff_value, $bureau_inquiry_rule_actual_value, $bureau_inquiry_rule_relevant_inputs, $bureau_inquiry_rule_system_decision_id, $bureau_inquiry_rule_manual_decision_id);
+        // insertBreRuleResult($lead_id, $bureau_inquiry_rule_id, $bureau_inquiry_rule_name, $bureau_inquiry_rule_cutoff_value, $bureau_inquiry_rule_actual_value, $bureau_inquiry_rule_relevant_inputs, $bureau_inquiry_rule_system_decision_id, $bureau_inquiry_rule_manual_decision_id);
 
         //RULE ENGINE FINAL OUTPUT
 

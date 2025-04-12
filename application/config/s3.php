@@ -34,7 +34,7 @@ $config['verify_peer'] = TRUE;
 */
 
 // $config['access_key'] = 'AKIAXEVXYIVMRIOWP3MO';
-$config['access_key'] = 'AKIASVLKCFXIUCEZPHEK';
+$config['access_key'] = 'AKIASE5KQZXHCBU65I6O';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,9 +44,8 @@ $config['access_key'] = 'AKIASVLKCFXIUCEZPHEK';
 | Your Amazon S3 Secret Key.
 |
 */
-
 // $config['secret_key'] = 'awlWUgbMYfWJFRe4ZqdHnrIcmZfMJuOorHT4ZXiS';
-$config['secret_key'] = 'p6FGb9If6Jc9PCeZJ8T6r+sBzdnzGmCr/KUHKFNp';
+$config['secret_key'] = 'CHd7MQF79xIi50vIP4G1A/BD52OF0+dyDmFp7xCd';
 
 /*
 |--------------------------------------------------------------------------

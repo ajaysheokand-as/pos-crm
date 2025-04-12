@@ -513,7 +513,8 @@ $route['ums/get-reporting-list'] = 'UMS/UMSController/getReportingList';
 /* * ***************************Call Back URL for APIs******************************** */
 $route['callbackba-novel-patterns'] = 'ApiCallBackController/callback_novel_bank_analysis';
 $route['sanction-esign-request'] = 'ApiCallBackController/eSignSanctionLetterRequest';
-$route['sanction-esign-consent'] = 'ApiCallBackController/eSignConsentForm';
+$route['sign-in-link/(:any)'] = 'ApiCallBackController/eSignRequest/$1';
+$route['sanction-esign-consent'] = 'ApiCallBackController/eSignConsentForm/$1';
 $route['sanction-esign-response'] = 'ApiCallBackController/eSignSanctionLetterResponse';
 $route['aadhaar-veri-request'] = 'ApiCallBackController/digilockerRequest';
 $route['aadhaar-veri-response'] = 'ApiCallBackController/digilockerResponse';

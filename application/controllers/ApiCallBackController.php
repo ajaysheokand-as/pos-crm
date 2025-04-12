@@ -120,8 +120,21 @@ class ApiCallBackController extends CI_Controller {
         } else {
             $message = "Missing application reference.";
         }
-
+        if ($return_status == 1) {
+            $message = $this->thank_you_html($message);
+        } else {
+            $message = $this->error_page_html($message);
+        }
         echo $message;
+    }
+
+    public function eSignRequest($lead_id) {
+        $request_array = array("refstr" => $this->encrypt->encode($lead_id));
+        require_once(COMPONENT_PATH . 'CommonComponent.php');
+
+        $CommonComponent = new CommonComponent();
+        $esign_return = $CommonComponent->call_signin_api($lead_id, $request_array);
+
     }
 
     public function eSignConsentForm() {
@@ -148,13 +161,23 @@ class ApiCallBackController extends CI_Controller {
         $return_status = 0;
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : NULL;
 
-        if (!empty($_GET['docId'])) {
-            $esign_data = $this->IntegrationModel->geteSignDetailsByDocId($_GET['docId']);
+        // if (!empty($_GET['docId'])) {
+        //     $esign_data = $this->IntegrationModel->geteSignDetailsByDocId($_GET['docId']);
+
+        //     if ($esign_data['status'] == 1) {
+        //         $lead_id = $esign_data['esign_data']['esign_lead_id'];
+        //     }
+        // }
+
+        if (!empty($_GET['transactionId'])) {
+            $esign_data = $this->IntegrationModel->geteSignDetailsByDocId($_GET['transactionId']);
 
             if ($esign_data['status'] == 1) {
                 $lead_id = $esign_data['esign_data']['esign_lead_id'];
             }
         }
+        // echo $_GET['transactionId'];
+        // exit;
 
         if (!empty($_GET['lead_id']) || !empty($_GET['refstr']) || !empty($lead_id)) {
 
@@ -444,6 +467,11 @@ class ApiCallBackController extends CI_Controller {
         } else {
             $message = "Missing application reference.";
         }
+        if ($return_status == 1) {
+            $message = $this->thank_you_html($message);
+        } else {
+            $message = $this->error_page_html($message);
+        }
 
         echo $message;
     }
@@ -519,6 +547,11 @@ class ApiCallBackController extends CI_Controller {
             }
         } else {
             $message = "Missing application reference.";
+        }
+        if ($return_status == 1) {
+            $message = $this->thank_you_html($message);
+        } else {
+            $message = $this->error_page_html($message);
         }
 
         echo $message;
