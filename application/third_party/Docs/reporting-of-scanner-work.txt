@@ -1,0 +1,10 @@
+
+View :
+
+/var/www/html/uat_bharatloan_lms/application/models/UMS/UMS_Models (add getCHI() function)
+/var/www/html/uat_bharatloan_lms/application/controllers/UMS/UMSController (add some data and add update query)
+   $view_data['get_chi'] = $this->umsModel->getCHI($user_role_id);
+   $view_data['get_chi'] = $this->umsModel->getCHI(); 
+/var/www/html/uat_bharatloan_lms/application/view/UMS/AddUserRole (add id user_role_supervisor_role_id_row and js add bottom)
+/var/www/html/uat_bharatloan_lms/application/view/UMS/UpdateUserRole (add id user_role_supervisor_role_id_row and js add bottom)
+ 
