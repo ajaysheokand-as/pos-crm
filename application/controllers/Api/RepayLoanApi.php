@@ -356,7 +356,7 @@
 	                        $card_holder_name = $customer_name;
 	                        $email = $emailId;
 	                        $phone = $mobile;
-	                        $name = 'Naman Finlease Pvt. Ltd.';
+	                        $name = 'Aman Fincap Limited';
 	                        $return_url = $rurl;
 	                      //echo  "=====".$data['itemInfo']->branch;
 	                    //  echo "<pre>";print_r($data['itemInfo']);

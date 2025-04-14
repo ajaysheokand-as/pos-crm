@@ -110,7 +110,7 @@ class LWTestController extends CI_Controller {
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2">
-                                                                    <p style="margin: 2px 0px;">M/S Naman Finlease Pvt. Ltd., operating under the brand name of Loanwalle.com.</p>
+                                                                    <p style="margin: 2px 0px;">M/S Aman Fincap Limited, operating under the brand name of Loanwalle.com.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>

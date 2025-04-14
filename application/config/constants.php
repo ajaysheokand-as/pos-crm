@@ -138,7 +138,7 @@ define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 // define("LMS_BRAND_LOGO", LMS_URL . "public/front/img/brand_logo.jpg");
 define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
-define("COMPANY_NAME", "NAMAN FINLEASE PRIVATE LIMITED");
+define("COMPANY_NAME", "AMAN FINCAP LIMITED");
 define("RBI_LICENCE_NUMBER", "14.01466");
 define('CONTACT_PERSON', 'AJAY SINGH');
 define("REGISTED_ADDRESS", "S-370, Panchsheel Park, New Delhi - 110017");
@@ -257,7 +257,7 @@ const PORTAL_DOMAIN  = PORTAL_NAME . ".com";
 
 // NBFC details
 const NBFC_LOGO      = 'namanfinlease.png';
-const NBFC_NAME      = 'NAMAN FINLEASE PRIVATE LIMITED';
+const NBFC_NAME      = 'Aman Fincap Limited';
 const NBFC_CIN       = 'Reg No.14.01466';
 const NBFC_ADDRESS   = 'S-370, Panchsheel Park, New Delhi - 110017';
 const NBFC_MOBILE    = '8282824633';

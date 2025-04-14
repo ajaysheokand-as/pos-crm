@@ -48,7 +48,7 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/18-BK_kixu8fav.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/tejas-logo.png">
         <link rel="stylesheet" href="<?= base_url('public/front'); ?>/css/bootstrap.css?v=1.2" type="text/css">
         <link rel="stylesheet" href="<?= base_url('public/'); ?>css/font-awesome.css" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css">
