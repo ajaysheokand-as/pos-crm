@@ -32,7 +32,7 @@
     
       .parent_wrapper .right-side .logo_container a img {
           margin-right: 20px;
-          width: 165px;
+          width: 89px;
       }
 
 </style>

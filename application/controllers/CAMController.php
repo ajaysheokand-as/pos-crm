@@ -991,7 +991,7 @@ class CAMController extends CI_Controller {
                                     <td align="left" valign="middle">In  response to your loan application, we are pleased to sanction you a personal  loan with the following terms and conditions. Please go through the terms and  conditions carefully and give your consent so that we may proceed with the disbursal of your loan and credit your credit card account.</td>
                                     </tr>
                                     <tr>
-                                    <td align="left" valign="middle">You can repay the loan  via this link <a href="https://eazypay.icicibank.com/homePage" target="_blank" style="text-decoration:blink; color:#1a5ee6;"><span style="background : orange; color : #fff; padding : 2px;">https://eazypay.icicibank.com/homePage</span></a>                         or UPI ID <span style="background : orange; color : #fff; padding : 2px;">8076329281@okbizaxis</span>. Kindly make the payment in the name of Naman  Finlease Pvt. Ltd. </td>
+                                    <td align="left" valign="middle">You can repay the loan  via this link <a href="https://eazypay.icicibank.com/homePage" target="_blank" style="text-decoration:blink; color:#1a5ee6;"><span style="background : orange; color : #fff; padding : 2px;">https://eazypay.icicibank.com/homePage</span></a>                         or UPI ID <span style="background : orange; color : #fff; padding : 2px;">8076329281@okbizaxis</span>. Kindly make the payment in the name of Aman Fincap Limited </td>
                                     </tr>
                                 </table>
                             </td>
@@ -1020,7 +1020,7 @@ class CAMController extends CI_Controller {
                             <td colspan="3" align="left"><img src="' . base_url('public/img/img.png') . ' " alt="text" width="26" height="10" /></td>
                         </tr>
                         <tr>
-                            <td colspan="3" align="left">' . $logo->title . '.com is powered by Naman Finlease Pvt.  Ltd. with registered office at S-370, Panchsheel Park, New Delhi-110017 </td>
+                            <td colspan="3" align="left">' . $logo->title . '.com is powered by Aman Fincap Limited with registered office at S-370, Panchsheel Park, New Delhi-110017 </td>
                         </tr>
                         <tr>
                             <td colspan="3" align="center" style="padding-top : 8px;padding-bottom : 10px;"><strong>Most  Important Terms and Conditions (MITC)</strong></td>

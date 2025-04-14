@@ -798,7 +798,7 @@ class CronEmailerController extends CI_Controller {
                         <tbody>
 
                         <tr style = "padding: "><td style = "font-size:10px;line-height:15px;">Bank Name</td><td style = "font-size:10px;line-height:15px;">ICICI Bank Limited</td></tr>
-                        <tr><td style = "font-size:10px;line-height:15px;">Company Name</td><td style = "font-size:10px;line-height:15px;">Naman Finlease Pvt. Ltd.</td></tr>
+                        <tr><td style = "font-size:10px;line-height:15px;">Company Name</td><td style = "font-size:10px;line-height:15px;">Aman Fincap Limited</td></tr>
                         <tr><td style = "font-size:10px;line-height:15px;">Account Number</td><td style = "font-size:10px;line-height:15px;">084305001370</td></tr>
                         <tr><td style = "font-size:10px;line-height:15px;">IFSC Code</td><td style = "font-size:10px;line-height:15px;">ICIC0000843</td></tr>
                         <tr><td style = "font-size:10px;line-height:15px;">Branch Name</td><td style = "font-size:10px;line-height:15px;">DWARKA SEC-6 New Delhi</td></tr>
@@ -1950,7 +1950,7 @@ class CronEmailerController extends CI_Controller {
                         <td>
                         <p style = " line-height:22px; margin-bottom:5px;font-size: 13px;"><strong>Regards</strong><br />
                         <strong>Team Loanwalle</strong><br/>
-                        <span>Naman Finlease Pvt. Ltd.</span><br/>
+                        <span>Aman Fincap Limited</span><br/>
                         <span>S-370, Basement, Panchsheel Enclave</span><br/>
                         <span>New Delhi-110017</span>
                         </p>

@@ -6148,7 +6148,7 @@ $pdf->Output($file_path_with_name, 'F');
                             <div class="details">
                                 <h2>Subject: Sanction Letter for Loan Approval</h2>
                                 <p>Dear ' . $fullname . ',</p>
-                                <p>We are pleased to inform you that your application for a loan with Naman Finlease Private Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
+                                <p>We are pleased to inform you that your application for a loan with Aman Fincap Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
                                 <h3>Loan Details:</h3>
                                 <ul>
                                     <li>Loan Amount:' . number_format(round($loan_recommended, 2)) . '</li>
@@ -6159,15 +6159,15 @@ $pdf->Output($file_path_with_name, 'F');
                                 <p>Your loan has been sanctioned with the above-mentioned terms and conditions. The loan amount will be disbursed directly to your designated bank account within ' . $sanction_date . ', subject to the completion of any remaining formalities.</p>
                                 <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@salarywalle.com .</p>
                                 <p>Kindly ensure that you adhere to the repayment schedule to avoid any unnecessary penalties or charges. Timely repayment will also help you maintain a positive credit history with our institution.</p>
-                                <p>We appreciate your trust in Naman Finlease Private Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
-                                <p>Thank you for choosing Naman Finlease Private Limited. We look forward to a mutually beneficial relationship.</p>
+                                <p>We appreciate your trust in Aman Fincap Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
+                                <p>Thank you for choosing Aman Fincap Limited. We look forward to a mutually beneficial relationship.</p>
                                 <p>Best regards,</p>
-                                <p>Naman Finlease Private Limited</p>
+                                <p>Aman Fincap Limited</p>
                             </div>
                             <div class="loan-agreement">
                                 <h2 >Loan Agreement</h2>
                                 <p>This Loan Agreement is entered into on ' . $sanction_date . ', between:</p>
-                                <p>Naman Finlease Private Limited, a company duly registered under the laws of India, having its registered office at S-370, Panchsheel Park, New Delhi - 110017 (hereinafter referred to as the "Lender"), on one part and</p>
+                                <p>Aman Fincap Limited, a company duly registered under the laws of India, having its registered office at S-370, Panchsheel Park, New Delhi - 110017 (hereinafter referred to as the "Lender"), on one part and</p>
                                 <p> ' . $fullname . ', an individual/legal entity, residing at address ' . $residence_address . '(hereinafter referred to as the "Borrower"), on the other part.</p>
                                 <h3>Background:</h3>
                                 <p>The Borrower has approached the Lender for a loan to meet its financial requirements, and the Lender has agreed to provide the loan on the terms and conditions set forth in this Agreement.</p>
@@ -6281,7 +6281,7 @@ $pdf->Output($file_path_with_name, 'F');
                                 </ol>
 
                                 <p><strong>IN WITNESS WHEREOF</strong>, the parties hereto have executed this Agreement on the date first above written.</p>
-                                <p><strong>For Naman Finlease Private Limited:</strong></p><br>
+                                <p><strong>For Aman Fincap Limited:</strong></p><br>
                                 <p><strong>For the Borrower:</strong></p>
                                 <p>' . $fullname . '<br>' . $sanction_date . '</p>
 

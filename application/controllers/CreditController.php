@@ -1121,7 +1121,7 @@
 			                                                                <div><strong>Beneficiary Name</strong></div>
 			                                                            </td>
 			                                                            <td style="font-size:14px; font-family:Arial,Helvetica,sans-serif, sans-serif; color:#3c4858; line-height: 21px;">
-			                                                                <div><strong>Naman Finlease Pvt. Ltd.</strong></div>
+			                                                                <div><strong>Aman Fincap Limited</strong></div>
 			                                                            </td>
 			                                                            </tr>
 			                                                            <tr>
@@ -2373,7 +2373,7 @@
                                 <td colspan="3"><a href="https://loanagainstcard.com/" target="_blank" style="text-decoration:blink;">Loanagainstcard.com</a></td>
                               </tr>
                               <tr>
-                                <td colspan="3">Powered by Naman Finlease Pvt. Ltd. (RBI approved NBFC)</td>
+                                <td colspan="3">Powered by Aman Fincap Limited (RBI approved NBFC)</td>
                               </tr>
                               <tr>
                                 <td colspan="3">Tower 12-102, Sunworld Vanalika Noida-201304</td>
