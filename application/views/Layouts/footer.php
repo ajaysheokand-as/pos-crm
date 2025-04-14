@@ -106,7 +106,7 @@
 
             <!--<div class="footer-line"></div>-->
             <div class="copyright">
-                <p><i class="fa-solid fa-copyright"></i>&nbsp;Copyright 2025. All Rights Reserved by Naman Finlease Private Limited.</p>
+                <p><i class="fa-solid fa-copyright"></i>&nbsp;Copyright 2025. All Rights Reserved by Aman Fincap Limited.</p>
             </div>
         </div>
 

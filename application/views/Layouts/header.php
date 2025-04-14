@@ -152,7 +152,7 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
                 width: 234px;
                 display: flex;
                 justify-content: center;
-                background-color: #00455E;
+                background-color: #000080;
                 box-shadow: 0 0 7px #c7c7c7;
             }
 

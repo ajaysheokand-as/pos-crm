@@ -132,7 +132,7 @@ define("WEBSITE", "tejasloan.com");
 define("WEBSITE_UTM_SOURCE", WEBSITE_URL . "apply-now?utm_source=");
 
 // define("LMS_COMPANY_LOGO", LMS_URL . "public/front/img/company_logo.png");
-define("LMS_COMPANY_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
+define("LMS_COMPANY_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("LMS_KASAR_LETTERHEAD", LMS_URL . "public/images/Letter_Head_A4.png");
 define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 // define("LMS_BRAND_LOGO", LMS_URL . "public/front/img/brand_logo.jpg");

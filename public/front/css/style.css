@@ -344,7 +344,7 @@ div.spinner {
     background : #35b7c4;
 
     color : #fff;
-    border: 1px solid #FB6900;
+    border: 1px solid #000080;
 }
 
 
@@ -644,7 +644,7 @@ div.spinner {
     /*padding: 10px;*/
     /*border-radius: 100px;*/
     /*color: #ffffff;*/
-    color: #00455E;
+    color: #000080;
     /*height: 64px*/
     /*width: 64px;*/
     /*line-height: 48px;*/
@@ -652,7 +652,7 @@ div.spinner {
 }
 
 .lead-box:hover i {
-    color: #FFAE00;
+    color: #0063B9;
 }
 
 .lead-box span{
@@ -664,7 +664,7 @@ div.spinner {
     padding: 5px 0px;
     /*padding: 20px 0px;*/
     /*color: #000;*/
-    color: #00455E;
+    color: #000080;
     /* color: #FB6900; */
     /*border-radius: 9px 10px 0 0;*/
     /*height: 100px; */
@@ -1081,7 +1081,7 @@ div.spinner {
 
 footer{
 
-    background: #FFAE00;
+    background: #0063B9;
     color: #a2abb7;
     position: fixed;
     left: 234px;
@@ -1877,7 +1877,7 @@ input:checked + .slider:before {
 }
 .tooltip .fa
 {
-    color: #00455E;
+    color: #000080;
     font-size: 16px;
 }
 
@@ -1960,8 +1960,8 @@ input:checked + .slider:before {
 
 
 .drop-me .panel-default>.panel-heading {
-    background-color: #00455E !important;
-    border-color: #00455E !important;
+    background-color: #000080 !important;
+    border-color: #000080 !important;
     padding: 13px;
     min-width: 165px;
 }
@@ -2064,7 +2064,7 @@ ul.list-group li {
 ul.list-group li a:hover
 
 {
-    color:#FB6900 !important;
+    color:#0063B9 !important;
 }
 
 
@@ -2267,10 +2267,10 @@ ul.list-group li a:hover, ul li a:focus {
 .lead-box {
     /*background: #0a425a;*/
     /*color: #fff;*/
-    color: black;
+    color: #000080;
     padding: 0 8px;
     margin-bottom: 0;
-    border: 1px solid #00455E;
+    border: 1px solid #000080;
     align-items: center;
     display: grid;
     /*box-shadow: 0 20px 20px -16px rgb(0 0 0 / 38%);*/
@@ -2281,7 +2281,7 @@ ul.list-group li a:hover, ul li a:focus {
     content: '';
     height: 80%;
     width: 1.1rem;
-    background-color: #00455E;
+    background-color: #000080;
     position: absolute;
     right: 0%;
     top: 10%;
@@ -2948,4 +2948,11 @@ details[open] summary::before {
         stroke-dashoffset: 900;
     }
 }
-
+#userSaction{
+    a {
+        color: blue !important;
+    }
+}
+.page-item a{
+    color: #000080 !important;
+}

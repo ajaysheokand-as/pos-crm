@@ -328,7 +328,7 @@ body{
 }
 
 .container button{
-    background-color: #00455E;
+    background-color: #000080;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -342,7 +342,7 @@ body{
     transition: 0.4s;
 }
 .container button:hover{
-background-color: #FFAE00;
+background-color: #0063B9;
 }
 
 .container button.hidden{
@@ -433,9 +433,9 @@ background-color: #FFAE00;
 }
 
 .toggle{
-    background-color: #512da8;
+    /* background-color: #512da8; */
     height: 100%;
-    background: #00455E;
+    background: #000080;
     color: #fff;
     position: relative;
     left: -100%;
@@ -465,7 +465,7 @@ background-color: #FFAE00;
 }
 
 .toggle img{
-    width: 70%;
+    width: 150px;
     margin-top: -22px;
     margin-bottom: 13px;
 }

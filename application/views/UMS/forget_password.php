@@ -54,7 +54,7 @@
                 <div class="toggle-panel toggle-right">
                     <div class="logo">
                         <!-- <img src="<?= base_url('public'); ?>/images/final_logo.png"> -->
-                        <img src="<?= base_url('public'); ?>/images/18-BK_kixu8.png">
+                        <img src="<?= base_url('public'); ?>/images/logo-white.svg">
                     </div>
                     <h1>Welcome Back !</h1>
                     <p>Please logging through your credentials

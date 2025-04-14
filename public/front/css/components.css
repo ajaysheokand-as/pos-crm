@@ -2080,7 +2080,7 @@ select[multiple].form-group-lg .form-control {
     -moz-transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    background: #00455E !important;
+    background: #000080 !important;
     color: #fff !important;}
 
 .btn:hover,
@@ -2103,7 +2103,7 @@ select[multiple].form-group-lg .form-control {
 
   transition: all 0.2s ease-out;
 
-  background: #FFAE00 !important;
+  background: #0063B9 !important;
 
 }
 

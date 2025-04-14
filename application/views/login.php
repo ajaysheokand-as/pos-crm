@@ -97,7 +97,7 @@
                 <div class="toggle-panel toggle-right">
                     <div class="logo">
                         <!-- <img src="<?= base_url('public'); ?>/images/final_logo.png"> -->
-                        <img src="<?= base_url('public'); ?>/images/login-logo.png">
+                        <img src="<?= base_url('public'); ?>/images/logo-white.svg">
                     </div>
                     <h1>Welcome Back !</h1>
                     <p>Please log in using your credentials
