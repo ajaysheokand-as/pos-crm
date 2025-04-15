@@ -1,0 +1,18 @@
+{% if session_expired == true %}
+    <div id="modalOverlay">
+{% endif %}
+<div class="container{{ add_class }}">
+<div class="row">
+<div class="col-12">
+<a href="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" target="_blank" rel="noopener noreferrer" class="logo">
+<img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" id="imLogo" style="width: 75%;margin-bottom: -50px;" name="imLogo" alt="Salary On Time" border="0">
+</a>
+<h1>{{ 'Welcome to %s'|trans|format('<bdo dir="ltr" lang="en">Salary On Time</bdo>')|raw }}</h1>
+
+<noscript>
+{{ "Javascript must be enabled past this point!"|trans|error }}
+</noscript>
+
+<div class="hide" id="js-https-mismatch">
+{{ "There is a mismatch between HTTPS indicated on the server and client. This can lead to a non working Salary On Time or a security risk. Please fix your server configuration to indicate HTTPS properly."|trans|error }}
+</div>

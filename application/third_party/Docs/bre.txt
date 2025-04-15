@@ -1,0 +1,5 @@
+
+View :
+
+/var/www/html/uat_bharatloan_lms/application/views/Tasks/task_js.php
+/var/www/html/uat_bharatloan_lms/application/views/Bre/bre.php (No logic only add html tags)
