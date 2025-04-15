@@ -141,7 +141,7 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
             $template_id = "1207174339585786518";
             $headerId = "NAMANF";
             // $input_message = "Dear customer, $otp is the OTP for your login at SalaryOnTime. In case you have not requested this, please contact us at info@speedoloan.com KASAR";
-            $input_message = "Dear customer, $otp is the OTP for your login at Salarywalle. In case you have not requested this, please contact us at info@salarywalle.com tejasloan";
+            $input_message = "Dear customer, $otp is the OTP for your login at Salarywalle. In case you have not requested this, please contact us at info@salarywalle.com salarywalle";
 
         } else if ($sms_type_id == 2) {
 
@@ -169,7 +169,7 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
             $template_id = "1207174339585786518";
             $headerId = "NAMANF";
             // $input_message = "Dear customer, 3456 is the OTP for your login at SalaryOnTime. In case you have not requested this, please contact us at info@speedoloan.com KASAR";
-            $input_message = "Dear customer, 3456 is the OTP for your login at Salarywalle. In case you have not requested this, please contact us at info@salarywalle.com tejasloan";
+            $input_message = "Dear customer, 3456 is the OTP for your login at Salarywalle. In case you have not requested this, please contact us at info@salarywalle.com salarywalle";
         }
         // print_r($template_id);
         // exit();
