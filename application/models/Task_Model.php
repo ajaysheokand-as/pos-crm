@@ -7954,7 +7954,9 @@ $pdf->Output($file_path_with_name, 'F');
 
             // $active_service = (date('d') % 2) > 0 ? 1 : 2;
 
-            $digital_ekyc_url = base_url("aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
+            $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
+
+            // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
             // if ($active_service == 1) { // DigiTap
             //     $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
