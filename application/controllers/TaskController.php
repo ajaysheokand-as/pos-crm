@@ -62,6 +62,10 @@ class TaskController extends CI_Controller {
             $where_in['LD.lead_status_id'] = array(1);
         }
 
+        if ($stage == "S1" && $this->uri->segment(1) == "partialLeads") {
+            $where_in['LD.lead_status_id'] = array(42);
+        }
+
         if (in_array($stage, ['S9'])) {
             $conditions["LD.lead_status_id"] = 9;
 
@@ -597,7 +601,7 @@ class TaskController extends CI_Controller {
                                 <p style="color:#000;">TO ,<br>SHRI/SMT <b> ' . $firstname . ' </b><br>R/O - <b>' . $current_house . ' </b></p><br/>
                                 <h2 style="color:#000;">Legal Notice (without prejudice)</h2>
                                 <p style="color:#000;">Sir/Ma\'am</p>
-                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Tejasloan</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
+                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Salarywalle”</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
                                 <ol>
                                     <li style="color:#000;">That you had approached my client for a short-term loan as you were in dire need of money on <strong>' . date('d, M Y', strtotime($final_disbursed_date)) . '</strong>.</li>
                                     <li style="color:#000;">That pursuant to the terms and conditions of the Loan agreement form as agreed by you, you were provided the short-term loan of Rs. <strong>' . $loan_recommended . '</strong> with Loan No.<strong> ' . $loan_no . '</strong> at a mutually agreed rate of interest.</li>
@@ -1471,7 +1475,7 @@ class TaskController extends CI_Controller {
                     $lead_remark = "Lead allocate by self - " . $login_user_name;
                     if ($label == 'CR1' || $label == 'CA' || $label == 'SA') {
 
-                        if (!in_array($empDetails->lead_status_id, [41, 1])) {
+                        if (!in_array($empDetails->lead_status_id, [41, 42, 1])) {
                             continue;
                         }
 

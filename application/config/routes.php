@@ -96,6 +96,7 @@ $route['getQualification'] = 'TaskController/getQualification';
 
 $route['inProcess/(:any)(/:any)?'] = 'TaskController/index/$1';
 $route['screeninLeads/(:any)(/:any)?'] = 'TaskController/index/$1';
+$route['partialLeads/(:any)(/:any)?'] = 'TaskController/index/$1';
 $route['holdleads/(:any)(/:any)?'] = 'TaskController/index/$1';
 $route['enquires/(:any)(/:any)?'] = 'TaskController/index/$1';
 $route['getEnquiryDetails/(:any)'] = 'TaskController/getEnquiryDetails/$1';
