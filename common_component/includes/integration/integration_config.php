@@ -350,8 +350,8 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['verify_peer'] = '1';
             $config_arr['version'] = 'latest';
             $config_arr['region'] = 'ap-south-1';
-            $config_arr['access_key'] = 'AKIASVLKCFXIUCEZPHEK';
-            $config_arr['secret_key'] = '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';
+            $config_arr['access_key'] = 'AKIASE5KQZXHCBU65I6O';
+            $config_arr['secret_key'] = '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';
             $config_arr['bucket_name'] = 'tejasloanbucket';
             $config_arr['folder_name'] = 'upload';
             $config_arr['s3_url'] = 's3://tejasloanbucket/upload/';
