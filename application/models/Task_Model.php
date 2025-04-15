@@ -1064,7 +1064,7 @@ where a.disb_trans_lead_id = " . $lead_id;
                     <p style="line-height: 107%; font-size:18pt;text-align: center;font-family: Arial, Helvetica, sans-serif;">FOR</p>
 <h1 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;color:#c9211e">FDSPL</h1>
                     <h2 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;">(Fintelligence Data Science Private Limited)</h2>
-                    <p style="text-align: center"><img style="width:25%" src="https://crm.salarywalle.com/public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
+                    <p style="text-align: center"><img style="width:25%" src="https://crm.tejasloan.com/public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
                 </b>
 
             </p>
@@ -6136,7 +6136,7 @@ $pdf->Output($file_path_with_name, 'F');
                                     <p><strong>' . COMPANY_NAME . '</strong><br>
                                     ' . REGISTED_ADDRESS . '<br>
                                     ' . REGISTED_MOBILE . ',<br>
-                                    info@salarywalle.com,<br>
+                                    info@tejasloan.com,<br>
                                     <a href="https://tejasloan.com">https://www.tejasloan.com</a><br>
                                     Date : ' . $sanction_date . ' </p>
                                 </div>
@@ -6157,7 +6157,7 @@ $pdf->Output($file_path_with_name, 'F');
                                     <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
                                 </ul>
                                 <p>Your loan has been sanctioned with the above-mentioned terms and conditions. The loan amount will be disbursed directly to your designated bank account within ' . $sanction_date . ', subject to the completion of any remaining formalities.</p>
-                                <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@salarywalle.com .</p>
+                                <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@tejasloan.com .</p>
                                 <p>Kindly ensure that you adhere to the repayment schedule to avoid any unnecessary penalties or charges. Timely repayment will also help you maintain a positive credit history with our institution.</p>
                                 <p>We appreciate your trust in Aman Fincap Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
                                 <p>Thank you for choosing Aman Fincap Limited. We look forward to a mutually beneficial relationship.</p>
@@ -6231,7 +6231,7 @@ $pdf->Output($file_path_with_name, 'F');
                             <div class="loan-terms">
                                 <p>Kindly Note:</p>
                                 <p>Non-payment of loan on time will adversely affect your Credit score, further reducing your chances of getting Re loan again. Upon approval, the processing fee will be deducted from your Sanction amount and the balance amount will be disbursed to your account.</p>
-                                <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://salarywalle.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
+                                <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://tejasloan.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
                                 </td>.</p>
 
                                 <h2>Agreed Terms and Conditions:</h2>
@@ -6920,7 +6920,7 @@ $pdf->Output($file_path_with_name, 'F');
                 // $upload_return = uploadDocument($file_path_with_name, $lead_id, 2, 'pdf');
                 require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
-                $return_array = common_send_email($customer_email, $subject, $message, "", $cc_mail = "info@salarywalle.com", $from_email, "", $file_path_with_name, $file_name, 'Settlement_letter.pdf');
+                $return_array = common_send_email($customer_email, $subject, $message, "", $cc_mail = "info@tejasloan.com", $from_email, "", $file_path_with_name, $file_name, 'Settlement_letter.pdf');
 
                 if (LMS_DOC_S3_FLAG == true) {
                     $upload_return = uploadDocument($file_path_with_name, $lead_id, 2, 'pdf');
@@ -7307,7 +7307,7 @@ $pdf->Output($file_path_with_name, 'F');
         $fathname = ($sql->father_name ? $sql->father_name : 'Not Provided');
 
         $to = $sql->email;
-        //$to = 'info@salarywalle.com';
+        //$to = 'info@tejasloan.com';
 
         $current_date = date('d, M Y');
         $loan_disbursal_date = date("F Y", strtotime($sql->disbursal_date));
@@ -7449,8 +7449,8 @@ $pdf->Output($file_path_with_name, 'F');
 
             require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
-            //$return_array = common_send_email("info@salarywalle.com", $subject, $message, BCC_NOC_EMAIL, "", "", "", "", $file_name, "noc_recovery_letter.pdf");
-            $return_array = common_send_email($to, $subject, $message, "", "info@salarywalle.com", "", "", "", "", "noc_recovery_letter.pdf");
+            //$return_array = common_send_email("info@tejasloan.com", $subject, $message, BCC_NOC_EMAIL, "", "", "", "", $file_name, "noc_recovery_letter.pdf");
+            $return_array = common_send_email($to, $subject, $message, "", "info@tejasloan.com", "", "", "", "", "noc_recovery_letter.pdf");
 
             if ($return_array) {
 
@@ -7493,7 +7493,7 @@ $pdf->Output($file_path_with_name, 'F');
         $sql = $this->db->query($sql)->row();
 
         $to = $sql->email;
-        //$to = 'info@salarywalle.com';
+        //$to = 'info@tejasloan.com';
 
         if (!empty($to)) {
             $query = $this->db->select_sum('received_amount')->where(['payment_verification' => 1, 'collection_active' => 1, 'collection_deleted' => 0])->where('lead_id', $lead_id)->from('collection')->get()->row();
@@ -7663,7 +7663,7 @@ $pdf->Output($file_path_with_name, 'F');
 
             require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
-            $return_array = common_send_email($to, $subject, $message, BCC_NOC_EMAIL, $cc_mail = "info@salarywalle.com", "", "", "", $file_name, "noc_letter.pdf");
+            $return_array = common_send_email($to, $subject, $message, BCC_NOC_EMAIL, $cc_mail = "info@tejasloan.com", "", "", "", $file_name, "noc_letter.pdf");
             // print_r($return_array); die;
 
             $user_id = 0;
@@ -8109,7 +8109,7 @@ $pdf->Output($file_path_with_name, 'F');
                                         </tr>
 
                                         <tr>
-                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#00455E" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.salarywalle.com/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.salarywalle.com/public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "https://crm.salarywalle.com/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
+                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#00455E" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.tejasloan.com/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://crm.tejasloan.com/public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "https://crm.tejasloan.com/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
                                         </tr>
                                     </table>
                                 </body>
@@ -8607,7 +8607,7 @@ $pdf->Output($file_path_with_name, 'F');
                             </body>
                             </html>';
 
-        $return_array = common_send_email($email, $email_subject, $email_message, "", "", "info@salarywalle.com", "", "", "", "");
+        $return_array = common_send_email($email, $email_subject, $email_message, "", "", "info@tejasloan.com", "", "", "", "");
 
         if ($return_array['status'] == 1) {
             $data = 1;

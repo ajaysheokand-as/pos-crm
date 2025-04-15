@@ -140,9 +140,9 @@ define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
 define("COMPANY_NAME", "AMAN FINCAP LIMITED");
 define("RBI_LICENCE_NUMBER", "14.01466");
-define('CONTACT_PERSON', 'AJAY SINGH');
-define("REGISTED_ADDRESS", "S-370, Panchsheel Park, New Delhi - 110017");
-define("REGISTED_MOBILE", "+91-9319322114");
+define('CONTACT_PERSON', 'NITIN VAID');
+define("REGISTED_ADDRESS", "D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010");
+define("REGISTED_MOBILE", "+91-9355562952");
 define("BRAND_NAME", "TEJASLOAN");
 
 define("TECH_EMAIL", "tech@salarywalle.com");
