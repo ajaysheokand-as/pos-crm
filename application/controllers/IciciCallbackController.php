@@ -177,6 +177,6 @@ class IciciCallbackController extends CI_Controller {
                             </body>
                             </html>';
 
-        common_send_email($email, $email_subject, $email_message, "", "", "info@salarywalle.com", "", "", "", "");
+        common_send_email($email, $email_subject, $email_message, "", "", "info@tejasloan.com", "", "", "", "");
     }
 }

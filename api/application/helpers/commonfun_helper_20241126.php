@@ -381,7 +381,7 @@ if (!function_exists('lw_send_email')) {
             } else if ($active_id == 2) {
 
                 if (empty($from_email)) {
-                    $from_email = "info@salarywalle.com ";
+                    $from_email = "info@tejasloan.com ";
                 }
 
                 $apiUrl = "https://api.mailgun.net/v3/tejasloan.com/messages";
@@ -425,7 +425,7 @@ if (!function_exists('lw_send_email')) {
             } else {
 
                 if (empty($from_email)) {
-                    $from_email = "info@salarywalle.com";
+                    $from_email = "info@tejasloan.com";
                 }
 
                 $domain = "fintechcloud.in";

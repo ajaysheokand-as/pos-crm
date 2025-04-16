@@ -50,7 +50,7 @@ class CronCallController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-VOICE BLAST $cron_name REMINDER CALL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = $return_status;
                 $email_data['message'] .= "<br/><br/>Toal Calls : " . count($mobile_number_array);
@@ -65,7 +65,7 @@ class CronCallController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-VOICE BLAST $cron_name REMINDER CALL - start time - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -111,7 +111,7 @@ class CronCallController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-VOICE BLAST $cron_name REMINDER CALL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = $return_status;
                 $email_data['message'] .= "<br/><br/>Toal Calls : " . count($mobile_number_array);
@@ -126,7 +126,7 @@ class CronCallController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-VOICE BLAST $cron_name REMINDER CALL - start time - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -171,7 +171,7 @@ class CronCallController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-VOICE BLAST $cron_name Outstanding CALL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = $return_status;
                 $email_data['message'] .= "<br/><br/>Toal Calls : " . count($mobile_number_array);
@@ -186,7 +186,7 @@ class CronCallController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-VOICE BLAST $cron_name Outstanding CALL - start time - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -231,7 +231,7 @@ class CronCallController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-VOICE BLAST $cron_name Defaulter CALL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = $return_status;
                 $email_data['message'] .= "<br/><br/>Toal Calls : " . count($mobile_number_array);
@@ -246,7 +246,7 @@ class CronCallController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-VOICE BLAST $cron_name Defaulter CALL - start time - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -443,13 +443,13 @@ class CronCallController extends CI_Controller {
         } else {
 
             $to_email = $email;
-            $from_email = "info@salarywalle.com";
+            $from_email = "info@tejasloan.com";
 
             if ($email_type_id == 10) {
-                $from_email = "info@salarywalle.com";
+                $from_email = "info@tejasloan.com";
                 $provider_name = "MAILGUN";
             } else if ($email_type_id == 12) {
-                $from_email = "info@salarywalle.com";
+                $from_email = "info@tejasloan.com";
                 $provider_name = "MAILGUN";
             }
 

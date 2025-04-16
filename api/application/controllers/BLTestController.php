@@ -23,7 +23,7 @@ class BLTestController extends CI_Controller {
 
     public function send_appointment() {
         $this->load->model('Task_Model');
-        $this->Task_Model->email_appointment_schedule_with_link(6655, 'info@salarywalle.com', 'Ajay');
+        $this->Task_Model->email_appointment_schedule_with_link(6655, 'info@tejasloan.com', 'Ajay');
     }
 
     public function db_test() {

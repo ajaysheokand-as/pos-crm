@@ -88,20 +88,20 @@ defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatic
 
 defined('CSS_VERSION') or define('CSS_VERSION', 1.1); // highest automatically-assigned error code
 
-// defined('ALL_FROM_EMAIL') or define('ALL_FROM_EMAIL', 'info@salarywalle.com');
-defined('ALL_FROM_EMAIL') or define('ALL_FROM_EMAIL', 'info@salarywalle.com');
+// defined('ALL_FROM_EMAIL') or define('ALL_FROM_EMAIL', 'info@tejasloan.com');
+defined('ALL_FROM_EMAIL') or define('ALL_FROM_EMAIL', 'info@tejasloan.com');
 
-// defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@salarywalle.com');
-defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@salarywalle.com');
+// defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@tejasloan.com');
+defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@tejasloan.com');
 defined('BCC_DISBURSAL_EMAIL') or define('BCC_DISBURSAL_EMAIL', '');
-defined('BCC_NOC_EMAIL') or define('BCC_NOC_EMAIL', 'info@salarywalle.com');
-defined('BCC_DISBURSAL_WAIVE_EMAIL') or define('BCC_DISBURSAL_WAIVE_EMAIL', 'info@salarywalle.com');
+defined('BCC_NOC_EMAIL') or define('BCC_NOC_EMAIL', 'info@tejasloan.com');
+defined('BCC_DISBURSAL_WAIVE_EMAIL') or define('BCC_DISBURSAL_WAIVE_EMAIL', 'info@tejasloan.com');
 
 defined('CC_SANCTION_EMAIL') or define('CC_SANCTION_EMAIL', '');
 defined('CC_DISBURSAL_EMAIL') or define('CC_DISBURSAL_EMAIL', '');
-defined('CC_DISBURSAL_WAIVE_EMAIL') or define('CC_DISBURSAL_WAIVE_EMAIL', 'info@salarywalle.com');
+defined('CC_DISBURSAL_WAIVE_EMAIL') or define('CC_DISBURSAL_WAIVE_EMAIL', 'info@tejasloan.com');
 
-defined('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL') or define('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL', 'info@salarywalle.com');
+defined('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL') or define('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL', 'info@tejasloan.com');
 
 define("COMPONENT_PATH", "/var/www/html/tejasloan-backend/common_component/");
 define("UPLOAD_PATH", "/var/www/html/tejasloan-backend/uploads/");
@@ -134,9 +134,9 @@ define("WEBSITE_UTM_SOURCE", WEBSITE_URL . "apply-now?utm_source=");
 // define("LMS_COMPANY_LOGO", LMS_URL . "public/front/img/company_logo.png");
 define("LMS_COMPANY_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("LMS_KASAR_LETTERHEAD", LMS_URL . "public/images/Letter_Head_A4.png");
-define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
+define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 // define("LMS_BRAND_LOGO", LMS_URL . "public/front/img/brand_logo.jpg");
-define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
+define("LMS_BRAND_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
 define("COMPANY_NAME", "AMAN FINCAP LIMITED");
 define("RBI_LICENCE_NUMBER", "14.01466");
@@ -145,22 +145,22 @@ define("REGISTED_ADDRESS", "D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashod
 define("REGISTED_MOBILE", "+91-9355562952");
 define("BRAND_NAME", "TEJASLOAN");
 
-define("TECH_EMAIL", "tech@salarywalle.com");
-define("INFO_EMAIL", "tech@salarywalle.com");
-define("CARE_EMAIL", "tech@salarywalle.com");
-define("RECOVERY_EMAIL", "tech@salarywalle.com");
-define("COLLECTION_EMAIL", "tech@salarywalle.com");
-define("CTO_EMAIL", "tech@salarywalle.com");
+define("TECH_EMAIL", "tech@tejasloan.com");
+define("INFO_EMAIL", "tech@tejasloan.com");
+define("CARE_EMAIL", "tech@tejasloan.com");
+define("RECOVERY_EMAIL", "tech@tejasloan.com");
+define("COLLECTION_EMAIL", "tech@tejasloan.com");
+define("CTO_EMAIL", "tech@tejasloan.com");
 
 // ********** TEMPLETE DEFINED VARIABLE *****
 
-define("EMAIL_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
+define("EMAIL_BRAND_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("DISBURSAL_LETTER_BANNER", LMS_URL . "public/emailimages/disbursal_banner.png");
 
-define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/Hedder.png");
+define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
 define("SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
-define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/Hedder.png");
+define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
 define("GENERATE_SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
 define("EKYC_BRAND_LOGO", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/ekyc_brand_logo.gif");
@@ -184,7 +184,7 @@ define("ADVOCATE_HEADER", LMS_URL . "public/images/LEGAL_HD.jpg");
 define("ADVOCATE_MOBILE1", LMS_URL . "99101-52173");
 define("ADVOCATE_MOBILE2", LMS_URL . "92898-77841");
 define("ADVOCATE_MAIL", LMS_URL . "FAUJDARAJAY99@GMAIL.COM");
-define("ADVOCATE_COMPANY_MAIL", LMS_URL . "info@salarywalle.com");
+define("ADVOCATE_COMPANY_MAIL", LMS_URL . "info@tejasloan.com");
 
 define("LOAN_REPAY_LINK", WEBSITE_URL . "repay-loan");
 define("REPAYMENT_REPAY_LINK", WEBSITE_URL . "repay-loan-details");
@@ -252,7 +252,7 @@ $xco_path = 'common_component';
 define("COMP_PATH", $xco_path);
 
 // Portel configuration settings
-const PORTAL_NAME    = "Salarywalle";
+const PORTAL_NAME    = "tejasloan";
 const PORTAL_DOMAIN  = PORTAL_NAME . ".com";
 
 // NBFC details
@@ -261,7 +261,7 @@ const NBFC_NAME      = 'Aman Fincap Limited';
 const NBFC_CIN       = 'Reg No.14.01466';
 const NBFC_ADDRESS   = 'S-370, Panchsheel Park, New Delhi - 110017';
 const NBFC_MOBILE    = '8282824633';
-const NBFC_EMAIL     = 'info@salarywalle.com';
+const NBFC_EMAIL     = 'info@tejasloan.com';
 const NBFC_WEBSITE   = 'https://namanfinlease.com/';
 const NBFC_AUTHORIZED_SIGN   = LMS_URL . 'emailimages/Authorised-Signatory.jpg';
 

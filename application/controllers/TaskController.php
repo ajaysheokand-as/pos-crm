@@ -530,7 +530,7 @@ class TaskController extends CI_Controller {
         }
 
         //$email_to = "sandeeptech2contact@gmail.com";
-        $cc_mail = "info@salarywalle.com";
+        $cc_mail = "info@tejasloan.com";
         $subject = "Legal Notice Letter";
         $message = '<!DOCTYPE html>
                     <html lang="en">
@@ -623,7 +623,7 @@ class TaskController extends CI_Controller {
         $file_path_with_name = UPLOAD_LEGAL_PATH . $file_name;
 
         $file_url_path = LMS_URL . $file_name;
-        $from_email = "info@salarywalle.com";
+        $from_email = "info@tejasloan.com";
 
         require_once __DIR__ . '/../../vendor/autoload.php';
         $mpdf = new \Mpdf\Mpdf();
@@ -641,7 +641,7 @@ class TaskController extends CI_Controller {
 
             $upload_return = $CommonComponent->upload_document($lead_id, $request_array);
             // require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-            $return_array = common_send_email($email_to, $subject, $message, "", $cc_mail = "info@salarywalle.com", $from_email, "", $file_path_with_name, $file_name, 'legal_notice.pdf');
+            $return_array = common_send_email($email_to, $subject, $message, "", $cc_mail = "info@tejasloan.com", $from_email, "", $file_path_with_name, $file_name, 'legal_notice.pdf');
 
             if ($upload_return['status'] == 1) {
                 $return_array['status'] = 1;

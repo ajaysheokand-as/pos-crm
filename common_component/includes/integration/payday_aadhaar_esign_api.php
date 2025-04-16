@@ -316,7 +316,7 @@ function esign_document_upload_api_call($method_id, $lead_id = 0, $request_array
             "initiationEmailSubject": "Please sign the document received on your email",
             "customerMailList": [
                 "' . $email . '",
-                "info@salarywalle.com"
+                "info@tejasloan.com"
             ],
 
             "emailPdfCustomNameFormat": "SIGNERNAME"
