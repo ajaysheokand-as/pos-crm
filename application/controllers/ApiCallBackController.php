@@ -670,9 +670,9 @@ class ApiCallBackController extends CI_Controller {
                     <body style="background: #00455E">
                     <style>
                     .ekyc_thnk {position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;width: 600px;height: 310px;padding: 20px;border:
-                        solid 1px #fa6900;background: #fff;border-radius: 20px;box-shadow: 0 0 13px #fa6900;text-align: center;}
+                        solid 1px #000080;background: #fff;border-radius: 20px;box-shadow: 0 0 13px #000080;text-align: center;}
                     .we-cant {font-size: 20px;font-weight: normal;color: #525252;line-height: 25px;}
-                    .error {color: #525252;font-weight: bold; font-size: 27px;margin: 30px 0px 21px 0px;}.back-to-home-page {background: #fa6900;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}.back-to-home-page:hover {background: #fa6900;
+                    .error {color: #525252;font-weight: bold; font-size: 27px;margin: 30px 0px 21px 0px;}.back-to-home-page {background: #000080;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}.back-to-home-page:hover {background: #000080;
                         color: #fff;text-decoration: blink;}.error-page-marging {margin-top: 80px;text-align: center;}.follow-us {
                         font-weight: bold;color: #0363a3;margin-top: 32px;line-height: 38px;}
 
@@ -687,10 +687,10 @@ class ApiCallBackController extends CI_Controller {
                             width: 100%;
                             height: auto;
                             padding: 25px 20px;
-                            border: solid 1px #fa6900;
+                            border: solid 1px #000080;
                             background: #fff;
                             border-radius: 20px;
-                            box-shadow: 0 0 13px #fa6900;
+                            box-shadow: 0 0 13px #000080;
                             text-align: center;
                             float: left;
                         }
@@ -699,7 +699,7 @@ class ApiCallBackController extends CI_Controller {
                             margin-top: 5%;
                         }
                         .oops {font-size: 63px;
-                            padding: 3% 0; font-weight: 900;color: #fa6900;margin: 0px;}
+                            padding: 3% 0; font-weight: 900;color: #000080;margin: 0px;}
                             .we-cant { font-size: 27px;
                                 font-weight: bold;
                                 color: #00334b;
@@ -710,7 +710,7 @@ class ApiCallBackController extends CI_Controller {
                                     margin: 10px 0px 20px 0px;
                                     width: 100%;
                                     float: left;}
-                        .back-to-home-page {    background: #fa6900;
+                        .back-to-home-page {    background: #000080;
                             color: #fff;
                             padding: 20px;
                             border-radius: 3px;
@@ -762,13 +762,13 @@ class ApiCallBackController extends CI_Controller {
 
                     </head>
 
-                    <body style="background: #fa6900">
+                    <body style="background: #000080">
                         <style>
                         .ekyc_thnk {position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;width: 600px;height: 310px;padding: 20px;border:
-                            solid 1px #fa6900;background: #fff;border-radius: 20px;box-shadow: 0 0 13px #fa6900;text-align: center;}
-                            .oops {font-size: 40px;font-weight: bold;color: #fa6900;}
+                            solid 1px #000080;background: #fff;border-radius: 20px;box-shadow: 0 0 13px #000080;text-align: center;}
+                            .oops {font-size: 40px;font-weight: bold;color: #000080;}
                         .we-cant {font-size: 17px;font-weight: normal;color: #525252;line-height: 25px;}
-                        .error {color: #525252;font-weight: bold;font-size: 17px;margin: 30px 0px 21px 0px;}.back-to-home-page {background: #fa6900;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}.back-to-home-page:hover {background: #fa6900;
+                        .error {color: #525252;font-weight: bold;font-size: 17px;margin: 30px 0px 21px 0px;}.back-to-home-page {background: #000080;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}.back-to-home-page:hover {background: #000080;
                             color: #fff;text-decoration: blink;}.error-page-marging {margin-top: 80px;text-align: center;}.follow-us {
                             font-weight: bold;color: #0363a3;margin-top: 32px;line-height: 38px;}
 
@@ -783,10 +783,10 @@ class ApiCallBackController extends CI_Controller {
                                 width: 100%;
                                 height: auto;
                                 padding: 25px 20px;
-                                border: solid 1px #fa6900;
+                                border: solid 1px #000080;
                                 background: #fff;
                                 border-radius: 20px;
-                                box-shadow: 0 0 13px #fa6900;
+                                box-shadow: 0 0 13px #000080;
                                 text-align: center;
                                 float: left;
                             }
@@ -795,7 +795,7 @@ class ApiCallBackController extends CI_Controller {
                                 margin-top: 5%;
                             }
                             .oops {font-size: 63px;
-                                padding: 3% 0; font-weight: 900;color: #fa6900;margin: 0px;}
+                                padding: 3% 0; font-weight: 900;color: #000080;margin: 0px;}
                                 .we-cant {    font-size: 27px;
                                     font-weight: bold;
                                     color: #00334b;
@@ -851,19 +851,19 @@ class ApiCallBackController extends CI_Controller {
                     <body>
                         <style type="text/css">
                             .div {position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;width:600px;height:380px;padding: 20px;border: solid 1px #d1dee6;background: #e2f2fc;border-radius: 3px;box-shadow: 0 0 13px #d1dee6;text-align:center;}
-                            .oops{font-size:40px;font-weight: bold;color: #fa6900;}
+                            .oops{font-size:40px;font-weight: bold;color: #000080;}
                             .we-cant{font-size: 20px;font-weight: normal;color: #00334b;line-height: 25px;}
                             .error{color: #00334b;font-weight: bold;font-size: 17px;margin: 30px 0px 21px 0px;}
-                            .back-to-home-page{background: #fa6900;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}
-                            .back-to-home-page:hover{background:#fa6900;color: #fff;text-decoration:blink}
+                            .back-to-home-page{background: #000080;color: #fff;padding: 15px 20px;border-radius: 3px;font-weight: bold;}
+                            .back-to-home-page:hover{background:#000080;color: #fff;text-decoration:blink}
                             .error-page-marging{margin-top:80px;text-align:center;}
                             .follow-us{font-weight: bold;color: #0363a3;margin-top: 32px;line-height: 38px;}
 
                             @media all and (max-width:320px), (max-width:375px), (max-width:384px), (max-width:414px), (max-device-width:450px), (max-device-width:480px), (max-device-width:540px) {
-                                .oops{font-size:30px;font-weight: 900;color: #fa6900;margin:0px;}
+                                .oops{font-size:30px;font-weight: 900;color: #000080;margin:0px;}
                                 .we-cant{font-size:8px;font-weight: bold;color: #00334b;line-height:13px;}
                                 .error{color: #00334b;font-weight: bold;font-size: 9px;margin: 10px 0px 20px 0px;}
-                                .back-to-home-page{background: #fa6900;color: #fff;padding: 11px 11px;border-radius: 3px;font-weight: bold;font-size: 9px !important;}
+                                .back-to-home-page{background: #000080;color: #fff;padding: 11px 11px;border-radius: 3px;font-weight: bold;font-size: 9px !important;}
                                 .error-page-marging{margin-top:0px;}
                             }
                         </style>
@@ -1268,7 +1268,7 @@ class ApiCallBackController extends CI_Controller {
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
-                    background-color: #fa6900;
+                    background-color: #000080;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1289,7 +1289,7 @@ class ApiCallBackController extends CI_Controller {
                 .container h1 {
                     font-size: 24px;
                     font-weight: bold;
-                    color: #fa6900;
+                    color: #000080;
                     margin-bottom: 15px;
                 }
 
@@ -1312,7 +1312,7 @@ class ApiCallBackController extends CI_Controller {
 
                 .container button,
                 .container a {
-                    background-color: #fa6900;
+                    background-color: #000080;
                     color: #fff;
                     font-size: 14px;
                     padding: 10px 30px;
@@ -1329,7 +1329,7 @@ class ApiCallBackController extends CI_Controller {
 
                 .container button:hover,
                 .container a:hover {
-                    background-color: #fa6900;
+                    background-color: #000080;
                 }
 
                 .thank-you-container {
@@ -1543,7 +1543,7 @@ class ApiCallBackController extends CI_Controller {
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
-                    background-color: #fa6900;
+                    background-color: #000080;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1575,7 +1575,7 @@ class ApiCallBackController extends CI_Controller {
                 }
 
                 .container a {
-                    background-color: #fa6900;
+                    background-color: #000080;
                     color: #fff;
                     font-size: 14px;
                     padding: 10px 30px;
@@ -1591,7 +1591,7 @@ class ApiCallBackController extends CI_Controller {
                 }
 
                 .container a:hover {
-                    background-color: #fa6900;
+                    background-color: #000080;
                 }
 
                 .error-icon-container {

@@ -106,10 +106,10 @@ define("REGISTED_ADDRESS", "276, First Floor, Gagan Vihar, Shahdara, Shahdara, S
 define("REGISTED_MOBILE", "+91-9810780460");
 define("REGISTED_WHATSAPP_MOBILE", "+91-9810780460");
 
-define("TECH_EMAIL", "tech@salarywalle.com");
-define("INFO_EMAIL", "info@salarywalle.com");
-define("CARE_EMAIL", "tech@salarywalle.com");
-define("RECOVERY_EMAIL", "tech@salarywalle.com");
+define("TECH_EMAIL", "tech@telasloan.com");
+define("INFO_EMAIL", "info@tejasloan.com");
+define("CARE_EMAIL", "tech@telasloan.com");
+define("RECOVERY_EMAIL", "tech@telasloan.com");
 
 // *****  TEMPLETE VARIABLES *******
 

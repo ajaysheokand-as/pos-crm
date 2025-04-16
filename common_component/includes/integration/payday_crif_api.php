@@ -12,7 +12,6 @@ function bureau_api_call($method_name = "", $lead_id = 0, $request_array = array
     );
 
     $method_id = $opertion_array[$method_name];
-
     if ($method_id == 1) {
         $responseArray = crif_bureau_api_call($lead_id,$request_array);
     }else if ($method_id == 2) {
@@ -25,7 +24,6 @@ function bureau_api_call($method_name = "", $lead_id = 0, $request_array = array
 }
 
 function crif_bureau_api_call($lead_id = 0, $request_array = array()) {
-
 
     ini_set('max_execution_time', 3600);
     ini_set("memory_limit", "1024M");
@@ -1099,6 +1097,29 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
         $leadModelObj->insertApplicationLog($lead_id, $lead_status_id, $lead_remarks);
     }
     
+    $fileName = $lead_id.'.html';
+    $request_array['folderName'] = 'cibil';
+    $request_array['fileName'] = $fileName;
+    $request_array['htmlContent'] = $cibil_html;
+    $request_array['upload_type'] = 'cibil';
+
+    // $foldername = $requestData['folderName'];
+    // $fileName = $requestData['fileName'];
+    // $path = $foldername . '/' . $fileName;
+    // $htmlContent = $requestData['htmlContent'];
+    $commonComponent = new CommonComponent();
+    $s3Response = $commonComponent->upload_document($lead_id, $request_array);
+    // print_r($s3Response);
+    // die('yash');
+    // $request_darray['file'] = $s3Response['file_name'];
+    // $result_array = $commonComponent->download_document($lead_id, $request_darray);
+    // // $content_type = $result_array['header_content_type'];
+    // // header("Content-Type: {$content_type}");
+    // // // echo $result_array['document_body'];
+    // // $documentBody = $result_array['document_body'];
+
+    // print_r($result_array);
+    // die;
 
     $totalAccount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['NUMBER-OF-ACCOUNTS'];
     $overDueAccount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['OVERDUE-ACCOUNTS'];
@@ -1124,11 +1145,11 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
             'overDueAccount' => $overDueAccount,
             'overDueAmount' => $overDueAmount,
             'zeroBalance' => $zeroBalance,
-            'cibil_file' => addslashes($cibil_html),
+            'cibil_file' => $fileName,
             'applicationId' => $REPORT_ID['REPORT-ID'],
             'cibil_created_by' => !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0,
             'created_at' => date("Y-m-d H:i:s"),
-            's3_flag' => 0
+            's3_flag' => 1
         ];
 
         $leadModelObj->insertTable('tbl_cibil', $cibil_data);
@@ -1159,8 +1180,8 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
             'api1_response' => addslashes($jsonResponse),
             'memberCode' => $apiMemberId,
             'cibilScore' => $cibil_score,
-            'cibil_file' => addslashes($cibil_html),
-            's3_flag' => 0
+            'cibil_file' => $fileName,//addslashes($cibil_html),
+            's3_flag' => 1
         ];
         $leadModelObj->insertTable('tbl_cibil_log', $cibil_log);
     }

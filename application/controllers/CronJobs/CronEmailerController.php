@@ -194,7 +194,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Festive Existing Customer Email Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -206,7 +206,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Festive Existing Customer - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -283,7 +283,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Festive Settlement Existing Customer Email Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -295,7 +295,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Festive Settlement Existing Customer - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -372,7 +372,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Festive New Customer Email Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -384,7 +384,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Festive New Customer - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -422,7 +422,7 @@ class CronEmailerController extends CI_Controller {
                 if (!empty($customer_data['user_email_id'])) {
                     $email_data = array();
                     $email_data['email'] = $customer_data['user_email_id'];
-                    //$email_data['email'] = 'info@salarywalle.com';
+                    //$email_data['email'] = 'info@tejasloan.com';
                     $email_data['subject'] = "tejasloan.COM Offers - Instant Personal Loan In Just 30 Minutes*";
                     $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                                                     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -516,7 +516,7 @@ class CronEmailerController extends CI_Controller {
                 //}
             }
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Not Contactable Customer Emailer - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'] . " <br/> Campaign Name : " . $campaign_name;
 
@@ -561,7 +561,7 @@ class CronEmailerController extends CI_Controller {
 
                     $lead_id = $customer_data['lead_id'];
                     //$customer_email = $customer_data['email'];
-                    $customer_email = 'info@salarywalle.com';
+                    $customer_email = 'info@tejasloan.com';
                     $loan_no = $customer_data['loan_no'];
                     $cust_full_name = ucwords(strtolower($customer_data['cust_full_name']));
 
@@ -597,7 +597,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     //$email_data['email'] = $customer_email;
-                    $email_data['email'] = 'info@salarywalle.com';
+                    $email_data['email'] = 'info@tejasloan.com';
                     $email_data['subject'] = "tejasloan.com | Loan Outstanding Delay $due_past_date days | $loan_no";
                     $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                                                 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -679,7 +679,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD - Loan Outstanding Customer 1To60 Days Emailer - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -759,7 +759,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     $email_data['email'] = $customer_email;
-                    //                    $email_data['email'] = 'info@salarywalle.com';
+                    //                    $email_data['email'] = 'info@tejasloan.com';
                     $email_data['subject'] = "Loanwalle.com | Loan Outstanding | $loan_no";
                     $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -860,7 +860,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD - Loan Outstanding FY 2021-22 Emailer - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -959,7 +959,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Lohari Festival special - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -971,7 +971,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Lohari Festival special - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -988,7 +988,7 @@ class CronEmailerController extends CI_Controller {
         $time_close = intval(date("Hi"));
 
         if ($time_close > 1155) {
-            //            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+            //            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
             die;
         }
 
@@ -1003,7 +1003,7 @@ class CronEmailerController extends CI_Controller {
                     if (!empty($customer_data['user_email_id'])) {
                         $email_data = array();
                         $email_data['email'] = $customer_data['user_email_id'];
-                        //                        $email_data['email'] = "info@salarywalle.com";
+                        //                        $email_data['email'] = "info@tejasloan.com";
                         $email_data['subject'] = "LOANWALLE.COM Celebrate - Republic Day 2022";
                         $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -1048,7 +1048,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Republic Day 2022 - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -1060,7 +1060,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Celebrate - Republic Day 2022 - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -1074,7 +1074,7 @@ class CronEmailerController extends CI_Controller {
         $time_close = intval(date("Hi"));
 
         if ($time_close > 1537) {
-            //            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+            //            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
             die;
         }
 
@@ -1089,7 +1089,7 @@ class CronEmailerController extends CI_Controller {
                     if (!empty($customer_data['user_email_id'])) {
                         $email_data = array();
                         $email_data['email'] = $customer_data['user_email_id'];
-                        //                        $email_data['email'] = 'info@salarywalle.com';
+                        //                        $email_data['email'] = 'info@tejasloan.com';
                         $email_data['subject'] = "LOANWALLE.COM Limited Offer on Repay Loan";
                         $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -1140,7 +1140,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Repay Loan Email Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -1152,7 +1152,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Repay Loan Email- " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -1166,7 +1166,7 @@ class CronEmailerController extends CI_Controller {
         $time_close = intval(date("Hi"));
 
         if ($time_close > 1956) {
-            //            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+            //            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
             die;
         }
 
@@ -1188,7 +1188,7 @@ class CronEmailerController extends CI_Controller {
 
                         $email_data = array();
                         $email_data['email'] = $customer_data['user_email_id'];
-                        //                        $email_data['email'] = "info@salarywalle.com";
+                        //                        $email_data['email'] = "info@tejasloan.com";
                         $email_data['subject'] = "Valentine’s Day ahead and Pocket in debt?";
                         $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -1297,7 +1297,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Valentine Week Special - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -1309,7 +1309,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Valentine Week Special - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -1323,7 +1323,7 @@ class CronEmailerController extends CI_Controller {
         $time_close = intval(date("Hi"));
 
         if ($time_close > 2005) {
-            //            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+            //            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
             die;
         }
 
@@ -1345,7 +1345,7 @@ class CronEmailerController extends CI_Controller {
 
                         $email_data = array();
                         $email_data['email'] = $customer_data['user_email_id'];
-                        //                        $email_data['email'] = "info@salarywalle.com";
+                        //                        $email_data['email'] = "info@tejasloan.com";
                         $email_data['subject'] = "HAPPY HOLI | LOANWALLE.COM";
                         $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -1421,7 +1421,7 @@ class CronEmailerController extends CI_Controller {
                     }
                 }
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Holi Special - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -1433,7 +1433,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Holi Special - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -1447,7 +1447,7 @@ class CronEmailerController extends CI_Controller {
         $time_close = intval(date("Hi"));
 
         if ($time_close > 1353) {
-            //            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+            //            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
             die;
         }
 
@@ -1509,7 +1509,7 @@ class CronEmailerController extends CI_Controller {
 
                         $email_data = array();
                         $to_email = $customer_data['email'];
-                        //                        $to_email = 'info@salarywalle.com';
+                        //                        $to_email = 'info@tejasloan.com';
 
                         $email_subject = "LEGAL NOTICE : $cust_full_name";
 
@@ -1804,7 +1804,7 @@ class CronEmailerController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-LEGAL NOTICE EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -1816,7 +1816,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-LEGAL NOTICE EMAIL - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -1830,7 +1830,7 @@ class CronEmailerController extends CI_Controller {
         //        ini_set("display_errors", 1);
         //        $time_close = intval(date("Hi"));
         //        if ($time_close > 1353) {
-        ////            $this->middlewareEmail("info@salarywalle.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
+        ////            $this->middlewareEmail("info@tejasloan.com", "CRON CALL EMAIL | freshLoan26Jan22NewCustEmailer", "cron was called again | ".date("Y-m-d H:i:s"), '', 99);
         //            die;
         //        }
 
@@ -1866,7 +1866,7 @@ class CronEmailerController extends CI_Controller {
 
                         $email_data = array();
                         $to_email = $customer_data['email'];
-                        //                        $to_email = 'info@salarywalle.com';
+                        //                        $to_email = 'info@tejasloan.com';
 
                         $email_subject = "REPAYMENT REMINDER : $cust_full_name";
 
@@ -1990,7 +1990,7 @@ class CronEmailerController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-REPAYMENT REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2002,7 +2002,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT REMINDER EMAIL - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -2140,7 +2140,7 @@ class CronEmailerController extends CI_Controller {
                         </body>
                         </html>';
 
-                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 13, "info@salarywalle.com", 'info@salarywalle.com');
+                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 13, "info@tejasloan.com", 'info@tejasloan.com');
                     //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 13,  "", '');
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;
@@ -2151,7 +2151,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2207,7 +2207,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     //  $to_email = $customer_data['email'];
-                    //$to_email = 'info@salarywalle.com';
+                    //$to_email = 'info@tejasloan.com';
 
                     $email_subject = "tejasloan.com | Gentle Reminder : $cust_full_name";
 
@@ -2297,7 +2297,7 @@ class CronEmailerController extends CI_Controller {
                         </body>
                         </html>';
 
-                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 14,  "info@salarywalle.com", 'info@salarywalle.com');
+                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 14,  "info@tejasloan.com", 'info@tejasloan.com');
                     //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 14,  "", '');
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;
@@ -2308,7 +2308,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2363,7 +2363,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     $to_email = $customer_data['email'];
-                    //$to_email = 'info@salarywalle.com';
+                    //$to_email = 'info@tejasloan.com';
 
                     $email_subject = "tejasloan.COM | Payment Reminder : $cust_full_name";
 
@@ -2453,7 +2453,7 @@ class CronEmailerController extends CI_Controller {
                         </body>
                         </html>';
 
-                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 15,  "info@salarywalle.com", 'info@salarywalle.com');
+                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 15,  "info@tejasloan.com", 'info@tejasloan.com');
                     //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 15,  "", '');
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;
@@ -2464,7 +2464,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2520,7 +2520,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     $to_email = $customer_data['email'];
-                    //$to_email='info@salarywalle.com';
+                    //$to_email='info@tejasloan.com';
                     $email_subject = "tejasloan.COM | Don't Forget The Payment : $cust_full_name";
 
                     $email_message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2609,7 +2609,7 @@ class CronEmailerController extends CI_Controller {
                                                 </body>
                                             </html>';
 
-                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 16,  "info@salarywalle.com", 'info@salarywalle.com');
+                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 16,  "info@tejasloan.com", 'info@tejasloan.com');
                     //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 16,  "", '');
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;
@@ -2620,7 +2620,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2676,7 +2676,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     $to_email = $customer_data['email'];
-                    //$to_email = 'info@salarywalle.com';
+                    //$to_email = 'info@tejasloan.com';
                     $email_subject = "tejasloan.com | Don't Forget The Payment : $cust_full_name";
 
                     $email_message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2763,7 +2763,7 @@ class CronEmailerController extends CI_Controller {
                                                 </body>
                                             </html>';
 
-                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 17,  "info@salarywalle.com", 'info@salarywalle.com');
+                    $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 17,  "info@tejasloan.com", 'info@tejasloan.com');
                     //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 17,  "", '');
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;
@@ -2774,7 +2774,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -2954,7 +2954,7 @@ class CronEmailerController extends CI_Controller {
                                         </html>';
                     echo $email_message;
                     die();
-                    //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 18,  "info@salarywalle.com", 'info@salarywalle.com');
+                    //$return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 18,  "info@tejasloan.com", 'info@tejasloan.com');
                     $return_array = $this->middlewareEmail($to_email, $email_subject, $email_message, "", 18,  "", '');
 
                     if ($return_array['status'] == 1) {
@@ -2966,7 +2966,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-REPAYMENT $day_counter DAY REMINDER EMAIL - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -3014,7 +3014,7 @@ class CronEmailerController extends CI_Controller {
                         $email_data = array();
 
                         $email_data['email'] = $customer_data['user_email_id'];
-                        //                        $email_data['email'] = "info@salarywalle.com";
+                        //                        $email_data['email'] = "info@tejasloan.com";
                         $email_data['subject'] = "LOANWALLE.COM | FEEDBACK FORM";
                         $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                                                     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -3114,7 +3114,7 @@ class CronEmailerController extends CI_Controller {
                 }
 
                 $email_data = array();
-                $email_data['email'] = "info@salarywalle.com";
+                $email_data['email'] = "info@tejasloan.com";
                 $email_data['subject'] = "PROD-Festive Existing Customer Email Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
                 $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -3126,7 +3126,7 @@ class CronEmailerController extends CI_Controller {
             }
         } else {
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-Festive Existing Customer - " . date("d-m-Y");
             $email_data['message'] = "Unauthorized";
 
@@ -3218,7 +3218,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD- $cron_name Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -3261,7 +3261,7 @@ class CronEmailerController extends CI_Controller {
                 if (!empty($customer_data['user_email_id'])) {
                     $email_data = array();
                     $email_data['email'] = $customer_data['user_email_id'];
-                    //                    $email_data['email'] = "info@salarywalle.com";
+                    //                    $email_data['email'] = "info@tejasloan.com";
                     //                    $email_data['email'] = "tech.team@loanwalle.com";
                     //                    $email_data['email'] = "sushil.kumar@loanwalle.com";
                     $email_data['subject'] = "Loanwalle.com | Happy Independence Day";
@@ -3317,7 +3317,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD- $cron_name Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -3360,7 +3360,7 @@ class CronEmailerController extends CI_Controller {
                 if (!empty($customer_data['user_email_id'])) {
                     $email_data = array();
                     $email_data['email'] = $customer_data['user_email_id'];
-                    //                    $email_data['email'] = "info@salarywalle.com";
+                    //                    $email_data['email'] = "info@tejasloan.com";
                     //                    $email_data['email'] = "tech.team@loanwalle.com";
                     //                    $email_data['email'] = "sushil.kumar@loanwalle.com";
                     $email_data['subject'] = "Loanwalle.com | Happy Krishna Janmashtami";
@@ -3419,7 +3419,7 @@ class CronEmailerController extends CI_Controller {
             }
 
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD- $cron_name Counter - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'];
 
@@ -3464,7 +3464,7 @@ class CronEmailerController extends CI_Controller {
                 if (!empty($customer_data['user_email_id'])) {
                     $email_data = array();
                     $email_data['email'] = $customer_data['user_email_id'];
-                    //                    $email_data['email'] = 'info@salarywalle.com';
+                    //                    $email_data['email'] = 'info@tejasloan.com';
 
                     $email_data['subject'] = "LOANWALLE.COM Offers - Instant Personal Loan To Most Valued Customers";
                     $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -3529,7 +3529,7 @@ class CronEmailerController extends CI_Controller {
                 }
             }
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-$cron_name - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'] . " <br/> Campaing Name : " . $campaign_name;
 
@@ -3575,7 +3575,7 @@ class CronEmailerController extends CI_Controller {
                 if (!empty($customer_data['user_email_id'])) {
                     $email_data = array();
                     $email_data['email'] = $customer_data['user_email_id'];
-                    //                    $email_data['email'] = 'info@salarywalle.com';
+                    //                    $email_data['email'] = 'info@tejasloan.com';
 
                     $email_data['subject'] = "Surprise is here! It’s for Diwali Celebration from LOANWALLE.COM";
                     $email_data['message'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -3620,7 +3620,7 @@ class CronEmailerController extends CI_Controller {
                 }
             }
             $email_data = array();
-            $email_data['email'] = "info@salarywalle.com";
+            $email_data['email'] = "info@tejasloan.com";
             $email_data['subject'] = "PROD-$cron_name - start time :" . $start_datetime . " | end time : " . date("d-m-Y H:i:s");
             $email_data['message'] = "email_sent=" . $email_counter['email_sent'] . " | email_failed=" . $email_counter['email_failed'] . " <br/> Campaing Name : " . $campaign_name;
 
@@ -3648,13 +3648,13 @@ class CronEmailerController extends CI_Controller {
         } else {
 
             $to_email = $email;
-            $from_email = "info@salarywalle.com";
+            $from_email = "info@tejasloan.com";
 
             if ($email_type_id == 10) {
-                $from_email = "info@salarywalle.com";
+                $from_email = "info@tejasloan.com";
                 $provider_name = "MAILGUN";
             } else if ($email_type_id == 12) {
-                $from_email = "info@salarywalle.com";
+                $from_email = "info@tejasloan.com";
                 $provider_name = "MAILGUN";
             }
 
@@ -4029,7 +4029,7 @@ class CronEmailerController extends CI_Controller {
 
                                         </html>';
 
-                    common_send_email($to_email, $email_subject, $email_message, "", "", "info@salarywalle.com", "", "", "", "");
+                    common_send_email($to_email, $email_subject, $email_message, "", "", "info@tejasloan.com", "", "", "", "");
 
                     if ($return_array['status'] == 1) {
                         $email_counter['email_sent'] = $email_counter['email_sent'] + 1;

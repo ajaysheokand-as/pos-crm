@@ -97,7 +97,7 @@ function whatsapp_api_call($templete_type_id, $lead_id = 0, $request_array = arr
                 "apiKey" => $apiKey,
                 "campaignName" => "Repayment_reminder",
                 "destination" => "+91" . trim($mobile),
-                "userName" => "info@salarywalle.com",
+                "userName" => "info@tejasloan.com",
                 "source" => "any",
                 "templateParams" => array(
                     $customer_full_name,

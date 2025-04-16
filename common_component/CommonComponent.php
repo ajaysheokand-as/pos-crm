@@ -308,7 +308,11 @@ class CommonComponent {
 
     public function upload_document($lead_id = 0, $request_array = array()) {
         require_once(COMP_PATH . '/includes/file_handling_with_s3.php');
-        $return_array = call_s3_bucket("DOCUMENT_UPLOAD", $lead_id, $request_array);
+        if (isset($request_array['upload_type']) && $request_array['upload_type'] == 'cibil') {
+            $return_array = call_s3_bucket("DOCUMENT_UPLOAD_CIBIL", $lead_id, $request_array);
+        } else {
+            $return_array = call_s3_bucket("DOCUMENT_UPLOAD", $lead_id, $request_array);
+        }
         return $return_array;
     }
 
