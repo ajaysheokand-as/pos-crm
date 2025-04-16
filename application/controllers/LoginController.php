@@ -173,7 +173,7 @@ class LoginController extends CI_Controller {
 
                     $email_subject = BRAND_NAME . " FINTECH USER LOGIN | " . $isValidUser['user_data']['name'] . "| LOGIN TIME : " . date("d-m-Y H:i:s");
 
-                    // $cc_email = "info@salarywalle.com";
+                    // $cc_email = "info@tejasloan.com";
                     // $cc_email = "sunny@fintechbasket.com";
                     // $bcc_email = "";
 
@@ -227,8 +227,8 @@ class LoginController extends CI_Controller {
 
                     // if (!empty($isValidUser['user_data']['email'])) {
                     //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                    //     // common_send_email("info@salarywalle.com", $email_subject, $email_message, "", "info@salarywalle.com");
-                    //     common_send_email("tech@salarywalle.com", $email_subject, $email_message);
+                    //     // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
+                    //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
                     // }
 
                     $redirect_home_url = "home/";
@@ -300,8 +300,8 @@ class LoginController extends CI_Controller {
 
                             // if (!empty($userDetails['user_data']['email'])) {
                             //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                            //     // common_send_email($userDetails['user_data']['email'], $email_subject, $email_message, "", "info@salarywalle.com");
-                            //     common_send_email("tech@salarywalle.com", $email_subject, $email_message);
+                            //     // common_send_email($userDetails['user_data']['email'], $email_subject, $email_message, "", "info@tejasloan.com");
+                            //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
                             // }
                         } else {
                             $this->db->where('email', $input_email);
@@ -364,8 +364,8 @@ class LoginController extends CI_Controller {
 
                             // if (!empty($userDetails['user_data']['email'])) {
                             //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                            //     // common_send_email("info@salarywalle.com", $email_subject, $email_message, "", "info@salarywalle.com");
-                            //     common_send_email("tech@salarywalle.com", $email_subject, $email_message);
+                            //     // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
+                            //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
                             // }
                         }
                     } else {

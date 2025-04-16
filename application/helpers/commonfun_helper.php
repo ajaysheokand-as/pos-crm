@@ -297,7 +297,7 @@ function unformatMoney($str) {
 
 if (!function_exists('lw_send_email')) {
 
-    function lw_send_email($to_email, $subject, $message, $bcc_email = "", $cc_email = "", $from_email = "", $reply_to = "info@salarywalle.com", $attchement_path = "", $attachement_name = "", $file_name = "") {
+    function lw_send_email($to_email, $subject, $message, $bcc_email = "", $cc_email = "", $from_email = "", $reply_to = "info@tejasloan.com", $attchement_path = "", $attachement_name = "", $file_name = "") {
         $status = 0;
         $error = "";
         $active_id = 5;

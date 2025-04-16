@@ -80,7 +80,7 @@
         <img src="./public/images/18-BK_kixu8.png" alt="Maintenance Icon">
         <h1>We'll Be Back Soon!</h1>
         <p>Our website is currently undergoing scheduled maintenance. We apologize for any inconvenience.</p>
-        <p>Please check back later or contact <a href="mailto:tech@salarywalle.com">tech@salarywalle.com</a> for assistance.</p>
+        <p>Please check back later or contact <a href="mailto:tech@telasloan.com">tech@telasloan.com</a> for assistance.</p>
     </div>
 </body>
 

@@ -691,15 +691,14 @@ class CibilController extends CI_Controller {
 
     public function getCibilFile($cibil_id) {
         if (!empty($cibil_id)) {
-
             $sql = "SELECT cibil_file FROM tbl_cibil WHERE cibil_id = ? AND s3_flag = 1";
             $result = $this->db->query($sql, [$cibil_id])->row();
-
             if (!empty($result)) {
                 require_once(COMPONENT_PATH . "CommonComponent.php");
                 $CommonComponent = new CommonComponent();
 
                 $request_array['file'] = $result->cibil_file;
+                $request_array['folderName'] = 'cibil';
                 $result_array = $CommonComponent->download_document($lead_id, $request_array);
 
                 $documentBody = $result_array['document_body'];
@@ -714,7 +713,6 @@ class CibilController extends CI_Controller {
     }
 
     public function viewCustomerCibilPDF($cibil_id) {
-
         $data = $this->getCibilFile($cibil_id);
         $filename = $data['cibil_file'];
         print_r($filename);

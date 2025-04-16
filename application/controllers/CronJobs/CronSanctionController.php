@@ -16,7 +16,7 @@ class CronSanctionController extends CI_Controller {
     }
 
     public function index() {
-        //        $email_return = $this->lead_allocation_email_notification("info@salarywalle.com", "Ajay Kumar", "Rohit Kumar", 9319062592, 'info@salarywalle.com');
+        //        $email_return = $this->lead_allocation_email_notification("info@tejasloan.com", "Ajay Kumar", "Rohit Kumar", 9319062592, 'info@tejasloan.com');
         //        print_r($email_return);
     }
 
@@ -879,7 +879,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $return_array = $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@salarywalle.com');
+        $return_array = $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
 
         if ($return_array['status'] == 1) {
             echo json_encode(['Status' => 1, 'Message' => 'Success']);
@@ -1063,7 +1063,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@salarywalle.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
     }
 
     public function screenerLeadAllocationB50K() {
@@ -1244,7 +1244,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@salarywalle.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
     }
 
     public function creditApllicationAllocationG50K() {
@@ -1990,7 +1990,7 @@ class CronSanctionController extends CI_Controller {
         $email_data['subject'] .= " | end time : " . date("d-m-Y H:i:s");
         $email_data['message'] = $message;
 
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@salarywalle.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }

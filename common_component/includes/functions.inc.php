@@ -104,7 +104,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
     } else {
 
         // if (empty($from_email)) {
-        //     $from_email = "info@salarywalle.com";
+        //     $from_email = "info@tejasloan.com";
         // }
         if (empty($from_email)) {
             $from_email = "noreply@salarywalle.com";
@@ -144,8 +144,8 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             }
 
 
-            // $list = array('info@salarywalle.com', 'info@salarywalle.com');
-            $list = array('info@salarywalle.com','tech@salarywalle.com');
+            // $list = array('info@tejasloan.com', 'info@tejasloan.com');
+            $list = array('info@tejasloan.com','tech@telasloan.com');
 
             $ci->email->cc($list);
             $ci->email->to($to_email);
@@ -346,7 +346,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
         } /*else if ($active_id == 6) {
             $curl = curl_init();
             if (strpos($message, 'DOCTYPE html') !== false) {
-                $from_email = empty($from_email) ? "info@salarywalle.com" : $from_email;
+                $from_email = empty($from_email) ? "info@tejasloan.com" : $from_email;
                 if (!empty($attchement_path)) {
                     $apiRequestArray = array(
                         'from' => 'Salarywalle '.$from_email,
@@ -388,11 +388,11 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $url = "";
 
             // if (strpos(strtolower($to_email), 'tejasloan.com') !== false) {
-            if (strpos(strtolower($to_email), 'info@salarywalle.com') !== false) {
+            if (strpos(strtolower($to_email), 'info@tejasloan.com') !== false) {
                 // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
                 $url = 'https://api.zeptomail.in/v1.1/email';
             // } else if (strpos(strtolower($cc_email), 'tejasloan.com') !== false) {
-            } else if (strpos(strtolower($cc_email), 'tech@salarywalle.com') !== false) {
+            } else if (strpos(strtolower($cc_email), 'tech@telasloan.com') !== false) {
 
                 // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
                 $url = 'https://api.zeptomail.in/v1.1/email';
