@@ -1207,7 +1207,7 @@ class LWTestController extends CI_Controller {
         require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
         // common_send_email('info@tejasloan.com', $subject, $message);
-        common_send_email('alam@salarywalle.com', $subject, $message, "", "", "", "", "https://crm.tejasloan.com/direct-document-file/3718078_lms_20241120105925275.jpeg");
+        common_send_email('info@tejasloan.com', $subject, $message, "", "", "", "", "https://crm.tejasloan.com/direct-document-file/3718078_lms_20241120105925275.jpeg");
 
 
         // $curl = curl_init();
