@@ -217,7 +217,7 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
                     <input type="text" class="form-control inputField" id="res_aadhar" name="res_aadhar" autocomplete="off" <?= ($leadDetails->customer_digital_ekyc_flag == 1 ? 'readonly=readonly' : '') ?>>
                 </div>
                 <div class="col-md-6">
-                    <label class="labelField">Resent E-KYC email</label>
+                    <label class="labelField" <?= ($leadDetails->customer_digital_ekyc_flag == 1 ? 'style="color:green;"' : '') ?>>Resent E-KYC email</label>
                     <input type="checkbox" name="resent_ekyc_email" class="form-control inputField" id="resent_ekyc_email" value="<?= $this->encrypt->encode($leadDetails->lead_id); ?>" style="width: 14px !important;" <?= ($leadDetails->customer_digital_ekyc_flag == 1 ? 'disabled=disabled' : '') ?>>
                 </div>
             </div>

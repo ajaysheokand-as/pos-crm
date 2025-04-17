@@ -307,7 +307,7 @@ if (!function_exists('lw_send_email')) {
         } else {
 
             if (empty($from_email)) {
-                $from_email = "noreply@salarywalle.com";
+                $from_email = "noreply@tejasloan.com";
             }
 
             $ci = &get_instance();
@@ -317,7 +317,7 @@ if (!function_exists('lw_send_email')) {
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.zeptomail.in";
                 $config['smtp_user'] = "emailapikey";
-                $config['smtp_pass'] = "PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==";
+                $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
                 $config['smtp_port'] = 587;
                 $config['smtp_crypto'] = 'tls';
                 $config['mailtype'] = "html";
@@ -356,7 +356,7 @@ if (!function_exists('lw_send_email')) {
             } else if ($active_id == 2) {
 
                 if (empty($from_email)) {
-                    $from_email = "noreply@salarywalle.com";
+                    $from_email = "noreply@tejasloan.com";
                 }
 
                 $apiUrl = "https://api.zeptomail.in/v1.1/email";
@@ -409,7 +409,7 @@ if (!function_exists('lw_send_email')) {
                 }
 
                 $apiHeaders = array(
-                    "Authorization:Zoho-enczapikey PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==",
+                    "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
                     "Content-Type: application/json",
                     "Accept: application/json",
                 );
@@ -439,7 +439,7 @@ if (!function_exists('lw_send_email')) {
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.zeptomail.in";
                 $config['smtp_user'] = "emailapikey";
-                $config['smtp_pass'] = "PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==";
+                $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
                 $config['smtp_port'] = 587;
                 $config['smtp_crypto'] = 'tls';
                 $config['mailtype'] = "html";
@@ -528,7 +528,7 @@ if (!function_exists('lw_send_email')) {
                 }
 
                 $apiHeaders = array(
-                    "Authorization:Zoho-enczapikey PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==",
+                    "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
                     "Content-Type: application/json",
                     "Accept: application/json",
                 );

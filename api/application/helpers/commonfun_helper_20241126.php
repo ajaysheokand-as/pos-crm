@@ -346,7 +346,7 @@ if (!function_exists('lw_send_email')) {
                 $config = array();
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.mailgun.org";
-                $config['smtp_user'] = "postmaster@salarywalle.com";
+                $config['smtp_user'] = "info@tejasloan.com";
                 $config['smtp_pass'] = "fc21ed1e9a193b0208aa23a1b579ed8d-f6202374-5ffa2f4b";
                 $config['smtp_port'] = 587;
                 $config['mailtype'] = "html";

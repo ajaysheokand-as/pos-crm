@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CronMiscellaneousController extends CI_Controller {
 
-    private $notification_mail = "alam@salarywalle.com";
+    private $notification_mail = "info@tejasloan.com";
 
     public function __construct() {
         parent::__construct();
