@@ -4643,7 +4643,7 @@ class TaskController extends CI_Controller {
             $firstname = $return_sms['first_name'];
             $lead_id = $return_sms['lead_id'];
             //$email_to = $return_sms['email'];
-            // $email_to = 'tech.lead@salarywalle.com';
+            // $email_to = 'info@tejasloan.com';
             $email_to = 'sunny@fintechbasket.com';
             $mobile = $return_sms['mobile'];
             $address = $return_sms['current_house'];
