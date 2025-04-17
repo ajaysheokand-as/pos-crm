@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CronSMSController extends CI_Controller {
 
-    var $cron_notification_email = 'alam@salarywalle.com';
+    var $cron_notification_email = 'info@tejasloan.com';
     var $cron_notification_cc_email = '';
 
     public function __construct() {

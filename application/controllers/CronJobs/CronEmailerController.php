@@ -3,7 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class CronEmailerController extends CI_Controller {
-    private $notification_mail = "alam@salarywalle.com";
+    private $notification_mail = "info@tejasloan.com";
     public function __construct() {
         parent::__construct();
         date_default_timezone_set('Asia/Kolkata');
@@ -2838,7 +2838,7 @@ class CronEmailerController extends CI_Controller {
 
                     $email_data = array();
                     //$to_email = $customer_data['email'];
-                    $to_email = 'alam@salarywalle.com';
+                    $to_email = 'info@tejasloan.com';
                     $email_subject = "Action Required: Your Payment is Due Tomorrow | " . BRAND_NAME . " : " . ucwords($cust_full_name) . " | Loan No: " . $loan_no;
 
                     $email_message = '<!DOCTYPE html>

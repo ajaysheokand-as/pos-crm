@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CronSanctionController extends CI_Controller {
 
-    var $cron_notification_email = 'alam@salarywalle.com';
+    var $cron_notification_email = 'info@tejasloan.com';
     var $cron_repeat_utm_sources = array('REPEAT', 'REPEATNF', 'NFREPEATSMS', 'LWREPEATDB');
 
     public function __construct() {
@@ -2346,7 +2346,7 @@ class CronSanctionController extends CI_Controller {
         } else {
 
             $to_email = $email;
-            $from_email = "info@salarywalle.in";
+            $from_email = "info@tejasloan.com";
 
             $return_array = common_send_email($to_email, $subject, $message, $bcc_email, $cc_email, $from_email, $reply_to, "");
 

@@ -7976,7 +7976,7 @@ $pdf->Output($file_path_with_name, 'F');
                                             <td width = "800" colspan = "2" style = "background:url(' . EKYC_HEADER_BACK . ');" >
                                                 <table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                                                     <tr>
-                                                        <td width = "25%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src = "https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt = "logo" width = "200" height = "50" style = "margin-top:10px;margin-left:12px;"></a></td>
+                                                        <td width = "25%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src = "'.LMS_COMPANY_LOGO.'" alt = "logo" width = "200" height = "50" style = "margin-top:10px;margin-left:12px;"></a></td>
                                                         <td width = "64%" align = "center" valign = "middle"><strong style = "color:#fff; font-size:20px;">DIGITAL E-KYC</strong></td>
                                                         <!-- <td width = "11%" align = "right"><img src = "' . EKYC_LINES . '" width = "26" height = "147" /></td> -->
                                                     </tr>
@@ -8528,7 +8528,7 @@ $pdf->Output($file_path_with_name, 'F');
                             <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f3f4f6; color: #333;">
                                 <div style="max-width: 600px; margin: 20px auto; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
                                     <div style="background: linear-gradient(90deg, #266624, #19BF02); color: #fff; padding: 20px; text-align: center;">
-                                        <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" style="width: 30%;">
+                                        <img src="'.LMS_COMPANY_LOGO.'" style="width: 30%;">
                                     </div>
                                     <div style="padding: 20px;">
                                         <div style="text-align: center; margin-bottom: 20px;">

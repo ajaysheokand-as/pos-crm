@@ -107,7 +107,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
         //     $from_email = "info@tejasloan.com";
         // }
         if (empty($from_email)) {
-            $from_email = "noreply@salarywalle.com";
+            $from_email = "noreply@tejasloan.com";
         }
 
 
@@ -119,7 +119,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $config['protocol'] = "smtp";
             $config['smtp_host'] = "smtp.zeptomail.in";
             $config['smtp_user'] = "emailapikey";
-            $config['smtp_pass'] = "PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==";
+            $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
             $config['smtp_port'] = 587;
             $config['smtp_crypto'] = 'tls';
             $config['mailtype'] = "html";
@@ -162,7 +162,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
         } else if ($active_id == 2) {
 
             if (empty($from_email)) {
-                $from_email = "noreply@salarywalle.com";
+                $from_email = "noreply@tejasloan.com";
             }
 
             $apiUrl = "https://api.zeptomail.in/v1.1/email";
@@ -170,7 +170,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $emailData = array(
                 "from" => [
                     "address" => $from_email,
-                    "name" => "Salarywalle"
+                    "name" => "Tejas Loan"
                 ],
                 "to" => [
                     ["email_address" => ["address" => $to_email]]
@@ -201,7 +201,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             }
 
             $apiHeaders = array(
-                "Authorization:Zoho-enczapikey PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==",
+                "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
                 "Content-Type: application/json",
                 "Accept: application/json",
             );
@@ -232,7 +232,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $emailData = array(
                 "from" => [
                     "address" => $from_email,
-                    "name" => "Salarywalle"
+                    "name" => "Tejas Loan"
                 ],
                 "to" => [
                     ["email_address" => ["address" => $to_email]]
@@ -279,7 +279,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             }
 
             $apiHeaders = array(
-                "Authorization:Zoho-enczapikey PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==",
+                "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
                 "Content-Type: application/json",
                 "Accept: application/json",
             );
@@ -308,7 +308,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $config['protocol'] = "smtp";
             $config['smtp_host'] = "smtp.zeptomail.in";
             $config['smtp_user'] = "emailapikey";
-            $config['smtp_pass'] = "PHtE6r0EQerj3WcupBQEtva4HsemYNsvq+ozKwYUtY5GXvIEGE1T+Yp4lmDlrkt5UfdKFKWdmo45uOjP4e3UdDvqNmsaDmqyqK3sx/VYSPOZsbq6x00csVUSck3eUI7pdtZv0S3RstzdNA==";
+            $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
             $config['smtp_port'] = 587;
             $config['smtp_crypto'] = 'tls';
             $config['mailtype'] = "html";
@@ -349,7 +349,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
                 $from_email = empty($from_email) ? "info@tejasloan.com" : $from_email;
                 if (!empty($attchement_path)) {
                     $apiRequestArray = array(
-                        'from' => 'Salarywalle '.$from_email,
+                        'from' => 'Tejas Loan '.$from_email,
                         'to' => $to_email,
                         'html' => $message,
                         'subject' => $subject,
@@ -358,7 +358,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
                     );
                 } else {
                     $apiRequestArray = array(
-                        'from' => 'Salarywalle '.$from_email,
+                        'from' => 'Tejas Loan '.$from_email,
                         'to' => $to_email,
                         'html' => $message,
                         'subject' => $subject,
@@ -368,7 +368,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             } else {
                 if (!empty($attchement_path)) {
                     $apiRequestArray = array(
-                        'from' => 'Salarywalle '.$from_email,
+                        'from' => 'Tejas Loan '.$from_email,
                         'to' => $to_email,
                         'text' => $message,
                         'subject' => $subject,
@@ -377,7 +377,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
                     );
                 } else {
                     $apiRequestArray = array(
-                        'from' => 'Salarywalle '.$from_email,
+                        'from' => 'Tejas Loan '.$from_email,
                         'to' => $to_email,
                         'text' => $message,
                         'subject' => $subject,
@@ -573,7 +573,7 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
         return $return_array;
     } else {
 
-        $subject = 'Thank You. - Salarywalle';
+        $subject = 'Thank You. - Tejas Loan';
 
         $html = '<!DOCTYPE html>
                 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -612,7 +612,7 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
 
                                     <tr>
                                         <td>
-                                            <p style="line-height:25px; margin:0px;">Thank you for showing interest in Salarywalle.</p>
+                                            <p style="line-height:25px; margin:0px;">Thank you for showing interest in Tejas Loan.</p>
                                         </td>
                                     </tr>
                                     <tr>
