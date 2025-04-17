@@ -158,22 +158,22 @@ define("EMAIL_BRAND_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("DISBURSAL_LETTER_BANNER", LMS_URL . "public/emailimages/disbursal_banner.png");
 
 define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
-define("SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
+define("SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/footer.png");
 
 define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
-define("GENERATE_SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
+define("GENERATE_SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/footer.png");
 
-define("EKYC_BRAND_LOGO", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/ekyc_brand_logo.gif");
-define("EKYC_HEADER_BACK", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/header_back.jpg");
-define("EKYC_LINES", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/line.png");
-define("EKYC_IMAGES_1", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/1st.jpg");
-define("EKYC_IMAGES_1_SHOW", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/image1.png");
-define("EKYC_IMAGES_2", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/2nd.jpg");
-define("EKYC_IMAGES_2_SHOW", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/image2.png");
-define("EKYC_IMAGES_3", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/image3.png");
-define("EKYC_IMAGES_3_SHOW", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/3rd.jpg");
-define("EKYC_IMAGES_4", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/4th.jpg");
-define("EKYC_IMAGES_4_SHOW", WEBSITE_URL . "public/tejasloan.com/Digilocker_eKyc/images/4th.jpg");
+define("EKYC_BRAND_LOGO", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/ekyc_brand_logo.gif");
+define("EKYC_HEADER_BACK", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/header_back.jpg");
+define("EKYC_LINES", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/line.png");
+define("EKYC_IMAGES_1", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/1st.jpg");
+define("EKYC_IMAGES_1_SHOW", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/image1.png");
+define("EKYC_IMAGES_2", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/2nd.jpg");
+define("EKYC_IMAGES_2_SHOW", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/image2.png");
+define("EKYC_IMAGES_3", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/image3.png");
+define("EKYC_IMAGES_3_SHOW", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/3rd.jpg");
+define("EKYC_IMAGES_4", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/4th.jpg");
+define("EKYC_IMAGES_4_SHOW", WEBSITE_URL . "Digilocker_eKyc/images/4th.jpg");
 
 //******** Start Advocate Mail Constant *******************//
 
@@ -190,29 +190,29 @@ define("LOAN_REPAY_LINK", WEBSITE_URL . "repay-loan");
 define("REPAYMENT_REPAY_LINK", WEBSITE_URL . "repay-loan-details");
 define("AUTHORISED_SIGNATORY", WEBSITE_URL . "public/front/images/Authorised-Signatory.jpeg");
 
-define("PRE_APPROVED_LINES", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/back-line.png");
-define("PRE_APPROVED_BANNER", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/email-speedoloan.gif");
-define("PRE_APPROVED_LINE_COLOR", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/line-color.png");
-define("PRE_APPROVED_PHONE_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/phone-icon.png");
-define("PRE_APPROVED_WEB_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/web-icon.png");
-define("PRE_APPROVED_EMAIL_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/emil-icon.png");
-define("PRE_APPROVED_ARROW_LEFT", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/arrow-left.png");
-define("PRE_APPROVED_ARROW_RIGHT", WEBSITE_URL . "public/tejasloan.com/emailimages/final-email-template/images/arrow-right.png");
+define("PRE_APPROVED_LINES", WEBSITE_URL . "emailimages/final-email-template/images/back-line.png");
+define("PRE_APPROVED_BANNER", WEBSITE_URL . "emailimages/final-email-template/images/email-speedoloan.gif");
+define("PRE_APPROVED_LINE_COLOR", WEBSITE_URL . "emailimages/final-email-template/images/line-color.png");
+define("PRE_APPROVED_PHONE_ICON", WEBSITE_URL . "emailimages/final-email-template/images/phone-icon.png");
+define("PRE_APPROVED_WEB_ICON", WEBSITE_URL . "emailimages/final-email-template/images/web-icon.png");
+define("PRE_APPROVED_EMAIL_ICON", WEBSITE_URL . "emailimages/final-email-template/images/emil-icon.png");
+define("PRE_APPROVED_ARROW_LEFT", WEBSITE_URL . "emailimages/final-email-template/images/arrow-left.png");
+define("PRE_APPROVED_ARROW_RIGHT", WEBSITE_URL . "emailimages/final-email-template/images/arrow-right.png");
 
-define("FEEDBACK_HEADER", WEBSITE_URL . "public/tejasloan.com/emailimages/feedback/images/header2.jpg");
-define("FEEDBACK_LINE", WEBSITE_URL . "public/tejasloan.com/emailimages/feedback/images/line.png");
-define("FEEDBACK_PHONE_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/feedback/images/phone-icon.png");
-define("FEEDBACK_WEB_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/feedback/images/web-icon.png");
-define("FEEDBACK_EMAIL_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/feedback/images/email-icon.png");
+define("FEEDBACK_HEADER", WEBSITE_URL . "emailimages/feedback/images/header2.jpg");
+define("FEEDBACK_LINE", WEBSITE_URL . "emailimages/feedback/images/line.png");
+define("FEEDBACK_PHONE_ICON", WEBSITE_URL . "emailimages/feedback/images/phone-icon.png");
+define("FEEDBACK_WEB_ICON", WEBSITE_URL . "emailimages/feedback/images/web-icon.png");
+define("FEEDBACK_EMAIL_ICON", WEBSITE_URL . "emailimages/feedback/images/email-icon.png");
 
-define("COLLECTION_BRAND_LOGO", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/lw-logo.png");
-define("COLLECTION_EXE_BANNER", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/Collection-Executive-banner.jpg");
-define("COLLECTION_LINE", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/line.png");
-define("COLLECTION_INR_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/inr-icon.png");
-define("COLLECTION_ROAD_BANNER", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/CRM.jpg");
-define("COLLECTION_PHONE_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/phone-icon.png");
-define("COLLECTION_EMAIL_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/emil-icon.png");
-define("COLLECTION_WEB_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/collection/image/web-icon.png");
+define("COLLECTION_BRAND_LOGO", WEBSITE_URL . "emailimages/collection/image/lw-logo.png");
+define("COLLECTION_EXE_BANNER", WEBSITE_URL . "emailimages/collection/image/Collection-Executive-banner.jpg");
+define("COLLECTION_LINE", WEBSITE_URL . "emailimages/collection/image/line.png");
+define("COLLECTION_INR_ICON", WEBSITE_URL . "emailimages/collection/image/inr-icon.png");
+define("COLLECTION_ROAD_BANNER", WEBSITE_URL . "emailimages/collection/image/CRM.jpg");
+define("COLLECTION_PHONE_ICON", WEBSITE_URL . "emailimages/collection/image/phone-icon.png");
+define("COLLECTION_EMAIL_ICON", WEBSITE_URL . "emailimages/collection/image/emil-icon.png");
+define("COLLECTION_WEB_ICON", WEBSITE_URL . "emailimages/collection/image/web-icon.png");
 
 // *********SOCIAL MEDIA LINK ********
 
@@ -224,9 +224,9 @@ define("FACEBOOK_LINK", "#");
 define("YOUTUBE_LINK", "#");
 define("TWITTER_LINK", "#");
 
-// define("PHONE_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/phone-icon.png");
-// define("WEB_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/web_icon.png");
-// define("EMAIL_ICON", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/emil_icon.png");
+// define("PHONE_ICON", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/phone-icon.png");
+// define("WEB_ICON", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/web_icon.png");
+// define("EMAIL_ICON", WEBSITE_URL . "emailimages/Digilocker_eKyc/images/emil_icon.png");
 
 define("PHONE_ICON", LMS_URL . "public/new_images/images/phone-512.webp");
 define("WEB_ICON", LMS_URL . "public/new_images/images/1006771.png");
@@ -234,13 +234,13 @@ define("EMAIL_ICON", LMS_URL . "public/new_images/images/email-icon-1024x1024-7l
 
 // ******* CRON JOBS ********
 
-define("BIRTHDAY_LINE", WEBSITE_URL . "public/tejasloan.com/emailimages/birthday/line.png");
-define("BIRTHDAY_BIRTHDAY_PIC", WEBSITE_URL . "public/tejasloan.com/emailimages/birthday/email-design.jpg");
+define("BIRTHDAY_LINE", WEBSITE_URL . "emailimages/birthday/line.png");
+define("BIRTHDAY_BIRTHDAY_PIC", WEBSITE_URL . "emailimages/birthday/email-design.jpg");
 
-define("FESTIVAL_BANNER", WEBSITE_URL . "public/tejasloan.com/emailimages/festiv/image/offer.jpg");
-define("FESTIVAL_CLOSE_BANNER", WEBSITE_URL . "public/tejasloan.com/emailimages/new-cust/image/b.jpg");
-define("FESTIVAL_OFFICIAL_NUMBER", WEBSITE_URL . "public/tejasloan.com/emailimages/festiv/image/phone-icon.png");
-define("FESTIVAL_LINE", WEBSITE_URL . "public/tejasloan.com/emailimages/festiv/image/line.png");
+define("FESTIVAL_BANNER", WEBSITE_URL . "emailimages/festiv/image/offer.jpg");
+define("FESTIVAL_CLOSE_BANNER", WEBSITE_URL . "emailimages/new-cust/image/b.jpg");
+define("FESTIVAL_OFFICIAL_NUMBER", WEBSITE_URL . "emailimages/festiv/image/phone-icon.png");
+define("FESTIVAL_LINE", WEBSITE_URL . "emailimages/festiv/image/line.png");
 
 define("BLOG", WEBSITE_URL . "public/blog/");
 
