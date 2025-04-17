@@ -441,7 +441,8 @@ class ApiCallBackController extends CI_Controller {
                                         $this->IntegrationModel->insert('lead_followup', $lead_followup_insert_array);
 
                                         $return_status = 1;
-                                        $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/thumb.PNG" style=" width: 400px; height: 200px;" alt="thumb"></p>
+                                        // $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/thumb.PNG" style=" width: 400px; height: 200px;" alt="thumb"></p>
+                                        $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/checkmark.png" style=" width: 400px; height: 200px;" alt="thumb"></p>
                             <p style="text-align : center;">Thanks For Your Response.</p>';
                                     } else {
                                         $message = "Unable to update lead details of application.";
@@ -1365,7 +1366,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="hhttps://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; background:#fff;">
+                        <img src="hhttps://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
                     </a>
                 </div>
                 <h1>Fill Aadhaar Number</h1>
@@ -1382,7 +1383,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; background:#fff;">
+                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
                     </a>
                 </div>
                 <p id="seccess_msg" style="color: green; font-weight: bold;"></p>
@@ -1403,7 +1404,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; background:#fff">
+                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff">
                     </a>
                 </div>
                 <h1>Thank You!</h1>
@@ -1618,7 +1619,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; background:#fff">
+                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff">
                     </a>
                 </div>
                 <div class="error-icon-container">
