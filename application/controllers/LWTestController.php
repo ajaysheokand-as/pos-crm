@@ -297,7 +297,7 @@ class LWTestController extends CI_Controller {
 
                         </html>';
 
-            $return_array = lw_send_email("info@salarywalle.com", "LEGAL NOTICE", $message); //"","tech.team@loanwalle.com"
+            $return_array = lw_send_email("info@tejasloan.com", "LEGAL NOTICE", $message); //"","tech.team@loanwalle.com"
         } else if ($api_type == 8) {
             require_once(COMPONENT_PATH . 'CommonComponent.php');
 
@@ -352,7 +352,7 @@ class LWTestController extends CI_Controller {
 
     public function test() {
         $lead_id = $_GET['lead_id'];
-        $customer_email = 'info@salarywalle.com';
+        $customer_email = 'info@tejasloan.com';
         $customer_name = 'Ajay';
 
         $this->load->model('Task_Model');
@@ -381,7 +381,7 @@ class LWTestController extends CI_Controller {
         //            $this->Task->send_Customer_Feedback_Emailer(4005, 'alam.ansari@bharatloan.com', 'Alam');
         //           $res = $this->Task->sent_ekyc_request_email(4005);
 
-        $res = lw_send_email('info@salarywalle.com', 'Test', 'Testing');
+        $res = lw_send_email('info@tejasloan.com', 'Test', 'Testing');
         print_r($res);
         exit;
     }
@@ -1206,7 +1206,7 @@ class LWTestController extends CI_Controller {
 
         require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
-        // common_send_email('info@salarywalle.com', $subject, $message);
+        // common_send_email('info@tejasloan.com', $subject, $message);
         common_send_email('alam@salarywalle.com', $subject, $message, "", "", "", "", "https://crm.tejasloan.com/direct-document-file/3718078_lms_20241120105925275.jpeg");
 
 
@@ -1221,7 +1221,7 @@ class LWTestController extends CI_Controller {
         //   CURLOPT_FOLLOWLOCATION => true,
         //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         //   CURLOPT_CUSTOMREQUEST => 'POST',
-        //   CURLOPT_POSTFIELDS => array('from' => 'info@salarywalle.com','to' => 'chhabrabhavish@gmail.com','text' => 'Test','subject' => 'Testing'),
+        //   CURLOPT_POSTFIELDS => array('from' => 'info@tejasloan.com','to' => 'chhabrabhavish@gmail.com','text' => 'Test','subject' => 'Testing'),
         //   CURLOPT_HTTPHEADER => array(
         //     'Authorization: Basic YXBpOmFjMjg1MjIzOTU0ZmU4MmVhYTVjNGYwNDg1NzJjY2RhLTE5ODA2ZDE0LTExMWFlYjBi'
         //   ),
@@ -1245,8 +1245,8 @@ class LWTestController extends CI_Controller {
 
         $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
 
-        $to = 'info@salarywalle.com';
-        $from = 'info@salarywalle.com';
+        $to = 'info@tejasloan.com';
+        $from = 'info@tejasloan.com';
         $subject = 'Test email';
         $message = 'This is a test email sent using Mailgun.';
 
@@ -1567,7 +1567,7 @@ class LWTestController extends CI_Controller {
         //$enc_lead_id = $this->encrypt->encode($_GET['lead_id']);
         $lead_id = $_GET['lead_id'];
 
-        $email = "info@salarywalle.com";
+        $email = "info@tejasloan.com";
         $alternate_email = '';
 
         $bcc_email = '';

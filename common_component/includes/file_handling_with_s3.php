@@ -16,6 +16,7 @@ function call_s3_bucket($method_name = "", $lead_id = 0, $request_array = array(
     $opertion_array = array(
         "DOCUMENT_UPLOAD" => 1,
         "DOCUMENT_DOWNLOAD" => 2,
+        "DOCUMENT_UPLOAD_CIBIL" => 3
     );
 
     $method_id = $opertion_array[$method_name];
@@ -24,6 +25,8 @@ function call_s3_bucket($method_name = "", $lead_id = 0, $request_array = array(
         $responseArray = s3_document_upload_file($lead_id, $request_array);
     } else if ($method_id == 2) {
         $responseArray = s3_document_download_file($lead_id, $request_array);
+    } else if($method_id == 3) {
+        $responseArray = s3_document_upload_cibil($request_array);
     }
 
     common_log_writer(8, "call_to_s3_bucket end | $lead_id | $method_name | " . json_encode($responseArray));
@@ -218,7 +221,7 @@ function s3_document_download_file($lead_id, $request_array = array()) {
         $apiAccessKey = $apiConfig["access_key"];
         $apiSecretKey = $apiConfig["secret_key"];
         $apiBucket = $apiConfig["bucket_name"];
-        $apiBucketFolder = $apiConfig["folder_name"];
+        $apiBucketFolder = !empty($request_array['folderName']) ? $request_array['folderName'] : $apiConfig["folder_name"];
 
         if (empty($request_array['file'])) {
             throw new Exception("Requested file cannot be empty..");
@@ -255,5 +258,49 @@ function s3_document_download_file($lead_id, $request_array = array()) {
     } catch (Exception $exception) {
         echo "Failed to download File with error: " . $exception->getMessage();
         exit("Please fix error with file downloading before continuing.");
+    }
+}
+
+function s3_document_upload_cibil($requestData)
+{
+    $type = "S3_BUCKET";
+    $sub_type = "";
+    $apiConfig = integration_config($type, $sub_type);
+
+    $apiVersion = $apiConfig['version'];
+    $apiRegion = $apiConfig["region"];
+    $apiAccessKey = $apiConfig["access_key"];
+    $apiSecretKey = $apiConfig["secret_key"];
+    $apiBucket = $apiConfig["bucket_name"];
+    $apiBucketFolder = $apiConfig["folder_name"];
+
+    $s3 = new S3Client([
+        'version' => $apiVersion,
+        'region' => $apiRegion,
+        'credentials' => [
+            'key' => $apiAccessKey,
+            'secret' => $apiSecretKey,
+        ],
+    ]);
+    
+    $foldername = $requestData['folderName'];
+    $fileName = $requestData['fileName'];
+    $path = $foldername . '/' . $fileName;
+    $htmlContent = $requestData['htmlContent'];
+    try {
+        $result = $s3->putObject([
+            'Bucket' => $apiBucket,
+            'Key'    => $path,
+            'Body'   => $htmlContent,
+            'ContentType' => 'text/html',
+        ]);
+        return $result;
+    } catch (Aws\S3\Exception\S3Exception $exception) {
+        $apiStatusId = 5;
+        echo "S3 Upload Error: " . $exception->getMessage() . "\n";
+    }catch (AwsException $exception) {
+        echo "S3 Upload Error: " . $exception->getMessage() . "\n";
+    } catch (Exception $exception) {
+        echo "S3 Upload Error: " . $exception->getMessage() . "\n";
     }
 }

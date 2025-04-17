@@ -680,7 +680,7 @@ function sendgrid_email_validation_api($lead_id = 0, $request_array = array()) {
         }
 
         if ($hardcode_response && $envSet == 'development') {
-//                $apiResponseJson = '{"address":"info@salarywalle.com","is_disposable_address":false,"is_role_address":false,"reason":[],"result":"deliverable","risk":"low"}';
+//                $apiResponseJson = '{"address":"info@tejasloan.com","is_disposable_address":false,"is_role_address":false,"reason":[],"result":"deliverable","risk":"low"}';
         } else {
 
             // $apiUrl = 'https://signzy.tech/api/v2/patrons/661df0abcb57aa00230ea02e/emailverificationsv2';

@@ -51,7 +51,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
                 $config_arr['UserName'] = "";
                 $config_arr['UserPassword'] = "";
                 $config_arr['RPMiddleWareUrl'] = "";
-                // $config_arr['ApiUserId'] = "info@salarywalle.com";
+                // $config_arr['ApiUserId'] = "info@tejasloan.com";
                 // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
                 $config_arr['ApiUserId'] = "amit@agrimfin.com";
                 $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
@@ -59,7 +59,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
                 // $envSet = "production";
                 if ($envSet == "production") {
                     $config_arr['RPMiddleWareUrl'] = "";
-                    // $config_arr['ApiUserId'] = "info@salarywalle.com";
+                    // $config_arr['ApiUserId'] = "info@tejasloan.com";
                     // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
                     $config_arr['ApiUserId'] = "amit@agrimfin.com";
                     $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
@@ -239,10 +239,10 @@ function integration_config($api_type = "", $api_sub_type = "") {
             if ($api_sub_type == "SMS_NIBUS") {
                 $config_arr['Status'] = 1;
                 $config_arr['Provider'] = "Nimbus";
-                $config_arr['user'] = "namanfinlenet";
-                $config_arr['authkey'] = "92JPficG1956";
+                $config_arr['user'] = "AMANFINCAPnet";
+                $config_arr['authkey'] = "92UL5RPxRN6dU";
                 // $config_arr['type'] = 0;
-                $config_arr['entityid'] = "1201159134511282286";
+                $config_arr['entityid'] = "1701174478028595213";
                 $config_arr['rpt'] = 1;
                 $config_arr['ApiUrl'] = "http://nimbusit.net/api/pushsms?";
             }
@@ -719,7 +719,7 @@ function signzy_identity_object_api_call($request_type, $lead_id = 0, $request_a
 
         $apiRequestJsonArray = array();
         $apiRequestJsonArray["type"] = $request_type;
-        $apiRequestJsonArray["email"] = "info@salarywalle.com";
+        $apiRequestJsonArray["email"] = "info@tejasloan.com";
         $apiRequestJsonArray["callbackUrl"] = "https://www.tejasloan.com/";
         $apiRequestJsonArray["images"] = [];
 

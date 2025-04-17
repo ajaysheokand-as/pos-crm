@@ -1278,7 +1278,7 @@ footer{
     position: relative;
     display: block;
     padding: 0px 2px !important;
-    background: 000080;
+    background: #000080;
     margin-right: 1.22%;
     border-radius: 4px;
     border: 1px solid #000080;
@@ -1297,7 +1297,7 @@ li.borderList.active {
 
     color: #fff;
 
-    background: #ef5c82;
+    /* background: #ef5c82; */
 
     float: left;
 
@@ -1326,7 +1326,7 @@ li.borderList.active {
 
     color: #fff;
 
-    background: #e52255;
+    /* background: #e52255; */
 
     border-bottom: none !important;
 

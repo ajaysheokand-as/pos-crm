@@ -303,7 +303,7 @@ class CronSMSController extends CI_Controller {
         } else {
 
             $to_email = $email;
-            $from_email = "info@salarywalle.com";
+            $from_email = "info@tejasloan.com";
 
             $return_array = common_send_email($to_email, $subject, $message, $bcc_email, $cc_email, $from_email, $reply_to, "", "", "");
 
