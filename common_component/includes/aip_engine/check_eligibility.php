@@ -120,7 +120,7 @@ function check_customer_eligibility($lead_id) {
             $eligibility_remark .= "<br>Employment Type : Not available | Status : NA";
         }
 
-        if (!empty($monthly_salary_amount) && $monthly_salary_amount >= 26000) {
+        if (!empty($monthly_salary_amount) && $monthly_salary_amount >= 35000) {
             $eligibility_remark .= "<br>Monthly Salary - $user_type : " . $monthly_salary_amount . " | Status : Pass";
             $cust_income_flag = 1;
         } else {
@@ -319,7 +319,7 @@ function send_eligibility_failed_email($lead_id) {
         return $return_array;
     } else {
 
-        $subject = 'Eligibility Failed - Salary on Time';
+        $subject = 'Eligibility Failed - Tejas Loan';
 
         $html = '<!DOCTYPE html>
                 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -331,7 +331,7 @@ function send_eligibility_failed_email($lead_id) {
                     <body>
                         <table width="400" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif; border:solid 1px #ddd; padding:10px; background:#f9f9f9;">
                             <tr>
-                                <td width="775" align="center"><img src="https://tejasloan.com/public/front/img/company_logo.png" width="30%" alt="Brand Logo"></td>
+                                <td width="775" align="center"><img src="'. EMAIL_BRAND_LOGO .'" width="30%" alt="Brand Logo"></td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">
