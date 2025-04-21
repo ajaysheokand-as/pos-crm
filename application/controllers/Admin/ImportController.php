@@ -147,7 +147,8 @@ class ImportController extends CI_Controller {
                             }
 
 
-                            if (!empty($fullname) && !empty($mobile) && !empty($utm_source) && !empty($pancard) && !empty($pincode)) {
+                            // if (!empty($fullname) && !empty($mobile) && !empty($utm_source) && !empty($pancard) && !empty($pincode)) {
+                            if (!empty($fullname) && !empty($mobile) && !empty($pancard) && !empty($pincode)) {
 
                                 $fullname_array = common_parse_full_name($fullname);
 
