@@ -1227,21 +1227,31 @@ class BreRuleModel extends BaseModel {
             }
 
             // $pan_variation = $responseData['PERSONAL-INFO-VARIATION']['PAN-VARIATIONS']['VARIATION'];
-            $pan_variation = $responseData['STANDARD-DATA']['DEMOGS']['VARIATIONS'][1];
+            $pan_variation = $responseData['STANDARD-DATA']['DEMOGS']['VARIATIONS'];
 
-            if (!empty($pan_variation['VARIATION'])) {
-                $pan_variations_count = 1;
-                $variation_pan_cards = $pan_variation['VARIATION'];
-            } else {
-                $pan_variations_count = count($pan_variation);
-
-                $variation_pan_cards = [];
-                if ($pan_variations_count > 0) {
-                    $variation_pan_card = $responseData['STANDARD-DATA']['DEMOGS']['VARIATIONS'][1]['VARIATION'];
-                    foreach ($variation_pan_card as $value) {
-                        $variation_pan_cards[] = $value['VALUE'];
+            foreach($pan_variation as $pan_variations) {
+                if (isset($pan_variations['TYPE']) && $pan_variations['TYPE'] === 'PAN-VARIATIONS'){
+                    if(empty($pan_variations['VARIATION'])){
+                        $pan_variations_count = 0;
+                        $variation_pan_cards = 0;
+                    } else {
+                        $pan_variations_count = count($pan_variations['VARIATION']);
+        
+                        $variation_pan_cards = [];
+                        if ($pan_variations_count > 0) {
+                            $variation_pan_cards = $responseData['STANDARD-DATA']['DEMOGS']['VARIATIONS'];
+                            foreach ($variation_pan_cards as $variation) {
+                                if ($variation['TYPE'] === 'PAN-VARIATIONS') {
+                                    foreach ($variation['VARIATION'] as $panVariation) {
+                                        if (isset($panVariation['VALUE'])) {
+                                            $variation_pan_cards[] = $panVariation['VALUE'];
+                                        }
+                                    }
+                                }
+                            }
+                            $variation_pan_cards = implode(",", $variation_pan_cards);
+                        }
                     }
-                    $variation_pan_cards = implode(",", $variation_pan_cards);
                 }
             }
 

@@ -196,7 +196,7 @@ class CAMController extends CI_Controller {
         $monthly_salary = doubleval($input['monthly_salary']);
         $eligible_foir_percentage = doubleval($input['eligible_foir_percentage']);
         $roi = ($input['roi'] ? doubleval($input['roi']) : 1);
-        $processing_fee_percent = ($input['processing_fee_percent']) ? doubleval($input['processing_fee_percent']) : 0;
+        $processing_fee_percent = ($input['processing_fee_percent']) ? doubleval($input['processing_fee_percent']) : 15;
         $disbursal_date = $input['disbursal_date'];
         $repayment_date = $input['repayment_date'];
 
@@ -205,23 +205,25 @@ class CAMController extends CI_Controller {
         $tenure = 0;
         if (!empty($d2)) {
             $datediff = $d2 - $d1;
-            $tenure = round($datediff / (60 * 60 * 24));
+            $tenure = round($datediff / (60 * 60 * 24)) + 1;
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
         $gst = round(($admin_fee * 18) / 100);
-        $total_admin_fee = round($admin_fee + $gst);
+        // $total_admin_fee = round($admin_fee + $gst);
+        $total_admin_fee = round($admin_fee - $gst);
+
 
         $repayment_amount = ($loan_recommended + ($loan_recommended * $roi * $tenure) / 100);
 
         $data['roi'] = $roi;
         $data['tenure'] = $tenure;
         $data['repayment_amount'] = round($repayment_amount);
-        $data['admin_fee'] = $total_admin_fee;
+        $data['admin_fee'] = $admin_fee;
         $data['adminFeeWithGST'] = $gst;
         $data['adminFeeGST'] = $gst;
-        $data['total_admin_fee'] = $admin_fee;
-        $data['net_disbursal_amount'] = $loan_recommended - $total_admin_fee;
+        $data['total_admin_fee'] = $total_admin_fee;
+        $data['net_disbursal_amount'] = $loan_recommended - $admin_fee;
         $data['final_foir_percentage'] = number_format((($loan_recommended + $obligations) / $monthly_salary) * 100, 2);
         $data['foir_enhanced_by'] = number_format($data['final_foir_percentage'] - $eligible_foir_percentage, 2);
 

@@ -149,7 +149,7 @@ function bre_quote_engine($lead_id, $request_array = array()) {
         $errorMessage = $e->getMessage();
     }
 
-    $return_array = array("status" => $return_status_id, "error" => $errorMessage, "max_loan_amount" => $max_loan_amount, "min_loan_amount" => $min_loan_amount, "min_loan_tenure" => 7,  "max_loan_tenure" => 40, "interest_rate" => 1, "processing_fee" => 10, "eligible_foir_percentage" => $eligible_foir_percentage);
+    $return_array = array("status" => $return_status_id, "error" => $errorMessage, "max_loan_amount" => $max_loan_amount, "min_loan_amount" => $min_loan_amount, "min_loan_tenure" => 7,  "max_loan_tenure" => 40, "interest_rate" => 0.75, "processing_fee" => 15, "eligible_foir_percentage" => $eligible_foir_percentage);
 
     return $return_array;
 }
@@ -934,18 +934,18 @@ function bre_rule_engine($lead_id, $request_array = array()) {
         $bank_statement_balance_rule_system_decision_id = 0;
         $bank_statement_balance_rule_manual_decision_id = 0;
 
-        if (!empty($bank_analysis_data) && $bank_analysis_average_balance >= 10000) {
+        if (!empty($bank_analysis_data) && $bank_analysis_average_balance >= 5000) {
             $bank_statement_balance_rule_system_decision_id = 1;
             $bank_statement_balance_rule_manual_decision_id = 1;
-            $bank_statement_balance_rule_actual_value = [">=10,000"];
-        } else if (!empty($bank_analysis_data) && $bank_analysis_average_balance >= 5000 && $bank_analysis_average_balance < 10000) {
+            $bank_statement_balance_rule_actual_value = [">=5,000"];
+        } else if (!empty($bank_analysis_data) && $bank_analysis_average_balance >= 2500 && $bank_analysis_average_balance < 5000) {
             $bank_statement_balance_rule_system_decision_id = 2;
             $bank_statement_balance_rule_manual_decision_id = 2;
-            $bank_statement_balance_rule_actual_value = [">5,000 & <10,000"];
-        } else if (!empty($bank_analysis_data) && $bank_analysis_average_balance < 5000) {
+            $bank_statement_balance_rule_actual_value = [">2,500 & <5,000"];
+        } else if (!empty($bank_analysis_data) && $bank_analysis_average_balance < 2500) {
             $bank_statement_balance_rule_system_decision_id = 2;
             $bank_statement_balance_rule_manual_decision_id = 2;
-            $bank_statement_balance_rule_actual_value = ["<5,000"];
+            $bank_statement_balance_rule_actual_value = ["<2,500"];
         } else {
             $bank_statement_balance_rule_system_decision_id = 3;
             $bank_statement_balance_rule_manual_decision_id = 3;
