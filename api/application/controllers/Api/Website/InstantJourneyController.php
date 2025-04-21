@@ -1663,7 +1663,7 @@ class InstantJourneyController extends REST_Controller {
                         throw new RuntimeException("You are not eligible for a loan.");
                     }
 
-                    if ($monthly_income <= 25000 && $user_type == "NEW") {
+                    if ($monthly_income < 35000 && $user_type == "NEW") {
 
                         $update_array = array();
                         $update_array['status'] = 'SYSTEM-REJECT';
@@ -1675,7 +1675,7 @@ class InstantJourneyController extends REST_Controller {
 
                         $this->Tasks->updateLeads($lead_id, $update_array);
 
-                        $this->Tasks->insertApplicationLog($lead_id, 8, "Salary < 25000 - Case System Rejected");
+                        $this->Tasks->insertApplicationLog($lead_id, 8, "Salary < 35000 - Case System Rejected");
 
                         $eligibility_reason = "You are a little below our salary criteria.";
                         throw new RuntimeException("You are not eligible for a loan.");
@@ -2062,7 +2062,7 @@ class InstantJourneyController extends REST_Controller {
                     $loan_quote_accepted_id = 1;
                     $monthly_income = $leadDetails['monthly_salary_amount'];
 
-                    if (($loan_quote_accepted_id == 1 && $monthly_income > 25000) || $user_type == "REPEAT" || $user_type == "UNPAID-REPEAT") {
+                    if (($loan_quote_accepted_id == 1 && $monthly_income > 35000) || $user_type == "REPEAT" || $user_type == "UNPAID-REPEAT") {
                         $get_loan_purpose_details = $this->Tasks->selectdata(['enduse_id' => $loan_purpose_id], 'enduse_name', 'master_enduse');
 
                         if ($get_loan_purpose_details->num_rows() > 0) {
