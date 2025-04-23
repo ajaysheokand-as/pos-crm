@@ -242,7 +242,7 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
 
             <div class="row">
                 <div class="col-md-12">
-                    <label class="labelField">Address Line 2 <span class="required_Fields">*</span></label>
+                    <label class="labelField">Address Line 2</label>
                     <input type="text" class="form-control inputField" id="lcss2" name="lcss2" autocomplete="off" style="width: 76% !important;" <?= ($leadDetails->customer_digital_ekyc_flag == 1 ? 'readonly=readonly' : '') ?>>
                 </div>
             </div>
