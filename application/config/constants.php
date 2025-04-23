@@ -160,6 +160,9 @@ define("DISBURSAL_LETTER_BANNER", LMS_URL . "public/emailimages/disbursal_banner
 define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/tejas_header.jpeg");
 define("SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
+define("SANCTION_LETTER_NEW_HEADER", LMS_URL . "public/emailimages/AMAN FINCAP H.png");
+define("SANCTION_LETTER_NEW_FOOTER", LMS_URL . "public/emailimages/AMAN FINCAP F.png");
+
 define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/tejas_header.jpeg");
 define("GENERATE_SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
