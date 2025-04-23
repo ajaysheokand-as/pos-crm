@@ -3767,7 +3767,7 @@ class TaskController extends CI_Controller {
             $this->form_validation->set_rules('addharAddressSameasAbove', 'Is aadhaar address same as residence address', 'trim');
 
             $this->form_validation->set_rules('hfBulNo2', 'Aadhaar Address Line 1', 'required|trim');
-            $this->form_validation->set_rules('lcss2', 'Aadhaar Address Line 2', 'required|trim');
+            $this->form_validation->set_rules('lcss2', 'Aadhaar Address Line 2', 'trim');
             $this->form_validation->set_rules('landmark2', 'Aadhaar Landmark', 'trim');
             $this->form_validation->set_rules('state2', 'Aadhaar State', 'required|trim');
             // $this->form_validation->set_rules('city2', 'Aadhaar City', 'required|trim');
