@@ -334,7 +334,7 @@
                                                         <button class="btn btn-success approval-button" style="display:none;" onclick="ApprovalLoan()">Approve</button>
                                                     <?php }
                                                     // if ((agent == 'CR1') && !empty($leadDetails->lead_screener_assign_user_id) && $leadDetails->lead_screener_assign_user_id == user_id && in_array($leadDetails->lead_status_id, array(2, 3)) && ($leadDetails->user_is_loanwalle == 1)) { 
-                                                        if ((agent == 'CR1') && !empty($leadDetails->lead_screener_assign_user_id) && $leadDetails->lead_screener_assign_user_id == user_id && in_array($leadDetails->lead_status_id, array(2, 3)) && ($leadDetails->user_is_loanwalle == 1)) { 
+                                                        if ((agent == 'CR1') && !empty($leadDetails->lead_screener_assign_user_id) && $leadDetails->lead_screener_assign_user_id == user_id && in_array($leadDetails->lead_status_id, array(2, 3))) { 
                                                         ?>
                                                         <button class="btn btn-success reject-button" onclick="RejectedLoan()">Reject</button>
                                                     <?php } else if ((agent == 'CA') && !empty($leadDetails->lead_rejected_assign_user_id) && $leadDetails->lead_rejected_assign_user_id == user_id && in_array($leadDetails->lead_status_id, array(9)) && in_array($leadDetails->lead_rejected_reason_id, array(7, 31))) { ?>
