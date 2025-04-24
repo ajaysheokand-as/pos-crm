@@ -10919,8 +10919,11 @@ $pdf->Output($file_path_with_name, 'F');
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
-        $gst = round(($admin_fee * 18) / 100);
-        $total_admin_fee = round($admin_fee + $gst);
+        $adminFeeWithoutGst = round(($admin_fee / 1.18));
+        $gst = $admin_fee - $adminFeeWithoutGst;
+        $total_admin_fee = round($admin_fee - $gst);
+        // $gst = round(($admin_fee * 18) / 100);
+        // $total_admin_fee = round($admin_fee + $gst);
         $repayment_amount = ($loan_recommended + ($loan_recommended * $roi * $tenure) / 100);
 
         $data['roi'] = $roi;
