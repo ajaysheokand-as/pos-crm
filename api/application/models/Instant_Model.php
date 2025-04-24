@@ -2259,8 +2259,11 @@ class Instant_Model extends CI_Model {
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
-        $gst = round(($admin_fee * 18) / 100);
-        $total_admin_fee = round($admin_fee + $gst);
+        $adminFeeWithoutGst = round(($admin_fee / 1.18));
+        $gst = $admin_fee - $adminFeeWithoutGst;
+        $total_admin_fee = round($admin_fee - $gst);
+        // $gst = round(($admin_fee * 18) / 100);
+        // $total_admin_fee = round($admin_fee + $gst);
 
         $data['roi'] = $roi;
         $data['tenure'] = $tenure;
