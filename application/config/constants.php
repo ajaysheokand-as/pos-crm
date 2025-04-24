@@ -157,10 +157,13 @@ define("CTO_EMAIL", "tech@tejasloan.com");
 define("EMAIL_BRAND_LOGO", LMS_URL . "public/images/tejas-logo.svg");
 define("DISBURSAL_LETTER_BANNER", LMS_URL . "public/emailimages/disbursal_banner.png");
 
-define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
+define("SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/tejas_header.jpeg");
 define("SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
-define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/header.jpg");
+define("SANCTION_LETTER_NEW_HEADER", LMS_URL . "public/emailimages/AMAN FINCAP H.png");
+define("SANCTION_LETTER_NEW_FOOTER", LMS_URL . "public/emailimages/AMAN FINCAP F.png");
+
+define("GENERATE_SANCTION_LETTER_HEADER", LMS_URL . "public/emailimages/tejas_header.jpeg");
 define("GENERATE_SANCTION_LETTER_FOOTER", LMS_URL . "public/emailimages/Footer.png");
 
 define("EKYC_BRAND_LOGO", WEBSITE_URL . "public/tejasloan.com/emailimages/Digilocker_eKyc/images/ekyc_brand_logo.gif");

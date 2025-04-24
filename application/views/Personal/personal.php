@@ -16,17 +16,20 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
 
         <div class="col-md-6">
             <label class="labelField" class="labelField">First Name &nbsp;<strong class="required_Fields">*</strong></label>
-            <input type="text" class="form-control inputField" id="p_first_name" name="first_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>>
+            <!-- <input type="text" class="form-control inputField" id="p_first_name" name="first_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>> -->
+            <input type="text" class="form-control inputField" id="p_first_name" name="first_name" autocomplete="off">
         </div>
 
         <div class="col-md-6">
             <label class="labelField">Middle Name</label>
-            <input type="text" class="form-control inputField" id="p_middle_name" name="middle_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>>
+            <!-- <input type="text" class="form-control inputField" id="p_middle_name" name="middle_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>> -->
+            <input type="text" class="form-control inputField" id="p_middle_name" name="middle_name" autocomplete="off">
         </div>
 
         <div class="col-md-6">
             <label class="labelField">Surname</label>
-            <input type="text" class="form-control inputField" id="p_sur_name" name="sur_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>>
+            <!-- <input type="text" class="form-control inputField" id="p_sur_name" name="sur_name" autocomplete="off" <?= (($leadDetails->pancard_verified_status == 1) ? 'readonly=readonly' : '') ?>> -->
+            <input type="text" class="form-control inputField" id="p_sur_name" name="sur_name" autocomplete="off">
         </div>
 
         <div class="col-md-6">
@@ -65,7 +68,8 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
 
         <div class="col-md-6">
             <label class="labelField">Email (Office)</label>
-            <input type="text" class="form-control inputField" id="p_alternate_email" name="alternate_email" onchange="IsEmail(this)" autocomplete="off" <?= (($leadDetails->alternate_email_verified_status == "YES") ? 'readonly=readonly' : '') ?>>
+            <!-- <input type="text" class="form-control inputField" id="p_alternate_email" name="alternate_email" onchange="IsEmail(this)" autocomplete="off" <?= (($leadDetails->alternate_email_verified_status == "YES") ? 'readonly=readonly' : '') ?>> -->
+            <input type="text" class="form-control inputField" id="p_alternate_email" name="alternate_email" onchange="IsEmail(this)" autocomplete="off">
         </div>
 
         <div class="col-md-6">
@@ -238,7 +242,7 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
 
             <div class="row">
                 <div class="col-md-12">
-                    <label class="labelField">Address Line 2 <span class="required_Fields">*</span></label>
+                    <label class="labelField">Address Line 2</label>
                     <input type="text" class="form-control inputField" id="lcss2" name="lcss2" autocomplete="off" style="width: 76% !important;" <?= ($leadDetails->customer_digital_ekyc_flag == 1 ? 'readonly=readonly' : '') ?>>
                 </div>
             </div>

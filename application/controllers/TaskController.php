@@ -601,11 +601,11 @@ class TaskController extends CI_Controller {
                                 <p style="color:#000;">TO ,<br>SHRI/SMT <b> ' . $firstname . ' </b><br>R/O - <b>' . $current_house . ' </b></p><br/>
                                 <h2 style="color:#000;">Legal Notice (without prejudice)</h2>
                                 <p style="color:#000;">Sir/Ma\'am</p>
-                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Salarywalle”</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
+                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Tejas Loan</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
                                 <ol>
                                     <li style="color:#000;">That you had approached my client for a short-term loan as you were in dire need of money on <strong>' . date('d, M Y', strtotime($final_disbursed_date)) . '</strong>.</li>
                                     <li style="color:#000;">That pursuant to the terms and conditions of the Loan agreement form as agreed by you, you were provided the short-term loan of Rs. <strong>' . $loan_recommended . '</strong> with Loan No.<strong> ' . $loan_no . '</strong> at a mutually agreed rate of interest.</li>
-                                    <li style="color:#000;">That you had promised and agreed to repay the said loan amount with applicable interest rate but you did not repay the total amount of Rs.<strong>' . $totalinterest . '</strong> till date. You have breached the loan contract that you entered into with my client namely <strong>Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong>Salarywalle”</strong>.</li>
+                                    <li style="color:#000;">That you had promised and agreed to repay the said loan amount with applicable interest rate but you did not repay the total amount of Rs.<strong>' . $totalinterest . '</strong> till date. You have breached the loan contract that you entered into with my client namely <strong>Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong>Tejas Loan</strong>.</li>
                                     <li style="color:#000;">That thus by your act and conduct it is evident that since the time of availing such loan you had malafide intention.</li>
                                     <li style="color:#000;background:#FFFF00;">That as on date an amount of Rs.<strong>' . $totalinterest . ' </strong> is due and payable by you in the aforesaid connection to our client.</li>
                                 </ol>
@@ -1941,10 +1941,11 @@ class TaskController extends CI_Controller {
 
     public function sanctionleads() {
 
+
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0;
         $user_labels = !empty($_SESSION['isUserSession']['labels']) ? $_SESSION['isUserSession']['labels'] : "";
         $cam_blacklist_removed_flag = 0;
-        $allow_sanction_head = array(65, 2, 3, 116, 45, 166, 505, 506);
+        $allow_sanction_head = array(65, 2, 3, 116, 45, 166,180, 505, 506, 182);
 
         if ($this->input->server('REQUEST_METHOD') == 'POST') {
 
@@ -3425,7 +3426,7 @@ class TaskController extends CI_Controller {
 
         shuffle($code_mix);
 
-        $referenceID = "#Salarywalle";
+        $referenceID = "#Tejas";
 
         foreach ($code_mix as $each) {
 
@@ -3766,7 +3767,7 @@ class TaskController extends CI_Controller {
             $this->form_validation->set_rules('addharAddressSameasAbove', 'Is aadhaar address same as residence address', 'trim');
 
             $this->form_validation->set_rules('hfBulNo2', 'Aadhaar Address Line 1', 'required|trim');
-            $this->form_validation->set_rules('lcss2', 'Aadhaar Address Line 2', 'required|trim');
+            $this->form_validation->set_rules('lcss2', 'Aadhaar Address Line 2', 'trim');
             $this->form_validation->set_rules('landmark2', 'Aadhaar Landmark', 'trim');
             $this->form_validation->set_rules('state2', 'Aadhaar State', 'required|trim');
             // $this->form_validation->set_rules('city2', 'Aadhaar City', 'required|trim');
@@ -4643,7 +4644,7 @@ class TaskController extends CI_Controller {
             $firstname = $return_sms['first_name'];
             $lead_id = $return_sms['lead_id'];
             //$email_to = $return_sms['email'];
-            // $email_to = 'info@tejasloan.com';
+            // $email_to = 'tech.lead@salarywalle.com';
             $email_to = 'sunny@fintechbasket.com';
             $mobile = $return_sms['mobile'];
             $address = $return_sms['current_house'];
