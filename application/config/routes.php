@@ -679,3 +679,5 @@ $route['news/(:num)'] = 'NewsController/index';
 $route['newsDelete'] = 'NewsController/newsDelete';
 $route['news/add-news'] = 'NewsController/addNews';
 $route['news/edit-news/(:any)'] = 'NewsController/editNews/$1';
+
+$route['shiftToS3'] = 'ShiftCibilController/shiftToS3';
