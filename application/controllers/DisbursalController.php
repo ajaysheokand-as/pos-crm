@@ -795,7 +795,7 @@ class DisbursalController extends CI_Controller {
                 $netDisbursalAmount = '-';
                 if (!empty($colum['loan_principle_payable_amount'])) {
                     $loanPrincipalAmount = $colum['loan_principle_payable_amount'];
-                    $admin_fee = round(($loanPrincipalAmount * 10) / 100);
+                    $admin_fee = round(($loanPrincipalAmount * 15) / 100);
                     $adminFeeWithoutGst = round(($admin_fee / 1.18));
                     $gst = $admin_fee - $adminFeeWithoutGst;
                     $netDisbursalAmount = round($loanPrincipalAmount - ($gst + $adminFeeWithoutGst));
