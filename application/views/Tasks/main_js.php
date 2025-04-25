@@ -1596,10 +1596,12 @@
                 html += '<tr><th class="thbg">Sanctioned By</th><td>' + ((res.sanctioned_by !== '' && res.lead_status_id >= 14) ? res.sanctioned_by : '-') + '</td><th class="thbg">Sanctioned On</th><td>' + ((res.lead_credit_approve_datetime !== '' && res.lead_status_id >= 14) ? res.lead_credit_approve_datetime : '-') + '</td></tr>';
 
                 html += '<tr><th class="thbg">Disbursal Manager</th><td>' + ((res.disbursal_manager) ? res.disbursal_manager : "-") + '</td><th class="thbg">Disbursal Recommended On</th><td colspan="4">' + ((res.disbursal_recommend) ? res.disbursal_recommend : '-') + '</td></tr>';
-                html += '<tr><th class="thbg">Disbursal Head</th><td>' + ((res.disbursal_head) ? res.disbursal_head : "-") + '</td><th class="thbg">Disbursed On</th><td colspan="4">' + ((res.disbursal_approve) ? res.disbursal_approve : '-') + '</td></tr>';
+                // html += '<tr><th class="thbg">Disbursal Head</th><td>' + ((res.disbursal_head) ? res.disbursal_head : "-") + '</td><th class="thbg">Disbursed On</th><td colspan="4">' + ((res.disbursal_approve) ? res.disbursal_approve : '-') + '</td></tr>';
+                html += '<tr><th class="thbg">Disbursal Head</th><td>' + ((res.disbursal_head) ? res.disbursal_head : "-") + '</td><th class="thbg">Disbursed On</th><td colspan="4">' + ((res.disbursal_date) ? res.disbursal_date : '-') + '</td></tr>';
                 html += '<tr><th class="thbg">Loan Approved (Rs.)</th><td>' + ((res.loan_recommended) ? res.loan_recommended : "-") + '</td><th class="thbg">ROI % (p.d.) Approved</th><td>' + ((res.roi) ? res.roi : "-") + '</td></tr>';
                 //                html += '<tr><th class="thbg">Advance IRR Amount (Rs.)</th><td>' + ((res.cam_interest_amount) ? res.cam_interest_amount : "-") + '</td><th class="thbg"></th><td></td></tr>';
-                html += '<tr><th class="thbg">Total Admin Fee (Rs.) Approved</th><td>' + ((res.admin_fee) ? res.admin_fee : "-") + '</td><th class="thbg">Tenure Approved</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
+                // html += '<tr><th class="thbg">Total Admin Fee (Rs.) Approved</th><td>' + ((res.admin_fee) ? res.admin_fee : "-") + '</td><th class="thbg">Tenure Approved</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
+                html += '<tr><th class="thbg">Total Admin Fee (Rs.) Approved</th><td>' + ((res.total_admin_fee) ? res.total_admin_fee : "-") + '</td><th class="thbg">Tenure Approved</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
                 html += '<tr><th class="thbg">Sanction Email Sent On</th><td>' + ((res.agrementRequestedDate) ? res.agrementRequestedDate : '-') + '</td><th class="thbg">Sanction Email Sent To</th><td>' + ((res.email) ? res.email : '-') + '</td></tr>';
                 html += '<tr><th class="thbg">Sanction Email Delivery status</th><td>' + ((res.loanAgreementRequest == 1) ? "SENT" : 'PENDING') + '</td><th class="thbg">Sanction Email Response status</th><td>' + ((res.loanAgreementResponse == 1) ? "ACCEPTED" : '-') + '</td></tr>';
                 html += '<tr><th class="thbg">Sanction Email Response IP</th><td>' + ((res.agrementUserIP) ? res.agrementUserIP : "-") + '</td><th class="thbg">Acceptance Email</th><td>' + ((res.loanAgreementResponse == 1) ? res.email : '-') + '</td></tr>';
@@ -1622,7 +1624,8 @@
 
                 if (res.lead_disbursal_approve_datetime) {
 
-                    html += '<tr><th class="thbg">Loan Disbursal Letter : </th><td><strong><a onclick=download_disbursal_letter("' + res.lead_id + '") style="cursor:pointer;">Disbursal Download</a></strong> <br>Disbursed On : ' + ((res.disbursal_approve) ? res.disbursal_approve : '-') + '</td>';
+                    // html += '<tr><th class="thbg">Loan Disbursal Letter : </th><td><strong><a onclick=download_disbursal_letter("' + res.lead_id + '") style="cursor:pointer;">Disbursal Download</a></strong> <br>Disbursed On : ' + ((res.disbursal_approve) ? res.disbursal_approve : '-') + '</td>';
+                    html += '<tr><th class="thbg">Loan Disbursal Letter : </th><td><strong><a onclick=download_disbursal_letter("' + res.lead_id + '") style="cursor:pointer;">Disbursal Download</a></strong> <br>Disbursed On : ' + ((res.disbursal_date) ? res.disbursal_date : '-') + '</td>';
                 } else {
                     html += '<tr><th class="thbg">Loan Disbursal Letter </th><td> - </td>';
                 }

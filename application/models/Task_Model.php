@@ -660,11 +660,19 @@ class Task_Model extends CI_Model {
         $result = 0;
         $lead_data = [];
         if (!empty($lead_id)) { // && !empty($application_no)
-            $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response
+//             $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response
+// FROM `lead_disbursement_trans_log` as a
+// left join api_disburse_logs as b on a.disb_trans_reference_no = b.disburse_trans_refno
+// left join loan as c on c.lead_id = a.disb_trans_lead_id
+// where a.disb_trans_lead_id = " . $lead_id;
+
+$sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response,cam.disbursal_date
 FROM `lead_disbursement_trans_log` as a
 left join api_disburse_logs as b on a.disb_trans_reference_no = b.disburse_trans_refno
 left join loan as c on c.lead_id = a.disb_trans_lead_id
+left join credit_analysis_memo as cam on cam.lead_id = a.disb_trans_lead_id
 where a.disb_trans_lead_id = " . $lead_id;
+
 
             $leadsDetails = $this->db->query($sql); //->get()->row_array()
 
