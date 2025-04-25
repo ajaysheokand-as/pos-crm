@@ -791,6 +791,16 @@ class DisbursalController extends CI_Controller {
         if (isset($leadData['lead_data']) && count($leadData['lead_data']) > 0) {
             $i = 1;
             foreach ($leadData['lead_data'] as $colum) {
+                $loanPrincipalAmount = '-';
+                $netDisbursalAmount = '-';
+                if (!empty($colum['loan_principle_payable_amount'])) {
+                    $loanPrincipalAmount = $colum['loan_principle_payable_amount'];
+                    $admin_fee = round(($loanPrincipalAmount * 15) / 100);
+                    $adminFeeWithoutGst = round(($admin_fee / 1.18));
+                    $gst = $admin_fee - $adminFeeWithoutGst;
+                    $netDisbursalAmount = round($loanPrincipalAmount - ($gst + $adminFeeWithoutGst));
+                }
+
                 //                $sql3 = $this->Tasks->select(['lead_id' => $colum->lead_id], 'disbursal_date', 'credit_analysis_memo');
                 //                $cam = $sql3->row();
                 $data .= '
@@ -798,12 +808,12 @@ class DisbursalController extends CI_Controller {
                                 <td class="whitespace"><a href="' . base_url('getleadDetails/' . $this->encrypt->encode($colum['disb_trans_lead_id'])) . '" target="_blank">' . $colum['disb_trans_lead_id'] . '</a></td>
                                 <td class="whitespace">' . (!empty($colum['disburse_refrence_no']) ? $colum['disburse_refrence_no'] : '-') . '</td>
                                 <td class="whitespace">' . (!empty($colum['disb_trans_reference_no']) ? $colum['disb_trans_reference_no'] : '-') . '</td>
-                                <td class="whitespace">' . date('d-m-Y H:i', strtotime($colum['disb_trans_created_on'])) . '</td>
+                                <td class="whitespace">' . (!empty($colum['disbursal_date']) ? $colum['disbursal_date'] : '-')  . '</td>
                                 <td class="whitespace">' . (!empty($colum['disb_trans_status_id']) ? $disb_trans_status[$colum['disb_trans_status_id']] : '-') . '</td>
                                 <td class="whitespace">' . (!empty($colum['disburse_api_status_id']) ? $disburse_api_status[$colum['disburse_api_status_id']] : '-') . '</td>
                                 <td class="whitespace">' . (!empty($colum['loan_no']) ? $colum['loan_no'] : '-') . '</td>
-                                <td class="whitespace">' . (!empty($colum['loan_principle_payable_amount']) ? $colum['loan_principle_payable_amount'] : '-') . '</td>
-                                <td class="whitespace">' . (!empty($colum['recommended_amount']) ? $colum['recommended_amount'] : '-') . '</td>
+                                <td class="whitespace">' . $loanPrincipalAmount . '</td>
+                                <td class="whitespace">' . $netDisbursalAmount . '</td>
                                 <td class="whitespace">' . (!empty($colum['disburse_errors']) ? $colum['disburse_errors'] : '-') . '</td>
                                 <td class="whitespace">' . (!empty($colum['disb_trans_payment_mode_id']) ? $disb_trans_payment_mode[$colum['disb_trans_payment_mode_id']] : '-') . '</td>
                                 <td class="whitespace">' . (!empty($colum['disb_trans_payment_type_id']) ? $disb_trans_payment_type[$colum['disb_trans_payment_type_id']] : '-') . '</td>
@@ -813,6 +823,26 @@ class DisbursalController extends CI_Controller {
                                 <td class="whitespace">' . ' <button class="btn btn-success btn-sm" onclick="viewLog(this)" data-log=\'' . stripslashes($colum['disburse_response']) . '\'><i class="fa fa-eye"></i> View Log</button> <button class="btn btn-warning btn-sm" onclick="getPayoutStatus(this)" data-refId=\'' . $colum['disb_trans_reference_no'] . '\' data-leadId=\'' . $colum['disb_trans_lead_id'] . '\'>Get Status</button>  <!--<button class="btn btn-success btn-sm" onclick="changePayoutStaus(this)" data-refId=\'' . $colum['disb_trans_reference_no'] . '\' data-leadId=\'' . $colum['disb_trans_lead_id'] . '\'>Change Status</button>-->' . '</td>
 
                             </tr>';
+                            // $data .= '
+                            // <tr>
+                            //     <td class="whitespace"><a href="' . base_url('getleadDetails/' . $this->encrypt->encode($colum['disb_trans_lead_id'])) . '" target="_blank">' . $colum['disb_trans_lead_id'] . '</a></td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_refrence_no']) ? $colum['disburse_refrence_no'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disb_trans_reference_no']) ? $colum['disb_trans_reference_no'] : '-') . '</td>
+                            //     <td class="whitespace">' . date('d-m-Y H:i', strtotime($colum['disb_trans_created_on'])) . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disb_trans_status_id']) ? $disb_trans_status[$colum['disb_trans_status_id']] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_api_status_id']) ? $disburse_api_status[$colum['disburse_api_status_id']] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['loan_no']) ? $colum['loan_no'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['loan_principle_payable_amount']) ? $colum['loan_principle_payable_amount'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['recommended_amount']) ? $colum['recommended_amount'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_errors']) ? $colum['disburse_errors'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disb_trans_payment_mode_id']) ? $disb_trans_payment_mode[$colum['disb_trans_payment_mode_id']] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disb_trans_payment_type_id']) ? $disb_trans_payment_type[$colum['disb_trans_payment_type_id']] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_beneficiary_account_no']) ? $colum['disburse_beneficiary_account_no'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_beneficiary_ifsc_code']) ? $colum['disburse_beneficiary_ifsc_code'] : '-') . '</td>
+                            //     <td class="whitespace">' . (!empty($colum['disburse_beneficiary_name']) ? $colum['disburse_beneficiary_name'] : '-') . '</td>
+                            //     <td class="whitespace">' . ' <button class="btn btn-success btn-sm" onclick="viewLog(this)" data-log=\'' . stripslashes($colum['disburse_response']) . '\'><i class="fa fa-eye"></i> View Log</button> <button class="btn btn-warning btn-sm" onclick="getPayoutStatus(this)" data-refId=\'' . $colum['disb_trans_reference_no'] . '\' data-leadId=\'' . $colum['disb_trans_lead_id'] . '\'>Get Status</button>  <!--<button class="btn btn-success btn-sm" onclick="changePayoutStaus(this)" data-refId=\'' . $colum['disb_trans_reference_no'] . '\' data-leadId=\'' . $colum['disb_trans_lead_id'] . '\'>Change Status</button>-->' . '</td>
+
+                            // </tr>';
                 $i++;
             }
         } else {
