@@ -2831,9 +2831,11 @@
         html += '<tr><th>Loan Applied (Rs.)</th><td><?= ($leadDetails->loan_amount) ? round($leadDetails->loan_amount) : '-' ?></td><th>Loan Recommended (Rs.)</th><td>' + res.loan_recommended + '</td></tr>';
         html += '<tr><th>Final FOIR (%)</th><td>' + ((res.final_foir_percentage) ? res.final_foir_percentage : "-") + '</td><th>FOIR ENHANCED BY (%)</th><td>' + ((res.foir_enhanced_by) ? res.foir_enhanced_by : "-") + '</td></tr>';
         html += '<tr><th>Admin Fee (%)</th><td>' + ((res.processing_fee_percent) ? res.processing_fee_percent : "-") + '</td><th>ROI (%)</th><td>' + ((res.roi) ? res.roi : "-") + '</td></tr>';
-        html += '<tr><th>Total Admin Fee (Rs.)</th><td>' + ((res.admin_fee) ? res.admin_fee : "-") + '</td><th>Disbursal Date</th><td>' + ((res.disbursal_date) ? res.disbursal_date : "-") + '</td></tr>';
+        // html += '<tr><th>Total Admin Fee (Rs.)</th><td>' + ((res.admin_fee) ? res.admin_fee : "-") + '</td><th>Disbursal Date</th><td>' + ((res.disbursal_date) ? res.disbursal_date : "-") + '</td></tr>';
+        html += '<tr><th>Total Admin Fee (Rs.)</th><td>' + ((res.total_admin_fee) ? res.total_admin_fee : "-") + '</td><th>Disbursal Date</th><td>' + ((res.disbursal_date) ? res.disbursal_date : "-") + '</td></tr>';
         html += '<tr><th>GST @18.00 (%)</th><td>' + ((res.adminFeeWithGST) ? res.adminFeeWithGST : "-") + '</td><th>Repay Date</th><td>' + ((res.repayment_date) ? res.repayment_date : "-") + '</td></tr>';
-        html += '<tr><th>Net Admin Fee (Rs.)</th><td>' + ((res.total_admin_fee) ? res.total_admin_fee : "-") + '</td><th>Tenure (days)</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
+        html += '<tr><th>Net Admin Fee (Rs.)</th><td>' + ((res.admin_fee) ? res.admin_fee : "-") + '</td><th>Tenure (days)</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
+        // html += '<tr><th>Net Admin Fee (Rs.)</th><td>' + ((res.total_admin_fee) ? res.total_admin_fee : "-") + '</td><th>Tenure (days)</th><td>' + ((res.tenure) ? res.tenure : "-") + '</td></tr>';
         html += '<tr><th>Net Disb. Amount (Rs.)</th><td>' + ((res.net_disbursal_amount) ? res.net_disbursal_amount : "-") + '</td><th>Repay Amount (Rs.)</th><td>' + ((res.repayment_amount) ? res.repayment_amount : "-") + '</td></tr>';
         html += '<tr><th>Penal ROI</th><td>' + ((res.panel_roi) ? res.panel_roi : "-") + '</td><th>B2B Disbursal</th><td>' + ((res.b2b_disbursal) ? res.b2b_disbursal : "-") + '</td></tr>';
         html += '<tr><th>Risk Profile</th><td>' + ((res.cam_risk_profile) ? res.cam_risk_profile : "-") + '</td><th></th><td></td></tr>';
