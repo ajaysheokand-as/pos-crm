@@ -552,7 +552,6 @@ class ExportController extends CI_Controller {
                     'Loan Amount' => $res['loan_recommended'],
                     'Net Disbused Amount' => ($res['loan_recommended'] - $res['admin_fee']),
                     'Admin Fee' => $res['admin_fee'],
-                    'Net Processing Fee' => $res['admin_fee'],
                     'Tenure' => $res['tenure'],
                     'ROI' => $res['roi'],
                     'Loan Repay Amount' => $res['repayment_amount'],
