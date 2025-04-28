@@ -645,7 +645,7 @@ class LeadModel extends BaseModel {
         $data = array();
         $sql = "SELECT LD.lead_id, LD.user_type, LD.customer_id, LD.lead_status_id, MS.status_name as status, MS.status_stage as stage, LD.lead_status_id, LD.lead_black_list_flag, LD.loan_no, LD.lead_final_disbursed_date, ";
         $sql .= " CAM.cam_id, CAM.loan_recommended, CAM.final_foir_percentage, CAM.foir_enhanced_by, CAM.processing_fee_percent, ";
-        $sql .= " CAM.roi, CAM.admin_fee, CAM.disbursal_date, CAM.repayment_date, CAM.adminFeeWithGST, CAM.total_admin_fee, CAM.tenure, ";
+        $sql .= " CAM.roi, CAM.admin_fee, CAM.disbursal_date, CAM.repayment_date, CAM.adminFeeWithGST, CAM.total_admin_fee, CAM.tenure,";
         $sql .= " CAM.net_disbursal_amount, CAM.repayment_amount, CAM.panel_roi, CAM.cam_advance_interest_amount, CONCAT_WS(C.first_name, C.middle_name, C.sur_name) AS full_name ";
         $sql .= " FROM leads LD";
         $sql .= " INNER JOIN lead_customer C ON(LD.lead_id = C.customer_lead_id)";
@@ -716,7 +716,8 @@ class LeadModel extends BaseModel {
             $loan_closure_date = !empty($lead_details["loan_noc_closed_letter_datetime"]) ? date('d-m-Y H:i:s', strtotime($lead_details["loan_noc_closed_letter_datetime"])) : 0;
             $loan_noc_closing_letter = !empty($lead_details["loan_noc_closing_letter"]) ? $lead_details["loan_noc_closing_letter"] : 0;
             $penal_roi = $roi * 2;
-            $disbursal_date = !empty($lead_details["lead_final_disbursed_date"]) ? date('d-m-Y', strtotime($lead_details["lead_final_disbursed_date"])) : '';
+            // $disbursal_date = !empty($lead_details["lead_final_disbursed_date"]) ? date('d-m-Y', strtotime($lead_details["lead_final_disbursed_date"])) : '';
+            $disbursal_date = !empty($lead_details["disbursal_date"]) ? $lead_details["disbursal_date"] : '';
             $repayment_date = !empty($lead_details["repayment_date"]) ? date('d-m-Y', strtotime($lead_details["repayment_date"])) : '';
             $tenure = !empty($lead_details["tenure"]) ? $lead_details["tenure"] : 0;
             $repayment_amount = !empty($lead_details["repayment_amount"]) ? $lead_details["repayment_amount"] : 0;
