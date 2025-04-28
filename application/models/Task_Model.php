@@ -660,19 +660,11 @@ class Task_Model extends CI_Model {
         $result = 0;
         $lead_data = [];
         if (!empty($lead_id)) { // && !empty($application_no)
-//             $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response
-// FROM `lead_disbursement_trans_log` as a
-// left join api_disburse_logs as b on a.disb_trans_reference_no = b.disburse_trans_refno
-// left join loan as c on c.lead_id = a.disb_trans_lead_id
-// where a.disb_trans_lead_id = " . $lead_id;
-
-$sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response,cam.disbursal_date
+            $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response
 FROM `lead_disbursement_trans_log` as a
 left join api_disburse_logs as b on a.disb_trans_reference_no = b.disburse_trans_refno
 left join loan as c on c.lead_id = a.disb_trans_lead_id
-left join credit_analysis_memo as cam on cam.lead_id = a.disb_trans_lead_id
 where a.disb_trans_lead_id = " . $lead_id;
-
 
             $leadsDetails = $this->db->query($sql); //->get()->row_array()
 
@@ -5920,7 +5912,25 @@ $pdf->Output($file_path_with_name, 'F');
             
             $sql1 = $this->getResidenceDetails($lead_id);
             $getResidenceDetails = $sql1->row();
+
+            $conditions = "LD.lead_id = ".$lead_id;
+            $sql2 = $this->getLeadDetails($conditions);
+            $leadDetails = $sql2->row();
+            // print_r($leadDetails);
+            // exit;
             
+            $sql3 = $this->getEmploymentDetails($lead_id);
+            $employmentDetails = $sql3->row();
+
+            $sql4 = "SELECT * FROM loan WHERE lead_id = $lead_id";
+            $sqlquery4 = $this->db->query($sql4);
+            $loanDetails = $sqlquery4->row();
+            // print_r($loanDetails);
+            // exit;
+
+            $sql5 = "SELECT * FROM customer_banking WHERE lead_id = $lead_id";
+            $sqlquery5 = $this->db->query($sql5);
+            $bankDetails = $sqlquery5->row();
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
@@ -6165,7 +6175,7 @@ $pdf->Output($file_path_with_name, 'F');
                                 <p>We are pleased to inform you that your application for a loan with Aman Fincap Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
                                 <h3>Loan Details:</h3>
                                 <ul>
-                                    <li>Loan Amount:' . number_format(round($loan_recommended, 2)) . '</li>
+                                    <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
                                     <li>Loan Term: ' . $camDetails->tenure . '</li>
                                     <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
                                     <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
@@ -6252,7 +6262,7 @@ $pdf->Output($file_path_with_name, 'F');
                                 <ol>
                                     <li><strong>Loan Details:</strong>
                                         <ul>
-                                            <li>Loan Amount:' . number_format(round($loan_recommended, 2)) . '</li>
+                                            <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
                                             <li>Loan Term: ' . $camDetails->tenure . '</li>
                                             <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
                                             <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
@@ -6314,7 +6324,7 @@ $pdf->Output($file_path_with_name, 'F');
             $letterhead_url = SANCTION_LETTER_NEW_HEADER;
             $letterfooter_url = SANCTION_LETTER_NEW_FOOTER;
 
-            $html_string = "<html>
+            $html_string_new = "<html>
    <head>
       <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
       <meta name=Generator content='Microsoft Word 15 (filtered)'>
@@ -10863,10 +10873,8 @@ $pdf->Output($file_path_with_name, 'F');
    </body>
 </html>";
 
-//             print_r($html_string);
-//             exit;
-
-                    
+    //    print_r($html_string);
+    //    exit;             
                     
             $file_name = "sanction_letter_" . $lead_id . "_" . rand(1000, 9999) . ".pdf";
             
@@ -10964,11 +10972,8 @@ $pdf->Output($file_path_with_name, 'F');
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
-        $adminFeeWithoutGst = round(($admin_fee / 1.18));
-        $gst = $admin_fee - $adminFeeWithoutGst;
-        $total_admin_fee = round($admin_fee - $gst);
-        // $gst = round(($admin_fee * 18) / 100);
-        // $total_admin_fee = round($admin_fee + $gst);
+        $gst = round(($admin_fee * 18) / 100);
+        $total_admin_fee = round($admin_fee + $gst);
         $repayment_amount = ($loan_recommended + ($loan_recommended * $roi * $tenure) / 100);
 
         $data['roi'] = $roi;
