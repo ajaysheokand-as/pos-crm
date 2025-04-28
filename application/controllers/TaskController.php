@@ -4956,4 +4956,10 @@ class TaskController extends CI_Controller {
     public function __destruct() {
         $this->db->close();
     }
+    
+    public function testSanc() {
+        $pdf_return = $this->Tasks->newSanctionLetter($lead_id);
+        print_r($pdf_return);
+        exit;
+    }
 }
