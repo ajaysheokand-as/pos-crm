@@ -1945,7 +1945,7 @@ class TaskController extends CI_Controller {
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0;
         $user_labels = !empty($_SESSION['isUserSession']['labels']) ? $_SESSION['isUserSession']['labels'] : "";
         $cam_blacklist_removed_flag = 0;
-        $allow_sanction_head = array(65, 2, 3, 116, 45, 166,180, 505, 506, 182);
+        $allow_sanction_head = array(65, 2, 3, 116, 45, 166,180, 505, 506, 182, 189);
 
         if ($this->input->server('REQUEST_METHOD') == 'POST') {
 

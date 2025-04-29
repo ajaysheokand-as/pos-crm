@@ -13798,10 +13798,10 @@ $pdf->Output($file_path_with_name, 'F');
     public function newSanctionLetter() {
         $lead_id = 6;
         // Report all errors
-        error_reporting(E_ALL);
+        // error_reporting(E_ALL);
 
         // Display errors in output
-        ini_set('display_errors', 1);
+        // ini_set('display_errors', 1);
 
         $return_array = array("status" => 0, "errors" => "");
 
@@ -13910,7 +13910,7 @@ $pdf->Output($file_path_with_name, 'F');
                         <style>
                             table {
                                 width: 100%;
-                                border-collapse: collapse;
+                                border-collapse: collapse;html_string_new
                             }
                             th, td {
                                 padding: 8px;
@@ -14136,10 +14136,7 @@ $pdf->Output($file_path_with_name, 'F');
                                     <tr>
                                         <td>Penal Interest (%) per day:</td>
                                         <td>' . round(($camDetails->roi * 2), 2) . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Processing Fee (&#8377;):</td>
-                                        <td>' . number_format(round($camDetails->admin_fee, 0), 2) . '/- (Including 18% GST)</td>
+                                    </tr>html_string_newding 18% GST)</td>
                                     </tr>
                                     <tr>
                                         <td>Repayment Cheque(s):</td>
@@ -14285,8 +14282,8 @@ $pdf->Output($file_path_with_name, 'F');
             }
             
             @page WordSection1 {
-              size: 8.5in 11.0in;
-              margin: 1.0in 59.15pt 1.0in 1.0in;
+             size: 2480px 3508px;
+              margin: 30px 78.83px 30px 30px;
             }
             
             div.WordSection1 {
@@ -14301,7 +14298,12 @@ $pdf->Output($file_path_with_name, 'F');
             ul {
               margin-bottom: 0in;
             }
+              .second-page{
+              margin-top : 200px;
+              }
+
             -->
+            
       </style>
    </head>
    <body lang=EN-US link=blue vlink='#954F72' style='word-wrap:break-word'>
@@ -14454,11 +14456,11 @@ $pdf->Output($file_path_with_name, 'F');
          </p>
          <p class=MsoNormal style='text-align:justify'>&nbsp;</p>
          <br><br><br><br><br><br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- SANCTION LETTER END -->
       <!-- KEY FACT STATEMENT START -->
-      <div class=WordSection1>
+      <div class='WordSection1 second-page'>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal align=center style='margin-top:0.2in;margin-bottom:0.2in;text-align:center;
             line-height:normal'>
@@ -14764,7 +14766,7 @@ $pdf->Output($file_path_with_name, 'F');
             </tr>
          </table>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
          <img src='".$letterhead_url."' width='100%'>
          <br>
          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
@@ -14940,7 +14942,7 @@ $pdf->Output($file_path_with_name, 'F');
             </tr>
          </table>
          <br><br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
@@ -15153,7 +15155,7 @@ $pdf->Output($file_path_with_name, 'F');
                      line-height:normal'>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>Principal (INR)</span>
-                  </p>
+                  </p>html_string_new
                </td>
                <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
@@ -15266,7 +15268,7 @@ $pdf->Output($file_path_with_name, 'F');
          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
          </p>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- KEY FACT STATEMENT END -->
       <!-- Loan Terms START -->
@@ -15464,7 +15466,7 @@ $pdf->Output($file_path_with_name, 'F');
          </p>
          
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -15751,7 +15753,7 @@ $pdf->Output($file_path_with_name, 'F');
                color:black'>that should at any time during the Tenure of the Loan, if instructions for stop payment, cancellation of a Repayment Instrument and /or fail to confirm / register the ECS / NACH, the same shall be treated as dishonour / bounce of the Repayment Instrument, and the Loan shall be recalled at the discretion of the Lender.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
@@ -15821,7 +15823,7 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-family:sans-serif;
                color:black'>&nbsp;The following are the events of default under these Terms (“Event of Default”): (a) failure by the Borrower to repay the Loan (whole or part) on the Due Date; (b) breach / non-performance of any representation, warranty, covenant, undertaking or obligations under these Terms (including non-submission of documents or execution thereof), or any change in the information furnished by the Borrower to the Lender, if deemed material by the Lender; (c) the Borrower is subjected to any insolvency or bankruptcy proceeding or a receiver is appointed for its assets; (d) if the Borrower commits default in relation to any other loan or credit facility and /or statutory taxes and dues owed, or enters into any compromise with its creditors, or admits any inability in payment of its other debts; <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
           (e) the performance of obligations under these Terms becomes void or illegal; (f) non-payment of any of dues and / or outstanding amounts to any other financial institutions; and / or (g) any event which, with the passage of time, is likely to become an Event of Default. 
@@ -15878,7 +15880,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower shall indemnify and hold harmless the Lender and its directors, officers and agents, from and against any and all costs, expenses, direct or indirect claims, liabilities, demands and / or claims whatsoever, including any third-party claims for damages incurred as a consequence of occurrence of an Event of Default, breach of the terms and conditions of these Terms or acts of omission and commission on the part of the Borrower, or otherwise on account of the Loan.</span>
          </p>
          <br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
@@ -16039,7 +16041,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;color:black'>“ I Accept”</span>
          </p> -->
          <br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br>
       </div>
       <!-- Loan Terms END -->
@@ -16270,7 +16272,7 @@ $pdf->Output($file_path_with_name, 'F');
                font-family:sans-serif;color:black'>&nbsp;shall mean the additional amount payable by the Borrower to the Lender on account of any delay in payment of any Instalment and / or bullet payment(s), as more particularly set out in the Sanction Letter. Cum KFS</span>
          </p>
          <br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          
@@ -16449,7 +16451,7 @@ $pdf->Output($file_path_with_name, 'F');
                sans-serif;color:black'>&nbsp;shall mean any individual, corporation, partnership, (including, without limitation, association), company incorporated under the provisions of the Companies Act, 1956 / Companies Act, 2013, trust, unincorporated organization, Hindu undivided family or any governmental authority or political subdivision thereof. The expression shall, unless repugnant to the context or meaning thereof, be deemed to mean and include: (i) in case of a company, its successors and permitted assigns; (ii) in case of a partnership ﬁrm, the partners for the time being and from time to time of the partnership ﬁrm, their survivor or survivors of them, their respective heirs, administrators, executors, legal representatives and successors of the partner(s); (iii) in case of a trust, the trustee or trustees of the trust for the time being and from time to time; (iv) in case of a Hindu undivided family, the Karta and the members for the time being and from time to time of the said Hindu undivided family and their respective heirs, executors, administrators and legal representatives; (v) in case of an individual proprietor, the proprietor's heirs, administrators, executors and legal representatives; (vi) in case of an individual, the individual's heirs, administrators, executors and legal representatives;</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          
@@ -16614,7 +16616,7 @@ $pdf->Output($file_path_with_name, 'F');
                font-family:sans-serif;color:black'>&nbsp;means each of the dates on which the Bullet payments, Instalments together with Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and any other costs, charges, expenses if any, are due and payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 160px;' src='".$letterfooter_url."' width='100%'>
          <br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
@@ -16809,7 +16811,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall pay to the Lender all Instalments and/or bullet payments (inclusive of Interest), strictly on a monthly basis, on the Scheduled Due Dates, beginning from the first due date and continuing through to the last due date as stipulated in the Sanction Letter cum Key Fact Statement (“Sanction Letter cum KFS”). Time shall be of the essence for such payments. All payments shall be made through Repayment Instruments issued by the Borrower in favor of the Lender.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -16932,7 +16934,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif'>Each security interest created under this Agreement or any other Loan Document shall be in addition to, and not in substitution of, any other security, guarantee, lien, indemnity, undertaking, or right that the Lender presently holds or may hold in the future, whether under law or otherwise, in relation to the Outstanding Balance or any part thereof.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
          <br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -17107,7 +17109,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif'>: Acknowledge having read and understood all terms and conditions, privacy policy, and relevant documents made available on the websites of both Tejas Loan (hereinafter referred to as “Tejas Loan”) and the Lender.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
          <br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -17308,7 +17310,7 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>There are no actions, suits, proceedings, or investigations pending or, to the Borrower’s knowledge, threatened against the Borrower before any court, tribunal, or governmental authority that could materially affect the Borrower’s financial position, the enforceability of the Loan Documents, or the Borrower’s ability to perform its obligations thereunder.</span>
          </p>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -17462,7 +17464,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif'>Authority of Signatories (If Applicable) <br> Where the Borrower is an entity (proprietorship, partnership, LLP, or company), all signatories to the Loan Documents are duly authorized to execute the same on behalf of the Borrower. </span>
          </p>
          <br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
@@ -17661,7 +17663,7 @@ $pdf->Output($file_path_with_name, 'F');
                color:black'>Exercise any other right or remedy which may be available to the Lender under any applicable law, including the rights available pursuant to the provisions under the loan documents.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 210px;' src='".$letterfooter_url."' width='100%'>
          <br><br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
@@ -17833,7 +17835,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The Borrower undertake/s to indemnify and keep the Lender indemniﬁed in respect of any cost, loss or liability incurred by the Lender as a result of: (a) the occurrence of any Event of Default; (b) Any information supplied by the Borrower in the Application Form or any other Loan Document is found to be materially untrue, false, misleading or incorrect; (c) failure by the Borrower to pay any amount due under the Loan Documents on its Scheduled Due Date; (d) the Borrower failing to comply with the provisions of any applicable laws; and / or (e) breach of any representation, warranty, covenant or undertaking of the Borrower under the terms of the this Agreement or any of the other Loan Documents.</span>
          </p>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -17959,7 +17961,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding anything to the contrary contained in this Agreement, the Loan Documents, or any applicable law, the Borrower agrees that in the event of default in repayment of the Loan, any instalment thereof, or any part of the Outstanding Balance on the Scheduled Due Date(s), the Lender and/or the Reserve Bank of India shall have an unqualified right to disclose, report, or publish the name of the Borrower as a “defaulter” in such manner and through such media as they may, in their sole discretion, deem appropriate.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <br>
@@ -18108,7 +18110,7 @@ $pdf->Output($file_path_with_name, 'F');
                font-family:sans-serif;color:black'>&nbsp;Any question, dispute or claim arising out of or in connection with these Terms and Conditions or the other Loan Documents including any question on its existence, validity or termination shall be referred to and ﬁnally adjudicated through arbitration by a sole arbitrator and in accordance with the Arbitration and Conciliation Act, 1996. The sole arbitrator will be appointed by the Lender. The venue for such arbitration shall be New Delhi, India. The arbitration award given by the sole arbitrator appointed as aforesaid shall be ﬁnal and binding on all the parties in connection with any question of facts or law arising in the course of arbitration or with respect to any award made. Further, the present clause shall survive the termination of these Terms and Conditions and the other Loan Documents. The Courts at New Delhi, India shall have exclusive jurisdiction (subject to the arbitration proceedings which are to be also conducted in New Delhi, India) over any or all disputes arising out of this Agreement and the other Loan Documents. The present clause along with the clause for payment of Interest and other Outstanding Balance by the Borrower shall survive the termination of this Agreement and the other Loan Documents.</span>
          </p>
          <br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
          <br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
@@ -18237,7 +18239,7 @@ $pdf->Output($file_path_with_name, 'F');
                sans-serif;color:black'>&nbsp;These Terms and Conditions may be amended by the Lender at any time. Any such amendment shall take effect only prospectively i.e., after the amendment of the Terms and Conditions. However, the Lender shall upon such variation or amendment being made, inform the Borrower in respect of any variation or amendment in the Terms and Conditions and/or other charges as are applicable to the Loan.</span>
          </p>
          <br><br><br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
          <br><br><br>
          <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
@@ -18628,7 +18630,7 @@ $pdf->Output($file_path_with_name, 'F');
             </tr>
             </table>
             <br><br>
-        <img src='".$letterfooter_url."' width='100%'>
+        <img style='margin-top: 200px;' src='".$letterfooter_url."' width='100%'>
          
          <img src='".$letterhead_url."' width='100%'>
          <br><br>
@@ -18775,14 +18777,14 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
          </p> -->
          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-         <img src='".$letterfooter_url."' width='100%'>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- Loan Agreement END -->
    </body>
 </html>";
 
-            print_r($html_string_new);
-            exit;
+            // print_r($html_string_new);
+            // exit;
 
                     
                     
@@ -18794,49 +18796,43 @@ $pdf->Output($file_path_with_name, 'F');
             } else {
                 $file_path_with_name = UPLOAD_PATH . $file_name;
             }
-            
 
-            // print_r($html_string);
-//             ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+            require_once __DIR__ . '/../../vendor/autoload.php';
 
-            // require_once __DIR__ . '/../../vendor/autoload.php';
-            // require_once FCPATH . 'vendor/autoload.php';
+            $mpdf = new \Mpdf\Mpdf([
+                'tempDir' => sys_get_temp_dir(), // or '/tmp'
+                'debug' => false,
+                'showImageErrors' => false,
+            ]);
 
-            // $mpdf = new \Mpdf\Mpdf();
+            $mpdf->WriteHTML($html_string_new);
 
-
-
-            // $mpdf->WriteHTML($html_string);
-
-            // $mpdf->Output(TEMP_UPLOAD_PATH . $file_name, 'F');
-            // $mpdf->Output($file_path_with_name, 'F');
+            $mpdf->Output($file_path_with_name, 'I');
 
             // $this->load->library('Pdf');
             
 
             
             
-            require_once APPPATH . 'libraries/Pdf.php';
+//             require_once APPPATH . 'libraries/Pdf.php';
 
-$pdf = new Pdf();
-$pdf->AddPage();
+// $pdf = new Pdf();
+// $pdf->AddPage();
 
-// $pdf->SetFont('helvetica', '', 12);
+// // $pdf->SetFont('helvetica', '', 12);
 
-$pdf->writeHTML($html_string, true, false, true, false, '');
+// $pdf->writeHTML($html_string_new, true, false, true, false, '');
 
-ob_clean(); // Clear any previous output
-$pdf->Output($file_path_with_name, 'F');
+// ob_clean(); // Clear any previous output
+// $pdf->Output($file_path_with_name, 'F');
 
-    // if (file_exists($file_path_with_name)) {
-    //     echo 'PDF Uploaded Successfully';
-    //     echo $file_path_with_name;
-    // } else {
-    //     echo 'Failed to Upload PDF';
-    // }
-    // exit;
+    if (file_exists($file_path_with_name)) {
+        echo 'PDF Uploaded Successfully';
+        echo $file_path_with_name;
+    } else {
+        echo 'Failed to Upload PDF';
+    }
+    exit;
             
 
             if (file_exists($file_path_with_name)) {
