@@ -7000,7 +7000,6 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> Email:&nbsp;<a href='mailto:grievance@tejasloan.com' target='_blank'>grievance@tejasloan.com</a></span>,
-                     <a href='mailto:grievance@paymeindia.in' target='_blank'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br>
@@ -7080,7 +7079,6 @@ $pdf->Output($file_path_with_name, 'F');
                      </a>
                   </p>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance</span>
                   </p>
@@ -7119,7 +7117,6 @@ $pdf->Output($file_path_with_name, 'F');
                      <a href='mailto:grievance.nodal@amanfincap.com'>
                      <span style='font-size:9.0pt;font-family:sans-serif'>grievance.nodal@amanfincap.com</span>
                      </a>
-                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance </span>
@@ -14883,7 +14880,6 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> Email:&nbsp;<a href='mailto:grievance@tejasloan.com' target='_blank'>grievance@tejasloan.com</a></span>,
-                     <a href='mailto:grievance@paymeindia.in' target='_blank'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br>
@@ -14963,7 +14959,6 @@ $pdf->Output($file_path_with_name, 'F');
                      </a>
                   </p>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance</span>
                   </p>
@@ -15002,7 +14997,6 @@ $pdf->Output($file_path_with_name, 'F');
                      <a href='mailto:grievance.nodal@amanfincap.com'>
                      <span style='font-size:9.0pt;font-family:sans-serif'>grievance.nodal@amanfincap.com</span>
                      </a>
-                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance </span>
