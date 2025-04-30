@@ -5995,4889 +5995,4889 @@ $pdf->Output($file_path_with_name, 'F');
 
             $residence_address = trim($residence_address);
 
-            $html_string = '<!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>' . $subject . '</title>
-                        <style>
-                            table {
-                                width: 100%;
-                                border-collapse: collapse;
-                            }
-                            th, td {
-                                padding: 8px;
-                                text-align: left;
-                                border-bottom: 1px solid #ddd;
-                            }
-                            th, td, .first-table td {
-                                border: 1px solid #ddd;
-                            }
-                            th {
-                                background-color: #f2f2f2;
-                            }
-                            body {
-                                font-family: Arial, sans-serif;
-                                line-height: 1.6;
-                            }
-                            .container {
-                                max-width: 800px;
-                                margin: 0 auto;
-                                padding: 20px;
-                                text-align: justify;
-                                font-size: 15px;
-                            }
-                            .letterhead {
-                                text-align: center;
-                                margin-bottom: 20px;
-                            }
-                            .letterhead h1 {
-                                margin: 0;
-                            }
-                            .address {
-                                margin-bottom: 20px;
-                            }
-                            .details {
-                                margin-bottom: 20px;
-                            }
-                            .footer {
-                                margin-top: 20px;
-                                text-align: center;
-                            }
-                            .first-table {
-                                border: 1px solid #ddd;
-                                margin-bottom: 20px;
-                            }
-                            .loan-agreement{
-                                font-size: 18px;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="container">
-                            <h2 style="color: skyblue; text-align: center;">Key Fact Statement</h2>
-                            <table>
-                                <tr>
-                                    <th>S.No.</th>
-                                    <th>Parameters</th>
-                                    <th>Details</th>
-                                </tr>
-                                <tr>
-                                    <td>I</td>
-                                    <td>Name</td>
-                                    <td>' . $fullname . '</td>
-                                </tr>
-                                <tr>
-                                    <td>II</td>
-                                    <td>Loan Amount</td>
-                                    <td>RS. ' . number_format(round($camDetails->loan_recommended, 0), 2) . '/-</td>
-                                </tr>
-                                <tr>
-                                    <td>III</td>
-                                    <td>ROI (in % per day)</td>
-                                    <td>' . number_format($camDetails->roi, 2) . '</td>
-                                </tr>
-                                <tr>
-                                    <td>IV</td>
-                                    <td>Total interest charge during the entire Tenure of the loan</td>
-                                    <td>RS. ' . $total_interest . '/-</td>
-                                </tr>
-                                <tr>
-                                    <td>V</td>
-                                    <td>Processing Fee (Including 18% GST)</td>
-                                    <td>RS. ' . number_format(round($camDetails->admin_fee, 0), 2) . '/-</td>
-                                </tr>
-                                <tr>
-                                    <td>VI</td>
-                                    <td>Insurance charges, if any (in RS.)</td>
-                                    <td>Nil</td>
-                                </tr>
-                                <tr>
-                                    <td>VII</td>
-                                    <td>Others (if any) (in RS.)</td>
-                                    <td>Nil</td>
-                                </tr>
-                                <tr>
-                                    <td>VIII</td>
-                                    <td>Net disbursed amount</td>
-                                    <td>RS. ' . $final_disbursal . '</td>
-                                </tr>
-                                <tr>
-                                    <td>IX</td>
-                                    <td>Total Repayment Amount</td>
-                                    <td>RS. ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
-                                </tr>
-                                <tr>
-                                    <td>X</td>
-                                    <td>Annual Percentage Rate - Effective annualized interest rate (in %) (Considering the ROI of ' . $roi . '% per day)</td>
-                                    <td>  ' . round(($camDetails->roi * 365), 2) . ' </td>
-                                </tr>
-                                <tr>
-                                    <td>XI</td>
-                                    <td>Tenure of the Loan (days)</td>
-                                    <td>' . $camDetails->tenure . '</td>
-                                </tr>
-                                <tr>
-                                    <td>XII</td>
-                                    <td>Repayment frequency by the borrowert</td>
-                                    <td>One Time Only</td>
-                                </tr>
-                                <tr>
-                                    <td>XIII</td>
-                                    <td>Number of installments of repayment</td>
-                                    <td>One</td>
-                                </tr>
-                                <tr>
-                                    <td>XIV</td>
-                                    <td>Amount of each installment of repayment (in RS.)</td>
-                                    <td>RS. ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3"><strong>Details about Contingent Charges</strong></td>
-                                </tr>
+            // $html_string = '<!DOCTYPE html>
+            //         <html lang="en">
+            //         <head>
+            //             <meta charset="UTF-8">
+            //             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            //             <title>' . $subject . '</title>
+            //             <style>
+            //                 table {
+            //                     width: 100%;
+            //                     border-collapse: collapse;
+            //                 }
+            //                 th, td {
+            //                     padding: 8px;
+            //                     text-align: left;
+            //                     border-bottom: 1px solid #ddd;
+            //                 }
+            //                 th, td, .first-table td {
+            //                     border: 1px solid #ddd;
+            //                 }
+            //                 th {
+            //                     background-color: #f2f2f2;
+            //                 }
+            //                 body {
+            //                     font-family: Arial, sans-serif;
+            //                     line-height: 1.6;
+            //                 }
+            //                 .container {
+            //                     max-width: 800px;
+            //                     margin: 0 auto;
+            //                     padding: 20px;
+            //                     text-align: justify;
+            //                     font-size: 15px;
+            //                 }
+            //                 .letterhead {
+            //                     text-align: center;
+            //                     margin-bottom: 20px;
+            //                 }
+            //                 .letterhead h1 {
+            //                     margin: 0;
+            //                 }
+            //                 .address {
+            //                     margin-bottom: 20px;
+            //                 }
+            //                 .details {
+            //                     margin-bottom: 20px;
+            //                 }
+            //                 .footer {
+            //                     margin-top: 20px;
+            //                     text-align: center;
+            //                 }
+            //                 .first-table {
+            //                     border: 1px solid #ddd;
+            //                     margin-bottom: 20px;
+            //                 }
+            //                 .loan-agreement{
+            //                     font-size: 18px;
+            //                 }
+            //             </style>
+            //         </head>
+            //         <body>
+            //             <div class="container">
+            //                 <h2 style="color: skyblue; text-align: center;">Key Fact Statement</h2>
+            //                 <table>
+            //                     <tr>
+            //                         <th>S.No.</th>
+            //                         <th>Parameters</th>
+            //                         <th>Details</th>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>I</td>
+            //                         <td>Name</td>
+            //                         <td>' . $fullname . '</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>II</td>
+            //                         <td>Loan Amount</td>
+            //                         <td>RS. ' . number_format(round($camDetails->loan_recommended, 0), 2) . '/-</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>III</td>
+            //                         <td>ROI (in % per day)</td>
+            //                         <td>' . number_format($camDetails->roi, 2) . '</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>IV</td>
+            //                         <td>Total interest charge during the entire Tenure of the loan</td>
+            //                         <td>RS. ' . $total_interest . '/-</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>V</td>
+            //                         <td>Processing Fee (Including 18% GST)</td>
+            //                         <td>RS. ' . number_format(round($camDetails->admin_fee, 0), 2) . '/-</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>VI</td>
+            //                         <td>Insurance charges, if any (in RS.)</td>
+            //                         <td>Nil</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>VII</td>
+            //                         <td>Others (if any) (in RS.)</td>
+            //                         <td>Nil</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>VIII</td>
+            //                         <td>Net disbursed amount</td>
+            //                         <td>RS. ' . $final_disbursal . '</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>IX</td>
+            //                         <td>Total Repayment Amount</td>
+            //                         <td>RS. ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>X</td>
+            //                         <td>Annual Percentage Rate - Effective annualized interest rate (in %) (Considering the ROI of ' . $roi . '% per day)</td>
+            //                         <td>  ' . round(($camDetails->roi * 365), 2) . ' </td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>XI</td>
+            //                         <td>Tenure of the Loan (days)</td>
+            //                         <td>' . $camDetails->tenure . '</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>XII</td>
+            //                         <td>Repayment frequency by the borrowert</td>
+            //                         <td>One Time Only</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>XIII</td>
+            //                         <td>Number of installments of repayment</td>
+            //                         <td>One</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>XIV</td>
+            //                         <td>Amount of each installment of repayment (in RS.)</td>
+            //                         <td>RS. ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
+            //                     </tr>
+            //                     <tr>
+            //                         <td colspan="3"><strong>Details about Contingent Charges</strong></td>
+            //                     </tr>
 
-                                    <tr>
-                                        <td>XV</td>
-                                        <td>Rate of annualized penal charges in case of delayed payments (if any)</td>
-                                        <td>Double the (III)</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><strong>Other Disclosures</strong></td>
-                                    </tr>
+            //                         <tr>
+            //                             <td>XV</td>
+            //                             <td>Rate of annualized penal charges in case of delayed payments (if any)</td>
+            //                             <td>Double the (III)</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td colspan="3"><strong>Other Disclosures</strong></td>
+            //                         </tr>
 
-                                    <tr>
-                                        <td>XVI</td>
-                                        <td>Cooling off/look-up period during which borrower shall not be charged any penalty on prepayment of loan</td>
-                                        <td>3 Days</td>
-                                    </tr>
-                                    <tr>
-                                        <td>XVII</td>
-                                        <td>Name, designation, Address and phone number of nodal grievance redressal officer designated specifically to deal with FinTech/ digital lending related complaints/ issues</td>
-                                        <td>' . CONTACT_PERSON .' <br>Mobile: ' . REGISTED_MOBILE . '<br>Address: ' . REGISTED_ADDRESS . '</td>
-                                    </tr>
-                                </table>
-                                <div class="address">
-                                    <p><strong>' . COMPANY_NAME . '</strong><br>
-                                    ' . REGISTED_ADDRESS . '<br>
-                                    ' . REGISTED_MOBILE . ',<br>
-                                    info@tejasloan.com,<br>
-                                    <a href="https://tejasloan.com">https://www.tejasloan.com</a><br>
-                                    Date : ' . $sanction_date . ' </p>
-                                </div>
-                            <div class="customer">
-                                <p><strong>Customer Details</strong><br>
-                                Name of Customer  : ' . $fullname . '<br>
-                                Address of Customer  : ' . $residence_address . '<br></p>
-                            </div>
-                            <div class="details">
-                                <h2>Subject: Sanction Letter for Loan Approval</h2>
-                                <p>Dear ' . $fullname . ',</p>
-                                <p>We are pleased to inform you that your application for a loan with Aman Fincap Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
-                                <h3>Loan Details:</h3>
-                                <ul>
-                                    <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
-                                    <li>Loan Term: ' . $camDetails->tenure . '</li>
-                                    <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
-                                    <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
-                                </ul>
-                                <p>Your loan has been sanctioned with the above-mentioned terms and conditions. The loan amount will be disbursed directly to your designated bank account within ' . $sanction_date . ', subject to the completion of any remaining formalities.</p>
-                                <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@tejasloan.com .</p>
-                                <p>Kindly ensure that you adhere to the repayment schedule to avoid any unnecessary penalties or charges. Timely repayment will also help you maintain a positive credit history with our institution.</p>
-                                <p>We appreciate your trust in Aman Fincap Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
-                                <p>Thank you for choosing Aman Fincap Limited. We look forward to a mutually beneficial relationship.</p>
-                                <p>Best regards,</p>
-                                <p>Aman Fincap Limited</p>
-                            </div>
-                            <div class="loan-agreement">
-                                <h2 >Loan Agreement</h2>
-                                <p>This Loan Agreement is entered into on ' . $sanction_date . ', between:</p>
-                                <p>Aman Fincap Limited, a company duly registered under the laws of India, having its registered office at '. REGISTED_ADDRESS .' (hereinafter referred to as the "Lender"), on one part and</p>
-                                <p> ' . $fullname . ', an individual/legal entity, residing at address ' . $residence_address . '(hereinafter referred to as the "Borrower"), on the other part.</p>
-                                <h3>Background:</h3>
-                                <p>The Borrower has approached the Lender for a loan to meet its financial requirements, and the Lender has agreed to provide the loan on the terms and conditions set forth in this Agreement.</p>
-                            </div>
-                            <div class="loan-details">
-                                <table>
-                                    <tr>
-                                        <td>Customer Name:</td>
-                                        <td>' . $fullname . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sanctioned Loan Amount (Rs.):</td>
-                                        <td>' . number_format(round($camDetails->loan_recommended, 0), 2) . '/-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rate of Interest (%) per day:</td>
-                                        <td>' . number_format($camDetails->roi, 2) . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Date of Sanction:</td>
-                                        <td>' . $sanction_date . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Repayment Amount (Rs.):</td>
-                                        <td>' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tenure in Days:</td>
-                                        <td>' . $camDetails->tenure . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Repayment Date:</td>
-                                        <td>' . $camDetails->repayment_date . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Penal Interest (%) per day:</td>
-                                        <td>' . round(($camDetails->roi * 2), 2) . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Processing Fee (Rs.):</td>
-                                        <td>' . number_format(round($camDetails->admin_fee, 0), 2) . '/- (Including 18% GST)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Repayment Cheque(s):</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cheque drawn on (name of the Bank):</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cheque and NACH Bouncing Charges (Rs.):</td>
-                                        <td>1,000.00/- per bouncing/dishonour.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Annualised ROI (%):</td>
-                                        <td>' . round(($camDetails->roi * 365), 2) . '</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="loan-terms">
-                                <p>Kindly Note:</p>
-                                <p>Non-payment of loan on time will adversely affect your Credit score, further reducing your chances of getting Re loan again. Upon approval, the processing fee will be deducted from your Sanction amount and the balance amount will be disbursed to your account.</p>
-                                <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://tejasloan.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
-                                </td>.</p>
+            //                         <tr>
+            //                             <td>XVI</td>
+            //                             <td>Cooling off/look-up period during which borrower shall not be charged any penalty on prepayment of loan</td>
+            //                             <td>3 Days</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>XVII</td>
+            //                             <td>Name, designation, Address and phone number of nodal grievance redressal officer designated specifically to deal with FinTech/ digital lending related complaints/ issues</td>
+            //                             <td>' . CONTACT_PERSON .' <br>Mobile: ' . REGISTED_MOBILE . '<br>Address: ' . REGISTED_ADDRESS . '</td>
+            //                         </tr>
+            //                     </table>
+            //                     <div class="address">
+            //                         <p><strong>' . COMPANY_NAME . '</strong><br>
+            //                         ' . REGISTED_ADDRESS . '<br>
+            //                         ' . REGISTED_MOBILE . ',<br>
+            //                         info@tejasloan.com,<br>
+            //                         <a href="https://tejasloan.com">https://www.tejasloan.com</a><br>
+            //                         Date : ' . $sanction_date . ' </p>
+            //                     </div>
+            //                 <div class="customer">
+            //                     <p><strong>Customer Details</strong><br>
+            //                     Name of Customer  : ' . $fullname . '<br>
+            //                     Address of Customer  : ' . $residence_address . '<br></p>
+            //                 </div>
+            //                 <div class="details">
+            //                     <h2>Subject: Sanction Letter for Loan Approval</h2>
+            //                     <p>Dear ' . $fullname . ',</p>
+            //                     <p>We are pleased to inform you that your application for a loan with Aman Fincap Limited has been successfully approved. We understand the importance of your financial needs and are committed to providing you with the necessary assistance to meet them.</p>
+            //                     <h3>Loan Details:</h3>
+            //                     <ul>
+            //                         <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
+            //                         <li>Loan Term: ' . $camDetails->tenure . '</li>
+            //                         <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
+            //                         <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
+            //                     </ul>
+            //                     <p>Your loan has been sanctioned with the above-mentioned terms and conditions. The loan amount will be disbursed directly to your designated bank account within ' . $sanction_date . ', subject to the completion of any remaining formalities.</p>
+            //                     <p>Please carefully review the loan agreement, including the terms, conditions, and repayment schedule. Should you have any questions or require clarification regarding the loan terms, feel free to contact our customer service team at +91-88000 02890 or email us at info@tejasloan.com .</p>
+            //                     <p>Kindly ensure that you adhere to the repayment schedule to avoid any unnecessary penalties or charges. Timely repayment will also help you maintain a positive credit history with our institution.</p>
+            //                     <p>We appreciate your trust in Aman Fincap Limited, and we assure you of our dedicated support in meeting your financial requirements.</p>
+            //                     <p>Thank you for choosing Aman Fincap Limited. We look forward to a mutually beneficial relationship.</p>
+            //                     <p>Best regards,</p>
+            //                     <p>Aman Fincap Limited</p>
+            //                 </div>
+            //                 <div class="loan-agreement">
+            //                     <h2 >Loan Agreement</h2>
+            //                     <p>This Loan Agreement is entered into on ' . $sanction_date . ', between:</p>
+            //                     <p>Aman Fincap Limited, a company duly registered under the laws of India, having its registered office at '. REGISTED_ADDRESS .' (hereinafter referred to as the "Lender"), on one part and</p>
+            //                     <p> ' . $fullname . ', an individual/legal entity, residing at address ' . $residence_address . '(hereinafter referred to as the "Borrower"), on the other part.</p>
+            //                     <h3>Background:</h3>
+            //                     <p>The Borrower has approached the Lender for a loan to meet its financial requirements, and the Lender has agreed to provide the loan on the terms and conditions set forth in this Agreement.</p>
+            //                 </div>
+            //                 <div class="loan-details">
+            //                     <table>
+            //                         <tr>
+            //                             <td>Customer Name:</td>
+            //                             <td>' . $fullname . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Sanctioned Loan Amount (Rs.):</td>
+            //                             <td>' . number_format(round($camDetails->loan_recommended, 0), 2) . '/-</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Rate of Interest (%) per day:</td>
+            //                             <td>' . number_format($camDetails->roi, 2) . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Date of Sanction:</td>
+            //                             <td>' . $sanction_date . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Total Repayment Amount (Rs.):</td>
+            //                             <td>' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Tenure in Days:</td>
+            //                             <td>' . $camDetails->tenure . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Repayment Date:</td>
+            //                             <td>' . $camDetails->repayment_date . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Penal Interest (%) per day:</td>
+            //                             <td>' . round(($camDetails->roi * 2), 2) . '</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Processing Fee (Rs.):</td>
+            //                             <td>' . number_format(round($camDetails->admin_fee, 0), 2) . '/- (Including 18% GST)</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Repayment Cheque(s):</td>
+            //                             <td>-</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Cheque drawn on (name of the Bank):</td>
+            //                             <td>-</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Cheque and NACH Bouncing Charges (Rs.):</td>
+            //                             <td>1,000.00/- per bouncing/dishonour.</td>
+            //                         </tr>
+            //                         <tr>
+            //                             <td>Annualised ROI (%):</td>
+            //                             <td>' . round(($camDetails->roi * 365), 2) . '</td>
+            //                         </tr>
+            //                     </table>
+            //                 </div>
+            //                 <div class="loan-terms">
+            //                     <p>Kindly Note:</p>
+            //                     <p>Non-payment of loan on time will adversely affect your Credit score, further reducing your chances of getting Re loan again. Upon approval, the processing fee will be deducted from your Sanction amount and the balance amount will be disbursed to your account.</p>
+            //                     <p>This Sanction letter is valid for 24 Hours only. You can Prepay/Repay the loan amount using our link <br> <a href="https://tejasloan.com/repay-now" target="_blank"style="color: #4447fd; text-decoration: blink">Payment Link</a>
+            //                     </td>.</p>
 
-                                <h2>Agreed Terms and Conditions:</h2>
-                                <ol>
-                                    <li><strong>Loan Details:</strong>
-                                        <ul>
-                                            <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
-                                            <li>Loan Term: ' . $camDetails->tenure . '</li>
-                                            <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
-                                            <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Disbursement:</strong>
-                                        <ul>
-                                            <li>The Lender shall disburse the loan amount to the Borrower of designated bank account within ' . $sanction_date . ' from the execution of this Agreement, subject to the completion of all necessary documentation and formalities.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Repayment:</strong>
-                                        <ul>
-                                            <li>The Borrower agrees to repay the loan amount along with accrued interest as per the agreed repayment schedule outlined in Schedule A attached hereto.</li>
-                                            <li>The Borrower shall make repayments on or before the due dates specified in the repayment schedule.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Prepayment:</strong>
-                                        <ul>
-                                            <li>The Borrower reserves the right to prepay the loan, in part or in full, at any time without incurring any prepayment penalties or charges.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Default:</strong>
-                                        <ul>
-                                            <li>In the event of default in repayment, the Borrower shall be liable to pay default interest at the rate specified in Schedule A.</li>
-                                            <li>The Lender reserves the right to take legal action or pursue any other remedies available under law in case of default by the Borrower.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Representations and Warranties:</strong>
-                                        <ul>
-                                            <li>The Borrower represents and warrants that all information provided to the Lender in connection with this Agreement is true, accurate, and complete.</li>
-                                            <li>The Borrower undertakes to notify the Lender immediately of any material changes in the information provided.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Governing Law and Jurisdiction:</strong>
-                                        <ul>
-                                            <li>This Agreement shall be governed by and construed in accordance with the laws of [Delhi].</li>
-                                            <li>Any disputes arising out of or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].</li>
-                                        </ul>
-                                    </li>
-                                </ol>
+            //                     <h2>Agreed Terms and Conditions:</h2>
+            //                     <ol>
+            //                         <li><strong>Loan Details:</strong>
+            //                             <ul>
+            //                                 <li>Loan Amount:' . number_format(round($camDetails->loan_recommended, 0), 2) . '</li>
+            //                                 <li>Loan Term: ' . $camDetails->tenure . '</li>
+            //                                 <li>Interest Rate: ' . number_format($camDetails->roi, 2) . '</li>
+            //                                 <li>Repayment Amount: ' . number_format(round($camDetails->repayment_amount, 0), 2) . '/-</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Disbursement:</strong>
+            //                             <ul>
+            //                                 <li>The Lender shall disburse the loan amount to the Borrower of designated bank account within ' . $sanction_date . ' from the execution of this Agreement, subject to the completion of all necessary documentation and formalities.</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Repayment:</strong>
+            //                             <ul>
+            //                                 <li>The Borrower agrees to repay the loan amount along with accrued interest as per the agreed repayment schedule outlined in Schedule A attached hereto.</li>
+            //                                 <li>The Borrower shall make repayments on or before the due dates specified in the repayment schedule.</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Prepayment:</strong>
+            //                             <ul>
+            //                                 <li>The Borrower reserves the right to prepay the loan, in part or in full, at any time without incurring any prepayment penalties or charges.</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Default:</strong>
+            //                             <ul>
+            //                                 <li>In the event of default in repayment, the Borrower shall be liable to pay default interest at the rate specified in Schedule A.</li>
+            //                                 <li>The Lender reserves the right to take legal action or pursue any other remedies available under law in case of default by the Borrower.</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Representations and Warranties:</strong>
+            //                             <ul>
+            //                                 <li>The Borrower represents and warrants that all information provided to the Lender in connection with this Agreement is true, accurate, and complete.</li>
+            //                                 <li>The Borrower undertakes to notify the Lender immediately of any material changes in the information provided.</li>
+            //                             </ul>
+            //                         </li>
+            //                         <li><strong>Governing Law and Jurisdiction:</strong>
+            //                             <ul>
+            //                                 <li>This Agreement shall be governed by and construed in accordance with the laws of [Delhi].</li>
+            //                                 <li>Any disputes arising out of or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].</li>
+            //                             </ul>
+            //                         </li>
+            //                     </ol>
 
-                                <p><strong>IN WITNESS WHEREOF</strong>, the parties hereto have executed this Agreement on the date first above written.</p>
-                                <p><strong>For Aman Fincap Limited:</strong></p><br>
-                                <p><strong>For the Borrower:</strong></p>
-                                <p>' . $fullname . '<br>' . $sanction_date . '</p>
+            //                     <p><strong>IN WITNESS WHEREOF</strong>, the parties hereto have executed this Agreement on the date first above written.</p>
+            //                     <p><strong>For Aman Fincap Limited:</strong></p><br>
+            //                     <p><strong>For the Borrower:</strong></p>
+            //                     <p>' . $fullname . '<br>' . $sanction_date . '</p>
 
-                                <p><strong>Schedule A: Repayment Schedule</strong></p>
-                                <p>' . $sanction_date . '</p>
+            //                     <p><strong>Schedule A: Repayment Schedule</strong></p>
+            //                     <p>' . $sanction_date . '</p>
 
-                                <p>Please ensure that all terms and conditions are thoroughly reviewed and understood by both parties before signing the agreement. It is also advisable to consult with legal professionals to ensure compliance with applicable laws and regulations.</p>
-                            </div>
+            //                     <p>Please ensure that all terms and conditions are thoroughly reviewed and understood by both parties before signing the agreement. It is also advisable to consult with legal professionals to ensure compliance with applicable laws and regulations.</p>
+            //                 </div>
 
-                        </div>
-                    </body>
-                    </html>';
+            //             </div>
+            //         </body>
+            //         </html>';
 
             // $letterhead_url = SANCTION_LETTER_HEADER;
             // $letterfooter_url = SANCTION_LETTER_FOOTER;
             $letterhead_url = SANCTION_LETTER_NEW_HEADER;
             $letterfooter_url = SANCTION_LETTER_NEW_FOOTER;
 
-//             $html_string_new = "<html>
-//    <head>
-//       <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
-//       <meta name=Generator content='Microsoft Word 15 (filtered)'>
-//       <style>
-//          <!--
-//             /* Font Definitions */
-//             @font-face {
-//               font-family: 'Cambria Math';
-//               panose-1: 2 4 5 3 5 4 6 3 2 4;
-//             }
+            $html_string_new = "<html>
+   <head>
+      <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+      <meta name=Generator content='Microsoft Word 15 (filtered)'>
+      <style>
+         <!--
+            /* Font Definitions */
+            @font-face {
+              font-family: 'Cambria Math';
+              panose-1: 2 4 5 3 5 4 6 3 2 4;
+            }
             
-//             @font-face {
-//               font-family: Calibri;
-//               panose-1: 2 15 5 2 2 2 4 3 2 4;
-//             }
+            @font-face {
+              font-family: Calibri;
+              panose-1: 2 15 5 2 2 2 4 3 2 4;
+            }
             
-//             /* Style Definitions */
-//             p.MsoNormal,
-//             li.MsoNormal,
-//             div.MsoNormal {
-//               margin-top: 0in;
-//               margin-right: 0in;
-//               margin-bottom: 8.0pt;
-//               margin-left: 0in;
-//               line-height: 107%;
-//               font-size: 11.0pt;
-//               font-family: sans-serif;
-//             }
+            /* Style Definitions */
+            p.MsoNormal,
+            li.MsoNormal,
+            div.MsoNormal {
+              margin-top: 0in;
+              margin-right: 0in;
+              margin-bottom: 8.0pt;
+              margin-left: 0in;
+              line-height: 107%;
+              font-size: 11.0pt;
+              font-family: sans-serif;
+            }
             
-//             a:link,
-//             span.MsoHyperlink {
-//               color: blue;
-//               text-decoration: underline;
-//             }
+            a:link,
+            span.MsoHyperlink {
+              color: blue;
+              text-decoration: underline;
+            }
             
-//             p {
-//               margin-right: 0in;
-//               margin-left: 0in;
-//               font-size: 9.0pt;
-//               font-family: serif;
-//             }
+            p {
+              margin-right: 0in;
+              margin-left: 0in;
+              font-size: 9.0pt;
+              font-family: serif;
+            }
             
-//             .MsoChpDefault {
-//               font-family: sans-serif;
-//             }
+            .MsoChpDefault {
+              font-family: sans-serif;
+            }
             
-//             .MsoPapDefault {
-//               margin-bottom: 8.0pt;
-//               line-height: 107%;
-//             }
+            .MsoPapDefault {
+              margin-bottom: 8.0pt;
+              line-height: 107%;
+            }
             
-//             @page WordSection1 {
-//              size: 2480px 3508px;
-//               margin: 30px 78.83px 30px 30px;
-//             }
+            @page WordSection1 {
+             size: 2480px 3508px;
+              margin: 30px 78.83px 30px 30px;
+            }
             
-//             div.WordSection1 {
-//               page: WordSection1;
-//             }
+            div.WordSection1 {
+              page: WordSection1;
+            }
             
-//             /* List Definitions */
-//             ol {
-//               margin-bottom: 0in;
-//             }
+            /* List Definitions */
+            ol {
+              margin-bottom: 0in;
+            }
             
-//             ul {
-//               margin-bottom: 0in;
-//             }
-//               .second-page{
-//               margin-top : 200px;
-//               }
+            ul {
+              margin-bottom: 0in;
+            }
+              .second-page{
+              margin-top : 200px;
+              }
 
-//             -->
+            -->
             
-//       </style>
-//    </head>
-//    <body lang=EN-US link=blue vlink='#954F72' style='word-wrap:break-word'>
-//       <!-- SANCTION LETTER START -->
-//       <div class=WordSection1>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p align=center style='text-align:center'>
-//             <b>
-//             <u>
-//             <span style='font-size:9.0pt;
-//                color:black'>SANCTION LETTER</span>
-//             </u>
-//             </b>
-//          </p>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>&nbsp;</span>
-//          </p>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>Dear ".$fullname.",</span>
-//          </p>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>Sub:&nbsp; <b>
-//             <u>Short Term Loan from Aman Fincap Limited.</u>
-//             </b>
-//             </span>
-//          </p>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>With reference to your application dated&nbsp;".date('d-m-Y', strtotime($leadDetails->created_on))."&nbsp;for a Short Term Loan, we have the pleasure of sanctioning you an amount of&nbsp; <strong>Rs. " . number_format(round($camDetails->loan_recommended, 0), 2) . "</strong> subject to the following terms and conditions: </span>
-//          </p>
-//          <p style='margin-left:28.35pt;text-align:justify;text-indent:-10.35pt'>
-//             <span style='font-size:9.0pt;color:black'>1. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;color:black'>Loan Amount: " . number_format(round($camDetails->loan_recommended, 0), 2) . "</span>
-//             </b>
-//          </p>
-//          <p style='margin-left:28.35pt;text-align:justify;text-indent:-10.35pt'>
-//             <span style='font-size:9.0pt;color:black'>2. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;color:black'>Interest Rate: ". number_format($camDetails->roi, 2) ."%</span>
-//             </b>
-//          </p>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>As of effective date, the Schedule of interest and the charges are as follows:</span>
-//          </p>
-//          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=652 style='width:100%;border-collapse:collapse;'>
-//             <tr>
-//                <td width=192 style='width:144.1pt;border:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>Interest on the Loan</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:344.55pt;border:solid black 1.0pt;border-left:
-//                   none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;color:black'>". number_format($camDetails->roi, 2) ."</span>
-//                      </b>
-//                      <b>
-//                      <span style='font-size:9.0pt;color:black'>% per day from the date of disbursal until the date of repayment. In the event of failure to make payment on due date, a penal interest of ". round(($camDetails->roi * 2), 2) ."% per day shall be applicable from the due date until the date of payment.</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>Processing Fee</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:344.55pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>Lender will charge a processing fee of INR ". number_format(round($camDetails->admin_fee, 0), 2) ." including applicable taxes.</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>Late Fee</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:344.55pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>In case of delay in payment of amount due, late fee charges shall be INR ". round(($camDetails->roi * 2), 2) ."% of the loan amount, whichever is higher.</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>Maximum interest rate</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:344.55pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;
-//                         color:black'>The Interest rate on the loan shall not exceed 50% per month.</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <p style='text-align:justify'>
-//             <span style='font-size:9.0pt;color:black'>The Lender, may at its sole discretion, waive or reduce the charges as mentioned above, on a case to case basis.</span>
-//          </p>
-//          <p>
-//             <span style='font-size:9.0pt;color:black'>For any queries, you may write to us at&nbsp;</span>
-//             <a href='mailto:info@amanfincap.com' target='_blank'>
-//             <span style='font-size:
-//                9.0pt'>info@amanfincap.com</span>
-//             </a>
-//             <span style='font-size:9.0pt;color:black'> ,&nbsp;</span>
-//             <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
-//             <span style='font-size:9.0pt'>grievanceredressal@amanfincap.com</span>
-//             </a>
-//             <span style='font-size:9.0pt;color:black'>
-//             <br> Look forward to serving you. <br> Kind Regards </span>
-//          </p>
-//          <p class=MsoNormal style='text-align:justify'>&nbsp;</p>
-//          <br><br><br><br><br><br><br><br>
-//          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-//       </div>
-//       <!-- SANCTION LETTER END -->
-//       <!-- KEY FACT STATEMENT START -->
-//       <div class='WordSection1 second-page'>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal align=center style='margin-top:0.2in;margin-bottom:0.2in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>KEY FACT STATEMENT</span>
-//             </b>
-//          </p>
-//          <!-- <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br> (EMI) </span>
-//             </b>
-//          </p> -->
-//          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
-//             0.2in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>A. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>DETAILS OF LOAN</span>
-//             </b>
-//          </p>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
-//             <tr>
-//                <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Name of the Lender</span>
-//                   </p>
-//                </td>
-//                <td style='border:solid black 1.0pt;border-left:
-//                   none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Aman Fincap Limited.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Name of the Borrower</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".$fullname."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Name of the Lending Service Provider (LSP)</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Naman Finlease Private Limited</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Name of the Digital Lending Application (DLA)</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>TEJAS LOAN</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Name of the of Loan Service Provider acting as recovery agent and authorized to approach the Borrower</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Naman Finlease Private Limited</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Purpose of the Loan</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".$leadDetails->purpose."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Type of loan</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>BULLET LOAN / ONE TIME REPAYMENT</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Loan Amount (INR)</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".number_format(round($camDetails->loan_recommended, 0), 2)."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>APR (Annualised Percentage Rate)</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>
-//                   </p>
-//                   <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//                      margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>1) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//                      </span>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Fixed Rate of Interest : ". number_format($camDetails->roi, 2) ." % on a daily basis;</span>
-//                   </p>
-//                   <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//                      margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>2) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//                      </span>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Processing fee : ".number_format(round($camDetails->admin_fee, 0), 2)." (one time, non-refundable fee levied for processing and grant of loan, Taxes and Levies as applicable);</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Net disbursed amount</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>INR ".$final_disbursal." after deduction of Processing Fee;</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Total Repayment Amount</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>INR ".number_format(round($camDetails->repayment_amount, 0), 2)."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Tenure /Term of Loan in days</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".$camDetails->tenure."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Due Date</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".$camDetails->repayment_date."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Cooling-Off period*</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>3 days</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td colspan='2' style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Fees and Charges</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td valign=top style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>&nbsp;</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Pre-Payment Charges</span>
-//                   </p>
-//                </td>
-//                <td style='border:solid black 1.0pt;border-left:
-//                   none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>NA</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width='200' style='border:solid black 1.0pt;border-top:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Default /Penal Rate of Interest</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:solid black 1.0pt;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>According to Late Payment/Bounce Charge Grid</span>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <br>
-//          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <br>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
-//             <tr>
-//                <td width='200' style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Taxes &amp; Levies</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:solid black 1.0pt;;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>The Loan and any other services rendered by the Lender and/ or payments made by the Borrower shall be subject to applicable taxes notified by the government from time to time. The Borrower shall pay all taxes present and future on any transactions undertaken with the Lender.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width='200' style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Costs and charges</span>
-//                   </p>
-//                </td>
-//                <td style='border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>1. Cheque/electronic Instrument bounce /non-registration of NACH – NA <br> 2. Payment gateway charges for repayment –NA <br> 3. Stamp Duty -NA </span>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>*A cooling off period allows you / Borrower / end-user to cancel or withdraw from the loan until the Cooling-off Period. Upon expiry of the Cooling-off Period, the loan terms shall be deemed to be accepted by you. The Cooling-off Period on the loan commences / starts from the date of signing / accepting the loan terms / agreement and ends on the third (3) day from such acceptance. The Lender shall not levy any penalty or pre-payment charges for cancellation during the Cooling-off Period.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>To apply for cancellation of loan during the Cooling-off Period, a request must be submitted by the Borrower at&nbsp;</span>
-//             <u>
-//             <a href='mailto:info@amanfincap.com' target='_blank'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:blue'>info@amanfincap.com</span>
-//                </a>
-//             </u>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>,&nbsp;</span>
-//             <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
-//             </a>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>. After submission of such request, the Borrower must submit a copy of the bank account statement in which the said loan amount was disbursed along with an undertaking that such loan amount was not utilized by the Borrower during the Cooling-off Period.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The cancellation request will only be accepted, if (a) the loan has not been utilized; and (b) the Borrower repays the principal amount along with the Rate of Interest.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
-//             0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>B. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>GRIEVANCE REDRESSAL MECHANISM</span>
-//             </b>
-//          </p>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
-//             <tr>
-//                <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Level_1</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=590 colspan=2 style='width:442.3pt;border:solid black 1.0pt;
-//                   border-left:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Grievance Redressal Officer (GRO)</span>
-//                      </b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Borrowers can refer to Grievance Redressal Policy at <a href='https://tejasloan.com/privacy-policy' target='_blank'>https://tejasloan.com/privacy-policy</a></span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>LSP</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=305 style='width:228.8pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Grievance Redressal Officer (GRO)</span>
-//                      </b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br>
-//                      <br> Ms. GEETA MEHTA </span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Address: D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010 <br> Contact No:&nbsp;9990037064 </span>
-//                      <a href='tel:9319738611'></a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Email:&nbsp;<a href='mailto:grievance@tejasloan.com' target='_blank'>grievance@tejasloan.com</a></span>,
-//                      <a href='mailto:grievance@paymeindia.in' target='_blank'>grievance@paymeindia.in</a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br>
-//                      <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
-//                   </p>
-//                </td>
-//                <td width=285 style='width:213.5pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Nodal Officer</span>
-//                      </b>
-//                      <span style='font-size:9.0pt;
-//                         font-family:sans-serif;color:black'>
-//                      <br>
-//                      <br> Mr. NITIN VAID </span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Address: D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Contact No:&nbsp;9355562952</span>
-//                      <a href='tel:9319738611'></a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Email:&nbsp;<a href='info@tejasloan.com' target='_blank'>info@tejasloan.com</a> <br>
-//                      <br> If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <br><br><br><br>
-//          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
-//             <tr>
-//                <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>RE</span>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=305 style='width:228.8pt;border-top:solid black 1.0pt;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Grievance Redressal Officer (GRO)</span>
-//                      </b>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Mr. ANIKET PRAJAPATI</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Address: Office No. 105, First Floor, Plot No. 1/50, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Shahdara, Shahdara, Delhi, India, 110092</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Contact No:&nbsp;9310604350 </span>
-//                      <a href='tel:9319738611'></a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Email:&nbsp; </span>
-//                      <a href='mailto:grievanceredressal@amanfincap.com'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
-//                      </a>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance</span>
-//                   </p>
-//                </td>
-//                <td width=285 style='width:213.5pt;border-top:solid black 1.0pt;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>&nbsp;</span>
-//                      </b>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Nodal Officer</span>
-//                      </b>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Mr. NITESH MISHRA</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Address: Office No. 105, First Floor, Plot No. 1/50, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Shahdara, Shahdara, Delhi, India, 110092</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Contact No:&nbsp;9560567112</span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <a href='tel:9319738611'></a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> Email:&nbsp; </span>
-//                      <a href='mailto:grievance.nodal@amanfincap.com'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>grievance.nodal@amanfincap.com</span>
-//                      </a>
-//                      <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>
-//                      <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance </span>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>&nbsp;</span>
-//                      </b>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>&nbsp;</span>
-//                      </b>
-//                   </p>
-//                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//                      <b>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>&nbsp;</span>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
-//             0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>C. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>TERMS &amp; CONDITIONS OF RECOVERY MECHANISM</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Lender undertakes the recovery practices considering the following terms.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>In-house/Outsource Recovery</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Telephone Recovery {Human / IVR / Robo Calls}</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Digital Recovery</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Reminder Communication</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Legal Notice</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Arbitration &amp; Conciliation</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br> For the purpose of undertaking collection and recovery the Lender may, either on its own or through the service provider (including its agents etc.), undertake collection or recovery from the Borrower. The details of service provider and its agents etc. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
-//             0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>D. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>REPAYMENT SCHEDULE</span>
-//             </b>
-//          </p>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
-//             <tr>
-//                <td width=66 style='width:49.25pt;border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>S.No.</span>
-//                   </p>
-//                </td>
-//                <td width=113 style='width:85.05pt;border:solid black 1.0pt;border-left:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Principal (INR)</span>
-//                   </p>
-//                </td>
-//                <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Interest (INR)</span>
-//                   </p>
-//                </td>
-//                <td width=104 style='width:78.0pt;border:solid black 1.0pt;border-left:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Fees (INR)</span>
-//                   </p>
-//                </td>
-//                <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Due Date</span>
-//                   </p>
-//                </td>
-//                <td width=113 style='width:85.05pt;border:solid black 1.0pt;border-left:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>Repayable (INR)</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=66 style='width:49.25pt;border:solid black 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>1</span>
-//                   </p>
-//                </td>
-//                <td width=113 style='width:85.05pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".number_format(round($camDetails->loan_recommended, 0), 2)."</span>
-//                   </p>
-//                </td>
-//                <td width=123 style='width:92.1pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>". number_format($camDetails->roi, 2) ."</span>
-//                   </p>
-//                </td>
-//                <td width=104 style='width:78.0pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".number_format(round($camDetails->admin_fee, 0), 2)."</span>
-//                   </p>
-//                </td>
-//                <td width=123 style='width:92.1pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".$camDetails->repayment_date."</span>
-//                   </p>
-//                </td>
-//                <td width=113 style='width:85.05pt;border-top:none;border-left:none;
-//                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//                      line-height:normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif;
-//                         color:black'>".number_format(round($camDetails->repayment_amount, 0), 2)."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>For any queries, you may write to us at&nbsp; </span>
-//             <a href='mailto:info@amanfincap.com' target='_blank'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>info@amanfincap.com</span>
-//             </a>,
-//             <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
-//             </a>
-//             <u>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:blue'></span>
-//             </u>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <br> Look forward to serving you. <br> Kind Regards </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
-//       </div>
-//       <!-- KEY FACT STATEMENT END -->
-//       <!-- Loan Terms START -->
-//       <div class=WordSection1>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>LOAN CUM COMMERCIAL TERMS</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>By clicking the &quot;I AGREE&quot; button, you acknowledge that you have read, understood, and accepted the terms and conditions set forth herein (“Terms”). You further agree to be bound by these Terms and will be fully responsible for complying with them. If you do not agree with any provision of these Terms, do not click the “I AGREE” button.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>Upon your acceptance of these Terms and the Key Fact Statement (“KFS”), you, the borrower (“Borrower”)—which term shall include individual, legal heir(s), successor(s), and permitted assignee(s), unless repugnant to the context—confirm having requested a credit facility from <b>Aman Fincap Ltd.,</b> having its registered office at 105, Plot No. 1/50, First Floor, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Delhi-110092 (&quot;Lender&quot;), under the conditions specified herein. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>The Borrower hereby understands and acknowledges that these Terms are for two loan products, namely (a) Bullet Repayment; (b) EMI / Installment and that based on the nature / type of Loan availed by me / us through the Application Form and thereafter accepted in the KFS, only the respective Loan product Terms shall apply.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Definition:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;In these Terms, the capitalized words shall have the following meanings. All terms capitalized but not defined below shall have such meaning as ascribed to them in the Commercial Terms:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>ANNUALISED PERCENTAGE RATE / APR</span>
-//             </b>
-//             <span style='font-family:
-//                sans-serif;color:black'>&nbsp;means the effective annualised rate payable by the Borrower based on an all-inclusive cost and margin including cost of funds, credit cost and operating cost, processing fee, verification charges, maintenance charges, etc., and / or such specific costs indicated in the KFS.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>APPLICATION FORM</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means, direct application made by the Borrower for the Loan through web portal / mobile application of the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>BORROWER</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means the individual availing the Loan from the Lender in under these Terms hereof and who has agreed to the terms and conditions contained in these Terms for the purpose of availing Loan.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>BULLET REPAYMENT</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean such Loan product where the Borrower repays the full Outstanding Amount on one fixed Due Date;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>COMMERCIAL TERMS</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean the terms applicable to the Loan as detailed in SCHEDULE I of these Terms.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>DUE DATE</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean such date identified in the Commercial Terms and KFS on which the EMI shall be due and payable by the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>ECS OR NACH</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means electronic clearing services / electronic payment services, consented to in writing by Borrower, for facilitating the payment of EMI, fees and other applicable charges to the Lender in connection with the Loan.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>ESSENTIAL DATA</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means such data which is statutorily required by the Lender to be retained for compliance with applicable laws.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>EQUATED MONTHLY INSTALLMENT (EMI) / INSTALLMENT</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;shall mean such Loan product whereby the Borrower repays the Outstanding Amount at such frequency (monthly / quarterly) as indicated in the Commercial Terms on the respective Due Date during the Tenure of the Loan.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.10 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>GRIEVANCE REDRESSAL OFFICER</span>
-//             </b>
-//             <span style='font-family:
-//                sans-serif;color:black'>&nbsp;shall mean the officer named in the Commercial Terms and KFS who shall address and resolve the complaints / queries of Borrowers.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.11 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>LOAN</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means the credit facility granted / agreed to be granted by the Lender to the Borrower.</span>
-//          </p>
+      </style>
+   </head>
+   <body lang=EN-US link=blue vlink='#954F72' style='word-wrap:break-word'>
+      <!-- SANCTION LETTER START -->
+      <div class=WordSection1>
+         <img src='".$letterhead_url."' width='100%'>
+         <p align=center style='text-align:center'>
+            <b>
+            <u>
+            <span style='font-size:9.0pt;
+               color:black'>SANCTION LETTER</span>
+            </u>
+            </b>
+         </p>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>&nbsp;</span>
+         </p>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>Dear ".$fullname.",</span>
+         </p>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>Sub:&nbsp; <b>
+            <u>Short Term Loan from Aman Fincap Limited.</u>
+            </b>
+            </span>
+         </p>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>With reference to your application dated&nbsp;".date('d-m-Y', strtotime($leadDetails->created_on))."&nbsp;for a Short Term Loan, we have the pleasure of sanctioning you an amount of&nbsp; <strong>Rs. " . number_format(round($camDetails->loan_recommended, 0), 2) . "</strong> subject to the following terms and conditions: </span>
+         </p>
+         <p style='margin-left:28.35pt;text-align:justify;text-indent:-10.35pt'>
+            <span style='font-size:9.0pt;color:black'>1. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;color:black'>Loan Amount: " . number_format(round($camDetails->loan_recommended, 0), 2) . "</span>
+            </b>
+         </p>
+         <p style='margin-left:28.35pt;text-align:justify;text-indent:-10.35pt'>
+            <span style='font-size:9.0pt;color:black'>2. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;color:black'>Interest Rate: ". number_format($camDetails->roi, 2) ."%</span>
+            </b>
+         </p>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>As of effective date, the Schedule of interest and the charges are as follows:</span>
+         </p>
+         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=652 style='width:100%;border-collapse:collapse;'>
+            <tr>
+               <td width=192 style='width:144.1pt;border:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>Interest on the Loan</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=459 style='width:344.55pt;border:solid black 1.0pt;border-left:
+                  none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;color:black'>". number_format($camDetails->roi, 2) ."</span>
+                     </b>
+                     <b>
+                     <span style='font-size:9.0pt;color:black'>% per day from the date of disbursal until the date of repayment. In the event of failure to make payment on due date, a penal interest of ". round(($camDetails->roi * 2), 2) ."% per day shall be applicable from the due date until the date of payment.</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>Processing Fee</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=459 style='width:344.55pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>Lender will charge a processing fee of INR ". number_format(round($camDetails->admin_fee, 0), 2) ." including applicable taxes.</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>Late Fee</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=459 style='width:344.55pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>In case of delay in payment of amount due, late fee charges shall be INR ". round(($camDetails->roi * 2), 2) ."% of the loan amount, whichever is higher.</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>Maximum interest rate</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=459 style='width:344.55pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <span style='font-size:9.0pt;
+                        color:black'>The Interest rate on the loan shall not exceed 50% per month.</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <p style='text-align:justify'>
+            <span style='font-size:9.0pt;color:black'>The Lender, may at its sole discretion, waive or reduce the charges as mentioned above, on a case to case basis.</span>
+         </p>
+         <p>
+            <span style='font-size:9.0pt;color:black'>For any queries, you may write to us at&nbsp;</span>
+            <a href='mailto:info@amanfincap.com' target='_blank'>
+            <span style='font-size:
+               9.0pt'>info@amanfincap.com</span>
+            </a>
+            <span style='font-size:9.0pt;color:black'> ,&nbsp;</span>
+            <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
+            <span style='font-size:9.0pt'>grievanceredressal@amanfincap.com</span>
+            </a>
+            <span style='font-size:9.0pt;color:black'>
+            <br> Look forward to serving you. <br> Kind Regards </span>
+         </p>
+         <p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+         <br><br><br><br><br><br><br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+      </div>
+      <!-- SANCTION LETTER END -->
+      <!-- KEY FACT STATEMENT START -->
+      <div class='WordSection1 second-page'>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal align=center style='margin-top:0.2in;margin-bottom:0.2in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>KEY FACT STATEMENT</span>
+            </b>
+         </p>
+         <!-- <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br> (EMI) </span>
+            </b>
+         </p> -->
+         <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+            0.2in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>A. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>DETAILS OF LOAN</span>
+            </b>
+         </p>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Name of the Lender</span>
+                  </p>
+               </td>
+               <td style='border:solid black 1.0pt;border-left:
+                  none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Aman Fincap Limited.</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Name of the Borrower</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".$fullname."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Name of the Lending Service Provider (LSP)</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Naman Finlease Private Limited</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Name of the Digital Lending Application (DLA)</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>TEJAS LOAN</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Name of the of Loan Service Provider acting as recovery agent and authorized to approach the Borrower</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Naman Finlease Private Limited</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Purpose of the Loan</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".$leadDetails->purpose."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Type of loan</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>BULLET LOAN / ONE TIME REPAYMENT</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Loan Amount (INR)</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".number_format(round($camDetails->loan_recommended, 0), 2)."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>APR (Annualised Percentage Rate)</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>
+                  </p>
+                  <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+                     margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>1) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+                     </span>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Fixed Rate of Interest : ". number_format($camDetails->roi, 2) ." % on a daily basis;</span>
+                  </p>
+                  <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+                     margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>2) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+                     </span>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Processing fee : ".number_format(round($camDetails->admin_fee, 0), 2)." (one time, non-refundable fee levied for processing and grant of loan, Taxes and Levies as applicable);</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Net disbursed amount</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>INR ".$final_disbursal." after deduction of Processing Fee;</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Total Repayment Amount</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>INR ".number_format(round($camDetails->repayment_amount, 0), 2)."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Tenure /Term of Loan in days</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".$camDetails->tenure."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Due Date</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".$camDetails->repayment_date."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Cooling-Off period*</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>3 days</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td colspan='2' style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Fees and Charges</span>
+                     </b>
+                  </p>
+               </td>
+               <td valign=top style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>&nbsp;</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Pre-Payment Charges</span>
+                  </p>
+               </td>
+               <td style='border:solid black 1.0pt;border-left:
+                  none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>NA</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width='200' style='border:solid black 1.0pt;border-top:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Default /Penal Rate of Interest</span>
+                  </p>
+               </td>
+               <td style='border-top:solid black 1.0pt;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>According to Late Payment/Bounce Charge Grid</span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td width='200' style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Taxes &amp; Levies</span>
+                  </p>
+               </td>
+               <td style='border-top:solid black 1.0pt;;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>The Loan and any other services rendered by the Lender and/ or payments made by the Borrower shall be subject to applicable taxes notified by the government from time to time. The Borrower shall pay all taxes present and future on any transactions undertaken with the Lender.</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width='200' style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Costs and charges</span>
+                  </p>
+               </td>
+               <td style='border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>1. Cheque/electronic Instrument bounce /non-registration of NACH – NA <br> 2. Payment gateway charges for repayment –NA <br> 3. Stamp Duty -NA </span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br>
+            </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>*A cooling off period allows you / Borrower / end-user to cancel or withdraw from the loan until the Cooling-off Period. Upon expiry of the Cooling-off Period, the loan terms shall be deemed to be accepted by you. The Cooling-off Period on the loan commences / starts from the date of signing / accepting the loan terms / agreement and ends on the third (3) day from such acceptance. The Lender shall not levy any penalty or pre-payment charges for cancellation during the Cooling-off Period.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>To apply for cancellation of loan during the Cooling-off Period, a request must be submitted by the Borrower at&nbsp;</span>
+            <u>
+            <a href='mailto:info@amanfincap.com' target='_blank'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:blue'>info@amanfincap.com</span>
+               </a>
+            </u>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>,&nbsp;</span>
+            <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
+            </a>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>. After submission of such request, the Borrower must submit a copy of the bank account statement in which the said loan amount was disbursed along with an undertaking that such loan amount was not utilized by the Borrower during the Cooling-off Period.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The cancellation request will only be accepted, if (a) the loan has not been utilized; and (b) the Borrower repays the principal amount along with the Rate of Interest.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+            0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>B. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>GRIEVANCE REDRESSAL MECHANISM</span>
+            </b>
+         </p>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Level_1</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=590 colspan=2 style='width:442.3pt;border:solid black 1.0pt;
+                  border-left:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Grievance Redressal Officer (GRO)</span>
+                     </b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Borrowers can refer to Grievance Redressal Policy at <a href='https://tejasloan.com/privacy-policy' target='_blank'>https://tejasloan.com/privacy-policy</a></span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>LSP</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=305 style='width:228.8pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Grievance Redressal Officer (GRO)</span>
+                     </b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br>
+                     <br> Ms. GEETA MEHTA </span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Address: D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010 <br> Contact No:&nbsp;9990037064 </span>
+                     <a href='tel:9319738611'></a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Email:&nbsp;<a href='mailto:grievance@tejasloan.com' target='_blank'>grievance@tejasloan.com</a></span>,
+                     <a href='mailto:grievance@paymeindia.in' target='_blank'>grievance@paymeindia.in</a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br>
+                     <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
+                  </p>
+               </td>
+               <td width=285 style='width:213.5pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Nodal Officer</span>
+                     </b>
+                     <span style='font-size:9.0pt;
+                        font-family:sans-serif;color:black'>
+                     <br>
+                     <br> Mr. NITIN VAID </span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Address: D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Contact No:&nbsp;9355562952</span>
+                     <a href='tel:9319738611'></a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Email:&nbsp;<a href='info@tejasloan.com' target='_blank'>info@tejasloan.com</a> <br>
+                     <br> If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <br><br><br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>RE</span>
+                     </b>
+                  </p>
+               </td>
+               <td width=305 style='width:228.8pt;border-top:solid black 1.0pt;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Grievance Redressal Officer (GRO)</span>
+                     </b>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Mr. ANIKET PRAJAPATI</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Address: Office No. 105, First Floor, Plot No. 1/50, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Shahdara, Shahdara, Delhi, India, 110092</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Contact No:&nbsp;9310604350 </span>
+                     <a href='tel:9319738611'></a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Email:&nbsp; </span>
+                     <a href='mailto:grievanceredressal@amanfincap.com'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
+                     </a>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance</span>
+                  </p>
+               </td>
+               <td width=285 style='width:213.5pt;border-top:solid black 1.0pt;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>&nbsp;</span>
+                     </b>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Nodal Officer</span>
+                     </b>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Mr. NITESH MISHRA</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Address: Office No. 105, First Floor, Plot No. 1/50, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Shahdara, Shahdara, Delhi, India, 110092</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Contact No:&nbsp;9560567112</span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <a href='tel:9319738611'></a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> Email:&nbsp; </span>
+                     <a href='mailto:grievance.nodal@amanfincap.com'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>grievance.nodal@amanfincap.com</span>
+                     </a>
+                     <a href='grievance@paymeindia.in'>grievance@paymeindia.in</a>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>
+                     <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance </span>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>&nbsp;</span>
+                     </b>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>&nbsp;</span>
+                     </b>
+                  </p>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <b>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>&nbsp;</span>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+            0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>C. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>TERMS &amp; CONDITIONS OF RECOVERY MECHANISM</span>
+            </b>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Lender undertakes the recovery practices considering the following terms.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>In-house/Outsource Recovery</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Telephone Recovery {Human / IVR / Robo Calls}</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Digital Recovery</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Reminder Communication</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Legal Notice</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Arbitration &amp; Conciliation</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br> For the purpose of undertaking collection and recovery the Lender may, either on its own or through the service provider (including its agents etc.), undertake collection or recovery from the Borrower. The details of service provider and its agents etc. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+            0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>D. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>REPAYMENT SCHEDULE</span>
+            </b>
+         </p>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td width=66 style='width:49.25pt;border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>S.No.</span>
+                  </p>
+               </td>
+               <td width=113 style='width:85.05pt;border:solid black 1.0pt;border-left:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Principal (INR)</span>
+                  </p>
+               </td>
+               <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Interest (INR)</span>
+                  </p>
+               </td>
+               <td width=104 style='width:78.0pt;border:solid black 1.0pt;border-left:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Fees (INR)</span>
+                  </p>
+               </td>
+               <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Due Date</span>
+                  </p>
+               </td>
+               <td width=113 style='width:85.05pt;border:solid black 1.0pt;border-left:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>Repayable (INR)</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=66 style='width:49.25pt;border:solid black 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>1</span>
+                  </p>
+               </td>
+               <td width=113 style='width:85.05pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".number_format(round($camDetails->loan_recommended, 0), 2)."</span>
+                  </p>
+               </td>
+               <td width=123 style='width:92.1pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>". number_format($camDetails->roi, 2) ."</span>
+                  </p>
+               </td>
+               <td width=104 style='width:78.0pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".number_format(round($camDetails->admin_fee, 0), 2)."</span>
+                  </p>
+               </td>
+               <td width=123 style='width:92.1pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".$camDetails->repayment_date."</span>
+                  </p>
+               </td>
+               <td width=113 style='width:85.05pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+                     line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>".number_format(round($camDetails->repayment_amount, 0), 2)."</span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>For any queries, you may write to us at&nbsp; </span>
+            <a href='mailto:info@amanfincap.com' target='_blank'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>info@amanfincap.com</span>
+            </a>,
+            <a href='mailto:grievanceredressal@amanfincap.com' target='_blank'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>grievanceredressal@amanfincap.com</span>
+            </a>
+            <u>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:blue'></span>
+            </u>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <br> Look forward to serving you. <br> Kind Regards </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
+      </div>
+      <!-- KEY FACT STATEMENT END -->
+      <!-- Loan Terms START -->
+      <div class=WordSection1>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>LOAN CUM COMMERCIAL TERMS</span>
+            </b>
+         </p>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>By clicking the &quot;I AGREE&quot; button, you acknowledge that you have read, understood, and accepted the terms and conditions set forth herein (“Terms”). You further agree to be bound by these Terms and will be fully responsible for complying with them. If you do not agree with any provision of these Terms, do not click the “I AGREE” button.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>Upon your acceptance of these Terms and the Key Fact Statement (“KFS”), you, the borrower (“Borrower”)—which term shall include individual, legal heir(s), successor(s), and permitted assignee(s), unless repugnant to the context—confirm having requested a credit facility from <b>Aman Fincap Ltd.,</b> having its registered office at 105, Plot No. 1/50, First Floor, Ganga Apartment, Lalita Park, Laxmi Nagar, East Delhi, Delhi-110092 (&quot;Lender&quot;), under the conditions specified herein. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>The Borrower hereby understands and acknowledges that these Terms are for two loan products, namely (a) Bullet Repayment; (b) EMI / Installment and that based on the nature / type of Loan availed by me / us through the Application Form and thereafter accepted in the KFS, only the respective Loan product Terms shall apply.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Definition:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;In these Terms, the capitalized words shall have the following meanings. All terms capitalized but not defined below shall have such meaning as ascribed to them in the Commercial Terms:</span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>ANNUALISED PERCENTAGE RATE / APR</span>
+            </b>
+            <span style='font-family:
+               sans-serif;color:black'>&nbsp;means the effective annualised rate payable by the Borrower based on an all-inclusive cost and margin including cost of funds, credit cost and operating cost, processing fee, verification charges, maintenance charges, etc., and / or such specific costs indicated in the KFS.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>APPLICATION FORM</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means, direct application made by the Borrower for the Loan through web portal / mobile application of the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>BORROWER</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means the individual availing the Loan from the Lender in under these Terms hereof and who has agreed to the terms and conditions contained in these Terms for the purpose of availing Loan.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>BULLET REPAYMENT</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean such Loan product where the Borrower repays the full Outstanding Amount on one fixed Due Date;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>COMMERCIAL TERMS</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean the terms applicable to the Loan as detailed in SCHEDULE I of these Terms.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>DUE DATE</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean such date identified in the Commercial Terms and KFS on which the EMI shall be due and payable by the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>ECS OR NACH</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means electronic clearing services / electronic payment services, consented to in writing by Borrower, for facilitating the payment of EMI, fees and other applicable charges to the Lender in connection with the Loan.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>ESSENTIAL DATA</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means such data which is statutorily required by the Lender to be retained for compliance with applicable laws.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>EQUATED MONTHLY INSTALLMENT (EMI) / INSTALLMENT</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;shall mean such Loan product whereby the Borrower repays the Outstanding Amount at such frequency (monthly / quarterly) as indicated in the Commercial Terms on the respective Due Date during the Tenure of the Loan.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.10 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>GRIEVANCE REDRESSAL OFFICER</span>
+            </b>
+            <span style='font-family:
+               sans-serif;color:black'>&nbsp;shall mean the officer named in the Commercial Terms and KFS who shall address and resolve the complaints / queries of Borrowers.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.11 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>LOAN</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means the credit facility granted / agreed to be granted by the Lender to the Borrower.</span>
+         </p>
          
-//          <br>
-//          <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.12 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>KFS</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean the Key Fact Statement provided by the Lender before the execution of these Terms which lays down details such as Annual Percentage Rate, terms and conditions of recovery mechanism, details of Grievance Redressal Officer, and Cooling-off/ Look-up period.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.13 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>OUTSTANDING AMOUNT</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean all amounts pertaining to the Loan whether by way of the principal amount together with any EMI, accrued interest, default interest, Prepayment charges, bounce charges and/or any other cost and charges indicated herein or the Commercial Terms or KFS.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.14 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>PREPAYMENT</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;means premature repayment of the Loan in full, including principal amount, interest thereon, and all Outstanding Amount which is not yet due for payment by the Borrower under the Terms.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.15 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>REPAYMENT SCHEDULE</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean the schedule shared by the Lender which indicates the Outstanding Amount and the Due Date on which the said Outstanding Amount is to be repaid by the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.16 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>REPAYMENT INSTRUMENT</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean an ECS / NACH / standing instructions / cheque / post-dated cheque (PDC) and / or such other negotiable instrument or mode of payment that may be notified by the RBI from time to time.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.17 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>RBI</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean the Reserve Bank of India.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>1.18 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>TENURE</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;shall mean the months / years as indicated in the Commercial Terms and KFS.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Borrower's Representations, Warranties and Undertakings:</span>
-//             </b>
-//             <span style='font-family:
-//                sans-serif;color:black'>&nbsp;The Borrower hereby represents and warrants as follows: </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
-//             line-height:normal;display:none'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
-//             line-height:normal;display:none'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Is of sound mind, competent to contract, has attained the age of majority, and capable of fulfilling the obligations under these terms;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Is financially stable, not declared bankrupt or insolvent, and capable of repaying the Loan.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Will maintain sufficient funds in the designated account for repayment.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Shall maintain confidentiality and security over communications with the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Accepts the Lender’s final discretion in case of any disputes regarding interpretation or materiality of any matter.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>All information and documents provided are true, correct, complete, and not misleading.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Authorizes the Lender to access necessary data (location, CIBIL score, KYC, etc.) for loan processing and servicing.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Agrees to the storage of Essential Data for a duration of 5 to 8 years as per law.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>2.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>Confirms that the Loan shall be used strictly for the declared purpose and agrees to provide end-use certification upon request.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:21.3pt;text-align:justify;line-height:normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Loan disbursement:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Lender shall disburse the Loan into an account specified in Commercial Terms, below and/ or such other account as indicated in the Loan disbursal request form (“DRF”).</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Repayment:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower hereby agrees and undertakes:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
-//             line-height:normal;display:none'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
-//             line-height:normal;display:none'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>to issue such Repayment Instruments for: (a) Bullet Repayment Loan; (b) EMI Loan, respectively based on the type of Loan product agreed to be availed by the Borrower. The Borrower shall repay the Loan for such amount and at such intervals as is specified in the Commercial Terms, KFS and / or Repayment Schedule shared by the Lender from time to time. The Borrower understands and acknowledges that Lender may collect repayment directly by itself or through third party agents, as appointed by the Lender. The Borrower further undertakes to extend all co-operation with such third-party agents to ensure that due fulﬁllment of Borrower's obligations under these Terms and to obtain a valid discharge against the Outstanding Amounts.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>that should at any time during the Tenure of the Loan, if instructions for stop payment, cancellation of a Repayment Instrument and /or fail to confirm / register the ECS / NACH, the same shall be treated as dishonour / bounce of the Repayment Instrument, and the Loan shall be recalled at the discretion of the Lender.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif;
-//                color:black'>3.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif;
-//                color:black'>that upon delay and / or non-payment of Outstanding Amounts on the respective Due Date, the Lender shall have the right to classify the Borrower and its accounts as Special Mention Account (&quot;SMA”) and / or Non-Performing Asset (“NPA”), as detailed below:</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>If the Due Date is second (2nd) day of every month and the Borrower pays the Instalment amount on thirtieth (30th) of the month, the Lender shall levy Default Interest starting from third (3rd) until thirtieth (30th). In the second scenario, if the Borrower does not pay on the Due Date and the Outstanding Amount remain unpaid for a continuous period of thirty (30) days, the Lender shall have the right to: (a) levy Default Interest; and (b) report the Borrower as an SMA-0. If the Borrower further continues to default in repayment from a period of thirty (30) days up to sixty (60) days, the Lender shall report the Borrower as SMA-1 and levy Default Interest. If the Borrower further continues to default in repayment from a period of sixty (60) days up to ninety (90) day, the Lender shall report the Borrower as SMA-2 and levy Default Interest. Further, if the Borrower defaults in repayment beyond ninety (90) days, the Lender shall report the Borrower as NPA and levy Default Interest. The Lender shall additionally have the right to call and Event of Default in accordance with Clause 8, below, at any time upon an event of non-payment.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Interest &amp; costs:</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;The Borrower shall pay interest on the Loan at the Rate of Interest specified in the Commercial Terms from the date when the Loan is disbursed. The Lender shall inform the Borrower regarding any change in Rate of Interest by way of publishing a notice that shall be displayed on the notice board in the branch of the Lender or on the Lender's website. The said notice of change of Rate of Interest shall be deemed to be sufficient notice of change to the Borrower. The Borrower shall pay on the Loan, processing fee, stamp duty, and such other fees and charges indicated in the KFS and/ or notified by the Lender. Further, the Borrower undertakes to pay such fees / charges/ costs that comprise the Annual Percentage Rate, as mentioned in the Commercial Terms and KFS. The Borrower understands that Loan is subject to applicable taxes and such other statutory levies as may be notified by the government from time to time. All such taxes and levies shall be payable by the Borrower.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Prepayment.</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;In the event the Borrower wishes to prepay the Loan, the same shall be subject to Prepayment Fees as indicated in the Commercial Terms. Such Prepayment Fees shall be levied or become applicable after expiry of the Cooling-off and / or Look-up period indicated in the Commercial Terms and KFS.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>7. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Default/ Penal Interest:</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;In the event the Borrower fails to comply with the Terms including failure to repay the Loan on a Due Date and/ or such other Events of Default listed in Clause 8 below, the Lender shall be entitled to levy Default/ Penal Interest set out in Commercial Terms and KFS on the Outstanding Amount from the date of default until full and final settlement.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>8. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Events of Default and Remedies:</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;The following are the events of default under these Terms (“Event of Default”): (a) failure by the Borrower to repay the Loan (whole or part) on the Due Date; (b) breach / non-performance of any representation, warranty, covenant, undertaking or obligations under these Terms (including non-submission of documents or execution thereof), or any change in the information furnished by the Borrower to the Lender, if deemed material by the Lender; (c) the Borrower is subjected to any insolvency or bankruptcy proceeding or a receiver is appointed for its assets; (d) if the Borrower commits default in relation to any other loan or credit facility and /or statutory taxes and dues owed, or enters into any compromise with its creditors, or admits any inability in payment of its other debts; <br>
-//          <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//           (e) the performance of obligations under these Terms becomes void or illegal; (f) non-payment of any of dues and / or outstanding amounts to any other financial institutions; and / or (g) any event which, with the passage of time, is likely to become an Event of Default. 
-//                <br> On the happening of any Event of Default, the Lender may at its sole discretion , without prejudice to other rights and claims under these Terms, exercise any or all of the following rights, i.e.,: (a) recall the Loan and / or declare the Loan to become immediately due and payable; (b) levy Default Interest on the Outstanding Amount from the date when the Event of Default occurs until the date when the Event of Default has ceased to exist; and / or (c) exercise any other rights or remedies available to the Lender under applicable law including initiating civil and criminal proceedings. </span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>9. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Unconditional Cancellability:</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;The Lender reserves the unconditional right to cancel the Loan and / or any tranches advanced / to be advanced (either fully or partially) without giving any prior notice to the Borrower, on the occurrence of any one or more of the following (a) in case the Loan / part of the Loan are not utilised by the Borrower; (b) in case of ‘Deterioration in the Creditworthiness’ of the Borrower in any manner whatsoever; (c) in case of non-compliance of these Terms. For the purpose of this clause, Deterioration in the Creditworthiness shall mean and include without limitation, the following events: (a) downgrade of the rating of the Borrower by a credit rating agency; and / or (b) any other reason / event in the opinion of the Lender constituting or which may constitute Deterioration in the Creditworthiness.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>10. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Disclaimer:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower agrees and acknowledges that the Lender shall not be liable or responsible for any defect in the consumer durable products / goods purchased by the Borrower, in the event of any complaints / queries with respect to a product purchased from a third party from the proceeds of the Loan. The Borrower shall directly address such complaints / queries with the seller / manufacturer/ retailer or any other third party associated with selling such product.</span>
-//          </p>
+         <br>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.12 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>KFS</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean the Key Fact Statement provided by the Lender before the execution of these Terms which lays down details such as Annual Percentage Rate, terms and conditions of recovery mechanism, details of Grievance Redressal Officer, and Cooling-off/ Look-up period.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.13 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>OUTSTANDING AMOUNT</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean all amounts pertaining to the Loan whether by way of the principal amount together with any EMI, accrued interest, default interest, Prepayment charges, bounce charges and/or any other cost and charges indicated herein or the Commercial Terms or KFS.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.14 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>PREPAYMENT</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;means premature repayment of the Loan in full, including principal amount, interest thereon, and all Outstanding Amount which is not yet due for payment by the Borrower under the Terms.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.15 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>REPAYMENT SCHEDULE</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean the schedule shared by the Lender which indicates the Outstanding Amount and the Due Date on which the said Outstanding Amount is to be repaid by the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.16 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>REPAYMENT INSTRUMENT</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean an ECS / NACH / standing instructions / cheque / post-dated cheque (PDC) and / or such other negotiable instrument or mode of payment that may be notified by the RBI from time to time.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.17 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>RBI</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean the Reserve Bank of India.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>1.18 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>TENURE</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;shall mean the months / years as indicated in the Commercial Terms and KFS.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Borrower's Representations, Warranties and Undertakings:</span>
+            </b>
+            <span style='font-family:
+               sans-serif;color:black'>&nbsp;The Borrower hereby represents and warrants as follows: </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
+            line-height:normal;display:none'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
+            line-height:normal;display:none'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Is of sound mind, competent to contract, has attained the age of majority, and capable of fulfilling the obligations under these terms;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Is financially stable, not declared bankrupt or insolvent, and capable of repaying the Loan.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Will maintain sufficient funds in the designated account for repayment.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Shall maintain confidentiality and security over communications with the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Accepts the Lender’s final discretion in case of any disputes regarding interpretation or materiality of any matter.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>All information and documents provided are true, correct, complete, and not misleading.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Authorizes the Lender to access necessary data (location, CIBIL score, KYC, etc.) for loan processing and servicing.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Agrees to the storage of Essential Data for a duration of 5 to 8 years as per law.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>2.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>Confirms that the Loan shall be used strictly for the declared purpose and agrees to provide end-use certification upon request.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:21.3pt;text-align:justify;line-height:normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Loan disbursement:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Lender shall disburse the Loan into an account specified in Commercial Terms, below and/ or such other account as indicated in the Loan disbursal request form (“DRF”).</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Repayment:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower hereby agrees and undertakes:</span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
+            line-height:normal;display:none'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:18.75pt;text-align:justify;text-indent:-18.75pt;
+            line-height:normal;display:none'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>to issue such Repayment Instruments for: (a) Bullet Repayment Loan; (b) EMI Loan, respectively based on the type of Loan product agreed to be availed by the Borrower. The Borrower shall repay the Loan for such amount and at such intervals as is specified in the Commercial Terms, KFS and / or Repayment Schedule shared by the Lender from time to time. The Borrower understands and acknowledges that Lender may collect repayment directly by itself or through third party agents, as appointed by the Lender. The Borrower further undertakes to extend all co-operation with such third-party agents to ensure that due fulﬁllment of Borrower's obligations under these Terms and to obtain a valid discharge against the Outstanding Amounts.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>that should at any time during the Tenure of the Loan, if instructions for stop payment, cancellation of a Repayment Instrument and /or fail to confirm / register the ECS / NACH, the same shall be treated as dishonour / bounce of the Repayment Instrument, and the Loan shall be recalled at the discretion of the Lender.</span>
+         </p>
+         <br>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif;
+               color:black'>3.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif;
+               color:black'>that upon delay and / or non-payment of Outstanding Amounts on the respective Due Date, the Lender shall have the right to classify the Borrower and its accounts as Special Mention Account (&quot;SMA”) and / or Non-Performing Asset (“NPA”), as detailed below:</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>If the Due Date is second (2nd) day of every month and the Borrower pays the Instalment amount on thirtieth (30th) of the month, the Lender shall levy Default Interest starting from third (3rd) until thirtieth (30th). In the second scenario, if the Borrower does not pay on the Due Date and the Outstanding Amount remain unpaid for a continuous period of thirty (30) days, the Lender shall have the right to: (a) levy Default Interest; and (b) report the Borrower as an SMA-0. If the Borrower further continues to default in repayment from a period of thirty (30) days up to sixty (60) days, the Lender shall report the Borrower as SMA-1 and levy Default Interest. If the Borrower further continues to default in repayment from a period of sixty (60) days up to ninety (90) day, the Lender shall report the Borrower as SMA-2 and levy Default Interest. Further, if the Borrower defaults in repayment beyond ninety (90) days, the Lender shall report the Borrower as NPA and levy Default Interest. The Lender shall additionally have the right to call and Event of Default in accordance with Clause 8, below, at any time upon an event of non-payment.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Interest &amp; costs:</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;The Borrower shall pay interest on the Loan at the Rate of Interest specified in the Commercial Terms from the date when the Loan is disbursed. The Lender shall inform the Borrower regarding any change in Rate of Interest by way of publishing a notice that shall be displayed on the notice board in the branch of the Lender or on the Lender's website. The said notice of change of Rate of Interest shall be deemed to be sufficient notice of change to the Borrower. The Borrower shall pay on the Loan, processing fee, stamp duty, and such other fees and charges indicated in the KFS and/ or notified by the Lender. Further, the Borrower undertakes to pay such fees / charges/ costs that comprise the Annual Percentage Rate, as mentioned in the Commercial Terms and KFS. The Borrower understands that Loan is subject to applicable taxes and such other statutory levies as may be notified by the government from time to time. All such taxes and levies shall be payable by the Borrower.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Prepayment.</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;In the event the Borrower wishes to prepay the Loan, the same shall be subject to Prepayment Fees as indicated in the Commercial Terms. Such Prepayment Fees shall be levied or become applicable after expiry of the Cooling-off and / or Look-up period indicated in the Commercial Terms and KFS.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>7. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Default/ Penal Interest:</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;In the event the Borrower fails to comply with the Terms including failure to repay the Loan on a Due Date and/ or such other Events of Default listed in Clause 8 below, the Lender shall be entitled to levy Default/ Penal Interest set out in Commercial Terms and KFS on the Outstanding Amount from the date of default until full and final settlement.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>8. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Events of Default and Remedies:</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;The following are the events of default under these Terms (“Event of Default”): (a) failure by the Borrower to repay the Loan (whole or part) on the Due Date; (b) breach / non-performance of any representation, warranty, covenant, undertaking or obligations under these Terms (including non-submission of documents or execution thereof), or any change in the information furnished by the Borrower to the Lender, if deemed material by the Lender; (c) the Borrower is subjected to any insolvency or bankruptcy proceeding or a receiver is appointed for its assets; (d) if the Borrower commits default in relation to any other loan or credit facility and /or statutory taxes and dues owed, or enters into any compromise with its creditors, or admits any inability in payment of its other debts; <br>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+          (e) the performance of obligations under these Terms becomes void or illegal; (f) non-payment of any of dues and / or outstanding amounts to any other financial institutions; and / or (g) any event which, with the passage of time, is likely to become an Event of Default. 
+               <br> On the happening of any Event of Default, the Lender may at its sole discretion , without prejudice to other rights and claims under these Terms, exercise any or all of the following rights, i.e.,: (a) recall the Loan and / or declare the Loan to become immediately due and payable; (b) levy Default Interest on the Outstanding Amount from the date when the Event of Default occurs until the date when the Event of Default has ceased to exist; and / or (c) exercise any other rights or remedies available to the Lender under applicable law including initiating civil and criminal proceedings. </span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>9. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Unconditional Cancellability:</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;The Lender reserves the unconditional right to cancel the Loan and / or any tranches advanced / to be advanced (either fully or partially) without giving any prior notice to the Borrower, on the occurrence of any one or more of the following (a) in case the Loan / part of the Loan are not utilised by the Borrower; (b) in case of ‘Deterioration in the Creditworthiness’ of the Borrower in any manner whatsoever; (c) in case of non-compliance of these Terms. For the purpose of this clause, Deterioration in the Creditworthiness shall mean and include without limitation, the following events: (a) downgrade of the rating of the Borrower by a credit rating agency; and / or (b) any other reason / event in the opinion of the Lender constituting or which may constitute Deterioration in the Creditworthiness.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>10. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Disclaimer:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower agrees and acknowledges that the Lender shall not be liable or responsible for any defect in the consumer durable products / goods purchased by the Borrower, in the event of any complaints / queries with respect to a product purchased from a third party from the proceeds of the Loan. The Borrower shall directly address such complaints / queries with the seller / manufacturer/ retailer or any other third party associated with selling such product.</span>
+         </p>
          
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>11. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Disclosure:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower authorizes the Lender to disclose any information in relation to the Loan with: (a) RBI; (b) credit information companies / bureaus and information utilities; (c) any governmental / regulatory / statutory authority; (d) other financial institutions and industry bodies; (e) affiliates and group companies of the Lender; and / or (f) third party engaged by the Lender for purpose of the Loan including but not limited to KYC collection, recovery of dues and repayment and / or such other services as deemed necessary by the Lender. The Borrower hereby acknowledges and agrees that the RBI and / or any credit bureau, information utilities, any governmental / regulatory / statutory authority may publicly publish such data, subject to applicable laws.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>12. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Indemnity:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower shall indemnify and hold harmless the Lender and its directors, officers and agents, from and against any and all costs, expenses, direct or indirect claims, liabilities, demands and / or claims whatsoever, including any third-party claims for damages incurred as a consequence of occurrence of an Event of Default, breach of the terms and conditions of these Terms or acts of omission and commission on the part of the Borrower, or otherwise on account of the Loan.</span>
-//          </p>
-//          <br><br>
-//          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>13. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Evidence to Debt/ Electronic Evidence:</span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;The Lender may generate physical copies of these Terms from its system or produce these Terms in any other form at its discretion and the same shall be fully binding on the Borrower and such computer generated certificate / statement from the Lender’s system shall be conclusive evidence of the existence of the Outstanding Amounts of the Borrower. The Borrower hereby waives any right it may have under contract or applicable law to contest or raise an invalidity against such electronic records.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>14. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Assignment:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;The Lender may, without Borrower's consent or notice can assign its rights &amp; obligations under these Terms to its a</span>
-//             <span style='font-family:'Arial',sans-serif;
-//                color:black'>ﬃ</span>
-//             <span style='font-family:sans-serif;
-//                color:black'>liates or assignee but the Borrower is not entitled to directly or indirectly assign the benefit or obligation of these Terms to any third party.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>15. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-family:sans-serif;color:black'>Dispute Resolution:</span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;Any or all disputes, claims, differences arising out of or in connection with these Terms between the Lender and the Borrower shall be settled by arbitration to be referred to a sole arbitrator to be appointed by the Lender and the place of the arbitration shall be New Delhi.</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>16. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>Governing Law:</b>&nbsp;In the event of any dispute or controversy arising out of the arbitration clause, shall be governed by laws of India and the Courts at New Delhi shall have sole and exclusive jurisdiction. </span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>17. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>Notices:</b>&nbsp;Any notice to be given to Borrower in respect of these Terms shall be deemed to have been validly given and received if provided by using telephonic call (recorded) or text message to the registered mobile number of the Borrower, email to registered email id and written notice by courier or registered post to registered address of Borrower. </span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>18. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>Joint and Several Liability:</b>&nbsp;The obligations of the Borrower(s) and Co-Borrowers (if any) under these Terms shall be joint and several. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>19. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>NACH Mandate:</b>&nbsp;The amount mentioned on NACH Mandate for approval from borrower is 250% of the existing sanctioned credit limit/ loan amount as it covers possible increase of credit limit in near future, processing fee, interest and other charges levied in the event of default. Lenders, may at their absolute discretion, waive or reduce the charges as mentioned above, on a case to case basis. <br>
-//             <br> In Witness Where of the Borrower hereby accepts the terms and conditions this Agreement. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>20. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>Appropriation:</b>&nbsp;Any payments made by or recovered from the Borrower or otherwise shall be appropriated in a manner deemed fit by the Lender, as per its policies. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>21. <span style='font:7.0pt '></span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;color:black'>&nbsp; <b>Set-off:</b>&nbsp;The Lender shall be entitled to, without further notice, set -off any monies with the Lender or any monies payable by the Lender to the Borrower(s) against all Outstanding Amounts of the Borrower with the Lender. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>For any queries, you may write to us at </span>
-//             <a href='mailto:finance@amanfincap.com'>
-//             <span style='font-family:sans-serif'>finance@amanfincap.com</span>
-//             </a>
-//             <span style='font-family:sans-serif;color:black'>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <!--<p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>Look forward to serving you. <br> Kind Regards </span>
-//          </p>-->
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//             </b>
-//          </p>
-//          <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                color:black'>By clicking on &quot;I Accept&quot;, the Borrower hereby executes and electronically accept these Terms. Upon acceptance of these Terms, two original counterparts shall be electronically generated, one of which shall be automatically sent to the e-mail disclosed by the Borrower in the Commercial Terms, the other shall be retained by the Lender for its records.</span>
-//             </b>
-//          </p> -->
-//          <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
-//          </p> -->
-//          <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-family:sans-serif;color:black'>“ I Accept”</span>
-//          </p> -->
-//          <br><br>
-//          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-//          <br>
-//       </div>
-//       <!-- Loan Terms END -->
-//       <!-- Loan Agreement START -->
-//       <div class=WordSection1>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>LOAN AGREEMENT</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>THIS LOAN AGREEMENT</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;is made at the date and place set out in Schedule A hereto</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>BY AND BETWEEN:</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The entity listed in Schedule A (hereinafter referred to as the “Lender”, which expression shall, unless it be repugnant to the subject or context thereof, be deemed to mean and include its successors and assigns).</span>
-//          </p>
-//          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>AND</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Person(s) listed in&nbsp; <b>Schedule A</b>&nbsp;hereto, having his / her / its / their address as set out in&nbsp; <b>Schedule A</b>&nbsp;(hereinafter referred to as the&nbsp; <b>“Borrower ”</b>, which expression shall, unless it be repugnant to the subject or context thereof, be deemed to mean and include his / her / its / their respective heirs, executors, administrators, legal representatives, successors, permitted assigns, partner(s) for the time being, including the legal representatives of the deceased partner(s), if any); </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>WHEREAS:</span>
-//             </b>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Lender is a non-banking finance company within the meaning of the Reserve Bank of India Act, 1934 and is registered with the Reserve Bank of India as a non-banking finance company. Lender is engaged in the business of providing financial services and financial products as required by customers from time to time</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower(s) is an employed/salaried individual(s) as per details set out in Schedule A hereto and are in requirement of funds for the purpose more particularly described in the Sanction Letter cum Key Fact Statement and has approached the Service Provider of the Lender to avail the Loan,</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Whereas the Borrower is in need of money and at the request of the Borrower and after scrutinizing all the requisite documents and credibility of the Borrower, the Lender has agreed to grant Loan, to the Borrower in accordance with the terms and conditions hereinafter contained:</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>NOW, THEREFORE,</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;in consideration of the representations, warranties, mutual agreements, and covenants set forth in this Agreement, the Lender and Borrower agree as follows:</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>DEFINITIONS AND REFERENCE TERMS</b>
-//             </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The following capitalized words/expressions shall carry the meaning ascribed to them below, throughout this Agreement, unless otherwise stated or unless repugnant to the subject or context thereof:</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Agreement”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;means this Loan Agreement, including the Schedules hereto, each as amended, modiﬁed, supplemented and / or restated from time to time, and shall also include Sanction Letter cum Key Fact Statement in accordance with the terms hereof.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Application Form”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the application form as prescribed by the Lender (whether through its Service Provider) and filled in by the Borrower, prior to the date hereof, to avail the Loan.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp; </span>iii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Borrower&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall have the meaning ascribed to such term in the Recitals of this Agreement. For the avoidance of doubt, any reference in this Agreement to the term ‘Borrower’.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp; </span>iv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Collection Account”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the bank account of the Lender, designated as such, to which all amounts due and payable by the Borrower pursuant to the Loan Documents, are to be remitted.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>v. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Contract Act”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;means Indian Contract Act, 1872;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp; </span>vi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Approved Bank&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means a designated bank approved by the Lender (whether directly or through the Service Provider) for the purposes related to the Loan.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>vii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Delayed Payment Charges”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall mean the additional amount payable by the Borrower to the Lender on account of any delay in payment of any Instalment and / or bullet payment(s), as more particularly set out in the Sanction Letter. Cum KFS</span>
-//          </p>
-//          <br><br><br>
-//          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>11. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Disclosure:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower authorizes the Lender to disclose any information in relation to the Loan with: (a) RBI; (b) credit information companies / bureaus and information utilities; (c) any governmental / regulatory / statutory authority; (d) other financial institutions and industry bodies; (e) affiliates and group companies of the Lender; and / or (f) third party engaged by the Lender for purpose of the Loan including but not limited to KYC collection, recovery of dues and repayment and / or such other services as deemed necessary by the Lender. The Borrower hereby acknowledges and agrees that the RBI and / or any credit bureau, information utilities, any governmental / regulatory / statutory authority may publicly publish such data, subject to applicable laws.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>12. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Indemnity:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower shall indemnify and hold harmless the Lender and its directors, officers and agents, from and against any and all costs, expenses, direct or indirect claims, liabilities, demands and / or claims whatsoever, including any third-party claims for damages incurred as a consequence of occurrence of an Event of Default, breach of the terms and conditions of these Terms or acts of omission and commission on the part of the Borrower, or otherwise on account of the Loan.</span>
+         </p>
+         <br><br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>13. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Evidence to Debt/ Electronic Evidence:</span>
+            </b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;The Lender may generate physical copies of these Terms from its system or produce these Terms in any other form at its discretion and the same shall be fully binding on the Borrower and such computer generated certificate / statement from the Lender’s system shall be conclusive evidence of the existence of the Outstanding Amounts of the Borrower. The Borrower hereby waives any right it may have under contract or applicable law to contest or raise an invalidity against such electronic records.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>14. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Assignment:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;The Lender may, without Borrower's consent or notice can assign its rights &amp; obligations under these Terms to its a</span>
+            <span style='font-family:'Arial',sans-serif;
+               color:black'>ﬃ</span>
+            <span style='font-family:sans-serif;
+               color:black'>liates or assignee but the Borrower is not entitled to directly or indirectly assign the benefit or obligation of these Terms to any third party.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>15. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <b>
+            <span style='font-family:sans-serif;color:black'>Dispute Resolution:</span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp;Any or all disputes, claims, differences arising out of or in connection with these Terms between the Lender and the Borrower shall be settled by arbitration to be referred to a sole arbitrator to be appointed by the Lender and the place of the arbitration shall be New Delhi.</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>16. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>Governing Law:</b>&nbsp;In the event of any dispute or controversy arising out of the arbitration clause, shall be governed by laws of India and the Courts at New Delhi shall have sole and exclusive jurisdiction. </span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>17. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>Notices:</b>&nbsp;Any notice to be given to Borrower in respect of these Terms shall be deemed to have been validly given and received if provided by using telephonic call (recorded) or text message to the registered mobile number of the Borrower, email to registered email id and written notice by courier or registered post to registered address of Borrower. </span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>18. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>Joint and Several Liability:</b>&nbsp;The obligations of the Borrower(s) and Co-Borrowers (if any) under these Terms shall be joint and several. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>19. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>NACH Mandate:</b>&nbsp;The amount mentioned on NACH Mandate for approval from borrower is 250% of the existing sanctioned credit limit/ loan amount as it covers possible increase of credit limit in near future, processing fee, interest and other charges levied in the event of default. Lenders, may at their absolute discretion, waive or reduce the charges as mentioned above, on a case to case basis. <br>
+            <br> In Witness Where of the Borrower hereby accepts the terms and conditions this Agreement. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>20. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>Appropriation:</b>&nbsp;Any payments made by or recovered from the Borrower or otherwise shall be appropriated in a manner deemed fit by the Lender, as per its policies. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>21. <span style='font:7.0pt '></span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;color:black'>&nbsp; <b>Set-off:</b>&nbsp;The Lender shall be entitled to, without further notice, set -off any monies with the Lender or any monies payable by the Lender to the Borrower(s) against all Outstanding Amounts of the Borrower with the Lender. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>For any queries, you may write to us at </span>
+            <a href='mailto:finance@amanfincap.com'>
+            <span style='font-family:sans-serif'>finance@amanfincap.com</span>
+            </a>
+            <span style='font-family:sans-serif;color:black'>
+            <br>
+            <br>
+            </span>
+         </p>
+         <!--<p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>Look forward to serving you. <br> Kind Regards </span>
+         </p>-->
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>&nbsp;</span>
+            </b>
+         </p>
+         <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-family:sans-serif;
+               color:black'>By clicking on &quot;I Accept&quot;, the Borrower hereby executes and electronically accept these Terms. Upon acceptance of these Terms, two original counterparts shall be electronically generated, one of which shall be automatically sent to the e-mail disclosed by the Borrower in the Commercial Terms, the other shall be retained by the Lender for its records.</span>
+            </b>
+         </p> -->
+         <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>&nbsp;</span>
+         </p> -->
+         <!-- <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>“ I Accept”</span>
+         </p> -->
+         <br><br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+      </div>
+      <!-- Loan Terms END -->
+      <!-- Loan Agreement START -->
+      <div class=WordSection1>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>LOAN AGREEMENT</span>
+            </b>
+         </p>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>THIS LOAN AGREEMENT</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;is made at the date and place set out in Schedule A hereto</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+            </b>
+         </p>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>BY AND BETWEEN:</span>
+            </b>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The entity listed in Schedule A (hereinafter referred to as the “Lender”, which expression shall, unless it be repugnant to the subject or context thereof, be deemed to mean and include its successors and assigns).</span>
+         </p>
+         <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>AND</span>
+            </b>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Person(s) listed in&nbsp; <b>Schedule A</b>&nbsp;hereto, having his / her / its / their address as set out in&nbsp; <b>Schedule A</b>&nbsp;(hereinafter referred to as the&nbsp; <b>“Borrower ”</b>, which expression shall, unless it be repugnant to the subject or context thereof, be deemed to mean and include his / her / its / their respective heirs, executors, administrators, legal representatives, successors, permitted assigns, partner(s) for the time being, including the legal representatives of the deceased partner(s), if any); </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+            </b>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>WHEREAS:</span>
+            </b>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Lender is a non-banking finance company within the meaning of the Reserve Bank of India Act, 1934 and is registered with the Reserve Bank of India as a non-banking finance company. Lender is engaged in the business of providing financial services and financial products as required by customers from time to time</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower(s) is an employed/salaried individual(s) as per details set out in Schedule A hereto and are in requirement of funds for the purpose more particularly described in the Sanction Letter cum Key Fact Statement and has approached the Service Provider of the Lender to avail the Loan,</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Whereas the Borrower is in need of money and at the request of the Borrower and after scrutinizing all the requisite documents and credibility of the Borrower, the Lender has agreed to grant Loan, to the Borrower in accordance with the terms and conditions hereinafter contained:</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;text-align:justify;text-indent:-14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>NOW, THEREFORE,</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;in consideration of the representations, warranties, mutual agreements, and covenants set forth in this Agreement, the Lender and Borrower agree as follows:</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>1. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>DEFINITIONS AND REFERENCE TERMS</b>
+            </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The following capitalized words/expressions shall carry the meaning ascribed to them below, throughout this Agreement, unless otherwise stated or unless repugnant to the subject or context thereof:</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Agreement”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;means this Loan Agreement, including the Schedules hereto, each as amended, modiﬁed, supplemented and / or restated from time to time, and shall also include Sanction Letter cum Key Fact Statement in accordance with the terms hereof.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Application Form”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the application form as prescribed by the Lender (whether through its Service Provider) and filled in by the Borrower, prior to the date hereof, to avail the Loan.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp; </span>iii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Borrower&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall have the meaning ascribed to such term in the Recitals of this Agreement. For the avoidance of doubt, any reference in this Agreement to the term ‘Borrower’.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp; </span>iv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Collection Account”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the bank account of the Lender, designated as such, to which all amounts due and payable by the Borrower pursuant to the Loan Documents, are to be remitted.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>v. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Contract Act”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;means Indian Contract Act, 1872;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp; </span>vi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Approved Bank&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means a designated bank approved by the Lender (whether directly or through the Service Provider) for the purposes related to the Loan.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>vii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Delayed Payment Charges”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall mean the additional amount payable by the Borrower to the Lender on account of any delay in payment of any Instalment and / or bullet payment(s), as more particularly set out in the Sanction Letter. Cum KFS</span>
+         </p>
+         <br><br><br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
          
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>viii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Demand Promissory Note”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the Demand Promissory Note in the format prescribed by the Lender, to be executed by the Borrower, to secure payment of the Loan given to the Borrower pursuant to the terms hereof and the Sanction Letter cum KFS.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp; </span>ix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Dishonor Charges”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the dishonor charges payable by the Borrower to the Lender in the event of dishonor / bouncing of any Repayment Instrument, pursuant to the provisions of the Loan Documents.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>x. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Eligibility Criteria”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the minimum eligibility criteria set forth by the Lender to judge the credit worthiness of the Borrower, which is subject to change from time to time, at the sole and absolute discretion of the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '>&nbsp; </span>xi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Event of Default”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;has the meaning ascribed to such term in Article 8.1 of this Agreement.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '></span>xii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Fee”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;means the aggregate amount payable by the Borrower to the Lender / Service Provider, as per the details provided in the Sanction Letter cum Key Fact Statement</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Repayment”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;This can be further defined and segregated in/as bellow:</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Installments”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;means the equated monthly installment payable by the Borrower at monthly intervals, as detailed in the Sanction Letter cum KFS, during the tenor of the Loan, towards repayment of the principal amount of the Outstanding Balance.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '></span>xv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Bullet Payment”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the one-time amount payable by the Borrower, as detailed in the Sanction <b>Letter</b> cum KFS, during the tenor of the Loan, towards repayment of the principal amount of the outstanding balance. “Lender” shall have the meaning ascribed to such term in the Recitals of this Agreement. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Loan”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;means any and all term loans sanctioned / disbursed by the Lender to the Borrower pursuant to the provisions of this Agreement and the other Loan Documents; and includes re-borrowing of the paid Loan; and disbursal of new Loan.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xvii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Loan Documents”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means this Agreement, the Application Form (including all documents furnished by the Borrower with the Application Form), Demand Promissory Note, Sanction Letter cum KFS, Welcome Letter and all other documents, instruments, certiﬁcates, guarantees and agreements executed and/or delivered by the Borrower or any third party in connection with the Loan in favor of the Lender pursuant to the terms of this Agreement or the other Loan Documents.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xviii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Notice of Demand”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means a notice of demand issued by or on behalf of the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Outstanding Balance”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the balance of the principal amount of the Loan outstanding along with all other amounts payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents, including, without limitation, the Interest, Delayed Payment Charges, Fees, Installments and / or bullet payment(s), Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and other costs, charges, expenses.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>
-//             <span style='font:7.0pt '></span>xx. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Payment”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;means the payment towards Bullet payments, Installments, Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and other costs, charges, expenses, payable pursuant to the terms of the Loan Documents, in respect of the Loan, through any mode as approved by the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Person&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;shall mean any individual, corporation, partnership, (including, without limitation, association), company incorporated under the provisions of the Companies Act, 1956 / Companies Act, 2013, trust, unincorporated organization, Hindu undivided family or any governmental authority or political subdivision thereof. The expression shall, unless repugnant to the context or meaning thereof, be deemed to mean and include: (i) in case of a company, its successors and permitted assigns; (ii) in case of a partnership ﬁrm, the partners for the time being and from time to time of the partnership ﬁrm, their survivor or survivors of them, their respective heirs, administrators, executors, legal representatives and successors of the partner(s); (iii) in case of a trust, the trustee or trustees of the trust for the time being and from time to time; (iv) in case of a Hindu undivided family, the Karta and the members for the time being and from time to time of the said Hindu undivided family and their respective heirs, executors, administrators and legal representatives; (v) in case of an individual proprietor, the proprietor's heirs, administrators, executors and legal representatives; (vi) in case of an individual, the individual's heirs, administrators, executors and legal representatives;</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>viii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Demand Promissory Note”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the Demand Promissory Note in the format prescribed by the Lender, to be executed by the Borrower, to secure payment of the Loan given to the Borrower pursuant to the terms hereof and the Sanction Letter cum KFS.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp; </span>ix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Dishonor Charges”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the dishonor charges payable by the Borrower to the Lender in the event of dishonor / bouncing of any Repayment Instrument, pursuant to the provisions of the Loan Documents.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>x. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Eligibility Criteria”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the minimum eligibility criteria set forth by the Lender to judge the credit worthiness of the Borrower, which is subject to change from time to time, at the sole and absolute discretion of the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '>&nbsp; </span>xi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Event of Default”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;has the meaning ascribed to such term in Article 8.1 of this Agreement.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '></span>xii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Fee”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;means the aggregate amount payable by the Borrower to the Lender / Service Provider, as per the details provided in the Sanction Letter cum Key Fact Statement</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Repayment”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;This can be further defined and segregated in/as bellow:</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Installments”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;means the equated monthly installment payable by the Borrower at monthly intervals, as detailed in the Sanction Letter cum KFS, during the tenor of the Loan, towards repayment of the principal amount of the Outstanding Balance.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '></span>xv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Bullet Payment”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the one-time amount payable by the Borrower, as detailed in the Sanction <b>Letter</b> cum KFS, during the tenor of the Loan, towards repayment of the principal amount of the outstanding balance. “Lender” shall have the meaning ascribed to such term in the Recitals of this Agreement. </span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Loan”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;means any and all term loans sanctioned / disbursed by the Lender to the Borrower pursuant to the provisions of this Agreement and the other Loan Documents; and includes re-borrowing of the paid Loan; and disbursal of new Loan.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xvii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Loan Documents”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means this Agreement, the Application Form (including all documents furnished by the Borrower with the Application Form), Demand Promissory Note, Sanction Letter cum KFS, Welcome Letter and all other documents, instruments, certiﬁcates, guarantees and agreements executed and/or delivered by the Borrower or any third party in connection with the Loan in favor of the Lender pursuant to the terms of this Agreement or the other Loan Documents.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xviii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Notice of Demand”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means a notice of demand issued by or on behalf of the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Outstanding Balance”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the balance of the principal amount of the Loan outstanding along with all other amounts payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents, including, without limitation, the Interest, Delayed Payment Charges, Fees, Installments and / or bullet payment(s), Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and other costs, charges, expenses.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>
+            <span style='font:7.0pt '></span>xx. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Payment”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;means the payment towards Bullet payments, Installments, Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and other costs, charges, expenses, payable pursuant to the terms of the Loan Documents, in respect of the Loan, through any mode as approved by the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Person&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;shall mean any individual, corporation, partnership, (including, without limitation, association), company incorporated under the provisions of the Companies Act, 1956 / Companies Act, 2013, trust, unincorporated organization, Hindu undivided family or any governmental authority or political subdivision thereof. The expression shall, unless repugnant to the context or meaning thereof, be deemed to mean and include: (i) in case of a company, its successors and permitted assigns; (ii) in case of a partnership ﬁrm, the partners for the time being and from time to time of the partnership ﬁrm, their survivor or survivors of them, their respective heirs, administrators, executors, legal representatives and successors of the partner(s); (iii) in case of a trust, the trustee or trustees of the trust for the time being and from time to time; (iv) in case of a Hindu undivided family, the Karta and the members for the time being and from time to time of the said Hindu undivided family and their respective heirs, executors, administrators and legal representatives; (v) in case of an individual proprietor, the proprietor's heirs, administrators, executors and legal representatives; (vi) in case of an individual, the individual's heirs, administrators, executors and legal representatives;</span>
+         </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
          
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Pre-Payment&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the payment of the Outstanding Balance (or any part thereof) prior to the Scheduled Due Date for the same, according to the procedure prescribed in Article 6 of this Agreement, through any mode as approved by the Lender. The terms ‘Pre-Pay’ ‘Pre-Paid’ and any other cognate expressions thereof shall be construed accordingly.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Prepayment Amount”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;has the meaning ascribed to such term in Article 6.1 of this Agreement.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Prepayment Charges”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means the charges payable by the Borrower to the Lender in the event of Pre-Payment of the Outstanding Balance (or any part thereof), pursuant to the terms of the Loan Documents.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Rate of Interest”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;or “Interest” means the rate at which interest on the Loan is payable by the Borrower to the Lender, as stipulated in the Sanction Letter cum KFS, as amended from time to time with prior intimation to the Borrower.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Repayment Instruments”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means Post Dated Cheques (“PDC”), Electronic Clearance Service (“ECS”), National Automated Clearing House Mandate (&quot;NACH&quot;) and / or Standing Instructions (“SI”) (i.e., the debit clearing service notiﬁed by the Reserve Bank of India or the National Payments Corporation of India), for which the Borrower has agreed (in writing) to participate in, for facilitating <b>payment of Instalments and/or Bullet payments.</b>
-//             </span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxvii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Repayment Schedule”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall mean the repayment schedule of the Instalments and / or bullet payment(s) set out in the Sanction Letter cum Key Fact Statement, being the schedule for repayment of the Instalments and / or bullet payment(s) in relation to the Loan to the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxviii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Receipt”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;means the receipt issued by the Borrower in favor of the Lender, in the form prescribed by the Lender, for acknowledgment of disbursal of the Loan or a part thereof.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Sanction Letter cum Key Fact Statement&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;means the document that include the key terms of the Loan sanctioned by the Lender to the Borrower, in the way clearly understood by the Borrower, bearing reference number as set out in Schedule A and executed by the Borrower and the Lender on the date set out in Schedule A.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxx. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Security”</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;shall have the meaning set out in the Sanction Letter cum KFS and / or the other Loan Documents.</span>
-//          </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Pre-Payment&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the payment of the Outstanding Balance (or any part thereof) prior to the Scheduled Due Date for the same, according to the procedure prescribed in Article 6 of this Agreement, through any mode as approved by the Lender. The terms ‘Pre-Pay’ ‘Pre-Paid’ and any other cognate expressions thereof shall be construed accordingly.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Prepayment Amount”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;has the meaning ascribed to such term in Article 6.1 of this Agreement.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Prepayment Charges”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means the charges payable by the Borrower to the Lender in the event of Pre-Payment of the Outstanding Balance (or any part thereof), pursuant to the terms of the Loan Documents.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Rate of Interest”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;or “Interest” means the rate at which interest on the Loan is payable by the Borrower to the Lender, as stipulated in the Sanction Letter cum KFS, as amended from time to time with prior intimation to the Borrower.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Repayment Instruments”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means Post Dated Cheques (“PDC”), Electronic Clearance Service (“ECS”), National Automated Clearing House Mandate (&quot;NACH&quot;) and / or Standing Instructions (“SI”) (i.e., the debit clearing service notiﬁed by the Reserve Bank of India or the National Payments Corporation of India), for which the Borrower has agreed (in writing) to participate in, for facilitating <b>payment of Instalments and/or Bullet payments.</b>
+            </span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxvii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Repayment Schedule”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall mean the repayment schedule of the Instalments and / or bullet payment(s) set out in the Sanction Letter cum Key Fact Statement, being the schedule for repayment of the Instalments and / or bullet payment(s) in relation to the Loan to the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxviii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Receipt”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;means the receipt issued by the Borrower in favor of the Lender, in the form prescribed by the Lender, for acknowledgment of disbursal of the Loan or a part thereof.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxix. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Sanction Letter cum Key Fact Statement&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;means the document that include the key terms of the Loan sanctioned by the Lender to the Borrower, in the way clearly understood by the Borrower, bearing reference number as set out in Schedule A and executed by the Borrower and the Lender on the date set out in Schedule A.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxx. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Security”</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;shall have the meaning set out in the Sanction Letter cum KFS and / or the other Loan Documents.</span>
+         </p>
 
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Security Documents”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall mean and include without limitation any documents (including this Agreement) entered into or executed by the Borrower, or any other Person/s for creating and perfecting the Security (if any) to the satisfaction of the Lender.</span>
-//          </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Security Documents”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall mean and include without limitation any documents (including this Agreement) entered into or executed by the Borrower, or any other Person/s for creating and perfecting the Security (if any) to the satisfaction of the Lender.</span>
+         </p>
          
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Security Interest”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall mean any mortgage, pledge, hypothecation, assignment, deposit arrangement, encumbrance, lien (statutory or other), preference, priority or other security agreement of any kind or nature whatsoever including, without limitation: (i) any conditional sale or other title retention agreement, any ﬁnancing or similar statement or notice ﬁled under any recording or notice statute; and (ii) any designation of loss payees or beneﬁciaries or any similar arrangement under any insurance contract</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Service Provider”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;shall mean Naman Finlease Private Limited trading as Tejas Loan, a company incorporated under the provisions of Companies Act, 2013 and having its registered address at  S-370, BASEMENT PANCHSHEEL PARK , NEW DELHI, Delhi, India - 110017 which expression shall, unless it be repugnant to the subject or context thereof, include its successors and permitted assigns) and / or any agents / sub- contractors appointed by the Lender. The Service Provider acts as the authorized agent and representative of the Lender and shall undertake all requisite activities/services as mentioned in the Service Agreement executed between the Service Provider and Lender.</span>
-//          </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Security Interest”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall mean any mortgage, pledge, hypothecation, assignment, deposit arrangement, encumbrance, lien (statutory or other), preference, priority or other security agreement of any kind or nature whatsoever including, without limitation: (i) any conditional sale or other title retention agreement, any ﬁnancing or similar statement or notice ﬁled under any recording or notice statute; and (ii) any designation of loss payees or beneﬁciaries or any similar arrangement under any insurance contract</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxiii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Service Provider”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;shall mean Naman Finlease Private Limited trading as Tejas Loan, a company incorporated under the provisions of Companies Act, 2013 and having its registered address at  S-370, BASEMENT PANCHSHEEL PARK , NEW DELHI, Delhi, India - 110017 which expression shall, unless it be repugnant to the subject or context thereof, include its successors and permitted assigns) and / or any agents / sub- contractors appointed by the Lender. The Service Provider acts as the authorized agent and representative of the Lender and shall undertake all requisite activities/services as mentioned in the Service Agreement executed between the Service Provider and Lender.</span>
+         </p>
          
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Scheduled Due Date&quot;</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;means each of the dates on which the Bullet payments, Instalments together with Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and any other costs, charges, expenses if any, are due and payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 160px;' src='".$letterfooter_url."' width='100%'>
-//          <br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Standing Instructions”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;and/or “SI” means the written instructions issued by the Borrower to the Approved Bank where the Borrower maintaining account, of an amount equal to the Instalments or bullet payment(s) in favor of the Lender for repayment of the Loan. It may include other/all applicable (re)payment modes, means Post Dated Cheques (“PDC”), Electronic Clearance Service (“ECS”) National Automated Clearing House Mandate (&quot;NACH&quot;) and / or Standing Instructions (“SI”) (i.e. the debit clearing service notiﬁed by the Reserve Bank of India or the National Payments Corporation of India), for which the Borrower has agreed (in writing) to participate in, for facilitating payment of Instalment(s) and / or bullet payment(s)</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>xxxvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>“Terms and Conditions”</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;or&nbsp; <b>“Terms&quot;</b>&nbsp;mean the terms and conditions as contained in this Agreement, including all covenants, representations, and Schedules herein / hereto. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>LOAN, RATE OF INTEREST, TAXES ETC.</span>
-//             </b>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Loan:</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif'>The Lender agrees to make available to the Borrower a Loan in the amount specified in the <strong>
-//             <span style='font-family:sans-serif'>Sanction Letter cum Key Fact Statement (KFS)</span>
-//             </strong>, subject to and strictly in accordance with the terms and conditions set forth in this Agreement and the other Loan Documents executed by the Borrower. The Borrower hereby accepts and agrees to avail the Loan on the said terms. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The disbursement of the Loan shall be made by the Lender either in a single lump sum or in such instalments as the Lender may determine at its sole discretion.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall, upon request by the Lender, acknowledge the receipt of each disbursed amount by executing a receipt or any other document in a form acceptable to the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Terms of Disbursement and drawdowns:</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif'>Subject to the terms and conditions set forth in this Agreement and the other Loan Documents, the Lender may extend to the Borrower a Loan up to an aggregate principal amount as specified in the <strong>
-//             <span style='font-family:sans-serif'>Sanction Letter cum Key Fact Statement (KFS)</span>
-//             </strong>. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif'>The Borrower agrees and undertakes to utilize the Loan solely for the purpose stated in the <strong>
-//             <span style='font-family:sans-serif'>Sanction Letter cum KFS</span>
-//             </strong>, and for no other purpose whatsoever. The Borrower acknowledges that the Lender shall not be under any obligation to monitor or verify the utilization of the Loan amount and shall not be liable in any manner for the Borrower’s use or misuse thereof. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Rate of Interest:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;The Borrower agrees to pay interest and such other penal/additional interest payable on the Loan at such rates as mentioned in the Sanction Letter cum Key Fact Statement.</span>
-//          </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxiv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Scheduled Due Date&quot;</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;means each of the dates on which the Bullet payments, Instalments together with Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and any other costs, charges, expenses if any, are due and payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents.</span>
+         </p>
+         <br>
+         <img style='margin-top: 160px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxv. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Standing Instructions”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;and/or “SI” means the written instructions issued by the Borrower to the Approved Bank where the Borrower maintaining account, of an amount equal to the Instalments or bullet payment(s) in favor of the Lender for repayment of the Loan. It may include other/all applicable (re)payment modes, means Post Dated Cheques (“PDC”), Electronic Clearance Service (“ECS”) National Automated Clearing House Mandate (&quot;NACH&quot;) and / or Standing Instructions (“SI”) (i.e. the debit clearing service notiﬁed by the Reserve Bank of India or the National Payments Corporation of India), for which the Borrower has agreed (in writing) to participate in, for facilitating payment of Instalment(s) and / or bullet payment(s)</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>xxxvi. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>“Terms and Conditions”</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;or&nbsp; <b>“Terms&quot;</b>&nbsp;mean the terms and conditions as contained in this Agreement, including all covenants, representations, and Schedules herein / hereto. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>LOAN, RATE OF INTEREST, TAXES ETC.</span>
+            </b>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Loan:</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif'>The Lender agrees to make available to the Borrower a Loan in the amount specified in the <strong>
+            <span style='font-family:sans-serif'>Sanction Letter cum Key Fact Statement (KFS)</span>
+            </strong>, subject to and strictly in accordance with the terms and conditions set forth in this Agreement and the other Loan Documents executed by the Borrower. The Borrower hereby accepts and agrees to avail the Loan on the said terms. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The disbursement of the Loan shall be made by the Lender either in a single lump sum or in such instalments as the Lender may determine at its sole discretion.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall, upon request by the Lender, acknowledge the receipt of each disbursed amount by executing a receipt or any other document in a form acceptable to the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Terms of Disbursement and drawdowns:</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif'>Subject to the terms and conditions set forth in this Agreement and the other Loan Documents, the Lender may extend to the Borrower a Loan up to an aggregate principal amount as specified in the <strong>
+            <span style='font-family:sans-serif'>Sanction Letter cum Key Fact Statement (KFS)</span>
+            </strong>. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif'>The Borrower agrees and undertakes to utilize the Loan solely for the purpose stated in the <strong>
+            <span style='font-family:sans-serif'>Sanction Letter cum KFS</span>
+            </strong>, and for no other purpose whatsoever. The Borrower acknowledges that the Lender shall not be under any obligation to monitor or verify the utilization of the Loan amount and shall not be liable in any manner for the Borrower’s use or misuse thereof. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Rate of Interest:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;The Borrower agrees to pay interest and such other penal/additional interest payable on the Loan at such rates as mentioned in the Sanction Letter cum Key Fact Statement.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Direct and Indirect Taxes and Duties:</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;The Borrower hereby agrees that it shall be its sole liability to pay any and all taxes, duties or cesses including but not limited to service tax, GST, stamp duty, VAT, duties, and/or all other levies by whatever name called, payable in relation to the Loan provided by the Lender and/or the services provided pursuant hereto and/or any or all the Loan Documents (collectively referred to as “Taxes”). The Borrower shall reimburse to the Lender any such Taxes which may become payable and/ or has been paid by the Lender, as and when called upon to do so by the Lender and if the Borrower fails to pay/reimburse the same, such amounts paid by the Lender shall form part of the principal amount of the Loan Disbursed.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>2.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Cooling off Period:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;The Borrower is allowed a Cooling Off period of 3 days during which the Borrower shall have the option to decide to either continue with Loan or repay the same by paying the entire outstanding Loan amount including interest, charges or any other charges as mentioned in the Sanction Letter cum KFS post which no request for the cancellation of loan shall be entertained by the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Direct and Indirect Taxes and Duties:</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;The Borrower hereby agrees that it shall be its sole liability to pay any and all taxes, duties or cesses including but not limited to service tax, GST, stamp duty, VAT, duties, and/or all other levies by whatever name called, payable in relation to the Loan provided by the Lender and/or the services provided pursuant hereto and/or any or all the Loan Documents (collectively referred to as “Taxes”). The Borrower shall reimburse to the Lender any such Taxes which may become payable and/ or has been paid by the Lender, as and when called upon to do so by the Lender and if the Borrower fails to pay/reimburse the same, such amounts paid by the Lender shall form part of the principal amount of the Loan Disbursed.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>2.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Cooling off Period:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;The Borrower is allowed a Cooling Off period of 3 days during which the Borrower shall have the option to decide to either continue with Loan or repay the same by paying the entire outstanding Loan amount including interest, charges or any other charges as mentioned in the Sanction Letter cum KFS post which no request for the cancellation of loan shall be entertained by the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
          
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>PAYMENTS</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Payment of Instalments and Bullet Payments</span>
-//             </b>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall pay to the Lender all Instalments and/or bullet payments (inclusive of Interest), strictly on a monthly basis, on the Scheduled Due Dates, beginning from the first due date and continuing through to the last due date as stipulated in the Sanction Letter cum Key Fact Statement (“Sanction Letter cum KFS”). Time shall be of the essence for such payments. All payments shall be made through Repayment Instruments issued by the Borrower in favor of the Lender.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-//          <br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall not instruct or request the Lender to withhold or delay the presentation of any Repayment Instrument. Any delay or failure by the Lender or its Service Provider in presenting a Repayment Instrument shall not affect or defer the Borrower’s liability to make timely payments.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Dishonor of Repayment Instruments</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif'>
-//             <br> In the event of any Repayment Instrument being dishonored, the Borrower shall be liable to pay Dishonor Charges as specified in the Sanction Letter cum KFS. This shall be without prejudice to any other rights and remedies available to the Lender under law or the Loan Documents. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Return or Disposal of Repayment Instruments upon Foreclosure</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>
-//             <br> In the event of foreclosure or closure of the Loan, the Lender shall return any unutilized Repayment Instruments held by it within 30 (thirty) days from the date on which the Lender receives a written request from the Borrower. If the Borrower fails to collect such Repayment Instruments within this period, the Lender shall be entitled, at its sole discretion, to destroy them. The Borrower shall not have any claim or right to demand the return of the Repayment Instruments after this period. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Right to Recall in Case of Misrepresentation</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif'>
-//             <br> The Lender shall have the right to immediately recall the entire Outstanding Balance if it discovers that any information furnished by the Borrower—whether oral or written and whether provided in the Loan Documents, Application Form, or otherwise—relating to income, employment, personal details, or any other material fact, is false, misleading, or incorrect. Such right shall be without prejudice to any other rights or remedies available to the Lender under applicable law. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Repayment to Collection Account</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>
-//             <br> The Borrower agrees that all Repayment Instruments shall be drawn in favor of the Collection Account, the details of which are set out in <b>Schedule A</b> to this Agreement. The Lender reserves the right to modify the Collection Account by providing the Borrower with not less than 5 (five) days’ written notice. Upon such change, the Borrower shall ensure that all subsequent payments are made to the new Collection Account and shall issue fresh Repayment Instruments accordingly. </span>
-//          </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>3. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>PAYMENTS</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Payment of Instalments and Bullet Payments</span>
+            </b>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall pay to the Lender all Instalments and/or bullet payments (inclusive of Interest), strictly on a monthly basis, on the Scheduled Due Dates, beginning from the first due date and continuing through to the last due date as stipulated in the Sanction Letter cum Key Fact Statement (“Sanction Letter cum KFS”). Time shall be of the essence for such payments. All payments shall be made through Repayment Instruments issued by the Borrower in favor of the Lender.</span>
+         </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall not instruct or request the Lender to withhold or delay the presentation of any Repayment Instrument. Any delay or failure by the Lender or its Service Provider in presenting a Repayment Instrument shall not affect or defer the Borrower’s liability to make timely payments.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Dishonor of Repayment Instruments</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif'>
+            <br> In the event of any Repayment Instrument being dishonored, the Borrower shall be liable to pay Dishonor Charges as specified in the Sanction Letter cum KFS. This shall be without prejudice to any other rights and remedies available to the Lender under law or the Loan Documents. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Return or Disposal of Repayment Instruments upon Foreclosure</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>
+            <br> In the event of foreclosure or closure of the Loan, the Lender shall return any unutilized Repayment Instruments held by it within 30 (thirty) days from the date on which the Lender receives a written request from the Borrower. If the Borrower fails to collect such Repayment Instruments within this period, the Lender shall be entitled, at its sole discretion, to destroy them. The Borrower shall not have any claim or right to demand the return of the Repayment Instruments after this period. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Right to Recall in Case of Misrepresentation</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif'>
+            <br> The Lender shall have the right to immediately recall the entire Outstanding Balance if it discovers that any information furnished by the Borrower—whether oral or written and whether provided in the Loan Documents, Application Form, or otherwise—relating to income, employment, personal details, or any other material fact, is false, misleading, or incorrect. Such right shall be without prejudice to any other rights or remedies available to the Lender under applicable law. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Repayment to Collection Account</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>
+            <br> The Borrower agrees that all Repayment Instruments shall be drawn in favor of the Collection Account, the details of which are set out in <b>Schedule A</b> to this Agreement. The Lender reserves the right to modify the Collection Account by providing the Borrower with not less than 5 (five) days’ written notice. Upon such change, the Borrower shall ensure that all subsequent payments are made to the new Collection Account and shall issue fresh Repayment Instruments accordingly. </span>
+         </p>
 
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Corporate Borrower – Change in Authorized Signatories</span>
-//             </b>
-//             <span style='font-size:
-//                9.0pt;font-family:sans-serif'>
-//             <br> Where the Borrower is a corporate entity, it shall not make any change to or revoke any authorization granted to its authorized signatories who have executed the Repayment Instruments, without prior written notice to the Lender. Upon appointing new authorized signatories, the Borrower shall ensure that such signatories deliver replacement Repayment Instruments to the Lender within 3 (three) calendar days of their appointment. </span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Corporate Borrower – Change in Authorized Signatories</span>
+            </b>
+            <span style='font-size:
+               9.0pt;font-family:sans-serif'>
+            <br> Where the Borrower is a corporate entity, it shall not make any change to or revoke any authorization granted to its authorized signatories who have executed the Repayment Instruments, without prior written notice to the Lender. Upon appointing new authorized signatories, the Borrower shall ensure that such signatories deliver replacement Repayment Instruments to the Lender within 3 (three) calendar days of their appointment. </span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>3.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Appointment of Agent</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>
-//             <br> The Borrower acknowledges and agrees that <b>Naman Finlease Private Limited</b> has been appointed by the Lender as its authorized agent (“Agent”) for purposes including, but not limited to, disbursement, collection, recovery, and all other incidental matters related to the Loan. The Agent shall act exclusively under the instructions of the Lender. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>SECURITY &amp; OTHER TERMS:</span>
-//             </b>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>4.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall execute, in favor of the Lender, a <b>Demand Promissory Note</b> and such other documents as may be required by the Lender, in a form approved by the Lender, covering the full amount of the Loan along with applicable interest. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>4.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Any security provided or created by the Borrower under this Agreement and/or any other Loan Documents shall constitute <b>continuing security</b>, remaining in full force and effect until the entire Outstanding Balance and all other dues payable under the Loan Documents are fully repaid and discharged to the satisfaction of the Lender. </span>
-//          </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>3.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Appointment of Agent</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>
+            <br> The Borrower acknowledges and agrees that <b>Naman Finlease Private Limited</b> has been appointed by the Lender as its authorized agent (“Agent”) for purposes including, but not limited to, disbursement, collection, recovery, and all other incidental matters related to the Loan. The Agent shall act exclusively under the instructions of the Lender. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>4. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>SECURITY &amp; OTHER TERMS:</span>
+            </b>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>4.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall execute, in favor of the Lender, a <b>Demand Promissory Note</b> and such other documents as may be required by the Lender, in a form approved by the Lender, covering the full amount of the Loan along with applicable interest. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>4.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Any security provided or created by the Borrower under this Agreement and/or any other Loan Documents shall constitute <b>continuing security</b>, remaining in full force and effect until the entire Outstanding Balance and all other dues payable under the Loan Documents are fully repaid and discharged to the satisfaction of the Lender. </span>
+         </p>
         
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Each security interest created under this Agreement or any other Loan Document shall be in addition to, and not in substitution of, any other security, guarantee, lien, indemnity, undertaking, or right that the Lender presently holds or may hold in the future, whether under law or otherwise, in relation to the Outstanding Balance or any part thereof.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
-//          <br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The security created under this Agreement or any other Loan Document shall not be merged with, and shall not exclude or be prejudiced by, any other security interest, right of recourse, or remedy (including the invalidity thereof) that the Lender presently holds or may acquire in the future in respect of the Borrower or any other person liable for repayment of the Outstanding Balance.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The security interest created or to be created in favor of the Lender shall be released only upon full repayment of the Outstanding Balance and settlement of all dues and obligations owed by the Borrower, whether under this Agreement or otherwise, including any obligations owed by the Borrower to affiliates or group companies of the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Upon occurrence of an Event of Default, and without prejudice to any other rights or remedies available to the Lender under applicable law or the Loan Documents, the Lender shall have the right to:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Declare the entire Outstanding Balance, whether due or payable at such time or not, as <b>immediately due and payable</b>; </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Exercise any and all powers and rights available under the Loan Documents or under applicable law;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Undertake any action permitted, expressly or impliedly, by the Loan Documents or applicable legal provisions.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower acknowledges that the powers granted to the Lender under this clause are for <b>valuable consideration</b>, are <b>coupled with interest</b>, and shall accordingly be <b>irrevocable</b> for as long as any portion of the Outstanding Balance remains unpaid. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>4.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The enforcement of any security interest by the Lender shall not affect the Borrower's continuing liability to the Lender for any <b>shortfall or deficiency</b> arising or continuing under this Agreement or any of the Loan Documents in respect of the Outstanding Balance. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Each security interest created under this Agreement or any other Loan Document shall be in addition to, and not in substitution of, any other security, guarantee, lien, indemnity, undertaking, or right that the Lender presently holds or may hold in the future, whether under law or otherwise, in relation to the Outstanding Balance or any part thereof.</span>
+         </p>
+         <br>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The security created under this Agreement or any other Loan Document shall not be merged with, and shall not exclude or be prejudiced by, any other security interest, right of recourse, or remedy (including the invalidity thereof) that the Lender presently holds or may acquire in the future in respect of the Borrower or any other person liable for repayment of the Outstanding Balance.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The security interest created or to be created in favor of the Lender shall be released only upon full repayment of the Outstanding Balance and settlement of all dues and obligations owed by the Borrower, whether under this Agreement or otherwise, including any obligations owed by the Borrower to affiliates or group companies of the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Upon occurrence of an Event of Default, and without prejudice to any other rights or remedies available to the Lender under applicable law or the Loan Documents, the Lender shall have the right to:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Declare the entire Outstanding Balance, whether due or payable at such time or not, as <b>immediately due and payable</b>; </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Exercise any and all powers and rights available under the Loan Documents or under applicable law;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Undertake any action permitted, expressly or impliedly, by the Loan Documents or applicable legal provisions.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower acknowledges that the powers granted to the Lender under this clause are for <b>valuable consideration</b>, are <b>coupled with interest</b>, and shall accordingly be <b>irrevocable</b> for as long as any portion of the Outstanding Balance remains unpaid. </span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>4.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The enforcement of any security interest by the Lender shall not affect the Borrower's continuing liability to the Lender for any <b>shortfall or deficiency</b> arising or continuing under this Agreement or any of the Loan Documents in respect of the Outstanding Balance. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
          
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>OTHER CONDITIONS</b>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
-//             line-height:normal;display:none'>
-//             <b>
-//             <span style='font-family:sans-serif;
-//                display:none'>5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <span style='font-family:sans-serif;
-//                display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>5.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-family:sans-serif'>The Borrower agrees and undertakes to comply with the following obligations throughout the tenure of the Loan:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Change in Contact and Banking Details</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif'>: Promptly notify the Lender of any change in the Borrower’s residential or office address, and/or any modifications to the bank account from which the Repayment Instruments have been issued and associated repayment instructions provided.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Salary Account Continuity</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Ensure continued credit of salary into the same bank account from which Repayment Instruments have been issued towards repayment of the Loan. The Borrower shall not modify, close, or redirect salary credits to any other account without obtaining the Lender’s <b>prior written consent</b>. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Change in Employment / Occupation</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif'>: Immediately inform the Lender of any change in employment status, including resignation, termination, job switch, or initiation of a new business or profession. Upon such change, the Borrower shall:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Provide the name and address of the new employer, business, and/or professional establishment;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Ensure that salary or business income continues to be credited to the designated repayment account, unless otherwise permitted in writing by the Lender. The Lender reserves the right to terminate this Agreement and the other Loan Documents at its sole discretion in the event of such change, if deemed necessary.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Prohibited Use of Loan</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Not utilize any part of the Loan amount for illegal activities, immoral purposes, gambling, betting, lottery, races, speculative trading, or any activity of a similar prohibited or unethical nature.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Regulatory Compliance</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Obtain and submit all requisite permissions, consents, and approvals to the Lender and/or its service providers, as may be required under applicable law or internal policy, prior to the disbursement of the Loan.</span>
-//          </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>5. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>OTHER CONDITIONS</b>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
+            line-height:normal;display:none'>
+            <b>
+            <span style='font-family:sans-serif;
+               display:none'>5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <span style='font-family:sans-serif;
+               display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>5.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-family:sans-serif'>The Borrower agrees and undertakes to comply with the following obligations throughout the tenure of the Loan:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Change in Contact and Banking Details</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif'>: Promptly notify the Lender of any change in the Borrower’s residential or office address, and/or any modifications to the bank account from which the Repayment Instruments have been issued and associated repayment instructions provided.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Salary Account Continuity</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Ensure continued credit of salary into the same bank account from which Repayment Instruments have been issued towards repayment of the Loan. The Borrower shall not modify, close, or redirect salary credits to any other account without obtaining the Lender’s <b>prior written consent</b>. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Change in Employment / Occupation</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif'>: Immediately inform the Lender of any change in employment status, including resignation, termination, job switch, or initiation of a new business or profession. Upon such change, the Borrower shall:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Provide the name and address of the new employer, business, and/or professional establishment;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Ensure that salary or business income continues to be credited to the designated repayment account, unless otherwise permitted in writing by the Lender. The Lender reserves the right to terminate this Agreement and the other Loan Documents at its sole discretion in the event of such change, if deemed necessary.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Prohibited Use of Loan</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Not utilize any part of the Loan amount for illegal activities, immoral purposes, gambling, betting, lottery, races, speculative trading, or any activity of a similar prohibited or unethical nature.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Regulatory Compliance</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Obtain and submit all requisite permissions, consents, and approvals to the Lender and/or its service providers, as may be required under applicable law or internal policy, prior to the disbursement of the Loan.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Acknowledgement of Terms</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Acknowledge having read and understood all terms and conditions, privacy policy, and relevant documents made available on the websites of both Tejas Loan (hereinafter referred to as “Tejas Loan”) and the Lender.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
-//          <br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Acceptance of Online Terms</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Unconditionally agree to comply with all the terms and conditions, privacy policy, and other legally binding content published on the websites of Tejas Loan and the Lender, as may be updated from time to time.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Accuracy of Information</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>: Confirm that all personal, financial, and employment-related information provided to Tejas Loan and the Lender is true, accurate, and complete in all respects. The Borrower undertakes to immediately inform the Lender of any change or inaccuracy discovered.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:14.2pt;line-height:normal'>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             </b>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>PRE-PAYMENT</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
-//             line-height:normal;display:none'>
-//             <span style='font-family:sans-serif;
-//                display:none'>5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
-//             line-height:normal;display:none'>
-//             <span style='font-family:sans-serif;
-//                display:none'>6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black;display:none'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>6.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower may, subject to the prior written approval of the Lender, prepay the entire Outstanding Balance or any part thereof (“Prepayment Amount”) by providing at least one (1) calendar day prior written notice to the Lender, expressing the intention to make such prepayment.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>6.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Upon receiving the Lender’s written approval in response to the Borrower’s notice under Clause 6.1, the Borrower shall remit the Prepayment Amount to the Lender within five (5) calendar days from the date of such approval. Failure to make payment within the specified time frame shall render the prepayment request null and void, unless otherwise agreed by the Lender in writing.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>6.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Prepayment of the Loan shall be subject to Prepayment Charges as specified in the Sanction Letter cum Key Fact Statement (KFS), as may be amended from time to time. The applicable Prepayment Charges shall be computed on the Prepayment Amount and shall be payable simultaneously with the Prepayment Amount.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Acknowledgement of Terms</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Acknowledge having read and understood all terms and conditions, privacy policy, and relevant documents made available on the websites of both Tejas Loan (hereinafter referred to as “Tejas Loan”) and the Lender.</span>
+         </p>
+         <br>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Acceptance of Online Terms</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Unconditionally agree to comply with all the terms and conditions, privacy policy, and other legally binding content published on the websites of Tejas Loan and the Lender, as may be updated from time to time.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Accuracy of Information</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:sans-serif'>: Confirm that all personal, financial, and employment-related information provided to Tejas Loan and the Lender is true, accurate, and complete in all respects. The Borrower undertakes to immediately inform the Lender of any change or inaccuracy discovered.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:14.2pt;line-height:normal'>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>6. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            </b>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>PRE-PAYMENT</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
+            line-height:normal;display:none'>
+            <span style='font-family:sans-serif;
+               display:none'>5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:.25in;text-align:justify;text-indent:-.25in;
+            line-height:normal;display:none'>
+            <span style='font-family:sans-serif;
+               display:none'>6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black;display:none'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>6.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower may, subject to the prior written approval of the Lender, prepay the entire Outstanding Balance or any part thereof (“Prepayment Amount”) by providing at least one (1) calendar day prior written notice to the Lender, expressing the intention to make such prepayment.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>6.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Upon receiving the Lender’s written approval in response to the Borrower’s notice under Clause 6.1, the Borrower shall remit the Prepayment Amount to the Lender within five (5) calendar days from the date of such approval. Failure to make payment within the specified time frame shall render the prepayment request null and void, unless otherwise agreed by the Lender in writing.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>6.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Prepayment of the Loan shall be subject to Prepayment Charges as specified in the Sanction Letter cum Key Fact Statement (KFS), as may be amended from time to time. The applicable Prepayment Charges shall be computed on the Prepayment Amount and shall be payable simultaneously with the Prepayment Amount.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>6.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Lender shall have the sole and absolute discretion to apply the Prepayment Amount received from the Borrower in the following order of priority:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>First, towards any Prepayment Charges, Interest, Delayed Payment Charges, Fees, Dishonor Charges, Taxes, Lender Swap Charges, and all other costs, expenses, or charges payable under the Loan Documents.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Thereafter, towards the Bullet Payment or Installments, as applicable, or in such other manner as the Lender may deem appropriate.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>6.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Upon full and final prepayment of the entire Outstanding Balance, and subject to clearance of all dues, the Lender shall return the Repayment Instruments to the Borrower in accordance with the provisions of relevant Clause of this Agreement.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>BORROWER’S REPRESENTATIONS AND WARRANTIES</b>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower hereby makes the following representations and warranties to the Lender, which shall be deemed to be continuing and shall remain true and binding throughout the tenure of the Loan and until the discharge of all obligations under the Loan Documents:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The</span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'> Loan Documents executed and obligations undertaken by the Borrower are valid, binding, and enforceable in accordance with their terms and do not contravene any applicable laws, regulations, or existing contractual obligations of the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The execution, delivery, and performance of the Loan Documents by the Borrower do not and will not:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>violate any applicable law, regulation, or judicial or governmental order;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>result in a breach or constitute a default under any agreement or instrument to which the Borrower is a party or by which the Borrower or its assets are bound;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>cause the creation or imposition of any encumbrance on the Borrower’s assets, except as permitted under the Loan Documents;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>iv. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Contravene any provision of the Borrower’s constitutional or governing documents (where applicable).</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>6.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Lender shall have the sole and absolute discretion to apply the Prepayment Amount received from the Borrower in the following order of priority:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>First, towards any Prepayment Charges, Interest, Delayed Payment Charges, Fees, Dishonor Charges, Taxes, Lender Swap Charges, and all other costs, expenses, or charges payable under the Loan Documents.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Thereafter, towards the Bullet Payment or Installments, as applicable, or in such other manner as the Lender may deem appropriate.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>6.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Upon full and final prepayment of the entire Outstanding Balance, and subject to clearance of all dues, the Lender shall return the Repayment Instruments to the Borrower in accordance with the provisions of relevant Clause of this Agreement.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>BORROWER’S REPRESENTATIONS AND WARRANTIES</b>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower hereby makes the following representations and warranties to the Lender, which shall be deemed to be continuing and shall remain true and binding throughout the tenure of the Loan and until the discharge of all obligations under the Loan Documents:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The</span>
+            <span style='font-size:9.0pt;font-family:sans-serif'> Loan Documents executed and obligations undertaken by the Borrower are valid, binding, and enforceable in accordance with their terms and do not contravene any applicable laws, regulations, or existing contractual obligations of the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The execution, delivery, and performance of the Loan Documents by the Borrower do not and will not:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>violate any applicable law, regulation, or judicial or governmental order;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>result in a breach or constitute a default under any agreement or instrument to which the Borrower is a party or by which the Borrower or its assets are bound;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>cause the creation or imposition of any encumbrance on the Borrower’s assets, except as permitted under the Loan Documents;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>iv. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Contravene any provision of the Borrower’s constitutional or governing documents (where applicable).</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>There are no actions, suits, proceedings, or investigations pending or, to the Borrower’s knowledge, threatened against the Borrower before any court, tribunal, or governmental authority that could materially affect the Borrower’s financial position, the enforceability of the Loan Documents, or the Borrower’s ability to perform its obligations thereunder.</span>
-//          </p>
-//          <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding the Repayment Schedule or Loan Tenure, the Lender shall be entitled to demand immediate repayment of the Loan and all Outstanding Balances at any time. Upon such demand, the Borrower shall make immediate payment, and the Lender may adjust any monies lying in any account of the Borrower with the Lender or its branches towards such outstanding dues.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Repayment Instruments and Mandates:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has issued Repayment Instruments with full knowledge that dishonour of the same constitutes an offence under the Negotiable Instruments Act, 1881, and/or the Payment and Settlement Systems Act, 2007, as applicable.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>No notice shall be required for the presentation of such instruments.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower may authorize payment via direct debit, NACH/ECS, or similar mandates from an Approved Bank account.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Where the Borrower’s employer is registered for DAS, repayment shall be made through salary deduction. Upon cessation of employment, the Borrower shall promptly provide an alternate Repayment Instrument from an Approved Bank where the Borrower holds a new salary account.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall at all times comply with all applicable laws in India, including but not limited to the Prevention of Money Laundering Act, 2002.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower is competent to contract and has taken all necessary steps and obtained requisite authorizations to enter into and perform the Loan Documents.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>There are no actions, suits, proceedings, or investigations pending or, to the Borrower’s knowledge, threatened against the Borrower before any court, tribunal, or governmental authority that could materially affect the Borrower’s financial position, the enforceability of the Loan Documents, or the Borrower’s ability to perform its obligations thereunder.</span>
+         </p>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding the Repayment Schedule or Loan Tenure, the Lender shall be entitled to demand immediate repayment of the Loan and all Outstanding Balances at any time. Upon such demand, the Borrower shall make immediate payment, and the Lender may adjust any monies lying in any account of the Borrower with the Lender or its branches towards such outstanding dues.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Repayment Instruments and Mandates:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has issued Repayment Instruments with full knowledge that dishonour of the same constitutes an offence under the Negotiable Instruments Act, 1881, and/or the Payment and Settlement Systems Act, 2007, as applicable.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>No notice shall be required for the presentation of such instruments.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower may authorize payment via direct debit, NACH/ECS, or similar mandates from an Approved Bank account.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Where the Borrower’s employer is registered for DAS, repayment shall be made through salary deduction. Upon cessation of employment, the Borrower shall promptly provide an alternate Repayment Instrument from an Approved Bank where the Borrower holds a new salary account.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall at all times comply with all applicable laws in India, including but not limited to the Prevention of Money Laundering Act, 2002.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower is competent to contract and has taken all necessary steps and obtained requisite authorizations to enter into and perform the Loan Documents.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>i) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>All information, financial or otherwise, provided by the Borrower is true, complete, and not misleading in any material respect as of the date provided and remains valid unless updated or withdrawn in writing.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>j) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower is not insolvent, bankrupt, in receivership, or under liquidation and has not taken any steps toward such proceedings.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>k) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower confirms that they fully understand the English language and agrees that all communication from the Lender in English shall be binding.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>l) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has obtained all applicable statutory approvals and consents necessary to execute the Loan Documents and perform obligations thereunder.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>m) <span style='font:7.0pt '></span>
-//             </span>
-//             <span style='font-size:
-//                9.0pt;font-family:sans-serif;color:black'>The</span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'> Borrower confirms that he/she is gainfully employed at the time of execution of the Loan Documents, is not under notice or intending to resign. In case of resignation, termination, or change in employment, the Borrower shall promptly notify the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>n) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has duly filed all required tax returns and paid all applicable taxes, including stamp duty on Loan Documents, except where disputes are pending in good faith and proper reserves have been made.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Creditworthiness and Non-Default <br> The Borrower affirms that they: </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>are not identified as a willful defaulter;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>are not listed on the Reserve Bank of India’s caution lists or defaulters' databases;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>are not involved in any activities or investigations concerning terrorism, anti-national behavior, or enforcement proceedings by any statutory authority.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Undertaking on Lender Policies <br> The Borrower undertakes to keep themselves updated with the Lender's policies and terms from time to time and agrees to abide by the same. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Regular Payments <br> The Borrower warrants timely and regular payments to the Lender as per the terms of the Loan Documents. </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>7.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Authority of Signatories (If Applicable) <br> Where the Borrower is an entity (proprietorship, partnership, LLP, or company), all signatories to the Loan Documents are duly authorized to execute the same on behalf of the Borrower. </span>
-//          </p>
-//          <br><br><br>
-//          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>EVENTS OF DEFAULT</b>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>8.1</span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>An event of default (“Event of Default”) shall be deemed to have occurred under the Loan Documents, if:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower commits a breach or fails or neglects to perform, keep or observe any of the conditions set forth in any of the Loan Documents;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any covenant, representation and/or warranty of the Borrower is found/ proved to be incomplete, false, or incorrect.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>If the Borrower fails to deliver Repayment Instrument for the Instalments&nbsp;and / or bullet payment(s).</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any Repayment Instrument issued by the Borrower in favor of the Lender is dishonored by the Borrower’s bank.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower fail/s to pay the Instalments&nbsp;and / or bullet payment(s)&nbsp;or any other payment comprised in the Outstanding Balance on the Scheduled Due Dates.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any information supplied by the Borrower in the Application Form, or any other Loan Document is found to be materially untrue, false, misleading, or incorrect.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>i) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>All information, financial or otherwise, provided by the Borrower is true, complete, and not misleading in any material respect as of the date provided and remains valid unless updated or withdrawn in writing.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>j) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower is not insolvent, bankrupt, in receivership, or under liquidation and has not taken any steps toward such proceedings.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>k) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower confirms that they fully understand the English language and agrees that all communication from the Lender in English shall be binding.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>l) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has obtained all applicable statutory approvals and consents necessary to execute the Loan Documents and perform obligations thereunder.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>m) <span style='font:7.0pt '></span>
+            </span>
+            <span style='font-size:
+               9.0pt;font-family:sans-serif;color:black'>The</span>
+            <span style='font-size:9.0pt;font-family:sans-serif'> Borrower confirms that he/she is gainfully employed at the time of execution of the Loan Documents, is not under notice or intending to resign. In case of resignation, termination, or change in employment, the Borrower shall promptly notify the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>n) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has duly filed all required tax returns and paid all applicable taxes, including stamp duty on Loan Documents, except where disputes are pending in good faith and proper reserves have been made.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Creditworthiness and Non-Default <br> The Borrower affirms that they: </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>i. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>are not identified as a willful defaulter;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>ii. <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>are not listed on the Reserve Bank of India’s caution lists or defaulters' databases;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>iii. <span style='font:7.0pt '>&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>are not involved in any activities or investigations concerning terrorism, anti-national behavior, or enforcement proceedings by any statutory authority.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Undertaking on Lender Policies <br> The Borrower undertakes to keep themselves updated with the Lender's policies and terms from time to time and agrees to abide by the same. </span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Regular Payments <br> The Borrower warrants timely and regular payments to the Lender as per the terms of the Loan Documents. </span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>7.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Authority of Signatories (If Applicable) <br> Where the Borrower is an entity (proprietorship, partnership, LLP, or company), all signatories to the Loan Documents are duly authorized to execute the same on behalf of the Borrower. </span>
+         </p>
+         <br><br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>EVENTS OF DEFAULT</b>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>8.1</span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>An event of default (“Event of Default”) shall be deemed to have occurred under the Loan Documents, if:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower commits a breach or fails or neglects to perform, keep or observe any of the conditions set forth in any of the Loan Documents;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any covenant, representation and/or warranty of the Borrower is found/ proved to be incomplete, false, or incorrect.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>If the Borrower fails to deliver Repayment Instrument for the Instalments&nbsp;and / or bullet payment(s).</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any Repayment Instrument issued by the Borrower in favor of the Lender is dishonored by the Borrower’s bank.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower fail/s to pay the Instalments&nbsp;and / or bullet payment(s)&nbsp;or any other payment comprised in the Outstanding Balance on the Scheduled Due Dates.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any information supplied by the Borrower in the Application Form, or any other Loan Document is found to be materially untrue, false, misleading, or incorrect.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower has admitted to any Person in writing that the Borrower is unable to pay his/her debts and / or that the Borrower is willing to be adjudged bankrupt.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower has admitted to any Person in writing that the Borrower is unable to pay his/her debts and / or that the Borrower is willing to be adjudged bankrupt.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>If the Borrower commit any act of bankruptcy or makes assignment for the beneﬁt of creditors or consents to the appointment of a trustee or receiver in respect of its properties / assets or insolvency proceedings, whether voluntary or otherwise, are instituted against the Borrower:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>i) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The receiver is appointed in respect of the assets or properties of the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>j) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower, being an individual, has an insolvency notice served on him or is declared insane or is convicted of any offence.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>k) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any of the Repayment Instrument delivered or to be delivered by the Borrower to the Lender in accordance hereof, are not encashed / acted upon or dishonored for any reason whatsoever, on presentation being made by the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>l) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any instruction is given by the Borrower to stop payment on any of the Repayment Instrument.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>m) <span style='font:7.0pt '></span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>If the Borrower fail/s to create Security Interest in accordance with&nbsp;Article 4.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>n) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>If the Borrower commits a default under any other agreement executed with the Lender or any of its affiliates or group companies.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>o) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>If any other event has occurred which in the opinion of the Lender jeopardizes its interest or would make it difficult for the Lender to recover the Loan or the Outstanding Balance if timely action is not taken.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>p) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The occurrence of any event which, in the opinion of the Lender, may jeopardize the Borrower’s ability to pay the Lender’s dues.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>8.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Upon occurrence of any of the Events of Default and at any time thereafter, the Lender shall have the right, but not the obligation to declare all sums outstanding under the Loan (i.e., the entire Outstanding Balance), whether due or not, immediately repayable and upon the Borrower failing to make the said payments within 7 (seven) days thereof, the Lender may at its sole discretion</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Require the Borrower to pay liquidated damages equal to all unpaid Instalments&nbsp; <b>and / or bullet payment(s)</b>&nbsp;which in the absence of a default would have been payable by the Borrower for the full term hereof together with Interest stipulated in the Sanction Letter cum KFS from the date of such declaration till the date of payment and/or realization; and </span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>h) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>If the Borrower commit any act of bankruptcy or makes assignment for the beneﬁt of creditors or consents to the appointment of a trustee or receiver in respect of its properties / assets or insolvency proceedings, whether voluntary or otherwise, are instituted against the Borrower:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>i) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The receiver is appointed in respect of the assets or properties of the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>j) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower, being an individual, has an insolvency notice served on him or is declared insane or is convicted of any offence.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>k) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any of the Repayment Instrument delivered or to be delivered by the Borrower to the Lender in accordance hereof, are not encashed / acted upon or dishonored for any reason whatsoever, on presentation being made by the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>l) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any instruction is given by the Borrower to stop payment on any of the Repayment Instrument.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>m) <span style='font:7.0pt '></span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>If the Borrower fail/s to create Security Interest in accordance with&nbsp;Article 4.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>n) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>If the Borrower commits a default under any other agreement executed with the Lender or any of its affiliates or group companies.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>o) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>If any other event has occurred which in the opinion of the Lender jeopardizes its interest or would make it difficult for the Lender to recover the Loan or the Outstanding Balance if timely action is not taken.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>p) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The occurrence of any event which, in the opinion of the Lender, may jeopardize the Borrower’s ability to pay the Lender’s dues.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>8.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Upon occurrence of any of the Events of Default and at any time thereafter, the Lender shall have the right, but not the obligation to declare all sums outstanding under the Loan (i.e., the entire Outstanding Balance), whether due or not, immediately repayable and upon the Borrower failing to make the said payments within 7 (seven) days thereof, the Lender may at its sole discretion</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Require the Borrower to pay liquidated damages equal to all unpaid Instalments&nbsp; <b>and / or bullet payment(s)</b>&nbsp;which in the absence of a default would have been payable by the Borrower for the full term hereof together with Interest stipulated in the Sanction Letter cum KFS from the date of such declaration till the date of payment and/or realization; and </span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Exercise any other right or remedy which may be available to the Lender under any applicable law, including the rights available pursuant to the provisions under the loan documents.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 210px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower shall also be liable for payment of all legal and other costs and expenses resulting from the defaults or the exercise of the Lender’s remedies.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>ARTICLE 9: ASSIGNMENT &amp; DELEGATION</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>9.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower shall not assign, transfer, or otherwise dispose of, whether in whole or in part, the Loan or any of its rights or obligations under the Loan Documents to any third party without the prior written consent of the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>9.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower expressly agrees and acknowledges that the Lender shall have the absolute and unfettered right, at its sole discretion, to sell, assign, transfer or otherwise dispose of, whether in whole or in part, its rights, title, and interest in the Loan, the Outstanding Balance, or any part thereof, to any third party, on such terms and in such manner as the Lender may deem fit, without the requirement of any notice to or consent of the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>9.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower further acknowledges and agrees that, without prejudice to the Lender’s right to perform any obligations or functions under the Loan Documents directly, the Lender shall be entitled to appoint one or more third parties, including but not limited to service providers, agents, or collection agencies (collectively referred to as “Service Providers”), and to delegate to such parties any of the Lender’s functions, rights, or obligations under the Loan Documents, including without limitation:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Collection of all or any portion of the Instalments and/or Outstanding Balance;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Communication with the Borrower including issuance of demand notices or payment reminders;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Exercise any other right or remedy which may be available to the Lender under any applicable law, including the rights available pursuant to the provisions under the loan documents.</span>
+         </p>
+         <br>
+         <img style='margin-top: 210px;' src='".$letterfooter_url."' width='100%'>
+         <br><br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower shall also be liable for payment of all legal and other costs and expenses resulting from the defaults or the exercise of the Lender’s remedies.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>ARTICLE 9: ASSIGNMENT &amp; DELEGATION</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>9.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower shall not assign, transfer, or otherwise dispose of, whether in whole or in part, the Loan or any of its rights or obligations under the Loan Documents to any third party without the prior written consent of the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>9.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower expressly agrees and acknowledges that the Lender shall have the absolute and unfettered right, at its sole discretion, to sell, assign, transfer or otherwise dispose of, whether in whole or in part, its rights, title, and interest in the Loan, the Outstanding Balance, or any part thereof, to any third party, on such terms and in such manner as the Lender may deem fit, without the requirement of any notice to or consent of the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>9.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower further acknowledges and agrees that, without prejudice to the Lender’s right to perform any obligations or functions under the Loan Documents directly, the Lender shall be entitled to appoint one or more third parties, including but not limited to service providers, agents, or collection agencies (collectively referred to as “Service Providers”), and to delegate to such parties any of the Lender’s functions, rights, or obligations under the Loan Documents, including without limitation:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Collection of all or any portion of the Instalments and/or Outstanding Balance;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Communication with the Borrower including issuance of demand notices or payment reminders;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Visiting the Borrower’s residence, office, or place of business, or otherwise contacting the Borrower for collection purposes;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Visiting the Borrower’s residence, office, or place of business, or otherwise contacting the Borrower for collection purposes;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Issuing valid receipts, acknowledgments, or discharges on behalf of the Lender in respect of any payments received from the Borrower;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Issuing valid receipts, acknowledgments, or discharges on behalf of the Lender in respect of any payments received from the Borrower;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Performing any other lawful acts or functions as may be delegated by the Lender in connection with the administration, monitoring, or enforcement of the Loan.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>9.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower agrees that any such delegation by the Lender shall be binding upon the Borrower and that all acts done or performed by such Service Providers shall be deemed to have been done or performed by the Lender itself.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>10 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>COMPLIANCE WITH THE REGULATIONS</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>10.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower and the Lender agree to comply jointly and severally with all applicable laws and regulations from time to time in force including any amendments, modiﬁcation or change thereof which may be attracted and the Borrower shall indemnify the Lender in respect of any loss, claim or expense to the Lender as a result of non-compliance with any such laws and regulations by the Borrower</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>10.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The amount of Instalments&nbsp; <b>and / or bullet payment(s)</b>&nbsp;shall be increased by incremental taxes, whether sales, excise, security tax or interest tax and other related taxes now levied on this transaction or hereafter to be levied. </span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>11 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>FURTHER ASSURANCES</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>11.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower shall pay all costs and other expenses incurred by the Lender in enforcing the Loan Documents and/or for recovery of the Loan / Outstanding Balance.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>11.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower undertake/s to indemnify and keep the Lender indemniﬁed in respect of any cost, loss or liability incurred by the Lender as a result of: (a) the occurrence of any Event of Default; (b) Any information supplied by the Borrower in the Application Form or any other Loan Document is found to be materially untrue, false, misleading or incorrect; (c) failure by the Borrower to pay any amount due under the Loan Documents on its Scheduled Due Date; (d) the Borrower failing to comply with the provisions of any applicable laws; and / or (e) breach of any representation, warranty, covenant or undertaking of the Borrower under the terms of the this Agreement or any of the other Loan Documents.</span>
-//          </p>
-//          <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>11.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>In addition to the obligations and documents which the Lender expressly require the Borrower to execute, deliver and perform, the Borrower hereby agree to execute, deliver, and perform, such further acts or documents which the Lender may reasonably require, from time to time, to effectuate the purposes of these Terms and Conditions or any of the other Loan Documents.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>12 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>NOTICE / AUTHORISATION</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>12.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Any notice / letter / other communication sent by the Lender to the Borrower shall be sent at the latest address of the Borrower available in the records of the Lender and in English language (which the Borrower acknowledges and accepts) and the same shall be deemed to have been delivered on expiry of 48 hours after it has been sent by registered post / courier / other modes of delivery. Any notice to be sent to the Lender by the Borrower shall be sent by pre-paid Registered A.D. at its registered office or at such other address as may be intimated by the Lender to the Borrower. The Borrower shall immediately intimate the Lender of any change in its office / residential address Borrower.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Performing any other lawful acts or functions as may be delegated by the Lender in connection with the administration, monitoring, or enforcement of the Loan.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>9.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower agrees that any such delegation by the Lender shall be binding upon the Borrower and that all acts done or performed by such Service Providers shall be deemed to have been done or performed by the Lender itself.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>10 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>COMPLIANCE WITH THE REGULATIONS</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>10.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower and the Lender agree to comply jointly and severally with all applicable laws and regulations from time to time in force including any amendments, modiﬁcation or change thereof which may be attracted and the Borrower shall indemnify the Lender in respect of any loss, claim or expense to the Lender as a result of non-compliance with any such laws and regulations by the Borrower</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>10.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The amount of Instalments&nbsp; <b>and / or bullet payment(s)</b>&nbsp;shall be increased by incremental taxes, whether sales, excise, security tax or interest tax and other related taxes now levied on this transaction or hereafter to be levied. </span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>11 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>FURTHER ASSURANCES</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>11.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower shall pay all costs and other expenses incurred by the Lender in enforcing the Loan Documents and/or for recovery of the Loan / Outstanding Balance.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>11.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower undertake/s to indemnify and keep the Lender indemniﬁed in respect of any cost, loss or liability incurred by the Lender as a result of: (a) the occurrence of any Event of Default; (b) Any information supplied by the Borrower in the Application Form or any other Loan Document is found to be materially untrue, false, misleading or incorrect; (c) failure by the Borrower to pay any amount due under the Loan Documents on its Scheduled Due Date; (d) the Borrower failing to comply with the provisions of any applicable laws; and / or (e) breach of any representation, warranty, covenant or undertaking of the Borrower under the terms of the this Agreement or any of the other Loan Documents.</span>
+         </p>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>11.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>In addition to the obligations and documents which the Lender expressly require the Borrower to execute, deliver and perform, the Borrower hereby agree to execute, deliver, and perform, such further acts or documents which the Lender may reasonably require, from time to time, to effectuate the purposes of these Terms and Conditions or any of the other Loan Documents.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>12 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>NOTICE / AUTHORISATION</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>12.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Any notice / letter / other communication sent by the Lender to the Borrower shall be sent at the latest address of the Borrower available in the records of the Lender and in English language (which the Borrower acknowledges and accepts) and the same shall be deemed to have been delivered on expiry of 48 hours after it has been sent by registered post / courier / other modes of delivery. Any notice to be sent to the Lender by the Borrower shall be sent by pre-paid Registered A.D. at its registered office or at such other address as may be intimated by the Lender to the Borrower. The Borrower shall immediately intimate the Lender of any change in its office / residential address Borrower.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>12.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Borrower hereby authorize the Lender to contact the Borrower in relation to provision of information about new products of the Lender, offers, promotions and also for the purpose of receiving feedback or conducting surveys and hereby expressly agree to exempt such actions for the purpose of ‘Do Not Call / Disturb’ guidelines issued by the Telecom Regulatory and Development Authority or any other authority.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>12.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Borrower hereby authorize the Lender to contact the Borrower in relation to provision of information about new products of the Lender, offers, promotions and also for the purpose of receiving feedback or conducting surveys and hereby expressly agree to exempt such actions for the purpose of ‘Do Not Call / Disturb’ guidelines issued by the Telecom Regulatory and Development Authority or any other authority.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
          
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>13 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>CONSENT TO DISCLOSURE</b>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>13.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower understands and acknowledges that, as a pre-condition for the grant of the Loan by the Lender, the Lender requires the Borrower’s express consent for the disclosure and use of certain information and data pertaining to the Borrower. Accordingly, the Borrower hereby unconditionally consents and agrees to the disclosure and furnishing by the Lender, to such parties and in such manner as the Lender may deem fit or as may be authorized by the Reserve Bank of India (RBI), of the following:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'> any personal, financial, or credit-related information and data relating to the Borrower;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>information or data relating to the Loan and/or any credit facility availed or to be availed by the Borrower from the Lender;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>information regarding any obligations undertaken or to be undertaken by the Borrower in relation to such credit facilities;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Information regarding any default or non-compliance by the Borrower in the discharge of any of the aforesaid obligations.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>13.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower declares and affirms that all information and data provided by the Borrower to the Lender, whether submitted in writing or communicated orally, is true, complete, accurate, and not misleading in any respect.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>13.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower further agrees and acknowledges that:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>the Credit Information Bureau (India) Limited (CIBIL) and/or any other credit information company or agency authorized by the RBI may use and process the said information and data disclosed by the Lender in such manner as may be deemed appropriate by them;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>CIBIL and/or such other authorized agency may furnish, for consideration, the processed information or any reports, scores, or products derived therefrom to banks, financial institutions, credit grantors, or other registered users, as permitted under applicable law and regulations;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding anything to the contrary contained in this Agreement, the Loan Documents, or any applicable law, the Borrower agrees that in the event of default in repayment of the Loan, any instalment thereof, or any part of the Outstanding Balance on the Scheduled Due Date(s), the Lender and/or the Reserve Bank of India shall have an unqualified right to disclose, report, or publish the name of the Borrower as a “defaulter” in such manner and through such media as they may, in their sole discretion, deem appropriate.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <br>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp; <b>MISCELLANEOUS</b>
-//             <br>
-//             <br>
-//             </span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Interpretation:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'> Unless the subject or context otherwise requires or unless otherwise stated, in this Agreement: </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Unless the context otherwise requires or unless expressly stated to the contrary, in this Agreement:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>References to “Articles”, “Sections”, or “Schedules” are to the Articles, Sections, and Schedules of this Agreement and shall be deemed to include all amendments and modifications thereto</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>References to any law, statute, regulation, or provision thereof shall include such law, statute, regulation, or provision as amended, re-enacted, substituted, or supplemented from time to time.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The headings and titles used in this Agreement are for reference and convenience only and shall not affect the construction or interpretation of any provision of this Agreement.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>Words denoting the singular shall include the plural and vice versa, as the context may require.</span>
-//          </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>13 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>CONSENT TO DISCLOSURE</b>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>13.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower understands and acknowledges that, as a pre-condition for the grant of the Loan by the Lender, the Lender requires the Borrower’s express consent for the disclosure and use of certain information and data pertaining to the Borrower. Accordingly, the Borrower hereby unconditionally consents and agrees to the disclosure and furnishing by the Lender, to such parties and in such manner as the Lender may deem fit or as may be authorized by the Reserve Bank of India (RBI), of the following:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'> any personal, financial, or credit-related information and data relating to the Borrower;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>information or data relating to the Loan and/or any credit facility availed or to be availed by the Borrower from the Lender;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>information regarding any obligations undertaken or to be undertaken by the Borrower in relation to such credit facilities;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Information regarding any default or non-compliance by the Borrower in the discharge of any of the aforesaid obligations.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>13.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower declares and affirms that all information and data provided by the Borrower to the Lender, whether submitted in writing or communicated orally, is true, complete, accurate, and not misleading in any respect.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>13.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower further agrees and acknowledges that:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>the Credit Information Bureau (India) Limited (CIBIL) and/or any other credit information company or agency authorized by the RBI may use and process the said information and data disclosed by the Lender in such manner as may be deemed appropriate by them;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>CIBIL and/or such other authorized agency may furnish, for consideration, the processed information or any reports, scores, or products derived therefrom to banks, financial institutions, credit grantors, or other registered users, as permitted under applicable law and regulations;</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding anything to the contrary contained in this Agreement, the Loan Documents, or any applicable law, the Borrower agrees that in the event of default in repayment of the Loan, any instalment thereof, or any part of the Outstanding Balance on the Scheduled Due Date(s), the Lender and/or the Reserve Bank of India shall have an unqualified right to disclose, report, or publish the name of the Borrower as a “defaulter” in such manner and through such media as they may, in their sole discretion, deem appropriate.</span>
+         </p>
+         <br>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp; <b>MISCELLANEOUS</b>
+            <br>
+            <br>
+            </span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Interpretation:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'> Unless the subject or context otherwise requires or unless otherwise stated, in this Agreement: </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Unless the context otherwise requires or unless expressly stated to the contrary, in this Agreement:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>References to “Articles”, “Sections”, or “Schedules” are to the Articles, Sections, and Schedules of this Agreement and shall be deemed to include all amendments and modifications thereto</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>References to any law, statute, regulation, or provision thereof shall include such law, statute, regulation, or provision as amended, re-enacted, substituted, or supplemented from time to time.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The headings and titles used in this Agreement are for reference and convenience only and shall not affect the construction or interpretation of any provision of this Agreement.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>Words denoting the singular shall include the plural and vice versa, as the context may require.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>References to any gender shall include all genders—male, female, and neuter—as the context may require.</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>References to any gender shall include all genders—male, female, and neuter—as the context may require.</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Sanction Letter cum Key Fact Statement (KFS), all Schedules, and the Recitals form an integral and binding part of this Agreement and shall be read in conjunction with the provisions hereof.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>In the event any payment under this Agreement becomes due on a day which is not a Business Day, such payment shall be made on the next succeeding Business Day. Notwithstanding the actual date of payment, the calculation of interest and other charges shall be made with reference to the originally scheduled due date, unless otherwise agreed by the Lender and notified in writing to the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Effective Date of Terms:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'> These Terms and Conditions shall become binding on the Borrower and the Lender on and from the date of execution hereof. These Terms and Conditions shall be in force till all the monies due and payable to the Lender under the Loan Documents as well as all other agreement(s), document(s) that may be subsisting / executed between the Borrower and the Lender are fully paid to the satisfaction of the Lender.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Representatives and Assigns:</span>
-//             </b>
-//             <span style='font-size:
-//                9.0pt;font-family:sans-serif;color:black'> The Borrower, his/her/its/their heirs, legal representatives, executors, administrators, successors, permitted assigns, partner(s) for the time being, including the legal representatives of the deceased partner(s), if any) shall be bound by all the covenants of these Terms and Conditions.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Non-Waiver:</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;Any omission or delay on the part of the Lender, in exercising any of rights, powers or remedy accruing to the Lender, upon failure by the Borrower in the due and punctual fulﬁlment of the obligations of the Borrower hereunder, shall not be deemed to constitute a waiver by the Lender of any of its rights to require such due and punctual performance by the Borrower.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Governing Law and Jurisdiction:</span>
-//             </b>
-//             <span style='font-size:
-//                9.0pt;font-family:sans-serif;color:black'>&nbsp;These Terms and Conditions shall be construed and governed in all respects, including validity, interpretation, and effect in accordance with the laws of India. All disputes arising out of these Terms and Conditions shall be subject to the exclusive jurisdiction of the courts or tribunals at - New Delhi, India.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Dispute Resolution:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;Any question, dispute or claim arising out of or in connection with these Terms and Conditions or the other Loan Documents including any question on its existence, validity or termination shall be referred to and ﬁnally adjudicated through arbitration by a sole arbitrator and in accordance with the Arbitration and Conciliation Act, 1996. The sole arbitrator will be appointed by the Lender. The venue for such arbitration shall be New Delhi, India. The arbitration award given by the sole arbitrator appointed as aforesaid shall be ﬁnal and binding on all the parties in connection with any question of facts or law arising in the course of arbitration or with respect to any award made. Further, the present clause shall survive the termination of these Terms and Conditions and the other Loan Documents. The Courts at New Delhi, India shall have exclusive jurisdiction (subject to the arbitration proceedings which are to be also conducted in New Delhi, India) over any or all disputes arising out of this Agreement and the other Loan Documents. The present clause along with the clause for payment of Interest and other Outstanding Balance by the Borrower shall survive the termination of this Agreement and the other Loan Documents.</span>
-//          </p>
-//          <br>
-//          <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Conﬁdentiality:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;</span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Lender shall exercise reasonable care and diligence while handling any confidential information pertaining to the Borrower. However, the Borrower hereby acknowledges and agrees that the Lender shall be entitled to disclose, without any further notice or reference to the Borrower, any information or documentation relating to the Borrower, the Loan, or any of the transactions contemplated under the Loan Documents, in the following circumstances:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:35.45pt;text-align:justify;text-indent:-7.1pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>to the Lender’s affiliates, group companies, or subsidiaries;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>to any actual or prospective transferees, assignees, or purchasers of any rights, obligations or interests in the Loan and/or the Outstanding Balance;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Sanction Letter cum Key Fact Statement (KFS), all Schedules, and the Recitals form an integral and binding part of this Agreement and shall be read in conjunction with the provisions hereof.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>g) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>In the event any payment under this Agreement becomes due on a day which is not a Business Day, such payment shall be made on the next succeeding Business Day. Notwithstanding the actual date of payment, the calculation of interest and other charges shall be made with reference to the originally scheduled due date, unless otherwise agreed by the Lender and notified in writing to the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Effective Date of Terms:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'> These Terms and Conditions shall become binding on the Borrower and the Lender on and from the date of execution hereof. These Terms and Conditions shall be in force till all the monies due and payable to the Lender under the Loan Documents as well as all other agreement(s), document(s) that may be subsisting / executed between the Borrower and the Lender are fully paid to the satisfaction of the Lender.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Representatives and Assigns:</span>
+            </b>
+            <span style='font-size:
+               9.0pt;font-family:sans-serif;color:black'> The Borrower, his/her/its/their heirs, legal representatives, executors, administrators, successors, permitted assigns, partner(s) for the time being, including the legal representatives of the deceased partner(s), if any) shall be bound by all the covenants of these Terms and Conditions.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.4 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Non-Waiver:</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;Any omission or delay on the part of the Lender, in exercising any of rights, powers or remedy accruing to the Lender, upon failure by the Borrower in the due and punctual fulﬁlment of the obligations of the Borrower hereunder, shall not be deemed to constitute a waiver by the Lender of any of its rights to require such due and punctual performance by the Borrower.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.5 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Governing Law and Jurisdiction:</span>
+            </b>
+            <span style='font-size:
+               9.0pt;font-family:sans-serif;color:black'>&nbsp;These Terms and Conditions shall be construed and governed in all respects, including validity, interpretation, and effect in accordance with the laws of India. All disputes arising out of these Terms and Conditions shall be subject to the exclusive jurisdiction of the courts or tribunals at - New Delhi, India.</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.6 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Dispute Resolution:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;Any question, dispute or claim arising out of or in connection with these Terms and Conditions or the other Loan Documents including any question on its existence, validity or termination shall be referred to and ﬁnally adjudicated through arbitration by a sole arbitrator and in accordance with the Arbitration and Conciliation Act, 1996. The sole arbitrator will be appointed by the Lender. The venue for such arbitration shall be New Delhi, India. The arbitration award given by the sole arbitrator appointed as aforesaid shall be ﬁnal and binding on all the parties in connection with any question of facts or law arising in the course of arbitration or with respect to any award made. Further, the present clause shall survive the termination of these Terms and Conditions and the other Loan Documents. The Courts at New Delhi, India shall have exclusive jurisdiction (subject to the arbitration proceedings which are to be also conducted in New Delhi, India) over any or all disputes arising out of this Agreement and the other Loan Documents. The present clause along with the clause for payment of Interest and other Outstanding Balance by the Borrower shall survive the termination of this Agreement and the other Loan Documents.</span>
+         </p>
+         <br>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.7 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Conﬁdentiality:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;</span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Lender shall exercise reasonable care and diligence while handling any confidential information pertaining to the Borrower. However, the Borrower hereby acknowledges and agrees that the Lender shall be entitled to disclose, without any further notice or reference to the Borrower, any information or documentation relating to the Borrower, the Loan, or any of the transactions contemplated under the Loan Documents, in the following circumstances:</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:35.45pt;text-align:justify;text-indent:-7.1pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>a) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>to the Lender’s affiliates, group companies, or subsidiaries;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>b) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>to any actual or prospective transferees, assignees, or purchasers of any rights, obligations or interests in the Loan and/or the Outstanding Balance;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>to any regulatory, governmental, judicial, statutory, or quasi-judicial authority, including but not limited to disclosures made in compliance with any law, rule, regulation, directive, order, notification or instruction issued by the Reserve Bank of India or any other governmental authority;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>c) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>to any regulatory, governmental, judicial, statutory, or quasi-judicial authority, including but not limited to disclosures made in compliance with any law, rule, regulation, directive, order, notification or instruction issued by the Reserve Bank of India or any other governmental authority;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>in connection with the exercise of the Lender’s rights, remedies, powers, or obligations under the Loan Documents;</span>
-//          </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>d) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>in connection with the exercise of the Lender’s rights, remedies, powers, or obligations under the Loan Documents;</span>
+         </p>
          
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>to the Lender’s employees, directors, officers, advisors, agents, consultants, service providers and/or subcontractors, on a need-to-know basis, for the purpose of fulfilling the Lender’s obligations under the Loan Documents, or for evaluating or pursuing any business relationship with the Borrower;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
-//             line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'> to any credit information bureau, credit rating agency, data repository, or other service providers or agencies engaged by the Lender.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:42.55pt;text-align:justify;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>In addition to the above, the Lender shall have the right to disclose, without prior notice to the Borrower, all or any information or documentation, including but not limited to:</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:1.0in;text-indent:-29.45pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>personal and financial information and data relating to the Borrower;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:1.0in;text-indent:-29.45pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>details of any credit facility availed or proposed to be availed by the Borrower;</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:56.7pt;text-indent:-14.15pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>any default or delay in repayment, or any other non-compliance with the terms of the Loan Documents;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>to any governmental, taxation, regulatory or judicial authority or agency, including but not limited to the Income Tax Department, Credit Rating Agencies, Credit Information Companies (CICs), or any other authority, body, or department, for the purpose of compliance, regulatory reporting, or protection of the Lender’s interests.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-//             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower expressly waives any right to privacy, confidentiality, or non-disclosure with respect to the disclosures set out herein and further waives any right to initiate legal proceedings for defamation, breach of confidentiality, or any related claim in respect of such disclosures made in accordance with this Clause.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Costs and Expenses:</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>&nbsp;The Borrower shall forthwith on demand being made, pay to the Lender, on a full indemnity basis, all costs and expenses (including legal costs) incurred and/or to be incurred by the Lender and / or Service Provider for the enforcement of these Terms and Conditions, the other Loan Documents and realization/recovery of the amount of the Outstanding Balance from the Borrower, if any.</span>
-//          </p>
-//          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-//             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
-//             line-height:normal'>
-//             <span style='font-family:sans-serif'>14.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-//             </span>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>Amendments:</span>
-//             </b>
-//             <span style='font-size:9.0pt;font-family:
-//                sans-serif;color:black'>&nbsp;These Terms and Conditions may be amended by the Lender at any time. Any such amendment shall take effect only prospectively i.e., after the amendment of the Terms and Conditions. However, the Lender shall upon such variation or amendment being made, inform the Borrower in respect of any variation or amendment in the Terms and Conditions and/or other charges as are applicable to the Loan.</span>
-//          </p>
-//          <br><br><br><br><br>
-//          <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-//          <br><br><br>
-//          <img src='".$letterhead_url."' width='100%'>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <u>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>SCHEDULE A <br> AGREEMENT PARTICULARS </span>
-//             </u>
-//             </b>
-//          </p>
-//          <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <u>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>S.NO.</span>
-//                      </u>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border:solid #DDDDDD 1.0pt;border-left:
-//                   none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <u>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>PARTICULAR</span>
-//                      </u>
-//                      </b>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border:solid #DDDDDD 1.0pt;border-left:
-//                   none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <b>
-//                      <u>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>DETAILS</span>
-//                      </u>
-//                      </b>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>1.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Date of Execution</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$sanction_date."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>2.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Place of Execution</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".REGISTED_ADDRESS."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>3.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Lender</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Aman Fincap Limited</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Service Provider</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Naman Finlease Pvt Ltd.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//         </table>
-//         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
-//         <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
-//                <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Name of the DLA</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Tejas Loan</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>4.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Borrower</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$fullname."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>5.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Address of the Borrower</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$residence_address."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>6.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Employer</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$employmentDetails->employer_name."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>7.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Address of the Employer</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".($employmentDetails->emp_house) . ", ". ($employmentDetails->emp_street) . ", " . ($employmentDetails->emp_landmark) . ", " . ($employmentDetails->emp_city) . " - " . ($employmentDetails->emp_pincode)."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>8.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Reference number of Sanction Letter cum KFS</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$loanDetails->loan_no."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>9.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Date of Execution of Sanction Letter cum KFS</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$sanction_date."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>10.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Bank Account Details</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>".$bankDetails->account."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>11.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Sanctioned Loan Amount</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>INR ". number_format(round($camDetails->loan_recommended, 0), 2)."</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>12.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Interest Rate</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Interest on the Loan: Interest on the Loan: ".number_format($camDetails->roi, 2)."% from the date of disbursal until the date of repayment. In the event of failure to make payment on due date, a penal interest of ".round(($roi * 2), 2)."% shall be applicable from the due date until the date of payment.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             </table>
-//             <br><br>
-//         <img style='margin-top: 200px;' src='".$letterfooter_url."' width='100%'>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>e) <span style='font:7.0pt '>&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>to the Lender’s employees, directors, officers, advisors, agents, consultants, service providers and/or subcontractors, on a need-to-know basis, for the purpose of fulfilling the Lender’s obligations under the Loan Documents, or for evaluating or pursuing any business relationship with the Borrower;</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
+            line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>f) <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'> to any credit information bureau, credit rating agency, data repository, or other service providers or agencies engaged by the Lender.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:42.55pt;text-align:justify;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>In addition to the above, the Lender shall have the right to disclose, without prior notice to the Borrower, all or any information or documentation, including but not limited to:</span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:1.0in;text-indent:-29.45pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>personal and financial information and data relating to the Borrower;</span>
+         </p>
+         <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:1.0in;text-indent:-29.45pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>details of any credit facility availed or proposed to be availed by the Borrower;</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:56.7pt;text-indent:-14.15pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:Symbol'>· <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <span style='font-size:9.0pt;font-family:sans-serif'>any default or delay in repayment, or any other non-compliance with the terms of the Loan Documents;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>to any governmental, taxation, regulatory or judicial authority or agency, including but not limited to the Income Tax Department, Credit Rating Agencies, Credit Information Companies (CICs), or any other authority, body, or department, for the purpose of compliance, regulatory reporting, or protection of the Lender’s interests.</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+            margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower expressly waives any right to privacy, confidentiality, or non-disclosure with respect to the disclosures set out herein and further waives any right to initiate legal proceedings for defamation, breach of confidentiality, or any related claim in respect of such disclosures made in accordance with this Clause.</span>
+         </p>
+         <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.8 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Costs and Expenses:</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>&nbsp;The Borrower shall forthwith on demand being made, pay to the Lender, on a full indemnity basis, all costs and expenses (including legal costs) incurred and/or to be incurred by the Lender and / or Service Provider for the enforcement of these Terms and Conditions, the other Loan Documents and realization/recovery of the amount of the Outstanding Balance from the Borrower, if any.</span>
+         </p>
+         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+            margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
+            line-height:normal'>
+            <span style='font-family:sans-serif'>14.9 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </span>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>Amendments:</span>
+            </b>
+            <span style='font-size:9.0pt;font-family:
+               sans-serif;color:black'>&nbsp;These Terms and Conditions may be amended by the Lender at any time. Any such amendment shall take effect only prospectively i.e., after the amendment of the Terms and Conditions. However, the Lender shall upon such variation or amendment being made, inform the Borrower in respect of any variation or amendment in the Terms and Conditions and/or other charges as are applicable to the Loan.</span>
+         </p>
+         <br><br><br><br><br>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br><br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <u>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>SCHEDULE A <br> AGREEMENT PARTICULARS </span>
+            </u>
+            </b>
+         </p>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <u>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>S.NO.</span>
+                     </u>
+                     </b>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border:solid #DDDDDD 1.0pt;border-left:
+                  none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <u>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>PARTICULAR</span>
+                     </u>
+                     </b>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border:solid #DDDDDD 1.0pt;border-left:
+                  none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <b>
+                     <u>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>DETAILS</span>
+                     </u>
+                     </b>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>1.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Date of Execution</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$sanction_date."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>2.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Place of Execution</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".REGISTED_ADDRESS."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>3.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Lender</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Aman Fincap Limited</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Service Provider</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Naman Finlease Pvt Ltd.</span>
+                  </p>
+               </td>
+            </tr>
+        </table>
+        <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
+        <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+               <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Name of the DLA</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Tejas Loan</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>4.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Borrower</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$fullname."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>5.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Address of the Borrower</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$residence_address."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>6.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Name of the Employer</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$employmentDetails->employer_name."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>7.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Address of the Employer</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".($employmentDetails->emp_house) . ", ". ($employmentDetails->emp_street) . ", " . ($employmentDetails->emp_landmark) . ", " . ($employmentDetails->emp_city) . " - " . ($employmentDetails->emp_pincode)."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>8.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Reference number of Sanction Letter cum KFS</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$loanDetails->loan_no."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>9.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Date of Execution of Sanction Letter cum KFS</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$sanction_date."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>10.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Bank Account Details</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$bankDetails->account."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>11.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Sanctioned Loan Amount</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>INR ". number_format(round($camDetails->loan_recommended, 0), 2)."</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>12.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Interest Rate</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Interest on the Loan: Interest on the Loan: ".number_format($camDetails->roi, 2)."% from the date of disbursal until the date of repayment. In the event of failure to make payment on due date, a penal interest of ".round(($roi * 2), 2)."% shall be applicable from the due date until the date of payment.</span>
+                  </p>
+               </td>
+            </tr>
+            </table>
+            <br><br>
+        <img style='margin-top: 200px;' src='".$letterfooter_url."' width='100%'>
          
-//          <img src='".$letterhead_url."' width='100%'>
-//          <br><br>
-//             <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>13.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Processing Fee</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>A processing fee, ".number_format($camDetails->roi, 2)."% of the loan amount.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>14.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Late Fee</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>In case of delay in payment of Amount Due, Lender shall charge late payment charges of double of Interest rates. </span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>15.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Maximum Interest Rate</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>The Interest rate on the Loan shall not exceed 50% per Month.</span>
-//                   </p>
-//                </td>
-//             </tr>
-//             <tr>
-//                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>16.</span>
-//                   </p>
-//                </td>
-//                <td width=165 style='width:123.85pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>Cooling Period</span>
-//                   </p>
-//                </td>
-//                <td width=459 style='width:343.9pt;border-top:none;border-left:none;
-//                   border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
-//                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-//                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//                      normal'>
-//                      <span style='font-size:9.0pt;font-family:sans-serif'>3 days</span>
-//                   </p>
-//                </td>
-//             </tr>
-//          </table>
-//          <br><br>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>The Lender, may at its sole discretion, waive or reduce the charges as mentioned above, on a case-to-case basis.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>&nbsp;</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>IN WITNESS WHEREOF&nbsp;</span>
-//             </b>
-//             <span style='font-size:9.0pt;
-//                font-family:sans-serif;color:black'>the Borrower hereby accepts the terms and conditions this Agreement.</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>I/we, the Borrower acknowledge that I/we are well versed in and fully understand English language, a copy of the Loan Documents has been furnished to me/us in English language, as specially requested by me/us and that I/we have read and have understood the contents of the Loan Documents and hereby agree, accept, and undertake to abide by the same</span>
-//             </b>
-//          </p>
-//          <!--<p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>____________________________________________</span>
-//             <span style='font-size:37.5pt;font-family:'Segoe UI Symbol',sans-serif;color:black'>✍</span>
-//          </p>
-//          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-//             normal'>
-//             <b>
-//             <span style='font-size:9.0pt;font-family:sans-serif;
-//                color:black'>SIGNED AND DELIVERED by the within named Borrower</span>
-//             </b>
-//          </p> -->
-//          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-//          <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-//       </div>
-//       <!-- Loan Agreement END -->
-//    </body>
-// </html>";
+         <img src='".$letterhead_url."' width='100%'>
+         <br><br>
+            <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>13.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Processing Fee</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:solid #DDDDDD 1.0pt;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>A processing fee, ".number_format($camDetails->roi, 2)."% of the loan amount.</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>14.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Late Fee</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>In case of delay in payment of Amount Due, Lender shall charge late payment charges of double of Interest rates. </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>15.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Maximum Interest Rate</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>The Interest rate on the Loan shall not exceed 50% per Month.</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>16.</span>
+                  </p>
+               </td>
+               <td width=165 style='width:123.85pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>Cooling Period</span>
+                  </p>
+               </td>
+               <td width=459 style='width:343.9pt;border-top:none;border-left:none;
+                  border-bottom:solid #DDDDDD 1.0pt;border-right:solid #DDDDDD 1.0pt;
+                  padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>3 days</span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <br><br>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>The Lender, may at its sole discretion, waive or reduce the charges as mentioned above, on a case-to-case basis.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>&nbsp;</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>IN WITNESS WHEREOF&nbsp;</span>
+            </b>
+            <span style='font-size:9.0pt;
+               font-family:sans-serif;color:black'>the Borrower hereby accepts the terms and conditions this Agreement.</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>I/we, the Borrower acknowledge that I/we are well versed in and fully understand English language, a copy of the Loan Documents has been furnished to me/us in English language, as specially requested by me/us and that I/we have read and have understood the contents of the Loan Documents and hereby agree, accept, and undertake to abide by the same</span>
+            </b>
+         </p>
+         <!--<p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>____________________________________________</span>
+            <span style='font-size:37.5pt;font-family:'Segoe UI Symbol',sans-serif;color:black'>✍</span>
+         </p>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <b>
+            <span style='font-size:9.0pt;font-family:sans-serif;
+               color:black'>SIGNED AND DELIVERED by the within named Borrower</span>
+            </b>
+         </p> -->
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+      </div>
+      <!-- Loan Agreement END -->
+   </body>
+</html>";
 
     //    print_r($html_string);
     //    exit;             
@@ -10891,81 +10891,18 @@ $pdf->Output($file_path_with_name, 'F');
                 $file_path_with_name = UPLOAD_PATH . $file_name;
             }
 
-            // require_once __DIR__ . '/../../vendor/autoload.php';
-            // require_once FCPATH . 'vendor/autoload.php';
+            require_once __DIR__ . '/../../vendor/autoload.php';
 
+            $mpdf = new \Mpdf\Mpdf([
+                'tempDir' => sys_get_temp_dir(), // or '/tmp'
+                'debug' => false,
+                'showImageErrors' => false,
+            ]);
 
-            // $mpdf = new \Mpdf\Mpdf([
-            //     'tempDir' => sys_get_temp_dir(), // or '/tmp'
-            //     'debug' => false,
-            //     'showImageErrors' => false,
-            // ]);
+            $mpdf->WriteHTML($html_string_new);
 
-            // $mpdf->WriteHTML($html_string_new);
+            $mpdf->Output($file_path_with_name, 'F');
 
-            // $mpdf->Output($file_path_with_name, 'I');
-
-            // $this->load->library('Pdf');
-            
-
-            // print_r($html_string);
-//             ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
-            // require_once __DIR__ . '/../../vendor/autoload.php';
-            // require_once FCPATH . 'vendor/autoload.php';
-
-            // $mpdf = new \Mpdf\Mpdf();
-
-
-
-            // $mpdf->WriteHTML($html_string_new);
-
-            // $mpdf->Output(TEMP_UPLOAD_PATH . $file_name, 'F');
-            // $mpdf->Output($file_path_with_name, 'F');
-
-            // $this->load->library('Pdf');
-            
-
-            
-            
-            require_once APPPATH . 'libraries/Pdf.php';
-
-$pdf = new Pdf();
-$pdf->AddPage();
-
-// $pdf->SetFont('helvetica', '', 12);
-
-$pdf->writeHTML($html_string, true, false, true, false, '');
-
-ob_clean(); // Clear any previous output
-$pdf->Output($file_path_with_name, 'F');
-
-    // if (file_exists($file_path_with_name)) {
-    //     echo 'PDF Uploaded Successfully';
-    //     echo $file_path_with_name;
-    // } else {
-    //     echo 'Failed to Upload PDF';
-    // }
-    // exit;
-            
-
-            // if (file_exists($file_path_with_name)) {
-
-            //     if (LMS_DOC_S3_FLAG == true) {
-            //         $upload_return = uploadDocument($file_path_with_name, $lead_id, 2, 'pdf');
-            //         $file_name = $upload_return['file_name'];
-            //         unlink($file_path_with_name);
-            //     }
-
-            //     $return_array['status'] = 1;
-            //     $return_array['file_name'] = $file_name;
-            //     $this->updateLeads(['lead_id' => $lead_id], ['cam_sanction_letter_file_name' => $file_name], 'credit_analysis_memo');
-            // } else {
-
-            //     $return_array['errors'] = "File does not exist. Please check offline";
-            // }
             if (file_exists($file_path_with_name)) {
 
                 if (LMS_DOC_S3_FLAG == true) {
@@ -18849,7 +18786,7 @@ $pdf->Output($file_path_with_name, 'F');
 
             $mpdf->WriteHTML($html_string_new);
 
-            $mpdf->Output($file_path_with_name, 'I');
+            $mpdf->Output($file_path_with_name, 'F');
 
             // $this->load->library('Pdf');
             
@@ -18875,12 +18812,13 @@ $pdf->Output($file_path_with_name, 'F');
     //     echo 'Failed to Upload PDF';
     // }
     // exit;
-            
-
+    // echo '<pre>';
+    // print_r($file_path_with_name);
+    // die('sw');
             if (file_exists($file_path_with_name)) {
-
                 if (LMS_DOC_S3_FLAG == true) {
                     $upload_return = uploadDocument($file_path_with_name, $lead_id, 2, 'pdf');
+                   
                     $file_name = $upload_return['file_name'];
                     unlink($file_path_with_name);
                 }
@@ -18889,7 +18827,6 @@ $pdf->Output($file_path_with_name, 'F');
                 $return_array['file_name'] = $file_name;
                 $this->updateLeads(['lead_id' => $lead_id], ['cam_sanction_letter_file_name' => $file_name], 'credit_analysis_memo');
             } else {
-
                 $return_array['errors'] = "File does not exist. Please check offline";
             }
         } catch (Exception $e) {
