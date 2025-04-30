@@ -660,10 +660,11 @@ class Task_Model extends CI_Model {
         $result = 0;
         $lead_data = [];
         if (!empty($lead_id)) { // && !empty($application_no)
-            $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response
+            $sql = "SELECT c.loan_disbursement_trans_status_id,c.loan_principle_payable_amount,c.disburse_refrence_no,c.recommended_amount,c.loan_no,a.*,b.disburse_api_status_id,b.disburse_bank_reference_no,b.disburse_beneficiary_account_no,b.disburse_beneficiary_ifsc_code,b.disburse_beneficiary_name,b.disburse_errors,b.disburse_response,cam.disbursal_date,cam.processing_fee_percent
 FROM `lead_disbursement_trans_log` as a
 left join api_disburse_logs as b on a.disb_trans_reference_no = b.disburse_trans_refno
 left join loan as c on c.lead_id = a.disb_trans_lead_id
+left join credit_analysis_memo as cam on cam.lead_id = a.disb_trans_lead_id
 where a.disb_trans_lead_id = " . $lead_id;
 
             $leadsDetails = $this->db->query($sql); //->get()->row_array()
@@ -11008,8 +11009,11 @@ $pdf->Output($file_path_with_name, 'F');
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
-        $gst = round(($admin_fee * 18) / 100);
-        $total_admin_fee = round($admin_fee + $gst);
+        $adminFeeWithoutGst = round(($admin_fee / 1.18));
+        $gst = $admin_fee - $adminFeeWithoutGst;
+        // $gst = round(($admin_fee * 18) / 100);
+        // $total_admin_fee = round($admin_fee + $gst);
+        $total_admin_fee = round($admin_fee - $gst);
         $repayment_amount = ($loan_recommended + ($loan_recommended * $roi * $tenure) / 100);
 
         $data['roi'] = $roi;
@@ -15191,7 +15195,7 @@ $pdf->Output($file_path_with_name, 'F');
                      line-height:normal'>
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>Principal (INR)</span>
-                  </p>html_string_new
+                  </p>
                </td>
                <td width=123 style='width:92.1pt;border:solid black 1.0pt;border-left:none;
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
@@ -18862,13 +18866,13 @@ $pdf->Output($file_path_with_name, 'F');
 // ob_clean(); // Clear any previous output
 // $pdf->Output($file_path_with_name, 'F');
 
-    if (file_exists($file_path_with_name)) {
-        echo 'PDF Uploaded Successfully';
-        echo $file_path_with_name;
-    } else {
-        echo 'Failed to Upload PDF';
-    }
-    exit;
+    // if (file_exists($file_path_with_name)) {
+    //     echo 'PDF Uploaded Successfully';
+    //     echo $file_path_with_name;
+    // } else {
+    //     echo 'Failed to Upload PDF';
+    // }
+    // exit;
             
 
             if (file_exists($file_path_with_name)) {
