@@ -2268,10 +2268,12 @@ class Instant_Model extends CI_Model {
         $data['roi'] = $roi;
         $data['tenure'] = $tenure;
         $data['repayment_amount'] = round($repayment_amount);
-        $data['admin_fee'] = $total_admin_fee;
+        // $data['admin_fee'] = $total_admin_fee;
+        $data['admin_fee'] = $admin_fee;
         $data['adminFeeWithGST'] = $gst;
         $data['adminFeeGST'] = $gst;
-        $data['total_admin_fee'] = $admin_fee;
+        $data['total_admin_fee'] = $total_admin_fee;
+        // $data['total_admin_fee'] = $admin_fee;
         $data['final_foir_percentage'] = number_format((($loan_recommended + $obligations) / $monthly_salary) * 100, 2);
         $data['foir_enhanced_by'] = number_format($data['final_foir_percentage'] - $eligible_foir_percentage, 2);
         $data['pre_emi_tenure'] = $pre_emi_tenure;
