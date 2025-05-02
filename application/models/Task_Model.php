@@ -6330,77 +6330,57 @@ $pdf->Output($file_path_with_name, 'F');
       <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
       <meta name=Generator content='Microsoft Word 15 (filtered)'>
       <style>
-         <!--
-            /* Font Definitions */
-            @font-face {
-              font-family: 'Cambria Math';
-              panose-1: 2 4 5 3 5 4 6 3 2 4;
+            table {
+                width: 100%;
+                border-collapse: collapse;html_string_new
             }
-            
-            @font-face {
-              font-family: Calibri;
-              panose-1: 2 15 5 2 2 2 4 3 2 4;
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
             }
-            
-            /* Style Definitions */
-            p.MsoNormal,
-            li.MsoNormal,
-            div.MsoNormal {
-              margin-top: 0in;
-              margin-right: 0in;
-              margin-bottom: 8.0pt;
-              margin-left: 0in;
-              line-height: 107%;
-              font-size: 11.0pt;
-              font-family: sans-serif;
+            th, td, .first-table td {
+                border: 1px solid #ddd;
             }
-            
-            a:link,
-            span.MsoHyperlink {
-              color: blue;
-              text-decoration: underline;
+            th {
+                background-color: #f2f2f2;
             }
-            
-            p {
-              margin-right: 0in;
-              margin-left: 0in;
-              font-size: 9.0pt;
-              font-family: serif;
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
             }
-            
-            .MsoChpDefault {
-              font-family: sans-serif;
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: justify;
+                font-size: 15px;
             }
-            
-            .MsoPapDefault {
-              margin-bottom: 8.0pt;
-              line-height: 107%;
+            .letterhead {
+                text-align: center;
+                margin-bottom: 20px;
             }
-            
-            @page WordSection1 {
-             size: 2480px 3508px;
-              margin: 30px 78.83px 30px 30px;
+            .letterhead h1 {
+                margin: 0;
             }
-            
-            div.WordSection1 {
-              page: WordSection1;
+            .address {
+                margin-bottom: 20px;
             }
-            
-            /* List Definitions */
-            ol {
-              margin-bottom: 0in;
+            .details {
+                margin-bottom: 20px;
             }
-            
-            ul {
-              margin-bottom: 0in;
+            .footer {
+                margin-top: 20px;
+                text-align: center;
             }
-              .second-page{
-              margin-top : 200px;
-              }
-
-            -->
-            
-      </style>
+            .first-table {
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+            }
+            .loan-agreement{
+                font-size: 18px;
+            }
+        </style>
    </head>
    <body lang=EN-US link=blue vlink='#954F72' style='word-wrap:break-word'>
       <!-- SANCTION LETTER START -->
@@ -14210,77 +14190,57 @@ $pdf->Output($file_path_with_name, 'F');
       <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
       <meta name=Generator content='Microsoft Word 15 (filtered)'>
       <style>
-         <!--
-            /* Font Definitions */
-            @font-face {
-              font-family: 'Cambria Math';
-              panose-1: 2 4 5 3 5 4 6 3 2 4;
+            table {
+                width: 100%;
+                border-collapse: collapse;html_string_new
             }
-            
-            @font-face {
-              font-family: Calibri;
-              panose-1: 2 15 5 2 2 2 4 3 2 4;
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
             }
-            
-            /* Style Definitions */
-            p.MsoNormal,
-            li.MsoNormal,
-            div.MsoNormal {
-              margin-top: 0in;
-              margin-right: 0in;
-              margin-bottom: 8.0pt;
-              margin-left: 0in;
-              line-height: 107%;
-              font-size: 11.0pt;
-              font-family: sans-serif;
+            th, td, .first-table td {
+                border: 1px solid #ddd;
             }
-            
-            a:link,
-            span.MsoHyperlink {
-              color: blue;
-              text-decoration: underline;
+            th {
+                background-color: #f2f2f2;
             }
-            
-            p {
-              margin-right: 0in;
-              margin-left: 0in;
-              font-size: 9.0pt;
-              font-family: serif;
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
             }
-            
-            .MsoChpDefault {
-              font-family: sans-serif;
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: justify;
+                font-size: 15px;
             }
-            
-            .MsoPapDefault {
-              margin-bottom: 8.0pt;
-              line-height: 107%;
+            .letterhead {
+                text-align: center;
+                margin-bottom: 20px;
             }
-            
-            @page WordSection1 {
-             size: 2480px 3508px;
-              margin: 30px 78.83px 30px 30px;
+            .letterhead h1 {
+                margin: 0;
             }
-            
-            div.WordSection1 {
-              page: WordSection1;
+            .address {
+                margin-bottom: 20px;
             }
-            
-            /* List Definitions */
-            ol {
-              margin-bottom: 0in;
+            .details {
+                margin-bottom: 20px;
             }
-            
-            ul {
-              margin-bottom: 0in;
+            .footer {
+                margin-top: 20px;
+                text-align: center;
             }
-              .second-page{
-              margin-top : 200px;
-              }
-
-            -->
-            
-      </style>
+            .first-table {
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+            }
+            .loan-agreement{
+                font-size: 18px;
+            }
+        </style>
    </head>
    <body lang=EN-US link=blue vlink='#954F72' style='word-wrap:break-word'>
       <!-- SANCTION LETTER START -->
