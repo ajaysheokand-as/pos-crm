@@ -21,15 +21,9 @@ class CustomerCampaignController extends CI_Controller {
                     $response = ['success' => false, 'errors' => $this->form_validation->error_array()];
                 } else {
                     $formData = $this->input->post();
-                    $customerData['cp_first_name'] = $formData['first_name'];
-                    $customerData['cp_sur_name'] = $formData['last_name'];
-                    $customerData['cp_mobile'] = $formData['mobile_number'];
-                    $customerData['cp_pancard'] = $formData['pan_number'];
-                    $customerData['cp_monthly_income'] = $formData['salary'];
-                    $customerData['cp_personal_email'] = !empty($formData['email']) ? $formData['email'] : '';
-                    $customerData['cp_employment_type'] = $formData['employment_type'];
-                    $this->Tasks->insert($customerData, 'customer_profile');
-                    $response = ['success' => true, 'message' => 'Customer saved successfully!'];
+                    $formData['lead_source'] = 'Campaign';
+                    $this->Tasks->insert($formData, 'instant_loan_campaign');
+                    $response = ['success' => true, 'message' => 'Customer saved successfully!', 'data' => $formData];
                 }
 
             } else {
@@ -67,16 +61,16 @@ class CustomerCampaignController extends CI_Controller {
             [
                 'field' => 'last_name',
                 'label' => 'Last Name',
-                'rules' => 'required|alpha|trim'
+                'rules' => 'alpha|trim'
             ],
             [
                 'field' => 'pan_number',
                 'label' => 'PAN Number',
-                'rules' => 'required|regex_match[/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/]'
+                'rules' => 'regex_match[/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/]'
             ],
             [
-                'field' => 'mobile_number',
-                'label' => 'Mobile Number',
+                'field' => 'phone_number',
+                'label' => 'Phone Number',
                 'rules' => 'required|regex_match[/^[6-9][0-9]{9}$/]'
             ],
             [
@@ -85,14 +79,14 @@ class CustomerCampaignController extends CI_Controller {
                 'rules' => 'valid_email|trim' 
             ],
             [
-                'field' => 'salary',
+                'field' => 'current_salary',
                 'label' => 'Monthly Salary',
-                'rules' => 'required|numeric|greater_than[0]'
+                'rules' => 'required'
             ],
             [
                 'field' => 'employment_type',
                 'label' => 'Employment Type',
-                'rules' => 'required|in_list[Private Job, Government Service, Armed Forces/Police, Lawyer, Journalist, Self-Employed]'
+                'rules' => 'required'
             ]
         ];
         $this->form_validation->set_rules($validationRules);
