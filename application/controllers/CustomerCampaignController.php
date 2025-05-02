@@ -66,7 +66,7 @@ class CustomerCampaignController extends CI_Controller {
             [
                 'field' => 'pan_number',
                 'label' => 'PAN Number',
-                'rules' => 'regex_match[/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/]'
+                'rules' => 'regex_match[/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/]|is_unique[instant_loan_campaign.pan_number]'
             ],
             [
                 'field' => 'phone_number',
