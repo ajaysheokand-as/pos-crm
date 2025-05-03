@@ -5933,6 +5933,8 @@ $pdf->Output($file_path_with_name, 'F');
             $sqlquery5 = $this->db->query($sql5);
             $bankDetails = $sqlquery5->row();
 
+            $loan_no = $this->generateLoanNo($lead_id);
+
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
             $mobile = $camDetails->mobile;
@@ -10597,7 +10599,7 @@ $pdf->Output($file_path_with_name, 'F');
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
                      normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif'>".$loanDetails->loan_no."</span>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$loan_no."</span>
                   </p>
                </td>
             </tr>
@@ -13789,6 +13791,8 @@ $pdf->Output($file_path_with_name, 'F');
             $loanDetails = $sqlquery4->row();
             // print_r($loanDetails);
             // exit;
+
+            $loan_no = $this->generateLoanNo($lead_id);
 
             $sql5 = "SELECT * FROM customer_banking WHERE lead_id = $lead_id";
             $sqlquery5 = $this->db->query($sql5);
@@ -18457,7 +18461,7 @@ $pdf->Output($file_path_with_name, 'F');
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
                      normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif'>".$loanDetails->loan_no."</span>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>".$loan_no."</span>
                   </p>
                </td>
             </tr>
