@@ -40,7 +40,7 @@
                         <div class="box-widget widget-module">
                             <div class="widget-head clearfix">
                                 <span class="h-icon"><i class="fa fa-th"></i></span>
-                                <span class="inner-page-tag">Leads </span>
+                                <span class="inner-page-tag">Instant Loan Leads </span>
                             </div>
                             <div class="widget-container">
                                 <div class=" widget-block">
@@ -50,40 +50,31 @@
                                             <table class="table table-hover" id="domainTable">
                                                 <thead>
                                                     <tr>
-                                                        <th class="whitespace data-fixed-columns"><b>Lead ID</b></th>
-                                                        <th class="whitespace"><b>Applied&nbsp;On</b></th>
+                                                        <th class="whitespace data-fixed-columns"><b>Id</b></th>
                                                         <th class="whitespace"><b>First Name</b></th>
                                                         <th class="whitespace"><b>Last Name</b></th>
                                                         <th class="whitespace"><b>Mobile No.</b></th>
-                                                        <th class="whitespace"><b>Age</b></th>
-                                                        <th class="whitespace"><b>Employment Name</b></th>
-                                                        <th class="whitespace"><b>Employment Type</b></th>
                                                         <th class="whitespace"><b>Current Salary</b></th>
-                                                        <th class="whitespace"><b>Current EMI Per Month</b></th>
-                                                        <th class="whitespace"><b>PAN</b></th>
                                                         <th class="whitespace"><b>Email</b></th>
                                                         <th class="whitespace"><b>City</b></th>
+                                                        <th class="whitespace"><b>Applied&nbsp;On</b></th>
                                                 </thead>
                                                 <tbody>
                                                     <?php
                                                     if ($campaignData->num_rows() > 0) {
-                                                        $sn = 1;
+                                                        $counter = 1;
                                                         foreach ($campaignData->result() as $row) {
                                                             echo '<tr>
-                                                                <td>' . (!empty($row->lead_id) ? $row->lead_id : '-') . '</td>
-                                                                <td>-</td>
-                                                                <td>' . (!empty($row->first_name) ? $row->first_name : '-') . '</td>
-                                                                <td>' . (!empty($row->last_name) ? $row->last_name : '-') . '</td>
-                                                                <td>' . (!empty($row->phone_number) ? $row->phone_number : '-') . '</td>
-                                                                <td>' . (!empty($row->age) ? $row->age : '-') . '</td>
-                                                                <td>' . (!empty($row->employer_name) ? $row->employer_name : '-') . '</td>
-                                                                <td>' . (!empty($row->employment_type) ? $row->employment_type : '-') . '</td>
-                                                                <td>' . (!empty($row->current_salary) ? $row->current_salary : '-') . '</td>
-                                                                <td>' . (!empty($row->current_emi_per_month) ? $row->current_emi_per_month : '-') . '</td>
-                                                                <td>' . (!empty($row->pan_number) ? $row->pan_number : '-') . '</td>
-                                                                <td>' . (!empty($row->email) ? $row->email : '-') . '</td>
-                                                                <td>' . (!empty($row->city) ? $row->city : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->lead_id) ? $row->lead_id : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->first_name) ? $row->first_name : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->last_name) ? $row->last_name : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->phone_number) ? $row->phone_number : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->current_salary) ? $row->current_salary : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->email) ? $row->email : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->city) ? $row->city : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->created_at) ? $row->created_at : '-') . '</td>
                                                             </tr>';
+                                                            $counter++;
                                                         }
                                                     
                                                     } else {
