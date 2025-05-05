@@ -22,6 +22,7 @@ class CustomerCampaignController extends CI_Controller {
                 } else {
                     $formData = $this->input->post();
                     $formData['lead_source'] = 'Campaign';
+                    $formData['created_at'] = date('Y-m-d H:i:s');
                     $this->Tasks->insert($formData, 'instant_loan_campaign');
                     $response = ['success' => true, 'message' => 'Customer saved successfully!', 'data' => $formData];
                 }
@@ -55,18 +56,13 @@ class CustomerCampaignController extends CI_Controller {
         $validationRules = [
             [
                 'field' => 'first_name',
-                'label' => 'first_name',
+                'label' => 'First Name',
                 'rules' => 'required|alpha|trim'
             ],
             [
                 'field' => 'last_name',
                 'label' => 'Last Name',
                 'rules' => 'alpha|trim'
-            ],
-            [
-                'field' => 'pan_number',
-                'label' => 'PAN Number',
-                'rules' => 'regex_match[/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/]|is_unique[instant_loan_campaign.pan_number]'
             ],
             [
                 'field' => 'phone_number',
@@ -79,15 +75,15 @@ class CustomerCampaignController extends CI_Controller {
                 'rules' => 'valid_email|trim' 
             ],
             [
-                'field' => 'current_salary',
-                'label' => 'Monthly Salary',
-                'rules' => 'required'
+                'field' => 'city',
+                'label' => 'City',
+                'rules' => 'required|alpha|trim' 
             ],
             [
-                'field' => 'employment_type',
-                'label' => 'Employment Type',
-                'rules' => 'required'
-            ]
+                'field' => 'current_salary',
+                'label' => 'Salary',
+                'rules' => 'alpha|trim' 
+            ],
         ];
         $this->form_validation->set_rules($validationRules);
     }
