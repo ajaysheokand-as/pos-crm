@@ -65,7 +65,7 @@
                                                         $counter = 1;
                                                         foreach ($campaignData->result() as $row) {
                                                             echo '<tr>
-                                                                <td class="whitespace">' . (!empty($row->lead_id) ? $row->lead_id : '-') . '</td>
+                                                                <td class="whitespace">' . (!empty($row->id) ? $row->id : '-') . '</td>
                                                                 <td class="whitespace">' . (!empty($row->first_name) ? $row->first_name : '-') . '</td>
                                                                 <td class="whitespace">' . (!empty($row->last_name) ? $row->last_name : '-') . '</td>
                                                                 <td class="whitespace">' . (!empty($row->phone_number) ? $row->phone_number : '-') . '</td>
