@@ -6,7 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CustomerCampaignController extends CI_Controller {
 
-    private $googleCaptchSecretKey = '6Ldxui8rAAAAAGVgXUWyXLr_3ur2rfX-OiokCTye';
+    private $googleCaptchSecretKey = '6Lcr0C8rAAAAAK0XuHYbsk5ZuWC12w07qNdfiWkm';
 
     public function __construct() {
         parent::__construct();
@@ -25,7 +25,7 @@ class CustomerCampaignController extends CI_Controller {
                     $formData = $this->input->post();
                     $recaptchaCode = $formData['recaptcha_code'];
                     unset($formData['recaptcha_code']);
-                    $secretKey = $this->googleCaptchSecretKey; 
+                    $secretKey = $this->googleCaptchSecretKey;
                     $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaCode");
                     $responseData = json_decode($verifyResponse);
                     if (!$responseData->success || $responseData->score < 0.5) {
