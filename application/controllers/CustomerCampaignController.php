@@ -6,6 +6,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CustomerCampaignController extends CI_Controller {
 
+    private $googleCaptchSecretKey = '6Ldxui8rAAAAAGVgXUWyXLr_3ur2rfX-OiokCTye';
+
     public function __construct() {
         parent::__construct();
         $this->load->model('Task_Model', 'Tasks');
@@ -16,24 +18,37 @@ class CustomerCampaignController extends CI_Controller {
         try {
             if ($this->input->server('REQUEST_METHOD') == 'POST') {
                 $this->setValidationRules();
-
                 if ($this->form_validation->run() == FALSE) {
                     $response = ['success' => false, 'errors' => $this->form_validation->error_array()];
+                    $responseCode = 400;
                 } else {
                     $formData = $this->input->post();
-                    $formData['lead_source'] = 'Campaign';
-                    $formData['created_at'] = date('Y-m-d H:i:s');
-                    $this->Tasks->insert($formData, 'instant_loan_campaign');
-                    $response = ['success' => true, 'message' => 'Customer saved successfully!', 'data' => $formData];
+                    $recaptchaCode = $formData['recaptcha_code'];
+                    unset($formData['recaptcha_code']);
+                    $secretKey = $this->googleCaptchSecretKey; 
+                    $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaCode");
+                    $responseData = json_decode($verifyResponse);
+                    if (!$responseData->success || $responseData->score < 0.5) {
+                        $responseCode = 400;
+                        $response = ['success' => false, "message" => "reCAPTCHA verification failed. Please try again."];
+                    } else {
+                        $responseCode = 200;
+                        $formData['lead_source'] = 'Campaign';
+                        $formData['created_at'] = date('Y-m-d H:i:s');
+                        $this->Tasks->insert($formData, 'instant_loan_campaign');
+                        $response = ['success' => true, 'message' => 'Customer saved successfully!'];
+                    }
                 }
 
             } else {
+                $responseCode = 404;
                 $response = [
                     'success' => false,
                     'message' => $this->input->server('REQUEST_METHOD') . ' method is not supported!'
                 ];
             }
         } catch (Exception $exception) {
+            $responseCode = 401;
             $response = [
                 'success' => false,
                 'message' => $exception->getMessage()
@@ -42,7 +57,7 @@ class CustomerCampaignController extends CI_Controller {
 
         $this->output
             ->set_content_type('application/json')
-            ->set_status_header(200)
+            ->set_status_header($responseCode)
             ->set_output(json_encode($response));
     }
 
@@ -66,7 +81,7 @@ class CustomerCampaignController extends CI_Controller {
             ],
             [
                 'field' => 'phone_number',
-                'label' => 'Phone Number',
+                'label' => 'Mobile Number',
                 'rules' => 'required|regex_match[/^[6-9][0-9]{9}$/]'
             ],
             [
@@ -82,7 +97,7 @@ class CustomerCampaignController extends CI_Controller {
             [
                 'field' => 'current_salary',
                 'label' => 'Salary',
-                'rules' => 'alpha|trim' 
+                'rules' => 'alpha_numeric|trim' 
             ],
         ];
         $this->form_validation->set_rules($validationRules);
