@@ -680,6 +680,4 @@ $route['newsDelete'] = 'NewsController/newsDelete';
 $route['news/add-news'] = 'NewsController/addNews';
 $route['news/edit-news/(:any)'] = 'NewsController/editNews/$1';
 
-$route['storeCustomerData'] = 'CustomerCampaignController/storeCustomerData';
-
 $route['instaloans/(:any)'] = 'CampaignController/index';
