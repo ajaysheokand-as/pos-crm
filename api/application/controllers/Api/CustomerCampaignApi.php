@@ -9,7 +9,7 @@ class CustomerCampaignApi extends REST_Controller
     
     public function __construct() {
         parent::__construct();
-        $this->load->model('Task_Model', 'Tasks');
+        $this->load->model('InstantLoan_Model', 'InstantLoan');
     }
 
     public function storeCustomerData_post()
@@ -34,7 +34,7 @@ class CustomerCampaignApi extends REST_Controller
                         $responseCode = 200;
                         $formData['lead_source'] = 'Campaign';
                         $formData['created_at'] = date('Y-m-d H:i:s');
-                        $this->Tasks->insert($formData, 'instant_loan_campaign');
+                        $this->InstantLoan->insertData($formData);
                         $response = ['success' => true, 'message' => 'Customer saved successfully!'];
                     }
                 }
