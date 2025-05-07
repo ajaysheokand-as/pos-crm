@@ -1,19 +1,18 @@
 <?php
 
-use Exception;
+require APPPATH . 'libraries/REST_Controller.php';
+require APPPATH . 'libraries/Format.php';
 
-defined('BASEPATH') or exit('No direct script access allowed');
-
-class CustomerCampaignController extends CI_Controller {
-
+class CustomerCampaignApi extends REST_Controller
+{
     private $googleCaptchSecretKey = '6Lcr0C8rAAAAAK0XuHYbsk5ZuWC12w07qNdfiWkm';
-
+    
     public function __construct() {
         parent::__construct();
         $this->load->model('Task_Model', 'Tasks');
     }
 
-    public function storeCustomerData()
+    public function storeCustomerData_post()
     {
         try {
             if ($this->input->server('REQUEST_METHOD') == 'POST') {
