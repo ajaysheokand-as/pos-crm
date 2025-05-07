@@ -5,7 +5,8 @@ require APPPATH . 'libraries/Format.php';
 
 class CustomerCampaignApi extends REST_Controller
 {
-
+    private $googleCaptchSecretKey = '6Lcr0C8rAAAAAK0XuHYbsk5ZuWC12w07qNdfiWkm';
+    
     public function __construct() {
         parent::__construct();
         $this->load->model('Task_Model', 'Tasks');
