@@ -5140,6 +5140,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $logo_image = base_url('/public/images/18-BK_kixu8.png');
         }
 
+        $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->pf_pert * 12), 2);
+
 
         $message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -5477,6 +5479,8 @@ $pdf->Output($file_path_with_name, 'F');
         $letter_hedder = base_url()."public/emailimages/".$letterhead_url."";
         $letter_footer = base_url()."public/emailimages/".$letterfooter_url."";
 
+        $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->pf_pert * 12), 2);
+
 
         // $message = 'Sanction Letter Send Successfully';
 
@@ -5671,8 +5675,11 @@ $pdf->Output($file_path_with_name, 'F');
                                     <td align="center" valign="middle" bgcolor="#FFFFFF">
                                         <strong>:</strong>
                                     </td>
-                                    <td align="left" valign="middle" bgcolor="#FFFFFF">
+                                    <!--<td align="left" valign="middle" bgcolor="#FFFFFF">
                                        ' . round(($camDetails->roi * 365), 2) . '
+                                    </td>-->
+                                    <td align="left" valign="middle" bgcolor="#FFFFFF">
+                                       ' . $annual_percent_rate . '
                                     </td>
                                     </tr>
 
@@ -5934,6 +5941,8 @@ $pdf->Output($file_path_with_name, 'F');
             $bankDetails = $sqlquery5->row();
 
             $loan_no = $this->generateLoanNo($lead_id);
+
+            $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->pf_pert * 12), 2);
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
@@ -6698,8 +6707,8 @@ $pdf->Output($file_path_with_name, 'F');
                <td style='border-top:none;border-left:none;
                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif;
-                        color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>
+                     <!--<span style='font-size:9.0pt;font-family:sans-serif;color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>-->
+                     <span style='font-size:9.0pt;font-family:sans-serif;color:black'>".$annual_percent_rate." % p.a. which shall comprise of;</span>
                   </p>
                   <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
                      margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
@@ -13798,6 +13807,8 @@ $pdf->Output($file_path_with_name, 'F');
             $sqlquery5 = $this->db->query($sql5);
             $bankDetails = $sqlquery5->row();
 
+            $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->pf_pert * 12), 2);
+
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
@@ -14560,8 +14571,8 @@ $pdf->Output($file_path_with_name, 'F');
                <td style='border-top:none;border-left:none;
                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif;
-                        color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>
+                     <!--<span style='font-size:9.0pt;font-family:sans-serif;color:black'>".round(($camDetails->roi * 365), 2)." % p.a. which shall comprise of;</span>-->
+                     <span style='font-size:9.0pt;font-family:sans-serif;color:black'>".$annual_percent_rate." % p.a. which shall comprise of;</span>
                   </p>
                   <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
                      margin-bottom:0in;margin-left:11.45pt;text-indent:-14.15pt;line-height:normal'>
