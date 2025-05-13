@@ -549,6 +549,8 @@ class ExportController extends CI_Controller {
                     'Pan Number' => $res['pancard'],
                     'Loan No' => $res['loan_no'],
                     'Customer Name' => $res['full_name'],
+                    'Mobile' => $res['mobile'],
+                    'Alternamte Mobile' => $res['alternate_mobile'],
                     'Loan Amount' => $res['loan_recommended'],
                     // 'Net Disbused Amount' => ($res['loan_recommended'] - $res['admin_fee']),
                     // 'Admin Fee' => $res['admin_fee'],
