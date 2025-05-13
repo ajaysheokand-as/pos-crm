@@ -1205,7 +1205,7 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
         //     "multiSignerDocId" => $aadhar_no_last_4_digit
         // );
         $requestData = array(
-            "docClassId" => "EI358OTPESIG24561",//"sanction_letter_" . $lead_id . "_" . time(),// "EI358OTPESIG58568",
+            "docClassId" => "EI358OTPESIG58568",//"sanction_letter_" . $lead_id . "_" . time(),// "EI358OTPESIG58568",
             "reason" => "Loan agreement",
             "signersInfo" => array(
                 array(
