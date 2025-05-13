@@ -790,7 +790,7 @@ class UserApi extends REST_Controller {
 			$this->form_validation->set_rules("last_name", "Last Name", "alpha|trim");
 			$this->form_validation->set_rules("email", "Personal Email", "valid_email|trim");
 			$this->form_validation->set_rules("city_name", "City Name", "required|trim");
-			$this->form_validation->set_rules("monthly_salary_amount", "Monthly Amount", "alpha_numeric|trim");
+			$this->form_validation->set_rules("current_salary", "Monthly Amount", "alpha_numeric|trim");
 	
 			if ($this->form_validation->run() == FALSE) {
 				return json_encode($this->response(['Status' => 2, 'Message' => strip_tags(validation_errors())], REST_Controller::HTTP_OK));
@@ -806,7 +806,7 @@ class UserApi extends REST_Controller {
 				}
 				$lead_id = intval($post['lead_id']);
 				$email = strtoupper(strval($post['email']));
-				$monthly_amount = !empty($post['monthly_salary_amount']) ? doubleval($post['monthly_salary_amount']) : 0;
+				$monthly_amount = !empty($post['current_salary']) ? doubleval($post['current_salary']) : 0;
 				$firstName =  !empty($post['first_name']) ? $post['first_name'] : '';
 				$lastName =  !empty($post['last_name']) ? $post['last_name'] : '';
 
@@ -854,11 +854,11 @@ class UserApi extends REST_Controller {
 				require_once(COMPONENT_PATH . 'CommonComponent.php');
 				$CommonComponent = new CommonComponent();
 
-				// $return_eligibility_array = $CommonComponent->run_eligibility($lead_id);
+				$return_eligibility_array = $CommonComponent->run_eligibility($lead_id);
 
-				// if ($return_eligibility_array['status'] == 2) {
-				// 	return json_encode($this->response(['Status' => 3, 'Message' => 'Customer not eligible for loan due to city not in active list', 'lead_id' => $lead_id, 'data' => $steps], REST_Controller::HTTP_OK));
-				// }
+				if ($return_eligibility_array['status'] == 2) {
+					return json_encode($this->response(['Status' => 3, 'Message' => 'Customer not eligible for loan due to city not in active list', 'lead_id' => $lead_id, 'data' => $steps], REST_Controller::HTTP_OK));
+				}
 
 				return json_encode($this->response($response, REST_Controller::HTTP_OK));
 			}
