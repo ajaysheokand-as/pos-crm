@@ -769,6 +769,102 @@ class UserApi extends REST_Controller {
 		}
 	}
 
+	public function updateInstaLoanPersonalDetails_post() {
+		$input_data = file_get_contents("php://input");
+
+		if ($input_data) {
+			$post = $this->security->xss_clean(json_decode($input_data, true));
+		} else {
+			$post = $this->security->xss_clean($_POST);
+		}
+
+		$headers = $this->input->request_headers();
+		$token = $this->_token();
+		$header_validation = (($headers['Accept'] == "application/json") && ($token['token_Leads'] == base64_decode($headers['Auth'])));
+
+		if ($_SERVER['REQUEST_METHOD'] == 'POST' && $header_validation) {
+
+			$this->form_validation->set_data($post);
+			$this->form_validation->set_rules("lead_id", "Lead Id", "required|trim|numeric|is_natural|regex_match[/^[0-9]+$/]");
+			$this->form_validation->set_rules("first_name", "First Name", "required|alpha|trim");
+			$this->form_validation->set_rules("last_name", "Last Name", "alpha|trim");
+			$this->form_validation->set_rules("email", "Personal Email", "valid_email|trim");
+			$this->form_validation->set_rules("city_name", "City Name", "required|trim");
+			$this->form_validation->set_rules("monthly_salary_amount", "Monthly Amount", "alpha_numeric|trim");
+	
+			if ($this->form_validation->run() == FALSE) {
+				return json_encode($this->response(['Status' => 2, 'Message' => strip_tags(validation_errors())], REST_Controller::HTTP_OK));
+			} else {
+				$cityName = ucfirst(strtolower($post['city_name']));
+				$cityData =  $this->Tasks->selectdata(['m_city_name' => $cityName], '*', 'master_city');
+				$city_id = '';
+				$state_id = '';
+				if ($cityData->num_rows()) {
+					$cityData = $cityData->row();
+					$city_id = $cityData->m_city_id;
+					$state_id = $cityData->m_city_state_id;
+				}
+				$lead_id = intval($post['lead_id']);
+				$email = strtoupper(strval($post['email']));
+				$monthly_amount = !empty($post['monthly_salary_amount']) ? doubleval($post['monthly_salary_amount']) : 0;
+				$firstName =  !empty($post['first_name']) ? $post['first_name'] : '';
+				$lastName =  !empty($post['last_name']) ? $post['last_name'] : '';
+
+				$queryLead = $this->db->select('*')->where(['lead_id' => $lead_id])->from('leads')->get();
+				$leadData = $queryLead->row();
+
+				$lead_status_id = isset($leadData->lead_status_id) ? $leadData->lead_status_id : 0;
+
+				if ($lead_status_id > 1 && $leadData->user_type != 'REPEAT') {
+					return json_encode($this->response(['Status' => 0, 'Message' => 'Your application has been moved to next step.'], REST_Controller::HTTP_OK));
+				}
+
+				if (!isset($leadData) || empty($leadData)) {
+					return json_encode($this->response(['Status' => 2, 'Message' => 'Wrong request data .'], REST_Controller::HTTP_OK));
+				}
+
+				$update_personal_details = [
+					'first_name' => $firstName,
+					'email' => $email,
+					'city_id' => $city_id,
+					'state_id' => $state_id,
+					'monthly_salary_amount' => $monthly_amount,
+					'source' => 'Instantloan',
+					'lead_data_source_id' => 36,
+					'updated_on' => date('Y-m-d H:i:s')
+				];
+
+				$steps['mobile_verification'] = 'DONE';
+				$steps['pan_verification'] = 'PENDING';
+				$steps['personal_details'] = 'DONE';
+				$steps['step_stage'] = 'S1';
+				$steps['documents_uploads'] = 'PENDING';
+
+				$response = ['Status' => 1, 'Message' => 'Personal Detail Save successfull.', 'lead_id' => $lead_id, 'data' => $steps];
+
+				$this->Tasks->insertApplicationLog($lead_id, 1, "Update Personal Detail.");
+
+				$leaddt = $this->db->where('lead_id', $lead_id)->update('leads', $update_personal_details);
+
+				$update_lead_customer = [
+					'first_name' => $firstName,
+					'sur_name' => $lastName,
+				];
+				$this->db->where('customer_lead_id', $lead_id)->update('lead_customer', $update_lead_customer);
+				require_once(COMPONENT_PATH . 'CommonComponent.php');
+				$CommonComponent = new CommonComponent();
+
+				// $return_eligibility_array = $CommonComponent->run_eligibility($lead_id);
+
+				// if ($return_eligibility_array['status'] == 2) {
+				// 	return json_encode($this->response(['Status' => 3, 'Message' => 'Customer not eligible for loan due to city not in active list', 'lead_id' => $lead_id, 'data' => $steps], REST_Controller::HTTP_OK));
+				// }
+
+				return json_encode($this->response($response, REST_Controller::HTTP_OK));
+			}
+		}
+	}
+
 
 	public function saveCustomerDocument_post() {
 

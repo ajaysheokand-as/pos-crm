@@ -133,7 +133,6 @@ $route['otpVerifyQdeApp']['post'] = 'Connector/QdeApi/otpVerifyQdeApp';
 
 $route['get_customer_details']['post'] = 'Api/FeedbackApi/get_customer_details';
 $route['save_customer_feedback']['post'] = 'Api/FeedbackApi/save_customer_feedback';
-$route['instaloan_campaign']['post'] = 'Api/CustomerCampaignApi/storeCustomerData';
 
 /* * ******************Chat Bot API URL**************** */
 
