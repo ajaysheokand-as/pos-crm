@@ -5458,16 +5458,16 @@ $pdf->Output($file_path_with_name, 'F');
 
         $acceptance_button = '';
         // $link_value = base_url('sanction-esign-request') . "?lead_id=$lead_id";
-        $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
-        $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #00455E; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
-        $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
+        // $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
+        // $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #00455E; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
+        // $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
 
-        if (in_array($lead_data_source_id, array(21, 27))) {
+        // if (in_array($lead_data_source_id, array(21, 27))) {
             // $link_value = base_url('loanAgreementLetterResponse') . "?lead_id=$lead_id";
             $link_value = base_url('loanAgreementLetterResponse') . "?refstr=$enc_lead_id";
             $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #e52255; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">Accept Sanction Letter</a></center><br/><br/>';
             $acceptance_button_link = "If you are not able to click on the accept button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
-        }
+        // }
 
         $total_interest = round(($camDetails->repayment_amount), 2) - round(($camDetails->loan_recommended), 2);
 
