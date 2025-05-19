@@ -5868,9 +5868,9 @@ $pdf->Output($file_path_with_name, 'F');
         
 
 
-        // if (!empty($alternate_email)) {
-        //     $return_array = common_send_email($email,  $subject, $message, "", "", "", "", $directSanctionLetter, 'sanction_letter.pdf', "");
-        // }
+        if (!empty($alternate_email)) {
+            $return_array = common_send_email($alternate_email,  $subject, $message, "", "", "", "", $directSanctionLetter, 'sanction_letter.pdf', "");
+        }
         // print_r($return_array);
         // exit;
 
@@ -6546,7 +6546,6 @@ $pdf->Output($file_path_with_name, 'F');
             <br> Look forward to serving you. <br> Kind Regards </span>
          </p>
          <p class=MsoNormal style='text-align:justify'>&nbsp;</p>
-         <br>
          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- SANCTION LETTER END -->
@@ -6816,14 +6815,6 @@ $pdf->Output($file_path_with_name, 'F');
                      </b>
                   </p>
                </td>
-               <td valign=top style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
-                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
-                     <b>
-                     <span style='font-size:9.0pt;font-family:sans-serif;
-                        color:black'>&nbsp;</span>
-                     </b>
-                  </p>
-               </td>
             </tr>
             <tr>
                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
@@ -6840,6 +6831,12 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
+         </table>
+         <br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
             <tr>
                <td width='200' style='border:solid black 1.0pt;border-top:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
@@ -6855,12 +6852,6 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
-         </table>
-         <br>
-         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-         <img src='".$letterhead_url."' width='100%'>
-         <br>
-         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;border-collapse:collapse'>
             <tr>
                <td width='200' style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
@@ -6967,6 +6958,12 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
+         </table>
+         <br><br><br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
             <tr>
                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
@@ -7030,12 +7027,6 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
-         </table>
-         <br><br><br><br>
-         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
             <tr>
                <td style='border:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
