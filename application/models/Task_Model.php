@@ -5140,7 +5140,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $logo_image = base_url('/public/images/18-BK_kixu8.png');
         }
 
-        $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+        // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+        $annual_percent_rate = 453.75;
 
 
         $message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -5263,7 +5264,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                     </tr>
                                     <tr>
                                         <td colspan="3" style="font-size:17px; font-family: Courier, arial;line-height: 25px; padding-bottom: 6px;">
-                                            Note* - Annual ROI : ' . (number_format($camDetails->roi * 365, 2)) . '%
+                                            <!-- Note* - Annual ROI : ' . (number_format($camDetails->roi * 365, 2)) . '% -->
+                                            Note* - Annual ROI : ' . $annual_percent_rate . '%
                                         </td>
                                     </tr>
                                     <tr>
@@ -5479,7 +5481,8 @@ $pdf->Output($file_path_with_name, 'F');
         $letter_hedder = base_url()."public/emailimages/".$letterhead_url."";
         $letter_footer = base_url()."public/emailimages/".$letterfooter_url."";
 
-        $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+        // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+        $annual_percent_rate = 453.75;
 
 
         // $message = 'Sanction Letter Send Successfully';
@@ -5942,7 +5945,8 @@ $pdf->Output($file_path_with_name, 'F');
 
             $loan_no = $this->generateLoanNo($lead_id);
 
-            $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+            // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+            $annual_percent_rate = 453.75;
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
@@ -6542,7 +6546,7 @@ $pdf->Output($file_path_with_name, 'F');
             <br> Look forward to serving you. <br> Kind Regards </span>
          </p>
          <p class=MsoNormal style='text-align:justify'>&nbsp;</p>
-         <br><br><br><br><br><br><br><br>
+         <br>
          <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- SANCTION LETTER END -->
@@ -13807,7 +13811,8 @@ $pdf->Output($file_path_with_name, 'F');
             $sqlquery5 = $this->db->query($sql5);
             $bankDetails = $sqlquery5->row();
 
-            $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+            // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
+            $annual_percent_rate = 453.75;
 
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
