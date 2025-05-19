@@ -101,7 +101,9 @@
             <td>
                 <a href="tel:<?= $leadDetails->mobile ?>">
                     <i class="fa fa-phone"></i>
-                </a>&nbsp;<?= ($leadDetails->mobile) ? inscriptionNumber(strval($leadDetails->mobile), $leadDetails->lead_status_id) : '-' ?>&nbsp;
+                </a>
+                <!-- &nbsp;<?= ($leadDetails->mobile) ? inscriptionNumber(strval($leadDetails->mobile), $leadDetails->lead_status_id) : '-' ?>&nbsp; -->
+                &nbsp;<?= ($leadDetails->mobile) ? $leadDetails->mobile : '-' ?>&nbsp;
 
                 <?php if (!empty($leadDetails->mobile) && ((agent == 'CR1' && !empty($leadDetails->lead_screener_assign_user_id) && $leadDetails->lead_screener_assign_user_id == user_id) || (agent == 'CR2' && !empty($leadDetails->lead_credit_assign_user_id) && $leadDetails->lead_credit_assign_user_id == user_id)) && in_array($leadDetails->stage, array("S2", "S3", "S5", "S6", "S11"))) { ?>
                     <!--<button onclick="Click_To_Call('<?= $this->encrypt->encode($leadDetails->lead_id) ?>', 1, 1)">RUNO Call Assign</button>-->
@@ -117,7 +119,9 @@
             <td>
                 <a href="tel:<?= $leadDetails->alternate_mobile ?>">
                     <i class="fa fa-phone"></i>
-                </a>&nbsp;<?= ($leadDetails->alternate_mobile) ? inscriptionNumber(strval($leadDetails->alternate_mobile), $leadDetails->lead_status_id) : '-' ?>&nbsp;
+                </a>
+                <!-- &nbsp;<?= ($leadDetails->alternate_mobile) ? inscriptionNumber(strval($leadDetails->alternate_mobile), $leadDetails->lead_status_id) : '-' ?>&nbsp; -->
+                &nbsp;<?= ($leadDetails->alternate_mobile) ? $leadDetails->alternate_mobile : '-' ?>&nbsp;
 
                 <?php if (!empty($leadDetails->alternate_mobile) && (((agent == 'CR1' && !empty($leadDetails->lead_screener_assign_user_id) && $leadDetails->lead_screener_assign_user_id == user_id) || (agent == 'CR2' && !empty($leadDetails->lead_credit_assign_user_id) && $leadDetails->lead_credit_assign_user_id == user_id))) && in_array($leadDetails->stage, array("S2", "S3", "S5", "S6", "S11"))) { ?>
                     <!--<button onclick="Click_To_Call('<?= $this->encrypt->encode($leadDetails->lead_id) ?>', 2, 1)">RUNO Call Assign</button>-->
@@ -130,9 +134,11 @@
         </tr>
         <tr>
             <th>Email (Personal)</th>
-            <td><a href="mailto:<?= $leadDetails->email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->email) ? maskEmail($leadDetails->email) : '-' ?></td>
+            <!-- <td><a href="mailto:<?= $leadDetails->email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->email) ? maskEmail($leadDetails->email) : '-' ?></td> -->
+            <td><a href="mailto:<?= $leadDetails->email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->email) ? $leadDetails->email : '-' ?></td>
             <th>Email (Office)</th>
-            <td><a href="mailto:<?= $leadDetails->alternate_email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->alternate_email) ? maskEmail($leadDetails->alternate_email) : '-' ?></td>
+            <!-- <td><a href="mailto:<?= $leadDetails->alternate_email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->alternate_email) ? maskEmail($leadDetails->alternate_email) : '-' ?></td> -->
+            <td><a href="mailto:<?= $leadDetails->alternate_email ?>"><i class="fa fa-envelope"></i></a>&nbsp;<?= ($leadDetails->alternate_email) ? $leadDetails->alternate_email : '-' ?></td>
         </tr>
         <tr>
             <th>Lead Source</th>
