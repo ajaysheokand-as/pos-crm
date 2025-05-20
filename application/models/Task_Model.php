@@ -4516,8 +4516,18 @@ Capitalized terms used herein but not defined shall have the same meanings given
         return $result;
     }
 
+    // public function getDepartmentMaster() {
+    //     return $this->db->select($select)->where(['department_active' => 1, 'department_deleted' => 0])->from('master_department')->get()->result();
+    // }
     public function getDepartmentMaster() {
-        return $this->db->select($select)->where(['department_active' => 1, 'department_deleted' => 0])->from('master_department')->get()->result();
+        $select = '*'; // or specify fields like 'department_id, department_name' if needed
+        return $this->db
+                ->select($select)
+                ->from('master_department')
+                ->where('department_active', 1)
+                ->where('department_deleted', 0)
+                ->get()
+                ->result();
     }
 
     public function getEmpOccupation() {
