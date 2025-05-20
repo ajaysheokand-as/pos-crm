@@ -162,7 +162,7 @@
 
             <div class="col-md-6">
                 <label class="labelField">Admin Fee (%)&nbsp;<strong class="required_Fields">*</strong></label>
-                <input type="text" class="form-control inputField" id="processing_fee_percent" name="processing_fee_percent" onchange="calculateAmount()" value="15.00" min="0" max="20.00" autocomplete="off" readonly>
+                <input type="text" class="form-control inputField" id="processing_fee_percent" name="processing_fee_percent" onchange="calculateAmount()" value="15.00" min="0" max="20.00" autocomplete="off">
             </div> 
 
             <div class="col-md-6">
