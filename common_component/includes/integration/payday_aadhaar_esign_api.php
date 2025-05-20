@@ -1205,7 +1205,7 @@ function esign_document_upload_digitap_api_call($method_id, $lead_id = 0, $reque
         //     "multiSignerDocId" => $aadhar_no_last_4_digit
         // );
         $requestData = array(
-            "docClassId" => "EI358OTPESIG58568",//"sanction_letter_" . $lead_id . "_" . time(),// "EI358OTPESIG58568",
+            "docClassId" => "EI358OTPESIG29101",//"sanction_letter_" . $lead_id . "_" . time(),// "EI358OTPESIG58568",
             "reason" => "Loan agreement",
             "signersInfo" => array(
                 array(
@@ -1406,17 +1406,15 @@ function esign_upload_sanction_letter_digitap_api_call($fileUrl, $apiUrl) {
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 20,
-            CURLOPT_SSL_VERIFYHOST => 0,
-            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_TIMEOUT => 0,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'PUT',
-            CURLOPT_POSTFIELDS => $fileContent,
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/pdf', // Ensure correct MIME type
-                'Content-Length: ' . strlen($fileContent),
-            ),
+            CURLOPT_POSTFIELDS => $array(''=> new CURLFILE($fileContent))
+            // CURLOPT_HTTPHEADER => array(
+            //     'Content-Type: application/pdf', // Ensure correct MIME type
+            //     'Content-Length: ' . strlen($fileContent),
+            // ),
         ));
 
         $apiResponseJson = curl_exec($curl);
@@ -1550,12 +1548,12 @@ if (!empty($apiResponseData)) {
             // echo $enc_lead_id = $this->encrypt->encode($lead_id);
             // exit;
 
-echo '
-<script>
-    setTimeout(function() {
-        window.location.href = "' . COMP_CRM_URL . 'sanction-esign-response?lead_id=' . $lead_id . '";
-    }, 100);
-</script>';
+// echo '
+// <script>
+//     setTimeout(function() {
+//         window.location.href = "' . COMP_CRM_URL . 'sanction-esign-response?lead_id=' . $lead_id . '";
+//     }, 100);
+// </script>';
             // redirect('ApiCallBackController/eSignSanctionLetterResponse');
         } else {
             $tmp_error_msg = "Some error occurred. Please try again.";
