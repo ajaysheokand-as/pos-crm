@@ -395,98 +395,98 @@
                                                                 <span class="inner-page-tag">Leads </span>
                                                                 <?php if ($stage == "S13") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($stage == "S14") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
 
                                                                 <?php } elseif ($stage == "S16") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
 
                                                                 <?php } elseif ($stage == "S20") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($stage == "S21") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($stage == "S12") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($stage == "S32" || $stage == "S33" || $stage == "S34") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($stage == "S10") { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <?php if (!empty($totalcount)) { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total / $totalcount ?></span>
+                                                                    class="counter inner-page-box" title="Average Ticket Size"><?= $loan_recommended_total / $totalcount ?></span>
                                                                 <?php } else { ?>
                                                                 <span class="counter inner-page-box">0</span>
                                                                 <?php } ?>
                                                                 <?php } elseif ($this->uri->segment(1) == 'outstanding-cases') { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $loan_recommended_total ?></span>
+                                                                    class="counter inner-page-box" title="Total Loan Recommended"><?= $loan_recommended_total ?></span>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $total_outstanding ?></span>
+                                                                    class="counter inner-page-box" title="Total Outstanding"><?= $total_outstanding ?></span>
                                                                 <?php } else { ?>
                                                                 <span
-                                                                    class="counter inner-page-box"><?= $totalcount; ?></span>
+                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                 <?php } ?>
                                                                 <?php if ((agent == 'CR1' && $stage == "S1") || (agent == 'CR2' && $stage == "S4")) { ?>
                                                                 <!-- <a class="btn inner-page-box checkDuplicateItem" id="checkDuplicateItem" style="background: #0d7ec0 !important;">Duplicate</a> -->
