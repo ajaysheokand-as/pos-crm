@@ -354,11 +354,6 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
                 </select>
             </div>
 
-
-
-
-
-
             <div class="col-md-6">
                 <label class="labelField">Pincode&nbsp;<strong class="required_Fields">*</strong></label>
                 <select class="form-control inputField" id="pincode3" name="pincode3" autocomplete="off">
@@ -373,33 +368,36 @@ $refrenceData = getrefrenceData('lead_customer_references', $leadDetails->lead_i
 
             <div class="col-md-6">
                 <label class="labelField">Employer Type&nbsp;<span class="required_Fields">*</span></label>
-                <select class="form-control inputField" name="employeeType" autocomplete="off">
+                <!-- <select class="form-control inputField" name="employeeType" autocomplete="off">
                     <option value="">Select Employer Type</option>
                     <option value="Salaried">Salaried</option>
                     <option value="Self-Employed">Self-Employed</option>
+                </select> -->
+                <select class="form-control inputField" name="employeeType" autocomplete="off" readonly>
+                    <option value="Salaried">Salaried</option>
                 </select>
                 <!--<input type="text" class="form-control inputField" id="employeeType" name="employeeType" autocomplete="off" >-->
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Industry </label>
+                <label class="labelField">Sector/Industry </label>
                 <input type="text" class="form-control inputField" id="industry" name="industry" autocomplete="off" disabled>
             </div>
 
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <label class="labelField">Sector</label>
                 <input type="text" class="form-control inputField" id="sector" name="sector" autocomplete="off" disabled>
-            </div>
+            </div> -->
 
             <div class="col-md-6">
-                <label class="labelField">Department </label>
+                <label class="labelField">Department&nbsp;<span class="required_Fields">*</span></label>
                 <select class="form-control inputField" id="department" name="department" autocomplete="off">
                     <option value="">Select</option>
                 </select>
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Designation </label>
+                <label class="labelField">Designation &nbsp;<span class="required_Fields">*</span></label>
                 <input type="text" class="form-control inputField" id="designation" name="designation" autocomplete="off">
             </div>
 
