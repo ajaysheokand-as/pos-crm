@@ -4519,6 +4519,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
     // public function getDepartmentMaster() {
     //     return $this->db->select($select)->where(['department_active' => 1, 'department_deleted' => 0])->from('master_department')->get()->result();
     // }
+
     public function getDepartmentMaster() {
         $select = '*'; // or specify fields like 'department_id, department_name' if needed
         return $this->db
@@ -4529,6 +4530,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                 ->get()
                 ->result();
     }
+
 
     public function getEmpOccupation() {
         return $this->db->select('m_occupation_id, m_occupation_name')
@@ -6968,12 +6970,6 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
-         </table>
-         <br><br><br><br>
-         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
             <tr>
                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
@@ -7005,7 +7001,7 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br>
-                     <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
+                     <br></span>
                   </p>
                </td>
                <td width=285 style='width:213.5pt;border-top:none;border-left:none;
@@ -7033,7 +7029,31 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> Email:&nbsp;<a href='info@tejasloan.com' target='_blank'>info@tejasloan.com</a> <br>
-                     <br> If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
+                     <br></span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+               <td width=305 style='width:228.8pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
+                  </p>
+               </td>
+               <td width=285 style='width:213.5pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
                   </p>
                </td>
             </tr>
@@ -7217,6 +7237,11 @@ $pdf->Output($file_path_with_name, 'F');
             <br>
             </span>
          </p>
+         <br>
+         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
             0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
             <b>
@@ -7357,12 +7382,10 @@ $pdf->Output($file_path_with_name, 'F');
          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
          </p>
-         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- KEY FACT STATEMENT END -->
       <!-- Loan Terms START -->
       <div class=WordSection1>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
             line-height:normal'>
             <b>
@@ -7411,6 +7434,11 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-family:sans-serif;color:black'>&nbsp;In these Terms, the capitalized words shall have the following meanings. All terms capitalized but not defined below shall have such meaning as ascribed to them in the Commercial Terms:</span>
          </p>
+         <br>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7553,11 +7581,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black'>&nbsp;means the credit facility granted / agreed to be granted by the Lender to the Borrower.</span>
          </p>
-         
-         <br>
-         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7597,6 +7620,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black'>&nbsp;means premature repayment of the Loan in full, including principal amount, interest thereon, and all Outstanding Amount which is not yet due for payment by the Borrower under the Terms.</span>
          </p>
+         <br>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7653,6 +7681,7 @@ $pdf->Output($file_path_with_name, 'F');
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
          </p>
+         
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -7827,24 +7856,26 @@ $pdf->Output($file_path_with_name, 'F');
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
             <span style='font-family:sans-serif;
-               color:black'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+               color:black'>4.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             </span>
             <span style='font-family:sans-serif;
                color:black'>to issue such Repayment Instruments for: (a) Bullet Repayment Loan; (b) EMI Loan, respectively based on the type of Loan product agreed to be availed by the Borrower. The Borrower shall repay the Loan for such amount and at such intervals as is specified in the Commercial Terms, KFS and / or Repayment Schedule shared by the Lender from time to time. The Borrower understands and acknowledges that Lender may collect repayment directly by itself or through third party agents, as appointed by the Lender. The Borrower further undertakes to extend all co-operation with such third-party agents to ensure that due fulﬁllment of Borrower's obligations under these Terms and to obtain a valid discharge against the Outstanding Amounts.</span>
          </p>
+         <br>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
             <span style='font-family:sans-serif;
-               color:black'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+               color:black'>4.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             </span>
             <span style='font-family:sans-serif;
                color:black'>that should at any time during the Tenure of the Loan, if instructions for stop payment, cancellation of a Repayment Instrument and /or fail to confirm / register the ECS / NACH, the same shall be treated as dishonour / bounce of the Repayment Instrument, and the Loan shall be recalled at the discretion of the Lender.</span>
          </p>
-         <br>
-         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
+         
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -8254,6 +8285,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>&nbsp;</span>
          </p>
+         
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -11080,12 +11112,12 @@ $pdf->Output($file_path_with_name, 'F');
                         <tr>
                             <td><span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:10px 0px;">Website - <a href="' . WEBSITE_URL . '" target="_blank" style="text-decoration:blink;">' . WEBSITE . '</a></span></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td><span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:25px 0px;">
                             <a href="' . APPLE_STORE_LINK . '" target="_blank"><img style="width: 10%;margin-left: 0%;" src="' . APPLE_STORE_ICON . '"></a></span>
                             <span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:10px 0px;"><a href="' . ANDROID_STORE_LINK . '" target="_blank"><img style="width: 10%;margin-left: 0%;" src="' . ANDROID_STORE_ICON . '"></a></span>
                             </td>
-                        </tr>
+                        </tr>-->
 
                         <tr>
                             <td align="left">&nbsp;</td>
