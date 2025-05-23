@@ -2793,14 +2793,14 @@
         $('#loan_recommended').val(Math.round(res.loan_recommended) ? Math.round(res.loan_recommended) : '<?= round($leadDetails->loan_amount) ?>');
         $('#final_foir_percentage').val((res.final_foir_percentage) ? res.final_foir_percentage : "0");
         $('#foir_enhanced_by').val((res.foir_enhanced_by) ? res.foir_enhanced_by : "0");
-        $('#processing_fee_percent').val((res.processing_fee_percent) ? res.processing_fee_percent : "10");
+        $('#processing_fee_percent').val((res.processing_fee_percent) ? res.processing_fee_percent : "15");
         $('#admin_fee').val((res.admin_fee) ? res.admin_fee : "0");
         $('#disbursal_date').val((res.disbursal_date) ? res.disbursal_date : "<?= date('d-m-Y', strtotime(timestamp)) ?>");
         $('#repayment_date').val((res.repayment_date) ? res.repayment_date : "");
         $('#adminFeeWithGST').val((res.adminFeeWithGST) ? res.adminFeeWithGST : "0");
         $('#total_admin_fee').val((res.total_admin_fee) ? res.total_admin_fee : "0");
         $('#tenure').val((res.tenure) ? res.tenure : "0");
-        $('#roi').val((res.roi) ? res.roi : "0");
+        $('#roi').val((res.roi) ? res.roi : "0.75");
         $('#net_disbursal_amount').val((res.net_disbursal_amount) ? res.net_disbursal_amount : "0");
         $('#repayment_amount').val((res.repayment_amount) ? res.repayment_amount : "0");
         $('#monthly_salary').val((res.cam_monthly_income > 0) ? res.cam_monthly_income : "0");
