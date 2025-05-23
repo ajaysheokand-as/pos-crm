@@ -377,7 +377,7 @@ if (!function_exists('lw_send_email')) {
                 $emailData = array(
                     "from" => [
                         "address" => $from_email,
-                        "name" => "Salarywalle"
+                        "name" => "Tajas Loan"
                     ],
                     "to" => [
                         ["email_address" => ["address" => $to_email]]
