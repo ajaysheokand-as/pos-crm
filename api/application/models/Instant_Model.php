@@ -144,7 +144,7 @@ class Instant_Model extends CI_Model {
 
         shuffle($code_mix);
 
-        $referenceID = "#SALARY";
+        $referenceID = "#TEJAS";
 
         foreach ($code_mix as $each) {
 

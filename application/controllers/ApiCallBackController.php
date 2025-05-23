@@ -40,6 +40,9 @@ class ApiCallBackController extends CI_Controller {
 
     public function eSignSanctionLetterRequest() {
 
+        error_reporting(-1);
+        ini_set('display_errors', 1);
+
         $return_status = 0;
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : NULL;
 
@@ -1366,7 +1369,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="hhttps://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
+                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
                     </a>
                 </div>
                 <h1>Fill Aadhaar Number</h1>

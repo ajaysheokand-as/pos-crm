@@ -225,11 +225,11 @@ class LoginController extends CI_Controller {
                     	          </tr>
                     	        </table></body></head></html>";
 
-                    // if (!empty($isValidUser['user_data']['email'])) {
-                    //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                    //     // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
-                    //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
-                    // }
+                    if (!empty($isValidUser['user_data']['email'])) {
+                        require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+                        // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
+                        common_send_email("nitinvaid2050@gmail.com", $email_subject, $email_message);
+                    }
 
                     $redirect_home_url = "home/";
 
@@ -298,11 +298,11 @@ class LoginController extends CI_Controller {
                     	          </tr>
                     	        </table></html>";
 
-                            // if (!empty($userDetails['user_data']['email'])) {
-                            //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                            //     // common_send_email($userDetails['user_data']['email'], $email_subject, $email_message, "", "info@tejasloan.com");
-                            //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
-                            // }
+                            if (!empty($userDetails['user_data']['email'])) {
+                                require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+                                // common_send_email($userDetails['user_data']['email'], $email_subject, $email_message, "", "info@tejasloan.com");
+                                common_send_email("nitinvaid2050@gmail.com", $email_subject, $email_message);
+                            }
                         } else {
                             $this->db->where('email', $input_email);
                             $this->db->set('user_logins_failed_count', 'user_logins_failed_count+1', FALSE);
@@ -362,11 +362,11 @@ class LoginController extends CI_Controller {
                     	          </tr>
                     	        </table></html>";
 
-                            // if (!empty($userDetails['user_data']['email'])) {
-                            //     require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                            //     // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
-                            //     common_send_email("tech@telasloan.com", $email_subject, $email_message);
-                            // }
+                            if (!empty($userDetails['user_data']['email'])) {
+                                require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+                                // common_send_email("info@tejasloan.com", $email_subject, $email_message, "", "info@tejasloan.com");
+                                common_send_email("nitinvaid2050@gmail.com", $email_subject, $email_message);
+                            }
                         }
                     } else {
                         $this->session->set_flashdata('err', "Invalid credentails, Please try with correct details.");
