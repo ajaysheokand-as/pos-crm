@@ -172,7 +172,7 @@
                     </div>
 
                     <div class="col-md-2" style="padding-left: 0px;">
-                        <input type="text" class="form-control inputField" id="roi" name="roi" value="1" min="0.00" max="1.00" onchange="calculateAmount()" autocomplete="off" style="width:100% !important;">
+                        <input type="text" class="form-control inputField" id="roi" name="roi" value="0.75" min="0.00" max="1.00" onchange="calculateAmount()" autocomplete="off" style="width:100% !important;">
                     </div>
 
                     <div class="col-md-6">
