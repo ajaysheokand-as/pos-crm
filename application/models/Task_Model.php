@@ -9229,6 +9229,11 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-size:9.0pt;font-family:sans-serif'>: Not utilize any part of the Loan amount for illegal activities, immoral purposes, gambling, betting, lottery, races, speculative trading, or any activity of a similar prohibited or unethical nature.</span>
          </p>
+         <br>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -9239,11 +9244,6 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-size:9.0pt;font-family:sans-serif'>: Obtain and submit all requisite permissions, consents, and approvals to the Lender and/or its service providers, as may be required under applicable law or internal policy, prior to the disbursement of the Loan.</span>
          </p>
-         <br>
-         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
-         <br>
-         <img src='".$letterhead_url."' width='100%'>
-         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -9400,6 +9400,11 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower hereby makes the following representations and warranties to the Lender, which shall be deemed to be continuing and shall remain true and binding throughout the tenure of the Loan and until the discharge of all obligations under the Loan Documents:</span>
          </p>
+         <br>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -9444,7 +9449,6 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>Contravene any provision of the Borrower’s constitutional or governing documents (where applicable).</span>
          </p>
-         
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -9452,9 +9456,6 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>There are no actions, suits, proceedings, or investigations pending or, to the Borrower’s knowledge, threatened against the Borrower before any court, tribunal, or governmental authority that could materially affect the Borrower’s financial position, the enforceability of the Loan Documents, or the Borrower’s ability to perform its obligations thereunder.</span>
          </p>
-         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
