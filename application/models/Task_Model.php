@@ -4458,7 +4458,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
                 shuffle($code_mix);
 
-                $referenceID = "#SALARY";
+                $referenceID = "#TEJAS";
 
                 foreach ($code_mix as $each) {
 
@@ -9541,6 +9541,11 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower has obtained all applicable statutory approvals and consents necessary to execute the Loan Documents and perform obligations thereunder.</span>
          </p>
+         <br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -9606,10 +9611,6 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>Authority of Signatories (If Applicable) <br> Where the Borrower is an entity (proprietorship, partnership, LLP, or company), all signatories to the Loan Documents are duly authorized to execute the same on behalf of the Borrower. </span>
          </p>
-         <br><br><br>
-         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
             normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -9696,7 +9697,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The Borrower has admitted to any Person in writing that the Borrower is unable to pay his/her debts and / or that the Borrower is willing to be adjudged bankrupt.</span>
          </p>
-         
+         <br>
+         <img style='margin-top: 210px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -9805,10 +9810,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>Exercise any other right or remedy which may be available to the Lender under any applicable law, including the rights available pursuant to the provisions under the loan documents.</span>
          </p>
-         <br>
-         <img style='margin-top: 210px;' src='".$letterfooter_url."' width='100%'>
-         <br><br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -9847,6 +9848,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The Borrower expressly agrees and acknowledges that the Lender shall have the absolute and unfettered right, at its sole discretion, to sell, assign, transfer or otherwise dispose of, whether in whole or in part, its rights, title, and interest in the Loan, the Outstanding Balance, or any part thereof, to any third party, on such terms and in such manner as the Lender may deem fit, without the requirement of any notice to or consent of the Borrower.</span>
          </p>
+         <br><br><br>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -9911,10 +9917,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The Borrower agrees that any such delegation by the Lender shall be binding upon the Borrower and that all acts done or performed by such Service Providers shall be deemed to have been done or performed by the Lender itself.</span>
          </p>
-         <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
-            margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
-            <span style='font-family:sans-serif'>&nbsp;</span>
-         </p>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
             normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -9949,11 +9951,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>&nbsp;</span>
          </p>
-         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
-            normal'>
-            <span style='font-size:9.0pt;font-family:sans-serif;
-               color:black'>&nbsp;</span>
-         </p>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <span style='font-family:sans-serif'>11 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp; </span>
@@ -9978,9 +9975,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The Borrower undertake/s to indemnify and keep the Lender indemniﬁed in respect of any cost, loss or liability incurred by the Lender as a result of: (a) the occurrence of any Event of Default; (b) Any information supplied by the Borrower in the Application Form or any other Loan Document is found to be materially untrue, false, misleading or incorrect; (c) failure by the Borrower to pay any amount due under the Loan Documents on its Scheduled Due Date; (d) the Borrower failing to comply with the provisions of any applicable laws; and / or (e) breach of any representation, warranty, covenant or undertaking of the Borrower under the terms of the this Agreement or any of the other Loan Documents.</span>
          </p>
-         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -9989,6 +9983,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>In addition to the obligations and documents which the Lender expressly require the Borrower to execute, deliver and perform, the Borrower hereby agree to execute, deliver, and perform, such further acts or documents which the Lender may reasonably require, from time to time, to effectuate the purposes of these Terms and Conditions or any of the other Loan Documents.</span>
          </p>
+         <br>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -10096,6 +10095,11 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>CIBIL and/or such other authorized agency may furnish, for consideration, the processed information or any reports, scores, or products derived therefrom to banks, financial institutions, credit grantors, or other registered users, as permitted under applicable law and regulations;</span>
          </p>
+         <br><br><br>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -10103,11 +10107,6 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>Notwithstanding anything to the contrary contained in this Agreement, the Loan Documents, or any applicable law, the Borrower agrees that in the event of default in repayment of the Loan, any instalment thereof, or any part of the Outstanding Balance on the Scheduled Due Date(s), the Lender and/or the Reserve Bank of India shall have an unqualified right to disclose, report, or publish the name of the Borrower as a “defaulter” in such manner and through such media as they may, in their sole discretion, deem appropriate.</span>
          </p>
-         <br>
-         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         <br>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
             normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -10252,10 +10251,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;
                font-family:sans-serif;color:black'>&nbsp;Any question, dispute or claim arising out of or in connection with these Terms and Conditions or the other Loan Documents including any question on its existence, validity or termination shall be referred to and ﬁnally adjudicated through arbitration by a sole arbitrator and in accordance with the Arbitration and Conciliation Act, 1996. The sole arbitrator will be appointed by the Lender. The venue for such arbitration shall be New Delhi, India. The arbitration award given by the sole arbitrator appointed as aforesaid shall be ﬁnal and binding on all the parties in connection with any question of facts or law arising in the course of arbitration or with respect to any award made. Further, the present clause shall survive the termination of these Terms and Conditions and the other Loan Documents. The Courts at New Delhi, India shall have exclusive jurisdiction (subject to the arbitration proceedings which are to be also conducted in New Delhi, India) over any or all disputes arising out of this Agreement and the other Loan Documents. The present clause along with the clause for payment of Interest and other Outstanding Balance by the Borrower shall survive the termination of this Agreement and the other Loan Documents.</span>
          </p>
-         <br>
-         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -12205,12 +12200,12 @@ $pdf->Output($file_path_with_name, 'F');
 
             // $active_service = (date('d') % 2) > 0 ? 1 : 2;
 
-            // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
+            $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
 
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
             // if ($active_service == 1) { // DigiTap
-                $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
+                // $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // } elseif ($active_service == 2) { // Singzy
             //     $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
             // }
