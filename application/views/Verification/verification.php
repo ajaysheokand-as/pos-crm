@@ -263,11 +263,11 @@ if ($leadDetails->stage == "S5" || $leadDetails->stage == "S6" || $leadDetails->
 
 
 
-<div class="footer-support">
+<!-- <div class="footer-support">
     <h2 class="footer-support">
         <button type="button" class="btn btn-info collapse" data-toggle="collapse" onclick="checkAACurrentStatus('<?= $this->encrypt->encode($leadDetails->lead_id) ?>')" data-target="#ACCOUNTAGRIGATOR">ACCOUNT AGGREGATOR &nbsp;<i class="fa fa-angle-double-down"></i></button>
     </h2>
-</div>
+</div> -->
 
 <div id="ACCOUNTAGRIGATOR" class="collapse">
     <div>
