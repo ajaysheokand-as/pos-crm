@@ -306,11 +306,13 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['ApiPassword'] = "";
 
             // $config_arr['ApiToken'] = "API://ofbJDI/UjZYuUhxFOTYLsoxhi5Jy2OKz22hiKICrt2/88/NrejmPFWsdg4yYy1IC";
-            $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD";
+            // $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD";
+            $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb";
 
             if ($envSet == "production") {
                 // $config_arr['ApiToken'] = "API://ofbJDI/UjZYuUhxFOTYLsoxhi5Jy2OKz22hiKICrt2/88/NrejmPFWsdg4yYy1IC"; // New key
-                $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD"; // New key
+                // $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD"; // New key
+                $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb"; // New key
             }
 
             if ($api_sub_type == "UPLOAD_DOC") {

@@ -4519,6 +4519,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
     // public function getDepartmentMaster() {
     //     return $this->db->select($select)->where(['department_active' => 1, 'department_deleted' => 0])->from('master_department')->get()->result();
     // }
+
     public function getDepartmentMaster() {
         $select = '*'; // or specify fields like 'department_id, department_name' if needed
         return $this->db
@@ -4529,6 +4530,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                 ->get()
                 ->result();
     }
+
 
     public function getEmpOccupation() {
         return $this->db->select('m_occupation_id, m_occupation_name')
@@ -6968,12 +6970,6 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
-         </table>
-         <br><br><br><br>
-         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
             <tr>
                <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
@@ -7005,7 +7001,7 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br>
-                     <br> The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
+                     <br></span>
                   </p>
                </td>
                <td width=285 style='width:213.5pt;border-top:none;border-left:none;
@@ -7033,7 +7029,31 @@ $pdf->Output($file_path_with_name, 'F');
                      <span style='font-size:9.0pt;font-family:sans-serif;
                         color:black'>
                      <br> Email:&nbsp;<a href='info@tejasloan.com' target='_blank'>info@tejasloan.com</a> <br>
-                     <br> If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
+                     <br></span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+         <br><br>
+         <img style='margin-top: 150px;' src='".$letterfooter_url."' width='100%'>
+         <br><br>
+         <img src='".$letterhead_url."' width='100%'>
+         <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=659 style='width:100%;border-collapse:collapse'>
+            <tr>
+               <td style='border:solid black 1.0pt;border-top:none;padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+               <td width=305 style='width:228.8pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>The GRO may be reached on the number provided above anytime between 10:00 and 19:00 from Monday to Saturdays except public holidays or through the e-mail address above.The GRO shall endeavor to resolve the grievance within a period of (14) fourteen days from the date of receipt of a grievance. </span>
+                  </p>
+               </td>
+               <td width=285 style='width:213.5pt;border-top:none;border-left:none;
+                  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+                  <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+                     normal'>
+                     <span style='font-size:9.0pt;font-family:sans-serif;
+                        color:black'>If the Borrower does not receive a response from the GRO within 14 (fourteen) days of making a representation, or if the Borrower is not satisfied with the response received from the GRO, the Borrower may reach the Nodal Officer anytime between 10:00 to 19:00 from Monday to Saturdays except public holidays or write to the Nodal Officer. </span>
                   </p>
                </td>
             </tr>
@@ -7217,6 +7237,11 @@ $pdf->Output($file_path_with_name, 'F');
             <br>
             </span>
          </p>
+         <br>
+         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
             0in;margin-left:14.2pt;text-indent:-14.2pt;line-height:normal'>
             <b>
@@ -7357,12 +7382,10 @@ $pdf->Output($file_path_with_name, 'F');
          <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
          </p>
-         <img style='margin-top: 100px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- KEY FACT STATEMENT END -->
       <!-- Loan Terms START -->
       <div class=WordSection1>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
             line-height:normal'>
             <b>
@@ -7411,6 +7434,11 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-family:sans-serif;color:black'>&nbsp;In these Terms, the capitalized words shall have the following meanings. All terms capitalized but not defined below shall have such meaning as ascribed to them in the Commercial Terms:</span>
          </p>
+         <br>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7553,11 +7581,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black'>&nbsp;means the credit facility granted / agreed to be granted by the Lender to the Borrower.</span>
          </p>
-         
-         <br>
-         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7597,6 +7620,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black'>&nbsp;means premature repayment of the Loan in full, including principal amount, interest thereon, and all Outstanding Amount which is not yet due for payment by the Borrower under the Terms.</span>
          </p>
+         <br>
+         <img style='margin-top: 50px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -7653,6 +7681,7 @@ $pdf->Output($file_path_with_name, 'F');
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;line-height:normal'>
             <span style='font-family:sans-serif;color:black'>&nbsp;</span>
          </p>
+         
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -7823,33 +7852,36 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black;display:none'>&nbsp;</span>
          </p>
+         <br><br><br><br><br><br>
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
             <span style='font-family:sans-serif;
-               color:black'>3.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+               color:black'>4.1 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             </span>
             <span style='font-family:sans-serif;
                color:black'>to issue such Repayment Instruments for: (a) Bullet Repayment Loan; (b) EMI Loan, respectively based on the type of Loan product agreed to be availed by the Borrower. The Borrower shall repay the Loan for such amount and at such intervals as is specified in the Commercial Terms, KFS and / or Repayment Schedule shared by the Lender from time to time. The Borrower understands and acknowledges that Lender may collect repayment directly by itself or through third party agents, as appointed by the Lender. The Borrower further undertakes to extend all co-operation with such third-party agents to ensure that due fulﬁllment of Borrower's obligations under these Terms and to obtain a valid discharge against the Outstanding Amounts.</span>
          </p>
+         
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
             <span style='font-family:sans-serif;
-               color:black'>3.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+               color:black'>4.2 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             </span>
             <span style='font-family:sans-serif;
                color:black'>that should at any time during the Tenure of the Loan, if instructions for stop payment, cancellation of a Repayment Instrument and /or fail to confirm / register the ECS / NACH, the same shall be treated as dishonour / bounce of the Repayment Instrument, and the Loan shall be recalled at the discretion of the Lender.</span>
          </p>
-         <br>
-         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
+         
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
             <span style='font-family:sans-serif;
-               color:black'>3.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+               color:black'>4.3 <span style='font:7.0pt '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             </span>
             <span style='font-family:sans-serif;
                color:black'>that upon delay and / or non-payment of Outstanding Amounts on the respective Due Date, the Lender shall have the right to classify the Borrower and its accounts as Special Mention Account (&quot;SMA”) and / or Non-Performing Asset (“NPA”), as detailed below:</span>
@@ -7873,7 +7905,16 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;color:black'>Interest &amp; costs:</span>
             </b>
             <span style='font-family:sans-serif;
-               color:black'>&nbsp;The Borrower shall pay interest on the Loan at the Rate of Interest specified in the Commercial Terms from the date when the Loan is disbursed. The Lender shall inform the Borrower regarding any change in Rate of Interest by way of publishing a notice that shall be displayed on the notice board in the branch of the Lender or on the Lender's website. The said notice of change of Rate of Interest shall be deemed to be sufficient notice of change to the Borrower. The Borrower shall pay on the Loan, processing fee, stamp duty, and such other fees and charges indicated in the KFS and/ or notified by the Lender. Further, the Borrower undertakes to pay such fees / charges/ costs that comprise the Annual Percentage Rate, as mentioned in the Commercial Terms and KFS. The Borrower understands that Loan is subject to applicable taxes and such other statutory levies as may be notified by the government from time to time. All such taxes and levies shall be payable by the Borrower.</span>
+               color:black'>&nbsp;The Borrower shall pay interest on the Loan at the Rate of Interest specified in the Commercial Terms from the date when the Loan is disbursed. The Lender shall inform the Borrower regarding any change in Rate of Interest by way of publishing a notice that shall be displayed on the notice board in the branch of the Lender or on the Lender's website. The said notice of change of Rate of Interest shall be deemed to be sufficient notice of change to the Borrower.</span>
+         </p>
+         <br><br>      
+         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
+         <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
+            normal'>
+            <span style='font-family:sans-serif;color:black'>The Borrower shall pay on the Loan, processing fee, stamp duty, and such other fees and charges indicated in the KFS and/ or notified by the Lender. Further, the Borrower undertakes to pay such fees / charges/ costs that comprise the Annual Percentage Rate, as mentioned in the Commercial Terms and KFS. The Borrower understands that Loan is subject to applicable taxes and such other statutory levies as may be notified by the government from time to time. All such taxes and levies shall be payable by the Borrower.</span>
          </p>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
@@ -7912,12 +7953,14 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-family:sans-serif;
                color:black'>&nbsp;The following are the events of default under these Terms (“Event of Default”): (a) failure by the Borrower to repay the Loan (whole or part) on the Due Date; (b) breach / non-performance of any representation, warranty, covenant, undertaking or obligations under these Terms (including non-submission of documents or execution thereof), or any change in the information furnished by the Borrower to the Lender, if deemed material by the Lender; (c) the Borrower is subjected to any insolvency or bankruptcy proceeding or a receiver is appointed for its assets; (d) if the Borrower commits default in relation to any other loan or credit facility and /or statutory taxes and dues owed, or enters into any compromise with its creditors, or admits any inability in payment of its other debts; <br>
-         <img style='margin-top: 70px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
           (e) the performance of obligations under these Terms becomes void or illegal; (f) non-payment of any of dues and / or outstanding amounts to any other financial institutions; and / or (g) any event which, with the passage of time, is likely to become an Event of Default. 
                <br> On the happening of any Event of Default, the Lender may at its sole discretion , without prejudice to other rights and claims under these Terms, exercise any or all of the following rights, i.e.,: (a) recall the Loan and / or declare the Loan to become immediately due and payable; (b) levy Default Interest on the Outstanding Amount from the date when the Event of Default occurs until the date when the Event of Default has ceased to exist; and / or (c) exercise any other rights or remedies available to the Lender under applicable law including initiating civil and criminal proceedings. </span>
          </p>
+         <br><br><br><br><br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -7968,10 +8011,6 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-family:sans-serif;color:black'>&nbsp;The Borrower shall indemnify and hold harmless the Lender and its directors, officers and agents, from and against any and all costs, expenses, direct or indirect claims, liabilities, demands and / or claims whatsoever, including any third-party claims for damages incurred as a consequence of occurrence of an Event of Default, breach of the terms and conditions of these Terms or acts of omission and commission on the part of the Borrower, or otherwise on account of the Loan.</span>
          </p>
-         <br><br>
-         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -8001,6 +8040,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-family:sans-serif;
                color:black'>liates or assignee but the Borrower is not entitled to directly or indirectly assign the benefit or obligation of these Terms to any third party.</span>
          </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -8129,14 +8173,15 @@ $pdf->Output($file_path_with_name, 'F');
             normal'>
             <span style='font-family:sans-serif;color:black'>“ I Accept”</span>
          </p> -->
-         <br><br>
+         <br>
          <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
          <br>
       </div>
       <!-- Loan Terms END -->
       <!-- Loan Agreement START -->
       <div class=WordSection1>
-         <img src='".$letterhead_url."' width='100%'>
+        <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
             line-height:normal'>
             <b>
@@ -8254,6 +8299,7 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>&nbsp;</span>
          </p>
+         
          <p class=MsoNormal style='margin:0in;text-align:justify;text-indent:-.25in;
             line-height:normal'>
             <b>
@@ -8270,6 +8316,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>The following capitalized words/expressions shall carry the meaning ascribed to them below, throughout this Agreement, unless otherwise stated or unless repugnant to the subject or context thereof:</span>
          </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8360,11 +8411,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;
                font-family:sans-serif;color:black'>&nbsp;shall mean the additional amount payable by the Borrower to the Lender on account of any delay in payment of any Instalment and / or bullet payment(s), as more particularly set out in the Sanction Letter. Cum KFS</span>
          </p>
-         <br><br><br>
-         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8502,6 +8548,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;
                font-family:sans-serif;color:black'>&nbsp;means a notice of demand issued by or on behalf of the Lender.</span>
          </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8539,11 +8590,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:
                sans-serif;color:black'>&nbsp;shall mean any individual, corporation, partnership, (including, without limitation, association), company incorporated under the provisions of the Companies Act, 1956 / Companies Act, 2013, trust, unincorporated organization, Hindu undivided family or any governmental authority or political subdivision thereof. The expression shall, unless repugnant to the context or meaning thereof, be deemed to mean and include: (i) in case of a company, its successors and permitted assigns; (ii) in case of a partnership ﬁrm, the partners for the time being and from time to time of the partnership ﬁrm, their survivor or survivors of them, their respective heirs, administrators, executors, legal representatives and successors of the partner(s); (iii) in case of a trust, the trustee or trustees of the trust for the time being and from time to time; (iv) in case of a Hindu undivided family, the Karta and the members for the time being and from time to time of the said Hindu undivided family and their respective heirs, executors, administrators and legal representatives; (v) in case of an individual proprietor, the proprietor's heirs, administrators, executors and legal representatives; (vi) in case of an individual, the individual's heirs, administrators, executors and legal representatives;</span>
          </p>
-         <br>
-         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-         <br><br>
-         <img src='".$letterhead_url."' width='100%'>
-         
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8641,6 +8687,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:sans-serif;
                color:black'>&nbsp;means the document that include the key terms of the Loan sanctioned by the Lender to the Borrower, in the way clearly understood by the Borrower, bearing reference number as set out in Schedule A and executed by the Borrower and the Lender on the date set out in Schedule A.</span>
          </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8704,10 +8755,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;
                font-family:sans-serif;color:black'>&nbsp;means each of the dates on which the Bullet payments, Instalments together with Interest, Delayed Payment Charges, Fees, Prepayment Charges, Dishonor Charges, Taxes, Lender Swap Charges and any other costs, charges, expenses if any, are due and payable by the Borrower to the Lender, pursuant to the terms of the Loan Documents.</span>
          </p>
-         <br>
-         <img style='margin-top: 160px;' src='".$letterfooter_url."' width='100%'>
-         <br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:21.3pt;text-align:justify;text-indent:-21.3pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif;
@@ -8780,6 +8827,11 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>The disbursement of the Loan shall be made by the Lender either in a single lump sum or in such instalments as the Lender may determine at its sole discretion.</span>
          </p>
+         <br>
+         <img style='margin-top: 160px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -8899,10 +8951,6 @@ $pdf->Output($file_path_with_name, 'F');
             </span>
             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower shall pay to the Lender all Instalments and/or bullet payments (inclusive of Interest), strictly on a monthly basis, on the Scheduled Due Dates, beginning from the first due date and continuing through to the last due date as stipulated in the Sanction Letter cum Key Fact Statement (“Sanction Letter cum KFS”). Time shall be of the essence for such payments. All payments shall be made through Repayment Instruments issued by the Borrower in favor of the Lender.</span>
          </p>
-         <br>
-         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
-         <br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:42.55pt;text-align:justify;text-indent:-14.2pt;
             line-height:normal'>
@@ -8922,6 +8970,11 @@ $pdf->Output($file_path_with_name, 'F');
                sans-serif'>
             <br> In the event of any Repayment Instrument being dishonored, the Borrower shall be liable to pay Dishonor Charges as specified in the Sanction Letter cum KFS. This shall be without prejudice to any other rights and remedies available to the Lender under law or the Loan Documents. </span>
          </p>
+         <br>
+         <img style='margin-top: 80px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -9186,7 +9239,11 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-size:9.0pt;font-family:sans-serif'>: Obtain and submit all requisite permissions, consents, and approvals to the Lender and/or its service providers, as may be required under applicable law or internal policy, prior to the disbursement of the Loan.</span>
          </p>
-         
+         <br>
+         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -9197,10 +9254,6 @@ $pdf->Output($file_path_with_name, 'F');
             </b>
             <span style='font-size:9.0pt;font-family:sans-serif'>: Acknowledge having read and understood all terms and conditions, privacy policy, and relevant documents made available on the websites of both Tejas Loan (hereinafter referred to as “Tejas Loan”) and the Lender.</span>
          </p>
-         <br>
-         <img style='margin-top: 140px;' src='".$letterfooter_url."' width='100%'>
-         <br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-14.15pt;
             line-height:normal'>
@@ -11080,12 +11133,12 @@ $pdf->Output($file_path_with_name, 'F');
                         <tr>
                             <td><span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:10px 0px;">Website - <a href="' . WEBSITE_URL . '" target="_blank" style="text-decoration:blink;">' . WEBSITE . '</a></span></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td><span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:25px 0px;">
                             <a href="' . APPLE_STORE_LINK . '" target="_blank"><img style="width: 10%;margin-left: 0%;" src="' . APPLE_STORE_ICON . '"></a></span>
                             <span style="font-size:17px;line-height: 25px;padding-bottom: 6px; text-align:justify; margin:10px 0px;"><a href="' . ANDROID_STORE_LINK . '" target="_blank"><img style="width: 10%;margin-left: 0%;" src="' . ANDROID_STORE_ICON . '"></a></span>
                             </td>
-                        </tr>
+                        </tr>-->
 
                         <tr>
                             <td align="left">&nbsp;</td>
