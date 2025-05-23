@@ -6654,8 +6654,8 @@ class InstantJourneyController extends REST_Controller {
                 $input['obligations'] = $lead_details['obligations'];
                 $input['monthly_salary'] = $salary_amount[0];
                 $input['eligible_foir_percentage'] = $eligible_foir_percentage;
-                $input['roi'] = 1;
-                $input['processing_fee_percent'] = 10;
+                $input['roi'] = 0.75;
+                $input['processing_fee_percent'] = 15;
 
                 $disbursal_date = date("Y-m-d");
                 $repayment_date = date("Y-m-d", strtotime($next_pay_date . "+5 days"));
