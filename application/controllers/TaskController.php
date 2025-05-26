@@ -4391,11 +4391,11 @@ class TaskController extends CI_Controller {
             //     return false;
             // }
 
-            $bankStatementDetails = $this->Tasks->select(['cart_lead_id' => $lead_id], 'cart_api_status_id,cart_errors', 'api_banking_cart_log');
+            $bankStatementDetails = $this->Tasks->select(['cart_lead_id' => $lead_id, 'cart_api_status_id' => 1], 'cart_api_status_id,cart_errors', 'api_banking_cart_log');
 
             $bankStatementDetails = $bankStatementDetails->row();
 
-            if ($bankStatementDetails->cart_api_status_id != 1) {
+            if (!isset($bankStatementDetails->cart_api_status_id)) {
                 $json['err'] = "Run bank statement analyser before recommending.";
                 echo json_encode($json);
                 return false;
