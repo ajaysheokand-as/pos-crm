@@ -101,12 +101,12 @@
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Appraised Salary (Rs)&nbsp;<span class="required_Fields">*</span></label>
+                <label class="labelField">Actual Salary (Rs)&nbsp;<span class="required_Fields">*</span></label>
                 <input type="text" class="form-control inputField" id="monthly_salary" name="monthly_salary" onchange="checkLoanEligibility()" value="" autocomplete="off">
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Appraised Obligations (Rs)&nbsp;<span class="required_Fields">*</span></label>
+                <label class="labelField">Obligations (Rs)&nbsp;<span class="required_Fields">*</span></label>
                 <input type="number" class="form-control inputField" id="appraised_obligations" name="obligations" onchange="checkLoanEligibility()" value="" autocomplete="off">
             </div>
 
@@ -161,7 +161,7 @@
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Admin Fee (%)&nbsp;<strong class="required_Fields">*</strong></label>
+                <label class="labelField">Processing Fee (%)&nbsp;<strong class="required_Fields">*</strong></label>
                 <input type="text" class="form-control inputField" id="processing_fee_percent" name="processing_fee_percent" onchange="calculateAmount()" value="15.00" min="0" max="20.00" autocomplete="off">
             </div> 
 
@@ -182,7 +182,7 @@
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Total Admin Fee (Rs.)</label>
+                <label class="labelField">Total Processing Fee (Rs.)</label>
                 <input class="form-control inputField" id="admin_fee" name="admin_fee" type="text" value="0" autocomplete="off" readonly>
             </div>
 
@@ -202,7 +202,7 @@
             </div>
 
             <div class="col-md-6">
-                <label class="labelField">Net Admin Fee (Rs.)</label>
+                <label class="labelField">Net Processing Fee (Rs.)</label>
                 <input class="form-control inputField" id="total_admin_fee" name="total_admin_fee" type="text" value="0" autocomplete="off" readonly>
             </div>
 
