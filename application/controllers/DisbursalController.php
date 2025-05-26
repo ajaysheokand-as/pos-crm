@@ -1262,7 +1262,7 @@ class DisbursalController extends CI_Controller {
 
 
 
-        $config['upload_path'] = realpath(FCPATH . 'upload');
+        $config['upload_path'] = realpath(FCPATH . 'uploads');
         $config['allowed_types'] = 'jpg|png|jpeg';
         $this->upload->initialize($config);
         // if (!$this->upload->do_upload('file')) {
