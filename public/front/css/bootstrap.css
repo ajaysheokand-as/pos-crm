@@ -11950,6 +11950,9 @@ button.close {
     background: #fafafa;
 
     border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
