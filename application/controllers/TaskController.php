@@ -1945,7 +1945,7 @@ class TaskController extends CI_Controller {
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0;
         $user_labels = !empty($_SESSION['isUserSession']['labels']) ? $_SESSION['isUserSession']['labels'] : "";
         $cam_blacklist_removed_flag = 0;
-        $allow_sanction_head = array(65, 2, 3, 116, 45, 166,180, 505, 506, 182, 189, 191, 205);
+        $allow_sanction_head = array(65, 2, 3, 116, 45, 166,180, 505, 506, 182, 189, 191, 205, 207);
 
         if ($this->input->server('REQUEST_METHOD') == 'POST') {
 
@@ -4391,11 +4391,11 @@ class TaskController extends CI_Controller {
             //     return false;
             // }
 
-            $bankStatementDetails = $this->Tasks->select(['cart_lead_id' => $lead_id], 'cart_api_status_id,cart_errors', 'api_banking_cart_log');
+            $bankStatementDetails = $this->Tasks->select(['cart_lead_id' => $lead_id, 'cart_api_status_id' => 1], 'cart_api_status_id,cart_errors', 'api_banking_cart_log');
 
             $bankStatementDetails = $bankStatementDetails->row();
 
-            if ($bankStatementDetails->cart_api_status_id != 1) {
+            if (!isset($bankStatementDetails->cart_api_status_id)) {
                 $json['err'] = "Run bank statement analyser before recommending.";
                 echo json_encode($json);
                 return false;
