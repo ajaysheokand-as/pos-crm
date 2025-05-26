@@ -1940,8 +1940,6 @@ class TaskController extends CI_Controller {
     }
 
     public function sanctionleads() {
-
-
         $user_id = !empty($_SESSION['isUserSession']['user_id']) ? $_SESSION['isUserSession']['user_id'] : 0;
         $user_labels = !empty($_SESSION['isUserSession']['labels']) ? $_SESSION['isUserSession']['labels'] : "";
         $cam_blacklist_removed_flag = 0;
