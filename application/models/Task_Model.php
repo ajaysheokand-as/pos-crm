@@ -5149,7 +5149,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
         $acceptance_button = '';
         $acceptance_button_link = '';
         if ($print_flag == true) {
-            $logo_image = base_url('/public/images/18-BK_kixu8.png');
+            $logo_image = base_url('/public/images/tejas-logo.svg');
         }
 
         // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
@@ -5318,31 +5318,31 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
 
         $file_name = "disbursal_letter_" . $lead_id . "_" . date('Ymd') . ".pdf";
-        // if (LMS_DOC_S3_FLAG == true) {
-        //     $file_path_with_name = TEMP_UPLOAD_PATH . $file_name;
-        // } else {
-        //     $file_path_with_name = UPLOAD_PATH . $file_name;
-        // }
-        $file_path_with_name = UPLOAD_DISBURSAL_PATH . $file_name;
-        $file_url_path = LMS_URL . $file_name;
+        if (LMS_DOC_S3_FLAG == true) {
+            $file_path_with_name = TEMP_UPLOAD_PATH . $file_name;
+        } else {
+            $file_path_with_name = UPLOAD_PATH . $file_name;
+        }
+        // $file_path_with_name = UPLOAD_DISBURSAL_PATH . $file_name;
+        // $file_url_path = LMS_URL . $file_name;
 
-        // require_once __DIR__ . '/../../vendor/autoload.php';
-        // $mpdf = new \Mpdf\Mpdf();
+        require_once __DIR__ . '/../../vendor/autoload.php';
+        $mpdf = new \Mpdf\Mpdf();
 
-        // $mpdf->WriteHTML($message);
-        // $mpdf->Output($file_path_with_name, 'F');
+        $mpdf->WriteHTML($message);
+        $mpdf->Output($file_path_with_name, 'F');
 
-        require_once APPPATH . 'libraries/Pdf.php';
+//         require_once APPPATH . 'libraries/Pdf.php';
 
-$pdf = new Pdf();
-$pdf->AddPage();
+// $pdf = new Pdf();
+// $pdf->AddPage();
 
-$pdf->SetFont('helvetica', '', 12);
+// $pdf->SetFont('helvetica', '', 12);
 
-$pdf->writeHTML($message, true, false, true, false, '');
+// $pdf->writeHTML($message, true, false, true, false, '');
 
-ob_clean(); // Clear any previous output
-$pdf->Output($file_path_with_name, 'F');
+// ob_clean(); // Clear any previous output
+// $pdf->Output($file_path_with_name, 'F');
 
         if (file_exists($file_path_with_name)) {
             require_once(COMPONENT_PATH . 'includes/functions.inc.php');
@@ -10227,6 +10227,11 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:
                sans-serif;color:black'>&nbsp;Any omission or delay on the part of the Lender, in exercising any of rights, powers or remedy accruing to the Lender, upon failure by the Borrower in the due and punctual fulﬁlment of the obligations of the Borrower hereunder, shall not be deemed to constitute a waiver by the Lender of any of its rights to require such due and punctual performance by the Borrower.</span>
          </p>
+         <br><br>
+         <img style='margin-top: 130px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
             margin-bottom:0in;margin-left:28.35pt;text-align:justify;text-indent:-28.35pt;
             line-height:normal'>
@@ -10348,6 +10353,11 @@ $pdf->Output($file_path_with_name, 'F');
             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif'>&nbsp;</span>
          </p>
+         <br>
+         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
             margin-left:42.55pt;text-align:justify;text-indent:.5pt;line-height:normal'>
             <span style='font-size:9.0pt;font-family:sans-serif'>The Borrower expressly waives any right to privacy, confidentiality, or non-disclosure with respect to the disclosures set out herein and further waives any right to initiate legal proceedings for defamation, breach of confidentiality, or any related claim in respect of such disclosures made in accordance with this Clause.</span>
@@ -10376,10 +10386,6 @@ $pdf->Output($file_path_with_name, 'F');
             <span style='font-size:9.0pt;font-family:
                sans-serif;color:black'>&nbsp;These Terms and Conditions may be amended by the Lender at any time. Any such amendment shall take effect only prospectively i.e., after the amendment of the Terms and Conditions. However, the Lender shall upon such variation or amendment being made, inform the Borrower in respect of any variation or amendment in the Terms and Conditions and/or other charges as are applicable to the Loan.</span>
          </p>
-         <br><br><br><br><br>
-         <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
-         <br><br><br>
-         <img src='".$letterhead_url."' width='100%'>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
             normal'>
             <b>
@@ -10641,6 +10647,13 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
+        </table>
+        <br>
+        <img style='margin-top: 200px;' src='".$letterfooter_url."' width='100%'>
+         <br>
+         <img src='".$letterhead_url."' width='100%'>
+         <br>
+        <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
             <tr>
                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:none;
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
@@ -10766,13 +10779,6 @@ $pdf->Output($file_path_with_name, 'F');
                   </p>
                </td>
             </tr>
-            </table>
-            <br><br>
-        <img style='margin-top: 200px;' src='".$letterfooter_url."' width='100%'>
-         
-         <img src='".$letterhead_url."' width='100%'>
-         <br><br>
-            <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='width:100%;margin-left:-.4pt;border-collapse:collapse'>
             <tr>
                <td width=57 style='width:42.55pt;border:solid #DDDDDD 1.0pt;border-top:solid #DDDDDD 1.0pt;
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
@@ -10914,7 +10920,7 @@ $pdf->Output($file_path_with_name, 'F');
                color:black'>SIGNED AND DELIVERED by the within named Borrower</span>
             </b>
          </p> -->
-         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         <br><br><br><br><br><br><br>
          <img style='margin-top: 120px;' src='".$letterfooter_url."' width='100%'>
       </div>
       <!-- Loan Agreement END -->
@@ -12200,12 +12206,12 @@ $pdf->Output($file_path_with_name, 'F');
 
             // $active_service = (date('d') % 2) > 0 ? 1 : 2;
 
-            $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
+            // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
 
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
             // if ($active_service == 1) { // DigiTap
-                // $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
+                $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // } elseif ($active_service == 2) { // Singzy
             //     $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
             // }
