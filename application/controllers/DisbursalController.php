@@ -1283,7 +1283,7 @@ class DisbursalController extends CI_Controller {
 
         $loan_data = [
             'disburse_refrence_no' => $loan_reference_no,
-            // 'screenshot' => $image,
+            'screenshot' => $image,
             'status' => $status,
             'loan_status_id' => $lead_status_id,
             'updated_by' => $_SESSION['isUserSession']['user_id'],

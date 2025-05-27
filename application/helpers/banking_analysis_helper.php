@@ -79,7 +79,7 @@ if (!function_exists('get_Banking_Analysis_Response_Data')) {
                                 foreach ($fraudIndicators[$iFi]['transactions'] as $fi_transactions) {
                                     $return_data .= '<tr>';
                                     foreach ($fi_transactions as $key_fi_tr => $val_fi_tr) {
-                                        $return_data .= '<td class="whitespace">' . (($key_fi_tr) ? $key_fi_tr : '-') . '</td>';
+                                        $return_data .= '<td class="whitespace">' . (($val_fi_tr) ? $val_fi_tr : '-') . '</td>';
                                     }
                                     $return_data .= '</tr>';
                                 }
