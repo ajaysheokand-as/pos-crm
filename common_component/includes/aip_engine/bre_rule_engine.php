@@ -704,10 +704,14 @@ function bre_rule_engine($lead_id, $request_array = array()) {
             $loan_amount_rule_system_decision_id = 1;
             $loan_amount_rule_manual_decision_id = 1;
             $loan_amount_rule_actual_value = [">=5,000 & <=1,00,000"];
+        } else if (!empty($recommend_loan_amount) && $recommend_loan_amount > 100000 && $recommend_loan_amount <= 115000) {
+            $loan_amount_rule_system_decision_id = 2;
+            $loan_amount_rule_manual_decision_id = 2;
+            $loan_amount_rule_actual_value = [">1,00,000 &  <=1,15,000"];
         } else if (!empty($recommend_loan_amount)) {
             $loan_amount_rule_system_decision_id = 3;
             $loan_amount_rule_manual_decision_id = 3;
-            $loan_amount_rule_actual_value = ["<5,000 &  >1,00,000"];
+            $loan_amount_rule_actual_value = ["<5,000 &  >1,15,000"];
         } else {
             $loan_amount_rule_system_decision_id = 3;
             $loan_amount_rule_manual_decision_id = 3;
