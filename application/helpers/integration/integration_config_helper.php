@@ -110,7 +110,8 @@ if (!function_exists('integration_config')) {
                 $config_arr['ApiUserId'] = "";
                 $config_arr['ApiPassword'] = "";
 
-                $config_arr['ApiToken'] = "API://Bdiz+uqvavZsaAAmfsepuRmlEOb3QIedSUvAqBvh1uSauh+/2ynoOmEARBZaXGR0";
+                // $config_arr['ApiToken'] = "API://Bdiz+uqvavZsaAAmfsepuRmlEOb3QIedSUvAqBvh1uSauh+/2ynoOmEARBZaXGR0";
+                $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb";
 
                 if ($envSet == "production") {
                     // $config_arr['ApiToken'] = "API://+zRrr3yyzbayo2Q4478Ji+y4YdY9MmlNPOKJx8WVP15Qb2bgwxFqrn7K0LgWIly1"; // New key
