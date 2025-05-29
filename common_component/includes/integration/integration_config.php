@@ -298,9 +298,11 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['Status'] = 1;
             $config_arr['Provider'] = "NOVEL PATTERN";
             // $config_arr['UserName'] = "prod@salarytime";
-            $config_arr['UserName'] = "prod@speedo";
+            // $config_arr['UserName'] = "prod@speedo";
+            $config_arr['UserName'] = "Fintech@002";
             // $config_arr['UserPassword'] = "on_time@prod321";
-            $config_arr['UserPassword'] = "sPeed@prod_987";
+            // $config_arr['UserPassword'] = "sPeed@prod_987";
+            $config_arr['UserPassword'] = "9999999371@tte";
             $config_arr['RPMiddleWareUrl'] = "";
             $config_arr['ApiUserId'] = "";
             $config_arr['ApiPassword'] = "";
