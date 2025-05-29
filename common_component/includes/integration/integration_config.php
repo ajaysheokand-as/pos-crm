@@ -53,18 +53,22 @@ function integration_config($api_type = "", $api_sub_type = "") {
                 $config_arr['RPMiddleWareUrl'] = "";
                 // $config_arr['ApiUserId'] = "info@tejasloan.com";
                 // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
-                $config_arr['ApiUserId'] = "amit@agrimfin.com";
-                $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
+                // $config_arr['ApiUserId'] = "amit@agrimfin.com";
+                // $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
+                $config_arr['ApiUserId'] = "vivek@salary4sure.com";
+                $config_arr['ApiPassword'] = "k6FAUrbcNyDJaWhTQqQR";
                 $config_arr['RPMiddleWareUrl'] = "";
                 // $envSet = "production";
                 if ($envSet == "production") {
                     $config_arr['RPMiddleWareUrl'] = "";
                     // $config_arr['ApiUserId'] = "info@tejasloan.com";
                     // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
-                    $config_arr['ApiUserId'] = "amit@agrimfin.com";
-                    $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
+                    // $config_arr['ApiUserId'] = "amit@agrimfin.com";
+                    // $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
+                    $config_arr['ApiUserId'] = "vivek@salary4sure.com";
+                    $config_arr['ApiPassword'] = "k6FAUrbcNyDJaWhTQqQR";
                     // $config_arr['ApiKey'] = "ScTTTviEmhU1EPT79VM6QV9NUHImPkBm";
-                    $config_arr['ApiKey'] = "n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey";
+                    $config_arr['ApiKey'] = "20YobI629zAm00OqQL3CVsbsJCYDAJu1";
                 }
     
                 if ($api_sub_type == "GET_TOKEN") {
