@@ -1411,7 +1411,8 @@ function esign_upload_sanction_letter_digitap_api_call($fileUrl, $apiUrl) {
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'PUT',
-            CURLOPT_POSTFIELDS => $array(''=> new CURLFILE($fileContent))
+            // CURLOPT_POSTFIELDS => $array(''=> new CURLFILE($fileContent))
+            CURLOPT_POSTFIELDS => $fileContent,
             // CURLOPT_HTTPHEADER => array(
             //     'Content-Type: application/pdf', // Ensure correct MIME type
             //     'Content-Length: ' . strlen($fileContent),
