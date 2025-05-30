@@ -5260,7 +5260,12 @@ Capitalized terms used herein but not defined shall have the same meanings given
         }
 
         // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
-        $annual_percent_rate = 453.75;
+        // $annual_percent_rate = 453.75;
+        $admin_fee = $camDetails->admin_fee; //Total Admin Fee with GST
+        $total_interest = round(($camDetails->repayment_amount), 2) - round(($camDetails->loan_recommended), 2);
+        $loan_recommended = $camDetails->loan_recommended; //Loan Amount Recommended
+        $tenure = $camDetails->tenure; //Tenure in Days
+        $annual_percent_rate = round(((($admin_fee + $total_interest) / $loan_recommended) * (365 / $tenure) * 100), 2); //Annual Percentage Rate
 
 
         $message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -5601,7 +5606,13 @@ Capitalized terms used herein but not defined shall have the same meanings given
         $letter_footer = base_url()."public/emailimages/".$letterfooter_url."";
 
         // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
-        $annual_percent_rate = 453.75;
+        // $annual_percent_rate = 453.75;
+        $admin_fee = $camDetails->admin_fee; //Total Admin Fee with GST
+        $loan_recommended = round($camDetails->loan_recommended, 2);
+        $tenure = $camDetails->tenure;
+        $total_interest = round(($camDetails->repayment_amount), 2) - round(($camDetails->loan_recommended), 2);
+        
+        $annual_percent_rate = round(((($admin_fee + $total_interest) / $loan_recommended) * (365 / $tenure) * 100), 2); //Annual Percentage Rate
 
 
         // $message = 'Sanction Letter Send Successfully';
@@ -6065,7 +6076,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $loan_no = $this->generateLoanNo($lead_id);
 
             // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
-            $annual_percent_rate = 453.75;
+            // $annual_percent_rate = 453.75;
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
 
@@ -6088,6 +6099,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
             
             //            $processing_fee_percent = $camDetails->processing_fee_percent;
             $admin_fee = $camDetails->admin_fee; //Total Admin Fee with GST
+
+            $annual_percent_rate = round(((($admin_fee + $total_interest) / $loan_recommended) * (365 / $tenure) * 100), 2); //Annual Percentage Rate
 
             $fullname = $camDetails->first_name;
 
@@ -13975,7 +13988,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $bankDetails = $sqlquery5->row();
 
             // $annual_percent_rate = number_format(($camDetails->roi * 365) + ($camDetails->processing_fee_percent * 12), 2);
-            $annual_percent_rate = 453.75;
+            // $annual_percent_rate = 453.75;
 
 
             $subject = 'Loan Sanction Letter - ' . BRAND_NAME;
@@ -13999,6 +14012,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
             
             //            $processing_fee_percent = $camDetails->processing_fee_percent;
             $admin_fee = $camDetails->admin_fee; //Total Admin Fee with GST
+
+            $annual_percent_rate = round(((($admin_fee + $total_interest) / $loan_recommended) * (365 / $tenure) * 100), 2); // Annual Percentage Rate
 
             $fullname = $camDetails->first_name;
 
