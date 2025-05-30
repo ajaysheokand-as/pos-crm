@@ -27,6 +27,8 @@ class Task_Model extends CI_Model {
         define("company_id", $_SESSION['isUserSession']['company_id']);
         define("user_id", $_SESSION['isUserSession']['user_id']);
         define('agent', $_SESSION['isUserSession']['labels']);
+        // 'default' is automatically loaded
+        $this->db2 = $this->load->database('second', TRUE); // TRUE returns the DB object
     }
 
     public function index($conditions = null, $limit = null, $start = null, $search_input_array = array(), $where_in = array()) {
@@ -653,6 +655,111 @@ class Task_Model extends CI_Model {
         $response['lead_data'] = $lead_data;
         $response['result'] = $result;
         return $response;
+    }
+
+    public function internalDedupeDuniya($lead_id = null)
+    {
+        $result = 0;
+
+        if (!empty($lead_id)) { // && !empty($application_no)
+            $sql = 'SELECT LD.lead_id, LD.pancard, C.first_name, C.middle_name, C.sur_name, C.dob, LD.mobile, C.alternate_mobile, C.email, C.alternate_email, C.aadhar_no, C.father_name';
+            $sql .= " FROM leads LD";
+            $sql .= " INNER JOIN lead_customer C  ON (C.customer_lead_id = LD.lead_id AND C.customer_active=1 AND C.customer_deleted=0)";
+            $sql .= " WHERE LD.lead_id = $lead_id AND LD.lead_active=1 AND LD.lead_deleted=0";
+
+            $leadsDetails = $this->db->query($sql); //->get()->row_array()
+
+            if ($leadsDetails->num_rows() > 0) {
+
+                $lead_data = $leadsDetails->row_array();
+
+                $first_name = !empty($lead_data['first_name']) ? strtoupper($lead_data['first_name']) : "";
+
+                $dob = !empty($lead_data['dob']) ? $lead_data['dob'] : "";
+
+                $pancard = !empty($lead_data['pancard']) ? strtoupper($lead_data['pancard']) : "";
+
+                $mobile = !empty($lead_data['mobile']) ? $lead_data['mobile'] : "";
+
+                $alternate_mobile = !empty($lead_data['alternate_mobile']) ? $lead_data['alternate_mobile'] : "";
+
+                $email = !empty($lead_data['email']) ? strtoupper($lead_data['email']) : "";
+
+                $alternate_email = !empty($lead_data['alternate_email']) ? strtoupper($lead_data['alternate_email']) : "";
+
+                $aadhar_no = !empty($lead_data['aadhar_no']) ? strtoupper($lead_data['aadhar_no']) : "";
+
+                $father_name = !empty($lead_data['father_name']) ? strtoupper($lead_data['father_name']) : "";
+
+                $final_where = "LD.lead_id != $lead_id AND LD.lead_status_id!=7 AND LD.lead_active=1 AND LD.lead_deleted=0 AND (";
+
+                $where = "";
+
+                if (!empty($first_name) && !empty($dob)) {
+                    $where .= "OR (C.first_name='$first_name' AND C.dob='$dob')";
+                }
+
+                if (!empty($pancard)) {
+                    $where .= "OR C.pancard='$pancard'";
+                }
+
+                if (!empty($mobile)) {
+                    $where .= "OR C.mobile='$mobile'";
+                    $where .= "OR C.alternate_mobile='$mobile'";
+                }
+
+                if (!empty($alternate_mobile)) {
+                    $where .= "OR C.mobile='$alternate_mobile'";
+                    $where .= "OR C.alternate_mobile='$alternate_mobile'";
+                }
+
+
+                if (!empty($email)) {
+                    $where .= "OR C.email='$email'";
+                    $where .= "OR C.alternate_email='$email'";
+                }
+
+                if (!empty($alternate_email)) {
+                    $where .= "OR C.email='$alternate_email'";
+                    $where .= "OR C.alternate_email='$alternate_email'";
+                }
+
+                if (!empty($aadhar_no) && !empty($dob)) {
+                    $where .= "OR (C.aadhar_no='$aadhar_no' AND C.dob='$dob')";
+                }
+
+                if (!empty($first_name) && !empty($father_name)) {
+                    $where .= "OR (C.first_name='$first_name' AND C.father_name='$father_name')";
+                }
+
+                $where = ltrim($where, 'OR ');
+
+                $final_where .= " " . $where . " )";
+
+                $select = 'LD.lead_id, LD.product_id, LD.customer_id, LD.loan_no, LD.application_no, LD.lead_data_source_id, LD.first_name,';
+                $select .= ' C.father_name, C.middle_name, C.sur_name, LD.email, C.alternate_email, C.gender, LD.mobile, C.alternate_mobile, LD.obligations, LD.promocode,';
+                $select .= ' LD.purpose, LD.user_type, LD.pancard, C.aadhar_no, IF(CAM.loan_recommended>0,CAM.loan_recommended,LD.loan_amount) as loan_amount, LD.tenure, LD.cibil, CE.income_type, CE.salary_mode,';
+                $select .= ' CE.monthly_income, LD.source, C.dob, LD.state_id, LD.city_id, ST.m_state_name as state, CT.m_city_name as city, LD.pincode, LD.status, LD.stage, LD.schedule_time,';
+                $select .= ' LD.created_on as lead_initiated_date, LD.coordinates, LD.ip, LD.imei_no, LD.term_and_condition,';
+                $select .= ' REJ.reason as reject_reason, REJU.name as rejected_by_name,CAM.disbursal_date';
+                $this->db2->where($final_where);
+                $this->db2->select($select);
+                $this->db2->distinct();
+                $this->db2->from($this->table . ' LD');
+                $this->db2->join($this->table_state . ' ST', 'ST.m_state_id = LD.state_id', 'left');
+                $this->db2->join($this->table_city . ' CT', 'CT.m_city_id = LD.city_id', 'left');
+                $this->db2->join($this->table_lead_customer . ' C', 'C.customer_lead_id = LD.lead_id AND C.customer_active=1 AND C.customer_deleted=0', 'left');
+                $this->db2->join($this->table_customer_employment . ' CE', 'CE.lead_id = LD.lead_id AND CE.emp_active=1 AND CE.emp_deleted=0', 'left');
+                $this->db2->join($this->table_credit_analysis_memo . ' CAM', 'CAM.lead_id = LD.lead_id AND CAM.cam_active=1 AND CAM.cam_deleted=0', 'left');
+                $this->db2->join($this->table_loan . ' L', 'L.lead_id = LD.lead_id AND L.loan_active=1 AND L.loan_deleted=0', 'left');
+                $this->db2->join('tbl_rejection_master REJ', 'REJ.id = LD.lead_rejected_reason_id', 'left');
+                $this->db2->join('users REJU', 'REJU.user_id = LD.lead_rejected_user_id', 'left');
+                $result = $this->db2->order_by('LD.created_on', 'DESC')->get();
+                            //    echo $this->db2->last_query();
+            }
+        }
+        // print_r($result);
+        return $result;
     }
 
 
@@ -5472,16 +5579,16 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
         $acceptance_button = '';
         // $link_value = base_url('sanction-esign-request') . "?lead_id=$lead_id";
-        // $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
-        // $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #00455E; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
-        // $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
+        $link_value = base_url('sanction-esign-consent') . "?refstr=$enc_lead_id";
+        $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #00455E; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">eSign Sanction Letter</a></center><br/><br/>';
+        $acceptance_button_link .= "If you are not able to click on the eSign button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
 
-        // if (in_array($lead_data_source_id, array(21, 27))) {
+        if (in_array($lead_data_source_id, array(21, 27))) {
             // $link_value = base_url('loanAgreementLetterResponse') . "?lead_id=$lead_id";
             $link_value = base_url('loanAgreementLetterResponse') . "?refstr=$enc_lead_id";
             $acceptance_button_link = '<br/><br/><center><a style="text-align:center;outline : none;color: #fff; background: #e52255; border-bottom: none !important; padding: 12px 9px !important;" href="' . $link_value . '">Accept Sanction Letter</a></center><br/><br/>';
             $acceptance_button_link = "If you are not able to click on the accept button then please copy and paste this url in browser to proceed or click here .<br/><a href='" . $link_value . "'>" . $link_value . "</a>";
-        // }
+        }
 
         $total_interest = round(($camDetails->repayment_amount), 2) - round(($camDetails->loan_recommended), 2);
 

@@ -264,7 +264,7 @@ function esign_document_upload_api_call($method_id, $lead_id = 0, $request_array
             "contractExecuterName": "Signzy",
             "successRedirectUrl": "https://crm.tejasloan.com/sanction-esign-response?lead_id=' . $lead_id . '",
             "failureRedirectUrl": "https://tejasloan.com/",
-            "contractTtl": 10000,
+            "contractTtl": 86400,
             "eSignProvider": "eMudhra",
             "nameMatchThreshold": "0.50",
             "allowSignerGenderMatch": true,

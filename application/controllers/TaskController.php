@@ -937,6 +937,8 @@ class TaskController extends CI_Controller {
     public function viewOldHistory($leadId) {
         $lead_id = $this->encrypt->decode($leadId);
         $leadData = $this->Tasks->internalDedupe($lead_id);
+        $leadData2 = $this->Tasks->internalDedupeDuniya($lead_id);
+        // print_r($leadData2);
         //        $data_source_array = $this->Tasks->getDataSourceList();
         //echo "<pre>"; print_r($leadData); die;
         $data = '<div class="table-responsive">
@@ -965,9 +967,10 @@ class TaskController extends CI_Controller {
                             <th class="whitespace">Rejected By</th>
                         </tr>
                   	</thead>';
-        if (isset($leadData['result']) && count($leadData['result']) > 0) {
+        if ((isset($leadData['result']) && count($leadData['result']) > 0)) {
             $lead_data = $leadData['lead_data'];
             $i = 1;
+            // $j = 1;
             foreach ($leadData['result'] as $colum) {
                 //                $sql3 = $this->Tasks->select(['lead_id' => $colum->lead_id], 'disbursal_date', 'credit_analysis_memo');
                 //                $cam = $sql3->row();
@@ -1002,6 +1005,34 @@ class TaskController extends CI_Controller {
                             </tr>';
                 $i++;
             }
+//             foreach ($leadData2->result() as $colum2) {
+// //                $sql3 = $this->Tasks->select(['lead_id' => $colum->lead_id], 'disbursal_date', 'credit_analysis_memo');
+// //                $cam = $sql3->row();
+//                 $data .= '
+//                             <tr>
+//                                 <td class="whitespace">' . $colum2->lead_id . '</td>
+//                                 <td class="whitespace">' . date('d-m-Y H:i', strtotime($colum2->lead_initiated_date)) . '</td> 
+//                                 <td class="whitespace">' . (!empty($colum2->status) ? $colum2->status : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->loan_no) ? $colum2->loan_no : '-') . '</td>
+//                                 <td class="whitespace">' . $colum2->first_name . ' ' . $colum2->middle_name . ' ' . $colum2->sur_name . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->father_name) ? $colum2->father_name : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->dob) ? date("d-m-Y", strtotime($colum2->dob)) : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->pancard) ? $colum2->pancard : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->mobile) ? $colum2->mobile : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->alternate_mobile) ? $colum2->alternate_mobile : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->email) ? $colum2->email : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->alternate_email) ? $colum2->alternate_email : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->aadhar_no) ? $colum2->aadhar_no : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->state) ? $colum2->state : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->city) ? $colum2->city : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->loan_amount) ? $colum2->loan_amount : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->disbursal_date) ? date("d-m-Y", strtotime($colum2->disbursal_date)) : '-') . '</td> 
+//                                 <td class="whitespace">' . (!empty($colum2->source) ? $colum2->source : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->reject_reason) ? $colum2->reject_reason : '-') . '</td>
+//                                 <td class="whitespace">' . (!empty($colum2->rejected_by_name) ? $colum2->rejected_by_name : '-') . '</td>
+//                             </tr>';
+//                 $j++;
+//             }
         } else {
             $data .= '<tbody><tr><td colspan="16" style="text-align:center;color:red;">Record Not Found...</td></tr></tbody></table></div>';
         }
