@@ -320,7 +320,7 @@ class ApiCallBackController extends CI_Controller {
                                             $this->IntegrationModel->insert('lead_followup', $lead_followup_insert_array);
 
                                             $return_status = 1;
-                                            $message = 'You have successfully eSigned the Sanction Letter. We will get back to you soon.';
+                                            $message = 'You have successfully eSigned the Sanction Letter. Everything is completed, Disbursement will be done soon.';
                                         } else {
                                             $message = "Unable to update lead details of application.";
                                         }
@@ -338,7 +338,7 @@ class ApiCallBackController extends CI_Controller {
                         }
                     } else if ($applicationDetails['lead_status_id'] == 25) {
                         $return_status = 1;
-                        $message = 'You have successfully eSigned the Sanction Letter. We will get back to you soon..';
+                        $message = 'You have successfully eSigned the Sanction Letter. Everything is completed, Disbursement will be done soon..';
                     } else {
                         $message = "Application has been move to next step..";
                     }
@@ -445,7 +445,7 @@ class ApiCallBackController extends CI_Controller {
 
                                         $return_status = 1;
                                         // $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/thumb.PNG" style=" width: 400px; height: 200px;" alt="thumb"></p>
-                                        $message = '<p style="text-align : center;"><img src="' . WEBSITE_URL . '"public/front/images/checkmark.png" style=" width: 400px; height: 200px;" alt="thumb"></p>
+                                        $message = '<p style="text-align : center;"><img src="' . LMS_URL . '"public/front/images/checkmark.png" style=" width: 400px; height: 200px;" alt="thumb"></p>
                             <p style="text-align : center;">Thanks For Your Response.</p>';
                                     } else {
                                         $message = "Unable to update lead details of application.";
@@ -1003,7 +1003,7 @@ class ApiCallBackController extends CI_Controller {
                                             $this->IntegrationModel->insert('lead_followup', $lead_followup_insert_array);
 
                                             $return_status = 1;
-                                            $message = 'You have successfully eSigned the Sanction Letter. We will get back to you soon.';
+                                            $message = 'You have successfully eSigned the Sanction Letter. Everything is completed, Disbursement will be done soon.';
                                         } else {
                                             $message = "Unable to update lead details of application.";
                                         }
@@ -1021,7 +1021,7 @@ class ApiCallBackController extends CI_Controller {
                         }
                     } else if ($applicationDetails['lead_status_id'] == 25) {
                         $return_status = 1;
-                        $message = 'You have successfully eSigned the Sanction Letter. We will get back to you soon..';
+                        $message = 'You have successfully eSigned the Sanction Letter. Everything is completed, Disbursement will be done soon..';
                     } else {
                         $message = "Application has been move to next step..";
                     }
