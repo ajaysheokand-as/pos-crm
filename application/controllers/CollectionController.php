@@ -959,7 +959,7 @@ class CollectionController extends CI_Controller {
                                         }
                                     } else {
 
-                                        if ((($total_payment_received + $received_amount) >= $repayment_amount_without_penality) && (($total_payment_received + $received_amount + $discount) == $total_repayment_amount)) {
+                                        if ((($total_payment_received + $received_amount) >= $repayment_amount_without_penality) || (($total_payment_received + $received_amount + $discount) == $total_repayment_amount)) {
                                             $update_loan_array['loan_penalty_discount_amount'] = $discount;
                                         } else {
                                             $json['err'] = "Loan clousre amount is incorrect.";

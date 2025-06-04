@@ -45,10 +45,10 @@ if (!function_exists('payday_loan_disbursement_call')) {
         }
 
         if ($transRefNoCreateFlag) { //create the disbursement request
-            $tranRefNo = "SLUAT" . date("YmdHis") . rand(100, 999);
+            $tranRefNo = "TLUAT" . date("YmdHis") . rand(100, 999);
 
-            if ($envSet == 'production') {
-                $tranRefNo = "SLPRD" . date("YmdHis") . rand(100, 999);
+            if (ENVIRONMENT == 'production') {
+                $tranRefNo = "TLPRD" . date("YmdHis") . rand(100, 999);
             }
             $disb_trans_array = array();
             $disb_trans_array["disb_trans_lead_id"] = $lead_id;
@@ -94,8 +94,8 @@ if (!function_exists('icici_disburse_loan_amount_api')) {
 
         $api_disburse_bypass_mobile = array(); //"9560807913"
 
-        // $envSet = ENVIRONMENT;
-        $envSet = 'UAT';
+        // ENVIRONMENT = ENVIRONMENT;
+        ENVIRONMENT = 'UAT';
 
         $ci = &get_instance();
         $ci->load->helper('integration/integration_config');
@@ -174,7 +174,7 @@ if (!function_exists('icici_disburse_loan_amount_api')) {
                     throw new Exception("Application details cannot be empty.");
                 } else {
                     $lead_status_id = $applicationDetails["lead_status_id"];
-                    /*                     if (in_array($applicationDetails['mobile'], $api_disburse_bypass_mobile) && $envSet == 'development') {
+                    /*                     if (in_array($applicationDetails['mobile'], $api_disburse_bypass_mobile) && ENVIRONMENT == 'development') {
 //$hardcode_response = true;
                     } */
                 }
@@ -303,7 +303,7 @@ print_r($bankingDataReturnArr);  */
             );
             
 
-            if ($hardcode_response && $envSet == 'development') {
+            if ($hardcode_response && ENVIRONMENT == 'development') {
                 //$apiResponseJson = '{"ActCode":"0","Response":"Transaction Successful","BankRRN":"200701023783","BeneName":"BENE CUSTOMER NAME","success":true,"TransRefNo":"LWUAT20220107013948999"}';
             } else {
 
