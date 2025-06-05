@@ -1247,7 +1247,7 @@ class DisbursalController extends CI_Controller {
         }
     }
 
-    public function UpdateDisburseReferenceNo() {
+   public function UpdateDisburseReferenceNo() {
 
         if (empty($_SESSION['isUserSession']['user_id'])) {
             $json['errSession'] = 'Session Expired';
@@ -1262,7 +1262,7 @@ class DisbursalController extends CI_Controller {
 
 
 
-        $config['upload_path'] = realpath(FCPATH . 'uploads');
+        $config['upload_path'] = realpath(FCPATH . 'upload');
         $config['allowed_types'] = 'jpg|png|jpeg';
         $this->upload->initialize($config);
         // if (!$this->upload->do_upload('file')) {
@@ -1329,8 +1329,8 @@ class DisbursalController extends CI_Controller {
             echo json_encode($json);
             return true;
         } else {
-            // print_r($loan_data);
-            // die;
+            print_r($loan_data);
+            die;
             $json['err'] = 'Failed to update Reference no, try again';
             echo json_encode($json);
             return false;
