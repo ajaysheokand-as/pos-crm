@@ -21,7 +21,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Log In</title>
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/18-BK_kixu8fav.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/tejas-logo.png">
        
 		<link rel="stylesheet preload" href="<?= base_url('public'); ?>/css/style.css">
 		<script src="<?= base_url('public/front'); ?>/js/jquery.3.5.1.min.js"></script>

@@ -9,7 +9,7 @@ $pagination_links = "";
 <style>
       .parent_wrapper .right-side .logo_container a img {
           margin-right: 0px;
-          width: 155px !important;
+          width: 100px !important;
       }
 </style>
 
@@ -160,7 +160,7 @@ $pagination_links = "";
                                             
                                               .parent_wrapper .right-side .logo_container a img {
                                                   margin-right: 20px;
-                                                  width: 270px;
+                                                  width: 100px;
                                               }
                                     </style>
                                 </div>

@@ -47,7 +47,7 @@ if (!function_exists('payday_loan_disbursement_call')) {
         if ($transRefNoCreateFlag) { //create the disbursement request
             $tranRefNo = "TLUAT" . date("YmdHis") . rand(100, 999);
 
-            if (ENVIRONMENT == 'production') {
+            if ($envSet == 'production') {
                 $tranRefNo = "TLPRD" . date("YmdHis") . rand(100, 999);
             }
             $disb_trans_array = array();
@@ -94,8 +94,8 @@ if (!function_exists('icici_disburse_loan_amount_api')) {
 
         $api_disburse_bypass_mobile = array(); //"9560807913"
 
-        // ENVIRONMENT = ENVIRONMENT;
-        ENVIRONMENT = 'UAT';
+        // $envSet = $envSet;
+        $envSet = 'UAT';
 
         $ci = &get_instance();
         $ci->load->helper('integration/integration_config');
@@ -174,7 +174,7 @@ if (!function_exists('icici_disburse_loan_amount_api')) {
                     throw new Exception("Application details cannot be empty.");
                 } else {
                     $lead_status_id = $applicationDetails["lead_status_id"];
-                    /*                     if (in_array($applicationDetails['mobile'], $api_disburse_bypass_mobile) && ENVIRONMENT == 'development') {
+                    /*                     if (in_array($applicationDetails['mobile'], $api_disburse_bypass_mobile) && $envSet == 'development') {
 //$hardcode_response = true;
                     } */
                 }
@@ -303,7 +303,7 @@ print_r($bankingDataReturnArr);  */
             );
             
 
-            if ($hardcode_response && ENVIRONMENT == 'development') {
+            if ($hardcode_response && $envSet == 'development') {
                 //$apiResponseJson = '{"ActCode":"0","Response":"Transaction Successful","BankRRN":"200701023783","BeneName":"BENE CUSTOMER NAME","success":true,"TransRefNo":"LWUAT20220107013948999"}';
             } else {
 
