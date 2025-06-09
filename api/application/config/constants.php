@@ -100,11 +100,11 @@ define("API_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical 
 define("LMS_COMPANY_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
 
-define("COMPANY_NAME", "AGRIM FINCAP PVT. LTD.");
+define("COMPANY_NAME", "AMAN FINCAP LIMITED");
 define("BRAND_NAME", "TEJASLOAN");
-define("REGISTED_ADDRESS", "276, First Floor, Gagan Vihar, Shahdara, Shahdara, Shahdara, Delhi, India, 110051");
-define("REGISTED_MOBILE", "+91-9810780460");
-define("REGISTED_WHATSAPP_MOBILE", "+91-9810780460");
+define("REGISTED_ADDRESS", "D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010");
+define("REGISTED_MOBILE", "+91-9355562952");
+define("REGISTED_WHATSAPP_MOBILE", "+91-9355562952");
 
 define("TECH_EMAIL", "tech@telasloan.com");
 define("INFO_EMAIL", "info@tejasloan.com");

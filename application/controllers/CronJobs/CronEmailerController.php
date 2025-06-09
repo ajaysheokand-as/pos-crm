@@ -65,7 +65,7 @@ class CronEmailerController extends CI_Controller {
                                                                 <tr>
                                                                     <td style="padding: 20px; text-align: center; color: #555;">
                                                                         <p style="font-size: 16px; margin: 10px 0;">
-                                                                            "Cheers to another year of growth, happiness, and achieving your financial goals! Wishing you a fantastic birthday filled with joy and memorable moments – from all of us at <a href="https://tejasloan.com/apply-now?utm_source=EMAIL&utm_campaign=birthday_wish_' . date("d-m-Y") . '" target="_blank"><strong>SalaryOnTime</strong></a>."
+                                                                            "Cheers to another year of growth, happiness, and achieving your financial goals! Wishing you a fantastic birthday filled with joy and memorable moments – from all of us at <a href="https://tejasloan.com/apply-now?utm_source=EMAIL&utm_campaign=birthday_wish_' . date("d-m-Y") . '" target="_blank"><strong>Tejas Loan</strong></a>."
                                                                         </p>
                                                                     </td>
                                                                 </tr>

@@ -1027,7 +1027,7 @@ class Android1Controller extends REST_Controller {
         }
     }
 
-    /* SalaryOntime App First Page Submit */
+    /* TejasLoan App First Page Submit */
 
     public function qdeAppSaveRegistration_post() {
         $input_data = file_get_contents("php://input");
@@ -1133,10 +1133,10 @@ class Android1Controller extends REST_Controller {
                 ];
                 
                 if ($data_source_id == 33) {
-                    $data_source_name = "ARDSalaryontime";
+                    $data_source_name = "ARDTejasLoan";
                 
                 } else if($data_source_id==34){
-                    $data_source_name = "IosSalaryontime";
+                    $data_source_name = "IosTejasLoan";
                 }
 
                 $dataleads = array(
@@ -1215,10 +1215,10 @@ class Android1Controller extends REST_Controller {
                 $getCityName1 = getcustId('master_city', 'm_city_id', $city_id, 'm_city_name');
 
                   if ($data_source_id == 33) {
-                    $data_source_name = "ARDSalaryontime";
+                    $data_source_name = "ARDTejasLoan";
                 
                 } else if($data_source_id==34){
-                    $data_source_name = "IosSalaryontime";
+                    $data_source_name = "IosTejasLoan";
                 }
 
                 $user_type = "NEW";
