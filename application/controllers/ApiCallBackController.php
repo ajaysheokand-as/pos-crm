@@ -735,7 +735,7 @@ class ApiCallBackController extends CI_Controller {
                             <img
                             src="' . LMS_BRAND_LOGO . '"
                             alt="thanks"
-                            style="border-bottom: dotted 1px #b31c43; padding-bottom: 10px;width: 200px;"/>
+                            style="border-bottom: dotted 1px #b31c43; padding-bottom: 10px;width: 150px;"/>
                         </p>
                         <div class="oops">Thank You!</div>
                         <div class="we-cant">' . $tag_line . '</div><br/><br/>
@@ -831,7 +831,7 @@ class ApiCallBackController extends CI_Controller {
                             <img
                             src="' . LMS_BRAND_LOGO . '"
                             alt="thanks"
-                            style="border-bottom: dotted 1px #b31c43; padding-bottom: 10px;width: 200px;"/>
+                            style="border-bottom: dotted 1px #b31c43; padding-bottom: 10px;width: 150px;"/>
                         </p>
                         <div class="oops">Oops!!! Error Occurred.</div>
                         <div class="we-cant">' . $tag_line . '</div><br/><br/>
