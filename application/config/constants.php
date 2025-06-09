@@ -93,12 +93,12 @@ defined('ALL_FROM_EMAIL') or define('ALL_FROM_EMAIL', 'info@tejasloan.com');
 
 // defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@tejasloan.com');
 defined('BCC_SANCTION_EMAIL') or define('BCC_SANCTION_EMAIL', 'info@tejasloan.com');
-defined('BCC_DISBURSAL_EMAIL') or define('BCC_DISBURSAL_EMAIL', '');
+defined('BCC_DISBURSAL_EMAIL') or define('BCC_DISBURSAL_EMAIL', 'info@tejasloan.com');
 defined('BCC_NOC_EMAIL') or define('BCC_NOC_EMAIL', 'info@tejasloan.com');
 defined('BCC_DISBURSAL_WAIVE_EMAIL') or define('BCC_DISBURSAL_WAIVE_EMAIL', 'info@tejasloan.com');
 
-defined('CC_SANCTION_EMAIL') or define('CC_SANCTION_EMAIL', '');
-defined('CC_DISBURSAL_EMAIL') or define('CC_DISBURSAL_EMAIL', '');
+defined('CC_SANCTION_EMAIL') or define('CC_SANCTION_EMAIL', 'info@tejasloan.com');
+defined('CC_DISBURSAL_EMAIL') or define('CC_DISBURSAL_EMAIL', 'info@tejasloan.com');
 defined('CC_DISBURSAL_WAIVE_EMAIL') or define('CC_DISBURSAL_WAIVE_EMAIL', 'info@tejasloan.com');
 
 defined('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL') or define('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL', 'info@tejasloan.com');
@@ -189,7 +189,7 @@ define("ADVOCATE_MOBILE2", LMS_URL . "92898-77841");
 define("ADVOCATE_MAIL", LMS_URL . "FAUJDARAJAY99@GMAIL.COM");
 define("ADVOCATE_COMPANY_MAIL", LMS_URL . "info@tejasloan.com");
 
-define("LOAN_REPAY_LINK", WEBSITE_URL . "repay-loan");
+define("LOAN_REPAY_LINK", WEBSITE_URL . "repayloan");
 define("REPAYMENT_REPAY_LINK", WEBSITE_URL . "repay-loan-details");
 define("AUTHORISED_SIGNATORY", WEBSITE_URL . "public/front/images/Authorised-Signatory.jpeg");
 

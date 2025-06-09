@@ -114,13 +114,13 @@ class UserApi extends REST_Controller {
 						$data_source_name = "AffiliatesApp";
 						$lead_data_source_id = 17;
 					} else if ($source_id == 33) {
-						$data_source_name = "ARDSALARYONTIME";
+						$data_source_name = "ARDTejasLoan";
 						$lead_data_source_id = 33;
 					} else if ($source_id == 34) {
-						$data_source_name = "IOSSALARYONTIME";
+						$data_source_name = "IOSTejasLoan";
 						$lead_data_source_id = 34;
 					} else {
-						$data_source_name = "WebSalaryontime";
+						$data_source_name = "WebTejasLoan";
 						$lead_data_source_id = 4;
 					}
 					$insertDataLeads = array(
