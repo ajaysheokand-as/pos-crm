@@ -875,22 +875,128 @@ class Export_Model extends CI_Model {
             }
 
 
-            $sql = "SELECT LD.lead_id,LD.source, LD.status, CE.monthly_income, master_branch.m_branch_name, CONCAT_WS(' ',LC.first_name, LC.middle_name, LC.sur_name) as cust_full_name";
-            $sql .= " , LC.email,LC.alternate_email, LC.mobile, LC.gender, LC.alternate_mobile, L.loan_no, L.recommended_amount, CAM.loan_recommended, CAM.roi, CAM.tenure, CAM.repayment_date, CAM.disbursal_date, CAM.repayment_amount, LD.user_type";
-            $sql .= ' , credit_manager.name as credit_manager_name, CONCAT_WS(" ", LC.current_house, LC.current_locality, LC.current_landmark) current_address, ST.m_state_name, MC.m_city_name, LC.cr_residence_pincode pincode, CONCAT_WS(" ", CE.emp_house, CE.emp_street, CE.emp_landmark) office_address, employer_city.m_city_name emp_city, employer_state.m_state_name emp_state, CE.emp_pincode office_pincode,';
-            $sql .= " L.loan_principle_outstanding_amount, L.loan_total_received_amount, L.loan_total_outstanding_amount ";
-            $sql .= " FROM leads LD";
-            $sql .= " INNER JOIN lead_customer LC ON(LD.lead_id = LC.customer_lead_id)";
-            $sql .= " INNER JOIN credit_analysis_memo CAM ON(LD.lead_id = CAM.lead_id)";
-            $sql .= " INNER JOIN loan L ON(L.lead_id = LD.lead_id)";
-            $sql .= " INNER JOIN customer_employment CE ON(CE.lead_id = LD.lead_id)";
-            $sql .= " LEFT JOIN master_branch ON(LD.lead_branch_id = master_branch.m_branch_id)";
-            $sql .= " LEFT JOIN master_state ST ON(LC.state_id = ST.m_state_id)";
-            $sql .= " LEFT JOIN master_city MC ON(LC.city_id = MC.m_city_id)";
-            $sql .= " LEFT JOIN master_state employer_state ON(CE.state_id = employer_state.m_state_id)";
-            $sql .= " LEFT JOIN master_city employer_city ON(CE.city_id = employer_city.m_city_id)";
-            $sql .= " LEFT JOIN users credit_manager ON(LD.lead_credit_assign_user_id = credit_manager.user_id )";
-            $sql .= " WHERE LD.lead_status_id IN(14,19) AND CAM.repayment_date >= '$current_date' AND CAM.repayment_date <= '$reminder_date'";
+            // $sql = "SELECT LD.lead_id,LD.source, LD.status, CE.monthly_income, CE.employer_name, master_branch.m_branch_name, CONCAT_WS(' ',LC.first_name, LC.middle_name, LC.sur_name) as cust_full_name";
+            // $sql .= " , LC.email,LC.alternate_email, LC.mobile, LC.gender, LC.alternate_mobile, L.loan_no, L.recommended_amount, CAM.loan_recommended, CAM.roi, CAM.tenure, CAM.repayment_date, CAM.disbursal_date, CAM.repayment_amount, LD.user_type";
+            // $sql .= ' , credit_manager.name as credit_manager_name, CONCAT_WS(" ", LC.current_house, LC.current_locality, LC.current_landmark) current_address, ST.m_state_name, MC.m_city_name, LC.cr_residence_pincode pincode, CONCAT_WS(" ", CE.emp_house, CE.emp_street, CE.emp_landmark) office_address, employer_city.m_city_name emp_city, employer_state.m_state_name emp_state, CE.emp_pincode office_pincode,';
+            // $sql .= " L.loan_principle_outstanding_amount, L.loan_total_received_amount, L.loan_total_outstanding_amount ";
+            // $sql .= " FROM leads LD";
+            // $sql .= " INNER JOIN lead_customer LC ON(LD.lead_id = LC.customer_lead_id)";
+            // $sql .= " INNER JOIN credit_analysis_memo CAM ON(LD.lead_id = CAM.lead_id)";
+            // $sql .= " INNER JOIN loan L ON(L.lead_id = LD.lead_id)";
+            // $sql .= " INNER JOIN customer_employment CE ON(CE.lead_id = LD.lead_id)";
+            // $sql .= " LEFT JOIN master_branch ON(LD.lead_branch_id = master_branch.m_branch_id)";
+            // $sql .= " LEFT JOIN master_state ST ON(LC.state_id = ST.m_state_id)";
+            // $sql .= " LEFT JOIN master_city MC ON(LC.city_id = MC.m_city_id)";
+            // $sql .= " LEFT JOIN master_state employer_state ON(CE.state_id = employer_state.m_state_id)";
+            // $sql .= " LEFT JOIN master_city employer_city ON(CE.city_id = employer_city.m_city_id)";
+            // $sql .= " LEFT JOIN users credit_manager ON(LD.lead_credit_assign_user_id = credit_manager.user_id )";
+            // $sql .= " WHERE LD.lead_status_id IN(14,19) AND CAM.repayment_date >= '$current_date' AND CAM.repayment_date <= '$reminder_date'";
+
+            $sql = "SELECT 
+    LD.lead_id, 
+    LD.source, 
+    LD.status, 
+    CE.monthly_income, 
+    CE.employer_name, 
+    
+    -- Reference 1
+    ref1.reference1_name,
+    ref1.reference1_mobile,
+    ref1.reference1_relation,
+    
+    -- Reference 2
+    ref2.reference2_name,
+    ref2.reference2_mobile,
+    ref2.reference2_relation,
+
+    master_branch.m_branch_name, 
+    CONCAT_WS(' ', LC.first_name, LC.middle_name, LC.sur_name) as cust_full_name, 
+    LC.email, 
+    LC.alternate_email, 
+    LC.mobile, 
+    LC.gender, 
+    LC.alternate_mobile, 
+
+    L.loan_no, 
+    L.recommended_amount, 
+    CAM.loan_recommended, 
+    CAM.roi, 
+    CAM.tenure, 
+    CAM.repayment_date, 
+    CAM.disbursal_date, 
+    CAM.repayment_amount, 
+    LD.user_type, 
+    credit_manager.name as credit_manager_name, 
+
+    CONCAT_WS(' ', LC.current_house, LC.current_locality, LC.current_landmark) current_address, 
+    ST.m_state_name, 
+    MC.m_city_name, 
+    LC.cr_residence_pincode pincode, 
+
+    CONCAT_WS(' ', CE.emp_house, CE.emp_street, CE.emp_landmark) office_address, 
+    employer_city.m_city_name emp_city, 
+    employer_state.m_state_name emp_state, 
+    CE.emp_pincode office_pincode, 
+
+    L.loan_principle_outstanding_amount, 
+    L.loan_total_received_amount, 
+    L.loan_total_outstanding_amount 
+
+FROM leads LD 
+
+INNER JOIN lead_customer LC ON LC.customer_lead_id = LD.lead_id
+INNER JOIN credit_analysis_memo CAM ON CAM.lead_id = LD.lead_id
+INNER JOIN loan L ON L.lead_id = LD.lead_id
+INNER JOIN customer_employment CE ON CE.lead_id = LD.lead_id
+
+-- Flattened Reference 1
+LEFT JOIN (
+    SELECT 
+        lcr1.lcr_lead_id,
+        lcr1.lcr_name AS reference1_name,
+        lcr1.lcr_mobile AS reference1_mobile,
+        mrt.mrt_name AS reference1_relation
+    FROM lead_customer_references lcr1
+    LEFT JOIN master_relation_type as mrt
+    ON lcr1.lcr_relationType = mrt.mrt_id
+    WHERE lcr1.lcr_id = (
+        SELECT MIN(lcr_sub1.lcr_id)
+        FROM lead_customer_references lcr_sub1
+        WHERE lcr_sub1.lcr_lead_id = lcr1.lcr_lead_id
+    )
+) ref1 ON ref1.lcr_lead_id = LD.lead_id
+
+-- Flattened Reference 2
+LEFT JOIN (
+    SELECT 
+        lcr2.lcr_lead_id,
+        lcr2.lcr_name AS reference2_name,
+        lcr2.lcr_mobile AS reference2_mobile,
+        mrt.mrt_name AS reference2_relation
+    FROM lead_customer_references lcr2
+    LEFT JOIN master_relation_type as mrt
+    ON lcr2.lcr_relationType = mrt.mrt_id
+    WHERE lcr2.lcr_id = (
+        SELECT lcr_sub2.lcr_id
+        FROM lead_customer_references lcr_sub2
+        WHERE lcr_sub2.lcr_lead_id = lcr2.lcr_lead_id
+        ORDER BY lcr_sub2.lcr_id ASC
+        LIMIT 1 OFFSET 1
+    )
+) ref2 ON ref2.lcr_lead_id = LD.lead_id
+
+-- Other optional joins
+LEFT JOIN master_branch ON LD.lead_branch_id = master_branch.m_branch_id
+LEFT JOIN master_state ST ON LC.state_id = ST.m_state_id
+LEFT JOIN master_city MC ON LC.city_id = MC.m_city_id
+LEFT JOIN master_state employer_state ON CE.state_id = employer_state.m_state_id
+LEFT JOIN master_city employer_city ON CE.city_id = employer_city.m_city_id
+LEFT JOIN users credit_manager ON LD.lead_credit_assign_user_id = credit_manager.user_id
+
+-- Filter: Only active loans with repayment today
+WHERE LD.lead_status_id IN (14, 19)
+  AND CAM.repayment_date >= '$current_date'
+  AND CAM.repayment_date <= '$reminder_date'";
 
             if (!empty($branchIds)) {
                 $sql .= " AND LD.lead_branch_id IN($branchIds)";
