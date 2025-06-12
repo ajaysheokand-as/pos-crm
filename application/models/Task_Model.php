@@ -5925,7 +5925,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                         1,000.00/- per bouncing/dishonour.
                                     </td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                     <td align="left" valign="middle" bgcolor="#FFFFFF">
                                         <strong>Annualised ROI (%)</strong>
                                     </td>
@@ -5935,7 +5935,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                     <td align="left" valign="middle" bgcolor="#FFFFFF">
                                         ' . round(($camDetails->roi * 365), 2) . '
                                     </td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                                 </td>
                             </tr>

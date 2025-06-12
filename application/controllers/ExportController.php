@@ -2128,7 +2128,7 @@ class ExportController extends CI_Controller {
 
 
                 $export_data_array[] = array(
-                    'lead ID' => $res['lead_id'],
+                    'Lead ID' => $res['lead_id'],
                     'Loan No' => $loan_no,
                     'Branch' => $res['m_branch_name'],
                     'Customer Name' => $res['cust_full_name'],
@@ -2143,6 +2143,7 @@ class ExportController extends CI_Controller {
                     'Current City' => $res['m_city_name'],
                     'Current State' => $res['m_state_name'],
                     'Current Pincode' => $res['pincode'],
+                    'Office Name ' => $res['employer_name'],
                     'Office Address' => $res['office_address'],
                     'Office City' => $res['emp_city'],
                     'office State' => $res['emp_state'],
@@ -2157,6 +2158,12 @@ class ExportController extends CI_Controller {
                     'User Type' => $res['user_type'],
                     'Monthly Income' => $res['monthly_income'],
                     'Status' => $res['status'],
+                    'First Reference Name' => $res['reference1_name'],
+                    'First Reference Mobile' => $res['reference1_mobile'],
+                    'First Reference Relation' => $res['reference1_relation'],
+                    'Second Reference Name' => $res['reference2_name'],
+                    'Second Reference Mobile' => $res['reference2_mobile'],
+                    'Second Reference Relation' => $res['reference2_relation'],
                 );
 
                 if ($user_id == 184 || $user_id == 406 || $user_id == 66) {
