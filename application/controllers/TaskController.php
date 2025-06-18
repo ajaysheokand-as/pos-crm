@@ -4672,9 +4672,9 @@ class TaskController extends CI_Controller {
 
             $firstname = $return_sms['first_name'];
             $lead_id = $return_sms['lead_id'];
-            //$email_to = $return_sms['email'];
+            $email_to = $return_sms['email'];
             // $email_to = 'tech.lead@salarywalle.com';
-            $email_to = 'sunny@fintechbasket.com';
+            // $email_to = 'sunny@fintechbasket.com';
             $mobile = $return_sms['mobile'];
             $address = $return_sms['current_house'];
             $loan_recommended = $return_sms['loan_recommended'];
@@ -4728,7 +4728,7 @@ class TaskController extends CI_Controller {
 				</html>';
 
 
-                /* require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+                require_once(COMPONENT_PATH . 'includes/functions.inc.php');
                 if(isset($return_sms['days_until_repayment']) && ($return_sms['days_until_repayment']==7)){
                     $return_array = common_send_email($email_to, $subject, $message, "", "", "", "", "", $file_name, 'Reminder Message');
                 }else if(isset($return_sms['days_until_repayment']) && ($return_sms['days_until_repayment']==6)){
@@ -4745,7 +4745,7 @@ class TaskController extends CI_Controller {
                      $return_array = common_send_email($email_to, $subject, $message, "", "", "", "", "", $file_name, 'Reminder Message');
                 }else{
                     echo 'Testing Wrong';
-                } */
+                }
                 $this->db->insert('customer_msg_reminder', $insertReminderAttention);
                 //echo "<pre>";
                 //print_r($insertReminderAttendence); echo "</pre><br/>";

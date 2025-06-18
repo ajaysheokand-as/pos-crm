@@ -1029,11 +1029,12 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
         $apiResponseDateTime = date("Y-m-d H:i:s");
 
         if (!empty($apiResponseJson)) { 
-            $tempApiResponseJson = $apiResponseJson;
-            $extractFinalResponseJson = extractFinalResponse($tempApiResponseJson);
-			$jsonResponse = $extractFinalResponseJson['jsonResponse'];
-			$htmlResponse = $extractFinalResponseJson['htmlResponse'];			
-			$apiResponseData = json_decode($jsonResponse,true);			
+            // $tempApiResponseJson = $apiResponseJson;
+            // $extractFinalResponseJson = extractFinalResponse($tempApiResponseJson);
+			// $jsonResponse = $extractFinalResponseJson['jsonResponse'];
+			// $htmlResponse = $extractFinalResponseJson['htmlResponse'];			
+			// $apiResponseData = json_decode($jsonResponse,true);		
+			$apiResponseData = json_decode($apiResponseJson,true);		
             $CIR_REPORT_FILE = $apiResponseData['CIR-REPORT-FILE'];
             $REPORT_DATA = $CIR_REPORT_FILE['REPORT-DATA'];
             $REPORT_ID = $CIR_REPORT_FILE['HEADER-SEGMENT'];
@@ -1060,7 +1061,8 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
 			// if ($upload_status['status'] == 1) {
 			// 	$cibil_html = $upload_status['file_name'];
 			// }
-            $cibil_html = $htmlResponse;
+            // $cibil_html = $htmlResponse;
+            $cibil_html = $apiResponseData['CIR-REPORT-FILE']['PRINTABLE-REPORT']['CONTENT'];
 			$apiStatusId = 1;
         } else {
             throw new ErrorException("Empty response from CRIF API");
@@ -1082,8 +1084,8 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
     $response_array['cibil_html'] = $cibil_html;
     $response_array['errors'] = $errorMessage;
     $response_array['request_xml'] = $apiRequestJson;
-    $response_array['response_json'] = $jsonResponse;
-    $response_array['response_html'] = $htmlResponse;
+    $response_array['response_json'] = $apiResponseJson;
+    $response_array['response_html'] = $cibil_html;
 
     // Convert JSON to an associative array
     $temp_array = json_decode($response_array['response_json'], true);
@@ -1124,7 +1126,6 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
     $totalAccount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['NUMBER-OF-ACCOUNTS'];
     $overDueAccount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['OVERDUE-ACCOUNTS'];
     $overDueAmount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['TOTAL-AMT-OVERDUE'];
-    $totalBalance = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['TOTAL-CURRENT-BALANCE'];
     $totalBalance = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['TOTAL-CURRENT-BALANCE'];
     $highCrSanAmt = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['TOTAL-SANCTIONED-AMT'];
     $activeAccount = $temp_array['CIR-REPORT-FILE']['REPORT-DATA']['ACCOUNTS-SUMMARY']['PRIMARY-ACCOUNTS-SUMMARY']['ACTIVE-ACCOUNTS'];
@@ -1177,7 +1178,7 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
             'overDueAmount' => $overDueAmount,
             'zeroBalance' => $zeroBalance,
             'api1_request' => addslashes($apiRequestJson),
-            'api1_response' => addslashes($jsonResponse),
+            'api1_response' => addslashes($apiResponseJson),
             'memberCode' => $apiMemberId,
             'cibilScore' => $cibil_score,
             'cibil_file' => $fileName,//addslashes($cibil_html),

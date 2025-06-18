@@ -636,31 +636,31 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
                                 <img src="https://crm.tejasloan.com/public/new_images/images/facebook.png" class="socil-t"
-                                    alt="speedoloan-instagram" style="width:30px;">
+                                    alt="tejasloan-facebook" style="width:30px;">
                             </a>
                             <!-- LinkedIn Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
                                 <img src="https://crm.tejasloan.com/public/new_images/images/linkedin.png" class="socil-t"
-                                    alt="speedoloan-instagram" style="width:30px;">
+                                    alt="tejasloan-linkedin" style="width:30px;">
                             </a>
                             <!-- Instagram Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
                                 <img src="https://crm.tejasloan.com/public/new_images/images/instagram.png" class="socil-t"
-                                    alt="speedoloan-instagram" style="width:30px;">
+                                    alt="tejasloan-instagram" style="width:30px;">
                             </a>
                             <!-- YouTube Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
                                 <img src="https://crm.tejasloan.com/public/new_images/images/youtube.png" class="socil-t"
-                                    alt="speedoloan-instagram" style="width:30px;">
+                                    alt="tejasloan-youtube" style="width:30px;">
                             </a>
                             <!-- Twitter Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
                                 <img src="https://crm.tejasloan.com/public/new_images/images/twitter.png" class="socil-t"
-                                    alt="speedoloan-instagram" style="width:30px;">
+                                    alt="tejasloan-twitter" style="width:30px;">
                             </a>
                         </td>
                         </tr>

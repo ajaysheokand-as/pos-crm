@@ -19,10 +19,15 @@ function integration_config($api_type = "", $api_sub_type = "") {
             // $config_arr['ApiMemberId'] = "NBF0005465";
             // $config_arr['ApiSubMemberId'] = "KASAR CREDIT N CAPITAL PRIVATE LIMI";
 
-            $config_arr['ApiUserId'] = "agrim_cpu_prd@agrimfincap.in";
-            $config_arr['ApiPassword'] = "6E261285001C87D1BC9C9A6B033A474034DCC5A2";
-            $config_arr['ApiMemberId'] = "NBF0005339";
-            $config_arr['ApiSubMemberId'] = "AGRIM FINCAP PRIVATE LIMITED";
+            // $config_arr['ApiUserId'] = "agrim_cpu_prd@agrimfincap.in";
+            // $config_arr['ApiPassword'] = "6E261285001C87D1BC9C9A6B033A474034DCC5A2";
+            // $config_arr['ApiMemberId'] = "NBF0005339";
+            // $config_arr['ApiSubMemberId'] = "AGRIM FINCAP PRIVATE LIMITED";
+
+            $config_arr['ApiUserId'] = "Ajaycirpro_prd@amanfincap.com";
+            $config_arr['ApiPassword'] = "B4724C9A8DCE18EB030902094FDD295CD5B50A91";
+            $config_arr['ApiMemberId'] = "NBF0001850";
+            $config_arr['ApiSubMemberId'] = "AMAN FINCAP LIMITED";
 
             // $config_arr['RPMiddleWareUrl'] = "";
             // if ($envSet == "production") {
@@ -396,6 +401,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
 
             // $config_arr['ApiToken'] = "Basic MTExMzI0MzM6SWdUMXNZckJiQUlleVRJTUR6OEdtRU1zVXRrUEhmQ2s=";
             $config_arr['ApiToken'] = "MTE2MzU3MjY6eFh2OTZlNGdoOW9OdHlxbXRLcmw1NFdTalFXOHVjQkQ=";
+            // $config_arr['ApiToken'] = "Nzg4NTk1ODY6IEJjdnFaRThvS1lOZTcyMjMzZnIzWmZrcFJCSmxqZkhv";
 
             // if ($envSet == "production") {
             //     $config_arr['ApiToken'] = "";
