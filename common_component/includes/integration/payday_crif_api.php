@@ -1178,7 +1178,7 @@ function crif_bureau_json_api_call($lead_id = 0, $request_array = array()) {
             'overDueAmount' => $overDueAmount,
             'zeroBalance' => $zeroBalance,
             'api1_request' => addslashes($apiRequestJson),
-            'api1_response' => addslashes($jsonResponse),
+            'api1_response' => addslashes($apiResponseJson),
             'memberCode' => $apiMemberId,
             'cibilScore' => $cibil_score,
             'cibil_file' => $fileName,//addslashes($cibil_html),

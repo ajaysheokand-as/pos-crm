@@ -484,7 +484,7 @@ function aadhaar_ocr_api_call($method_id, $lead_id = 0, $request_array = array()
 
             $apiHeaders = array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
+                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
                 'Content-Type: application/json'
             );
 
@@ -843,7 +843,7 @@ function aadhaar_mask_api_call($method_id, $lead_id = 0, $request_array = array(
             }',
                 CURLOPT_HTTPHEADER => array(
                     // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                    'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
+                    'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
                     'Content-Type: application/json'
                 ),
             ));
