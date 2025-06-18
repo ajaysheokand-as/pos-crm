@@ -2067,7 +2067,7 @@ class CronEmailerController extends CI_Controller {
                         <tr>
                         <td valign = "top"><table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                         <tr>
-                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-speedoloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
+                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-tejasloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
                         </tr>
                         <tr>
                         <td align = "center" valign = "top"><img src = "' . REMINDER_5_DAY . '" alt = "day" width = "170" height = "170" style = "position: relative;top: -54px;margin: 0 auto;left: 42%;" /></td>
@@ -2224,7 +2224,7 @@ class CronEmailerController extends CI_Controller {
                         <tr>
                         <td valign = "top"><table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                         <tr>
-                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-speedoloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
+                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-tejasloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
                         </tr>
                         <tr>
                         <td align = "center" valign = "top"><img src = "' . REMINDER_4_DAY . '" alt = "day" width = "170" height = "170" style = "position: relative;top: -54px;margin: 0 auto;left: 42%;" /></td>
@@ -2380,7 +2380,7 @@ class CronEmailerController extends CI_Controller {
                         <tr>
                         <td valign = "top"><table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                         <tr>
-                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-speedoloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
+                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-tejasloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
                         </tr>
                         <tr>
                         <td align = "center" valign = "top"><img src = "' . REMINDER_3_DAY . '" alt = "day" width = "170" height = "170" style = "position: relative;top: -54px;margin: 0 auto;left: 42%;" /></td>
@@ -2536,7 +2536,7 @@ class CronEmailerController extends CI_Controller {
                         <tr>
                         <td valign = "top"><table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                         <tr>
-                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-speedoloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
+                        <td width = "99%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-tejasloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
                         </tr>
                         <tr>
                         <td align = "center" valign = "top"><img src = "' . REMINDER_2_DAY . '" alt = "day" width = "170" height = "170" style = "position: relative;top: -54px;margin: 0 auto;left: 42%;" /></td>
@@ -2692,7 +2692,7 @@ class CronEmailerController extends CI_Controller {
                                                         <tr>
                                                             <td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                                     <tr>
-                                                                        <td width="99%" valign="top"><a href="' . WEBSITE_URL . '" target="_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-speedoloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
+                                                                        <td width="99%" valign="top"><a href="' . WEBSITE_URL . '" target="_blank"><img src="' . BRAND_TRANSPARENT_LOGO . '" alt="logo-tejasloan" style="width: 156px;padding-left: 28px;padding-top: 10px;" /></a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td align="center" valign="top"  style="text-align:center"><img src="' . REMINDER_1_DAY . '" alt="day" width="170" height="170" style="position: relative;top: -54px;margin: -70px auto 0 auto;left: 42%;" /></td>

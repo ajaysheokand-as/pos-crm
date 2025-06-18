@@ -488,31 +488,31 @@ class Task_Model extends CI_Model {
     // }
 
     public function enquires() {
-        /* $sql = 'SELECT EC.cust_enquiry_id, EC.cust_enquiry_lead_id, EC.cust_enquiry_mobile, EC.cust_enquiry_remarks, EC.cust_enquiry_created_datetime, LD.first_name, LD.lead_is_mobile_verified, LD.created_on';
+        $sql = 'SELECT EC.cust_enquiry_id, EC.cust_enquiry_lead_id, EC.cust_enquiry_mobile, EC.cust_enquiry_remarks, EC.cust_enquiry_created_datetime, LD.first_name, LD.lead_is_mobile_verified, LD.created_on';
         $sql .= ' FROM leads LD';
         $sql .= ' INNER JOIN customer_enquiry EC ON (EC.cust_enquiry_lead_id = LD.lead_id)';
         $sql .= ' WHERE LD.lead_active=1 AND LD.lead_deleted=0 AND LD.lead_is_mobile_verified=0 && LD.first_name IS NULL || LD.first_name=""';
-        $sql .= ' ORDER BY EC.cust_enquiry_id DESC'; */
-        $sql = "SELECT
-			LD.lead_id,
-			LD.mobile,
-			LD.created_on,
-			LD.first_name,
-			LD.source,
-			LD.status,
-			LD.lead_is_mobile_verified
-		FROM
-			leads LD
-		WHERE
-			LD.lead_active = 1
-			AND LD.lead_deleted = 0
-			AND LD.lead_status_id = 1
-			AND LD.status = 'LEAD-NEW'
-			AND LD.stage = 'S1'
-			AND (LD.first_name IS NULL)
-		group by LD.mobile
-		ORDER BY
-			LD.lead_id DESC";
+        $sql .= ' ORDER BY EC.cust_enquiry_id DESC';
+        // $sql = "SELECT
+		// 	LD.lead_id,
+		// 	LD.mobile,
+		// 	LD.created_on,
+		// 	LD.first_name,
+		// 	LD.source,
+		// 	LD.status,
+		// 	LD.lead_is_mobile_verified
+		// FROM
+		// 	leads LD
+		// WHERE
+		// 	LD.lead_active = 1
+		// 	AND LD.lead_deleted = 0
+		// 	AND LD.lead_status_id = 1
+		// 	AND LD.status = 'LEAD-NEW'
+		// 	AND LD.stage = 'S1'
+		// 	AND (LD.first_name IS NULL)
+		// group by LD.mobile
+		// ORDER BY
+		// 	LD.lead_id DESC";
         //echo $sql;
         // Execute the query
         $query = $this->db->query($sql)->result_array();
@@ -5366,18 +5366,18 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                                         <td bgcolor="#FFFFFF" style="padding:10px;">Processing Fee (Rs.)</td>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;">' . number_format($camDetails->admin_fee, 2) . '/- (Including 18% GST)</td>
                                                     </tr>
-                                                    <tr>
+                                                    <!--<tr>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;font-family: Courier, arial;">Repayment Cheque(s)</td>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;font-family: Courier, arial;">&nbsp;-</td>
-                                                    </tr>
-                                                    <tr>
+                                                    </tr>-->
+                                                    <!--<tr>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;font-family: Courier, arial;">Cheque drawn on (Bank Name) </td>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;">&nbsp;-</td>
-                                                    </tr>
-                                                    <tr>
+                                                    </tr>-->
+                                                    <!--<tr>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;font-family: Courier, arial;">Cheque &amp; NACH Bouncing Charges </td>
                                                         <td bgcolor="#FFFFFF" style="padding:10px;">Rs. 1000.00/- every time</td>
-                                                    </tr>
+                                                    </tr>-->
                                             </table>
                                         </td>
                                     </tr>
@@ -5896,7 +5896,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                     </td>
                                     </tr>
 
-                                    <tr>
+                                    <!--<tr>
                                     <td align="left" valign="middle" bgcolor="#FFFFFF">
                                         <strong>Repayment Cheque(s)</strong>
                                     </td>
@@ -5924,7 +5924,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                     <td align="left" valign="middle" bgcolor="#FFFFFF">
                                         1,000.00/- per bouncing/dishonour.
                                     </td>
-                                    </tr>
+                                    </tr>-->
                                     <!--<tr>
                                     <td align="left" valign="middle" bgcolor="#FFFFFF">
                                         <strong>Annualised ROI (%)</strong>
@@ -10920,7 +10920,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
                      normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif'>A processing fee, ".number_format($camDetails->roi, 2)."% of the loan amount.</span>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>INR ".number_format(round($camDetails->admin_fee, 0), 2)."</span>
                   </p>
                </td>
             </tr>
@@ -13326,15 +13326,15 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
         $file_path_with_name = TEMP_UPLOAD_PATH . $file_name;
 
-        // require_once __DIR__ . '/../../vendor/autoload.php';
+        require_once __DIR__ . '/../../vendor/autoload.php';
 
-        // $mpdf = new \Mpdf\Mpdf();
+        $mpdf = new \Mpdf\Mpdf();
 
-        // $mpdf->WriteHTML($pdf_html);
+        $mpdf->WriteHTML($pdf_html);
 
-        // $mpdf->Output($file_path_with_name, 'F');
+        $mpdf->Output($file_path_with_name, 'F');
 
-        print_r($pdf_html);
+        // print_r($pdf_html);
 
         if (file_exists($file_path_with_name)) {
             require_once(COMPONENT_PATH . "CommonComponent.php");
