@@ -89,14 +89,14 @@ class CommonComponent {
 
         require_once(COMP_PATH . '/includes/integration/payday_poi_ocr_api.php');
 
-        // $return_array = poi_ocr_api_call('GET_PAN_OCR', $lead_id, array());
+        $return_array = poi_ocr_api_call('GET_PAN_OCR', $lead_id, array());
 
-        $method_id = (date('d') % 2) > 0 ? 1 : 2;
-        if ($method_id == 1) {
-            $return_array = poi_ocr_api_call('GET_PAN_OCR_DIGITAP', $lead_id, array());
-        } else {
-            $return_array = poi_ocr_api_call('GET_PAN_OCR', $lead_id, array());
-        }
+        // $method_id = (date('d') % 2) > 0 ? 1 : 2;
+        // if ($method_id == 1) {
+            // $return_array = poi_ocr_api_call('GET_PAN_OCR_DIGITAP', $lead_id, array());
+        // } else {
+        //     $return_array = poi_ocr_api_call('GET_PAN_OCR', $lead_id, array());
+        // }
 
         return $return_array;
     }
@@ -105,14 +105,14 @@ class CommonComponent {
 
         require_once(COMP_PATH . '/includes/integration/payday_poi_ocr_api.php');
 
-        // $return_array = poi_ocr_api_call('GET_AADHAAR_OCR', $lead_id, array());
+        $return_array = poi_ocr_api_call('GET_AADHAAR_OCR', $lead_id, array());
 
-        $method_id = (date('d') % 2) > 0 ? 1 : 2;
-        if ($method_id == 1) {
-            $return_array = poi_ocr_api_call('GET_AADHAAR_OCR_DIGITAP', $lead_id, array());
-        } else {
-            $return_array = poi_ocr_api_call('GET_AADHAAR_OCR', $lead_id, array());
-        }
+        // $method_id = (date('d') % 2) > 0 ? 1 : 2;
+        // if ($method_id == 1) {
+            // $return_array = poi_ocr_api_call('GET_AADHAAR_OCR_DIGITAP', $lead_id, array());
+        // } else {
+        //     $return_array = poi_ocr_api_call('GET_AADHAAR_OCR', $lead_id, array());
+        // }
 
         return $return_array;
     }
