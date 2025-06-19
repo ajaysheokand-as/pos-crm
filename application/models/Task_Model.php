@@ -12324,17 +12324,17 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
             $enc_lead_id = $this->encrypt->encode($lead_id);
 
-            // $active_service = (date('d') % 2) > 0 ? 1 : 2;
+            $active_service = (date('d') % 2) > 0 ? 1 : 2;
 
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
 
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
-            // if ($active_service == 1) { // DigiTap
+            if ($active_service == 1) { // DigiTap
                 $digital_ekyc_url = base_url("digitap-aadhaar-veri-request") . "?refstr=" . $enc_lead_id;
-            // } elseif ($active_service == 2) { // Singzy
-            //     $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
-            // }
+            } elseif ($active_service == 2) { // Singzy
+                $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
+            }
 
             $message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                             <html xmlns="http://www.w3.org/1999/xhtml">
