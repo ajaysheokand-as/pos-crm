@@ -9666,7 +9666,7 @@ class Report_Model extends CI_Model {
                             font-weight: bold;
                         }
                         tbody {
-                            background-image: url("https://crm.tejasloan.com/public/front/img/company_logo.png");
+                            background-image: url("https://lms.paisaonsalary.in/public/images/final_logo.png");
                             background-repeat: no-repeat;
                             background-position: center;
                             background-size: 200px 200px;
@@ -9883,7 +9883,7 @@ class Report_Model extends CI_Model {
                                 <th>Total Amount</th>
                             </tr>
                         </thead>
-                        <tbody style="background-image: url(\'https://crm.tejasloan.com/public/front/img/company_logo.png\') !important;">';
+                        <tbody style="background-image: url(\'https://lms.paisaonsalary.in/public/images/final_logo.png\') !important;">';
 
                 $maxRows = max(count($report_array['Team A']), count($report_array['Team B']));
                 for ($i = 0; $i < $maxRows; $i++) {

@@ -177,7 +177,7 @@ function office_email_verification_api_call($method_id, $lead_id = 0, $request_a
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ObUb9uyt6VFVli8bFSw1BFiXMifComc43Djj8uflfXUjhfYd3uF9YgSIMQjEgmCo',
-                'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
+                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
                 'Content-Type: application/json'
               ),
             ));
@@ -441,7 +441,7 @@ function persional_email_verification_api_call($method_id, $lead_id = 0, $reques
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
+                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
                 'Content-Type: application/json'
               ),
             ));
@@ -670,7 +670,7 @@ function sendgrid_email_validation_api($lead_id = 0, $request_array = array()) {
         
 
         // $apiToken = "Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm";
-        $apiToken = "Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey";
+        $apiToken = "Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1";
         $apiHeaders = array('Accept: application/json', 'Content-Type: application/json', $apiToken
         );
 
@@ -976,7 +976,7 @@ function signzy_email_verification_api_call($method_id, $lead_id = 0, $request_a
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
+                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
                 'Content-Type: application/json'
               ),
             ));

@@ -33,7 +33,7 @@ $config['verify_peer'] = TRUE;
   |
  */
 
-$config['access_key'] = 'AKIAXEVXYIVMRIOWP3MO';
+$config['access_key'] = 'AKIAV72EG5TGUPEWVYJC';
 
 /*
   |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ $config['access_key'] = 'AKIAXEVXYIVMRIOWP3MO';
   |
  */
 
-$config['secret_key'] = 'awlWUgbMYfWJFRe4ZqdHnrIcmZfMJuOorHT4ZXiS';
+$config['secret_key'] = 'yKAIpQgcgw2WGnpLPGcRnKRizHDMxpkcrO9kmkQr';
 
 /*
   |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ $config['secret_key'] = 'awlWUgbMYfWJFRe4ZqdHnrIcmZfMJuOorHT4ZXiS';
   |
  */
 
-$config['bucket_name'] = 'tejasloanbucket';
+$config['bucket_name'] = 'paisaonsalarybucket';
 
 /*
   |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ $config['folder_name'] = 'upload';
   |
  */
 
-$config['s3_url'] = 's3://tejasloanbucket/upload/';
+$config['s3_url'] = 's3://paisaonsalarybucket/upload/';
 
 /*
   |--------------------------------------------------------------------------

@@ -328,7 +328,7 @@ body{
 }
 
 .container button{
-    background-color: #000080;
+    background-color: #278B65;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -342,7 +342,7 @@ body{
     transition: 0.4s;
 }
 .container button:hover{
-background-color: #0063B9;
+background-color: #000;
 }
 
 .container button.hidden{
@@ -435,7 +435,7 @@ background-color: #0063B9;
 .toggle{
     /* background-color: #512da8; */
     height: 100%;
-    background: #000080;
+    background: #278B65;
     color: #fff;
     position: relative;
     left: -100%;
@@ -468,6 +468,8 @@ background-color: #0063B9;
     width: 150px;
     margin-top: -22px;
     margin-bottom: 13px;
+    background: black;
+    border-radius: 10px;
 }
 
 

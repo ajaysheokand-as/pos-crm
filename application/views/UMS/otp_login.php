@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>OTP Verification</title>
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/18-BK_kixu8fav.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/final_fav.png">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/bootstrap.min.css">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/bootstrap.css">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/font-awesome.min.css">
@@ -132,6 +132,11 @@
                 border-left: 10px solid #fff;
 
               }
+              .img-rounded {
+                width: 200px;
+                background: #000;
+                border-radius: 10px;
+              }
 
             @media all and (max-width: 320px),
             (max-width: 375px),
@@ -173,7 +178,7 @@
                             <input type="hidden" name="otp_flag" value="1" />
 
                             <p class="text-center">
-                                <img class="img-rounded" src="<?= LMS_BRAND_LOGO ?>" alt="brand-logo">
+                                <img class="img-rounded" src="<?= LMS_BRAND_LOGO ?>" alt="brand-logo" style="background: #000; border-radius: 10px;">
                             </p>
                             <p class="text-center mb-4">
                             </p>

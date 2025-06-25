@@ -530,7 +530,7 @@ class TaskController extends CI_Controller {
         }
 
         //$email_to = "sandeeptech2contact@gmail.com";
-        $cc_mail = "info@tejasloan.com";
+        $cc_mail = "info@paisaonsalary.in";
         $subject = "Legal Notice Letter";
         $message = '<!DOCTYPE html>
                     <html lang="en">
@@ -601,11 +601,11 @@ class TaskController extends CI_Controller {
                                 <p style="color:#000;">TO ,<br>SHRI/SMT <b> ' . $firstname . ' </b><br>R/O - <b>' . $current_house . ' </b></p><br/>
                                 <h2 style="color:#000;">Legal Notice (without prejudice)</h2>
                                 <p style="color:#000;">Sir/Ma\'am</p>
-                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Tejas Loan</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
+                                <p style="color:#000;">Under instructions from and on behalf of my client <strong style="background:#FFFF00;">Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong style="background:#FFFF00;">Paisa On Salary</strong> having its office S-370, Panchsheel Park, New Delhi - 110017, I address you as under.</p>
                                 <ol>
                                     <li style="color:#000;">That you had approached my client for a short-term loan as you were in dire need of money on <strong>' . date('d, M Y', strtotime($final_disbursed_date)) . '</strong>.</li>
                                     <li style="color:#000;">That pursuant to the terms and conditions of the Loan agreement form as agreed by you, you were provided the short-term loan of Rs. <strong>' . $loan_recommended . '</strong> with Loan No.<strong> ' . $loan_no . '</strong> at a mutually agreed rate of interest.</li>
-                                    <li style="color:#000;">That you had promised and agreed to repay the said loan amount with applicable interest rate but you did not repay the total amount of Rs.<strong>' . $totalinterest . '</strong> till date. You have breached the loan contract that you entered into with my client namely <strong>Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong>Tejas Loan</strong>.</li>
+                                    <li style="color:#000;">That you had promised and agreed to repay the said loan amount with applicable interest rate but you did not repay the total amount of Rs.<strong>' . $totalinterest . '</strong> till date. You have breached the loan contract that you entered into with my client namely <strong>Agrim Fincap Pvt. Ltd.</strong> with the brand name <strong>Paisa On Salary</strong>.</li>
                                     <li style="color:#000;">That thus by your act and conduct it is evident that since the time of availing such loan you had malafide intention.</li>
                                     <li style="color:#000;background:#FFFF00;">That as on date an amount of Rs.<strong>' . $totalinterest . ' </strong> is due and payable by you in the aforesaid connection to our client.</li>
                                 </ol>
@@ -623,7 +623,7 @@ class TaskController extends CI_Controller {
         $file_path_with_name = UPLOAD_LEGAL_PATH . $file_name;
 
         $file_url_path = LMS_URL . $file_name;
-        $from_email = "info@tejasloan.com";
+        $from_email = "info@paisaonsalary.in";
 
         require_once __DIR__ . '/../../vendor/autoload.php';
         $mpdf = new \Mpdf\Mpdf();
@@ -641,7 +641,7 @@ class TaskController extends CI_Controller {
 
             $upload_return = $CommonComponent->upload_document($lead_id, $request_array);
             // require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-            $return_array = common_send_email($email_to, $subject, $message, "", $cc_mail = "info@tejasloan.com", $from_email, "", $file_path_with_name, $file_name, 'legal_notice.pdf');
+            $return_array = common_send_email($email_to, $subject, $message, "", $cc_mail = "info@paisaonsalary.in", $from_email, "", $file_path_with_name, $file_name, 'legal_notice.pdf');
 
             if ($upload_return['status'] == 1) {
                 $return_array['status'] = 1;
@@ -3455,7 +3455,7 @@ class TaskController extends CI_Controller {
 
         shuffle($code_mix);
 
-        $referenceID = "#Tejas";
+        $referenceID = "#POS";
 
         foreach ($code_mix as $each) {
 
@@ -4982,12 +4982,5 @@ class TaskController extends CI_Controller {
 
     public function __destruct() {
         $this->db->close();
-    }
-
-    
-    public function testSanc() {
-        $pdf_return = $this->Tasks->newSanctionLetter($lead_id);
-        print_r($pdf_return);
-        exit;
     }
 }

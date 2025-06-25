@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Forgot Password</title>
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/18-BK_kixu8fav.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/final_fav.png">
         <link rel="stylesheet preload" href="<?= base_url('public'); ?>/css/style.css">
      
     </head>
@@ -42,7 +42,7 @@
 						<span>Please enter your email</span>
                                 <!--</p>--> 
                                 <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
-                                <input type="email" name="email"  placeholder="type here" title="Email" required>
+                                <input type="email" name="email"  placeholder="Type Here" title="Email" required>
 						
                         <p><a href="<?= base_url() ?>">→ Back to login ←</a></p>
 					
@@ -54,7 +54,7 @@
                 <div class="toggle-panel toggle-right">
                     <div class="logo">
                         <!-- <img src="<?= base_url('public'); ?>/images/final_logo.png"> -->
-                        <img src="<?= base_url('public'); ?>/images/logo-white.svg">
+                        <img src="<?= base_url('public'); ?>/images/final_logo.png">
                     </div>
                     <h1>Welcome Back !</h1>
                     <p>Please logging through your credentials

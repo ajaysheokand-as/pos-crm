@@ -107,7 +107,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
         //     $from_email = "info@tejasloan.com";
         // }
         if (empty($from_email)) {
-            $from_email = "noreply@tejasloan.com";
+            $from_email = "info@paisaonsalary.in";
         }
 
 
@@ -119,7 +119,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $config['protocol'] = "smtp";
             $config['smtp_host'] = "smtp.zeptomail.in";
             $config['smtp_user'] = "emailapikey";
-            $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
+            $config['smtp_pass'] = "PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==";
             $config['smtp_port'] = 587;
             $config['smtp_crypto'] = 'tls';
             $config['mailtype'] = "html";
@@ -145,7 +145,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
 
 
             // $list = array('info@tejasloan.com', 'info@tejasloan.com');
-            $list = array('info@tejasloan.com','tech@telasloan.com');
+            $list = array('info@paisaonsalary.in','tech@paisaonsalary.in');
 
             $ci->email->cc($list);
             $ci->email->to($to_email);
@@ -162,7 +162,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
         } else if ($active_id == 2) {
 
             if (empty($from_email)) {
-                $from_email = "noreply@tejasloan.com";
+                $from_email = "info@paisaonsalary.in";
             }
 
             $apiUrl = "https://api.zeptomail.in/v1.1/email";
@@ -170,7 +170,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $emailData = array(
                 "from" => [
                     "address" => $from_email,
-                    "name" => "Tejas Loan"
+                    "name" => "Paias On Salary"
                 ],
                 "to" => [
                     ["email_address" => ["address" => $to_email]]
@@ -201,7 +201,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             }
 
             $apiHeaders = array(
-                "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
+                "Authorization:Zoho-enczapikey PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==",
                 "Content-Type: application/json",
                 "Accept: application/json",
             );
@@ -232,7 +232,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $emailData = array(
                 "from" => [
                     "address" => $from_email,
-                    "name" => "Tejas Loan"
+                    "name" => "Paisa On Salary"
                 ],
                 "to" => [
                     ["email_address" => ["address" => $to_email]]
@@ -279,7 +279,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             }
 
             $apiHeaders = array(
-                "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
+                "Authorization:Zoho-enczapikey PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==",
                 "Content-Type: application/json",
                 "Accept: application/json",
             );
@@ -308,7 +308,7 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             $config['protocol'] = "smtp";
             $config['smtp_host'] = "smtp.zeptomail.in";
             $config['smtp_user'] = "emailapikey";
-            $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
+            $config['smtp_pass'] = "PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==";
             $config['smtp_port'] = 587;
             $config['smtp_crypto'] = 'tls';
             $config['mailtype'] = "html";
@@ -573,13 +573,13 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
         return $return_array;
     } else {
 
-        $subject = 'Thank You. - Tejas Loan';
+        $subject = 'Thank You. - Paisa On Salary';
 
         $html = '<!DOCTYPE html>
                 <html xmlns="http://www.w3.org/1999/xhtml">
                 <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                    <title>Thank You | Salary Loan</title>
+                    <title>Thank You | Paisa On Salary</title>
                 </head>
 
                 <body>
@@ -587,13 +587,13 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                         style="font-family:Arial, Helvetica, sans-serif; border:solid 1px #ddd; padding:10px; background:#f9f9f9;">
                         <tr>
                             <td width="775" align="center" style="background: #00455E;"><img
-                                    src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" width="40%"></td>
+                                    src="https://lms.paisaonsalary.in/public/images/final_logo.png" width="40%"></td>
                         </tr>
                         <tr>
                             <td style="text-align:center;">
                                 <table width="418" border="0" style="text-align:center; padding:20px; background:#fff;">
                                     <tr>
-                                        <td style="font-size:16px;"><img src="https://crm.tejasloan.com/public/emailimages/thank-you.gif"
+                                        <td style="font-size:16px;"><img src="https://lms.paisaonsalary.in/public/emailimages/thank-you.gif"
                                                 width="auto" height="250" alt="thank-you"></td>
                                     </tr>
                                     <tr>
@@ -601,24 +601,24 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                                     </tr>
                                     <tr>
                                         <td width="412" style="font-size:16px;">
-                                            <h2 style="margin:0px; color: #FB6900;">Thank You</h2>
+                                            <h2 style="margin:0px; color: #278B65;">Thank You</h2>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="412" style="font-size:16px;">
-                                            <h2 style="margin:0px; color: #FB6900;">Dear ' . $name . '</h2>
+                                            <h2 style="margin:0px; color: #278B65;">Dear ' . $name . '</h2>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td>
-                                            <p style="line-height:25px; margin:0px;">Thank you for showing interest in Tejas Loan.</p>
+                                            <p style="line-height:25px; margin:0px;">Thank you for showing interest in Paisa On Salary.</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <p style="line-height:25px; margin:0px;">We have received your loan application <strong
-                                                    style="color: #FB6900;">' . $reference_no . '</strong> successfully. Please note the
+                                                    style="color: #278B65;">' . $reference_no . '</strong> successfully. Please note the
                                                 same for future communication.</p>
                                         </td>
                                     </tr>
@@ -635,32 +635,32 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                             <!-- Facebook Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://crm.tejasloan.com/public/new_images/images/facebook.png" class="socil-t"
-                                    alt="tejasloan-facebook" style="width:30px;">
+                                <img src="https://lms.paisaonsalary.in/public/new_images/images/facebook.png" class="socil-t"
+                                    alt="pos-facebook" style="width:30px;">
                             </a>
                             <!-- LinkedIn Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://crm.tejasloan.com/public/new_images/images/linkedin.png" class="socil-t"
-                                    alt="tejasloan-linkedin" style="width:30px;">
+                                <img src="https://lms.paisaonsalary.in/public/new_images/images/linkedin.png" class="socil-t"
+                                    alt="pos-linkedin" style="width:30px;">
                             </a>
                             <!-- Instagram Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://crm.tejasloan.com/public/new_images/images/instagram.png" class="socil-t"
-                                    alt="tejasloan-instagram" style="width:30px;">
+                                <img src="https://lms.paisaonsalary.in/public/new_images/images/instagram.png" class="socil-t"
+                                    alt="pos-instagram" style="width:30px;">
                             </a>
                             <!-- YouTube Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://crm.tejasloan.com/public/new_images/images/youtube.png" class="socil-t"
-                                    alt="tejasloan-youtube" style="width:30px;">
+                                <img src="https://lms.paisaonsalary.in/public/new_images/images/youtube.png" class="socil-t"
+                                    alt="pos-youtube" style="width:30px;">
                             </a>
                             <!-- Twitter Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://crm.tejasloan.com/public/new_images/images/twitter.png" class="socil-t"
-                                    alt="tejasloan-twitter" style="width:30px;">
+                                <img src="https://lms.paisaonsalary.in/public/new_images/images/twitter.png" class="socil-t"
+                                    alt="pos-twitter" style="width:30px;">
                             </a>
                         </td>
                         </tr>

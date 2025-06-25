@@ -126,12 +126,12 @@ class LeadApi extends REST_Controller {
                 }
                 else if($source_id == 21){
                     
-                    $data_source_name = "MessageTejas";
+                    $data_source_name = "MessagePOS";
                     $lead_data_source_id = 21;
                 }
                 else {
                    
-                    $data_source_name = "WebTejas";
+                    $data_source_name = "WebPOS";
                     $lead_data_source_id = 4;
                 }
 

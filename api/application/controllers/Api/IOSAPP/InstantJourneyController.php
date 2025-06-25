@@ -5325,8 +5325,8 @@ class InstantJourneyController extends REST_Controller {
 
             $banners = array(
                 "https://sot-website.s3.ap-south-1.amazonaws.com/festival/makar_sankranti.png" => NULL,
-                "https://tejasloan.com/static/media/banner_1.eb27168ad28641522f20.jpg" => NULL,
-                "https://tejasloan.com/static/media/banner_3.7d5cb8133b10bd3ed8d6.jpg" => NULL,
+                "https://paisaonsalary.com/static/media/banner_1.eb27168ad28641522f20.jpg" => NULL,
+                "https://paisaonsalary.com/static/media/banner_3.7d5cb8133b10bd3ed8d6.jpg" => NULL,
             );
 
             foreach ($banners as $imgUrl => $redirectUrl) {

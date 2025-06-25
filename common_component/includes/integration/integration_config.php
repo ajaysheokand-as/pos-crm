@@ -363,11 +363,11 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['verify_peer'] = '1';
             $config_arr['version'] = 'latest';
             $config_arr['region'] = 'ap-south-1';
-            $config_arr['access_key'] = 'AKIASE5KQZXHCBU65I6O';
-            $config_arr['secret_key'] = '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';
-            $config_arr['bucket_name'] = 'tejasloanbucket';
+            $config_arr['access_key'] = 'AKIAV72EG5TGUPEWVYJC';
+            $config_arr['secret_key'] = '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';
+            $config_arr['bucket_name'] = 'paisaonsalarybucket';
             $config_arr['folder_name'] = 'upload';
-            $config_arr['s3_url'] = 's3://tejasloanbucket/upload/';
+            $config_arr['s3_url'] = 's3://paisaonsalarybucket/upload/';
             $config_arr['access_key_envname'] = 'S3_KEY';
             $config_arr['secret_key_envname'] = 'S3_SECRET';
             $config_arr['get_from_enviroment'] = '';
@@ -733,8 +733,8 @@ function signzy_identity_object_api_call($request_type, $lead_id = 0, $request_a
 
         $apiRequestJsonArray = array();
         $apiRequestJsonArray["type"] = $request_type;
-        $apiRequestJsonArray["email"] = "info@tejasloan.com";
-        $apiRequestJsonArray["callbackUrl"] = "https://www.tejasloan.com/";
+        $apiRequestJsonArray["email"] = "info@paisaonsalary.in";
+        $apiRequestJsonArray["callbackUrl"] = "https://www.paisaonsalary.com/";
         $apiRequestJsonArray["images"] = [];
 
         if (!empty($ocr_file_1)) {

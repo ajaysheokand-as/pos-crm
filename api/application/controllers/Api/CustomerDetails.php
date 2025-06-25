@@ -333,7 +333,7 @@ class CustomerDetails extends REST_Controller {
         // $repayment_data['email'] = $masked_email;
 
         $repayment_data['mobile'] = 9999999999;
-        $repayment_data['email'] = "info@tejasloan.com";
+        $repayment_data['email'] = "info@paisaonsalary.in";
 
         // Send success response with order ID and repayment details
         $response = [

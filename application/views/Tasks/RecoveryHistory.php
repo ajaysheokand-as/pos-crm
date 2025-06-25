@@ -45,6 +45,8 @@ $hold_date = date('Y-m-d h:i:s', strtotime(timestamp . ' + 2 days'));
       .parent_wrapper .right-side .logo_container a img {
           margin-right: 20px;
           width: 100px;
+		  background: #000;
+		  border-radius: 10px;
       }
     </style>
 <div class="width-my">

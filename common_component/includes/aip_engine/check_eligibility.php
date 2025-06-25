@@ -319,7 +319,7 @@ function send_eligibility_failed_email($lead_id) {
         return $return_array;
     } else {
 
-        $subject = 'Eligibility Failed - Tejas Loan';
+        $subject = 'Eligibility Failed - Paisa On Salary';
 
         $html = '<!DOCTYPE html>
                 <html xmlns="http://www.w3.org/1999/xhtml">

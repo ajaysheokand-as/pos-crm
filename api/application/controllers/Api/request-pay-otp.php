@@ -8,7 +8,7 @@ $pan = $input['pancard'];
 $otp = $input['otp'];
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.tejasloan.com/Api/CustomerDetails/verifyOtp',
+  CURLOPT_URL => 'https://lms.paisaonsalary.in/api/Api/CustomerDetails/verifyOtp',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

@@ -54,7 +54,7 @@ class AAController extends CI_Controller {
 				"mobileNumber" => $mobile,
 				"consentDescription" => "CONSENT FOR BANK STATEMENT",
 				"consentArtifactName" => "BANK_STATEMENT_PERIODIC",
-				"redirectUrl" => "https://tejasloan.com/account-consent-thank-you?refstr=" . $enc_lead_id
+				"redirectUrl" => "https://paisaonsalary.com/account-consent-thank-you?refstr=" . $enc_lead_id
 			);
 			$json_request = json_encode($requestArray);
 			$endUrl = 'accountAggregator/consent-request-plus';
@@ -547,7 +547,7 @@ class AAController extends CI_Controller {
 													<span width="300" cellpadding="0">
 														Dear ' . ucwords($customer_name) . ',
 														<br/><br/>
-														We thank you for showing interest in Tejas Loan Instant personal loan.
+														We thank you for showing interest in Paisa On Salary Instant personal loan.
 														<br/><br/>Your application process is pending a crucial step, which involves obtaining your consent to access your salary bank account for retrieving the most recent bank statement.
 														<br />
 														In order to process your loan application further, please give your consent on our Account Aggregator portal to share your bank statement securely.

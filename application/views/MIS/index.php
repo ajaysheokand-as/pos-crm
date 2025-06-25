@@ -34,6 +34,8 @@
       .parent_wrapper .right-side .logo_container a img {
           margin-right: 20px;
           width: 100px;
+          background: #000;
+          border-radius: 10px;
       }
 
 </style>

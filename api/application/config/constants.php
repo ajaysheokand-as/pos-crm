@@ -86,31 +86,31 @@ defined('EXIT__AUTO_MIN') or define('EXIT__AUTO_MIN', 9); // lowest automaticall
 defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 // cibil api key
 
-define("COLLEX_DOC_URL", 'https://crm.tejasloan.com/direct-document-file/'); //production
-define("LMS_URL", "https://crm.tejasloan.com/");
-define("WEBSITE_URL", "https://tejasloan.com/");
-define("WEBSITE", "tejasloan.com");
+define("COLLEX_DOC_URL", 'https://lms.paisaonsalary.in/direct-document-file/'); //production
+define("LMS_URL", "https://lms.paisaonsalary.in/");
+define("WEBSITE_URL", "https://paisaonsalary.com/");
+define("WEBSITE", "paisaonsalary.com");
 
-define("UPLOAD_PATH", "/var/www/html/tejasloan-backend/upload/");
-define("TEMP_DOC_PATH", "/var/www/html/tejasloan-backend/temp_upload/");
-define("COMPONENT_PATH", "/var/www/html/tejasloan-backend/common_component/");
+define("UPLOAD_PATH", "/var/www/html/upload/");
+define("TEMP_DOC_PATH", "/var/www/html/temp_upload/");
+define("COMPONENT_PATH", "/var/www/html/common_component/");
 
 define("API_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical store.
 
-define("LMS_COMPANY_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
-define("LMS_BRAND_LOGO", LMS_URL . "public/images/18-BK_kixu8.png");
+define("LMS_COMPANY_LOGO", LMS_URL . "public/images/final_logo.png");
+define("LMS_BRAND_LOGO", LMS_URL . "public/images/final_logo.png");
 
 define("COMPANY_NAME", "AMAN FINCAP LIMITED");
-define("BRAND_NAME", "TEJASLOAN");
-define("REGISTED_ADDRESS", "D.K.Chopra Tower Plot no.2 , Basement -2 Near Yashodha Hospital Ghaziabad - UP - 201010");
-define("REGISTED_MOBILE", "+91-9355562952");
-define("REGISTED_WHATSAPP_MOBILE", "+91-9355562952");
+define("BRAND_NAME", "Paisa On Salary");
+define("REGISTED_ADDRESS", "88-E 2nd Floor Near Punjab and Sind Bank, Jindal Chowk Hisar, Haryana 125001");
+define("REGISTED_MOBILE", "+91-9588534824");
+define("REGISTED_WHATSAPP_MOBILE", "+91-9588534824");
 
-define("TECH_EMAIL", "tech@telasloan.com");
-define("INFO_EMAIL", "info@tejasloan.com");
-define("CARE_EMAIL", "tech@telasloan.com");
-define("RECOVERY_EMAIL", "tech@telasloan.com");
+define("TECH_EMAIL", "tech@paisaonsalary.in");
+define("INFO_EMAIL", "info@paisaonsalary.in");
+define("CARE_EMAIL", "care@paisaonsalary.in");
+define("RECOVERY_EMAIL", "recovery@paisaonsalary.in");
 
 // *****  TEMPLETE VARIABLES *******
 
-define("WEBSITE_DOCUMENT_BASE_URL", "https://tejasloanbucket.s3.ap-south-1.amazonaws.com/upload/");
+define("WEBSITE_DOCUMENT_BASE_URL", "https://paisaonsalrybucket.s3.ap-south-1.amazonaws.com/upload/");

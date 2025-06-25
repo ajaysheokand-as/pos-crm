@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class CronSanctionController extends CI_Controller {
 
-    var $cron_notification_email = 'info@tejasloan.com';
+    var $cron_notification_email = 'info@paisaonsalary.in';
     var $cron_repeat_utm_sources = array('REPEAT', 'REPEATNF', 'NFREPEATSMS', 'LWREPEATDB');
 
     public function __construct() {
@@ -16,7 +16,7 @@ class CronSanctionController extends CI_Controller {
     }
 
     public function index() {
-        //        $email_return = $this->lead_allocation_email_notification("info@tejasloan.com", "Ajay Kumar", "Rohit Kumar", 9319062592, 'info@tejasloan.com');
+        //        $email_return = $this->lead_allocation_email_notification("info@paisaonsalary.in", "Ajay Kumar", "Rohit Kumar", 9319062592, 'info@paisaonsalary.in');
         //        print_r($email_return);
     }
 
@@ -879,7 +879,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $return_array = $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
+        $return_array = $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@paisaonsalary.in');
 
         if ($return_array['status'] == 1) {
             echo json_encode(['Status' => 1, 'Message' => 'Success']);
@@ -1063,7 +1063,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@paisaonsalary.in');
     }
 
     public function screenerLeadAllocationB50K() {
@@ -1244,7 +1244,7 @@ class CronSanctionController extends CI_Controller {
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@paisaonsalary.in');
     }
 
     public function creditApllicationAllocationG50K() {
@@ -1990,7 +1990,7 @@ class CronSanctionController extends CI_Controller {
         $email_data['subject'] .= " | end time : " . date("d-m-Y H:i:s");
         $email_data['message'] = $message;
 
-        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@tejasloan.com');
+        $this->middlewareEmail($email_data['email'], $email_data['subject'], $email_data['message'], '', 99, 'info@paisaonsalary.in');
         if (!empty($cron_insert_id)) {
             $this->SanctionModel->update_cron_logs($cron_insert_id, $email_counter['update_record'], $email_counter['update_failed']);
         }
@@ -2346,7 +2346,7 @@ class CronSanctionController extends CI_Controller {
         } else {
 
             $to_email = $email;
-            $from_email = "info@tejasloan.com";
+            $from_email = "info@paisaonsalary.in";
 
             $return_array = common_send_email($to_email, $subject, $message, $bcc_email, $cc_email, $from_email, $reply_to, "");
 

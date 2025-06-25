@@ -44,11 +44,11 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
     <html>
 
     <head>
-        <title>Aman Fincap Limited | LMS</title>
+        <title>Aman Fincap Limited | CRM</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/tejas-logo.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/final_fav.png">
         <link rel="stylesheet" href="<?= base_url('public/front'); ?>/css/bootstrap.css?v=1.2" type="text/css">
         <link rel="stylesheet" href="<?= base_url('public/'); ?>css/font-awesome.css" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css">
@@ -152,7 +152,7 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
                 width: 234px;
                 display: flex;
                 justify-content: center;
-                background-color: #000080;
+                background-color: #1a1a1a;
                 box-shadow: 0 0 7px #c7c7c7;
             }
 
@@ -273,7 +273,7 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
         <div class="navbar-wrapper">
 
             <div class="nav-row">
-                <!--<div class="col-md-2 col-xs-12 top_naman">-->
+                <!-- <div class="col-md-2 col-xs-12 top_naman">-->
                 <!--    <a>-->
                 <!--        <a href="<?= base_url(); ?>"><img src="<?= LMS_COMPANY_LOGO ?>" alt="logo" height="70"> <!---<?= base_url('public/front'); ?>/img/dhanvikas-logo.png--->
 
@@ -299,7 +299,7 @@ if (empty($_SESSION['isUserSession']['user_id'])) {
 
                 <!--        </ul>-->
                 <!--    </nav>-->
-                <!--</div>-->
+                <!--</div> -->
                 <h2>Dashboard</h2>
                 <ul>
 

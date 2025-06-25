@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FORGOT PASSWORD</title>
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/18-BK_kixu8fav.png">
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/final_fav.png">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/bootstrap.min.css">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/bootstrap.css">
         <link rel="stylesheet preload" href="<?= base_url('public/front'); ?>/css/font-awesome.min.css">
@@ -95,8 +95,9 @@
                 }
             }
             .img-rounded {
-                border-radius: 6px;
                 width: 200px;
+                background: #000;
+                border-radius: 10px;
             }
             .close {
                 position: absolute !important;

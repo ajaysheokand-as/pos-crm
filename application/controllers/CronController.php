@@ -155,19 +155,19 @@ class CronController extends CI_Controller {
                                             <div class="email-content">
                                                 <table class="header" width="100%">
                                                     <tr>
-                                                        <!--<td  class="left-top"><img src="https://crm.tejasloan.com/public/images/Kasar_background.png" alt="Left Banner"></td>-->
-                                                        <td  class="left-top">Agrim Fincap Pvt. Ltd.</td>
+                                                        <!--<td  class="left-top"><img src="https://lms.paisaonsalary.in/public/images/Kasar_background.png" alt="Left Banner"></td>-->
+                                                        <td  class="left-top">Aman Fincap Ltd.</td>
                                                          <td class="right-top" ></td>
                                                     </tr>';
             if (isset($return_sms['days_until_repayment']) && ($return_sms['days_until_repayment'] < 1)) {
                 $message .= '<tr>
-                                                        <td class="left-banner"><img src="https://crm.tejasloan.com/public/images/important-reminer.png" alt="Important Reminder"></td>
-                                                        <td class="right-banner"><img src="https://crm.tejasloan.com/public/images/LAST-DAY.png" alt="LAST DAY"></td>
+                                                        <td class="left-banner"><img src="https://lms.paisaonsalary.in/public/images/important-reminer.png" alt="Important Reminder"></td>
+                                                        <td class="right-banner"><img src="https://lms.paisaonsalary.in/public/images/LAST-DAY.png" alt="LAST DAY"></td>
                                                     </tr>';
             } else {
                 $message .= '<tr>
-                                                        <td class="left-banner"><img src="https://crm.tejasloan.com/public/images/friend_backend.jpg" alt="Frindly Reminder"></td>
-                                                        <td class="right-banner"><img src="https://crm.tejasloan.com/public/images/' . $days . '-DAYS.png" alt="' . $days . ' DAYS"></td>
+                                                        <td class="left-banner"><img src="https://lms.paisaonsalary.in/public/images/friend_backend.jpg" alt="Frindly Reminder"></td>
+                                                        <td class="right-banner"><img src="https://lms.paisaonsalary.in/public/images/' . $days . '-DAYS.png" alt="' . $days . ' DAYS"></td>
                                                     </tr>';
             }
 

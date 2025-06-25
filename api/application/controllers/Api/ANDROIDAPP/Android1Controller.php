@@ -807,7 +807,7 @@ class Android1Controller extends REST_Controller {
                   //                }
 
                   $imgUrl = $image_name . $ext;
-                  $image_upload_dir = "/home/ut8e2mlo1yr5/public_html/tejasloan.com/upload/" . $imgUrl;
+                  $image_upload_dir = "/var/www/html/upload/" . $imgUrl;
 
                   $flag = file_put_contents($image_upload_dir, base64_decode($docs_file));
                 
@@ -1027,7 +1027,7 @@ class Android1Controller extends REST_Controller {
         }
     }
 
-    /* TejasLoan App First Page Submit */
+    /* POS App First Page Submit */
 
     public function qdeAppSaveRegistration_post() {
         $input_data = file_get_contents("php://input");
@@ -1133,10 +1133,10 @@ class Android1Controller extends REST_Controller {
                 ];
                 
                 if ($data_source_id == 33) {
-                    $data_source_name = "ARDTejasLoan";
+                    $data_source_name = "ARDPOS";
                 
                 } else if($data_source_id==34){
-                    $data_source_name = "IosTejasLoan";
+                    $data_source_name = "IosPOS";
                 }
 
                 $dataleads = array(
@@ -1215,10 +1215,10 @@ class Android1Controller extends REST_Controller {
                 $getCityName1 = getcustId('master_city', 'm_city_id', $city_id, 'm_city_name');
 
                   if ($data_source_id == 33) {
-                    $data_source_name = "ARDTejasLoan";
+                    $data_source_name = "ARDPOS";
                 
                 } else if($data_source_id==34){
-                    $data_source_name = "IosTejasLoan";
+                    $data_source_name = "IosPOS";
                 }
 
                 $user_type = "NEW";

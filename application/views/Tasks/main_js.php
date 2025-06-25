@@ -1678,7 +1678,7 @@
                 success: function(response) {
 
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1701,7 +1701,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1723,7 +1723,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1745,7 +1745,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1912,7 +1912,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3599,7 +3599,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3622,7 +3622,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3645,7 +3645,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://crm.tejasloan.com/direct-document-file/" + response['file_name']);
+                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -5232,7 +5232,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
         }
 
         var encData = btoa(JSON.stringify(requestDetails));
-        url = "https://payments.tejasloan.com/?encId=" + encData;
+        url = "https://payments.paisaonsalary.com/?encId=" + encData;
 
         try {
             $('#repaylink').val(url).select();
@@ -5561,7 +5561,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
         var remarks = $('#customer_feedfack_remarks').val();
         var reloan_flag = $('.checkbox').prop("checked");
 
-        if (reloan_flag == "") {
+        if (reloan_flag.toString() == "") {
             catchError("Please select the reloan flag.");
         } else if (remarks == "") {
             catchError("Please enter the remarks.");
@@ -5570,7 +5570,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 url: '<?= base_url("get-customer-feedback") ?>/' + lead_id,
                 type: 'POST',
                 data: {
-                    lead_id: lead_id,
+                    enc_lead_id: lead_id,
                     remarks: remarks,
                     pancard: pancard,
                     reloan_flag: reloan_flag,
@@ -5579,7 +5579,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     catchSuccess(response.msg);
-                    window.location.reload();
+                    // window.location.reload();
                 }
             });
         }
@@ -5834,32 +5834,32 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
         });
     }
 
-    function get_customer_feedback(lead_id) {
-        $.ajax({
-            url: "<?= base_url('get-customer-feedback'); ?>",
-            type: "POST",
-            data: {
-                lead_id: lead_id,
-                csrf_token
-            },
-            dataType: "json",
-            success: function(response) {
-                var i = 1;
-                $("#customer_feedback").empty();
-                $.each(response.feedback, function(index, myarr) {
-                    var html = '<table class="table table-hover">';
-                    html += '<thead>';
-                    html += '<tbody>';
-                    html += '<tr><th><b>Question : ' + i + ' ' + myarr.question + '</b></th></tr>';
-                    html += '<tr><td><b>Answer : </b>' + myarr.answer + '</td></tr>';
-                    html += '</tbody></table>';
+    // function get_customer_feedback(lead_id) {
+    //     $.ajax({
+    //         url: "<?= base_url('get-customer-feedback'); ?>",
+    //         type: "POST",
+    //         data: {
+    //             lead_id: lead_id,
+    //             csrf_token
+    //         },
+    //         dataType: "json",
+    //         success: function(response) {
+    //             var i = 1;
+    //             $("#customer_feedback").empty();
+    //             $.each(response.feedback, function(index, myarr) {
+    //                 var html = '<table class="table table-hover">';
+    //                 html += '<thead>';
+    //                 html += '<tbody>';
+    //                 html += '<tr><th><b>Question : ' + i + ' ' + myarr.question + '</b></th></tr>';
+    //                 html += '<tr><td><b>Answer : </b>' + myarr.answer + '</td></tr>';
+    //                 html += '</tbody></table>';
 
-                    $("#customer_feedback").append(html);
-                    i++;
-                });
-            }
-        });
-    }
+    //                 $("#customer_feedback").append(html);
+    //                 i++;
+    //             });
+    //         }
+    //     });
+    // }
 
     function collection_payment_verification(p_mode = "", payment_mode_id = "") {
         $.ajax({

@@ -1369,7 +1369,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
+                        <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; background:#fff;">
                     </a>
                 </div>
                 <h1>Fill Aadhaar Number</h1>
@@ -1386,7 +1386,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff;">
+                        <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; background:#fff;">
                     </a>
                 </div>
                 <p id="seccess_msg" style="color: green; font-weight: bold;"></p>
@@ -1407,7 +1407,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff">
+                        <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; background:#fff">
                     </a>
                 </div>
                 <h1>Thank You!</h1>
@@ -1622,7 +1622,7 @@ class ApiCallBackController extends CI_Controller {
                 <div class="logo_container">
                     <a href="<?= WEBSITE_URL; ?>" target="_blank">
                         <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                        <img src="https://crm.tejasloan.com/public/images/tejas-logo.svg" alt="logo" style="width: 50%; background:#fff">
+                        <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; background:#fff">
                     </a>
                 </div>
                 <div class="error-icon-container">

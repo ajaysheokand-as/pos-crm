@@ -51,7 +51,7 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
     $repayment_amount = "";
     $repayment_date = "";
     // $repayment_link = "https://www.lms.sotcrm.com/repay-loan";
-    $repayment_link = "https://tejasloan.com/repay-now";
+    $repayment_link = "https://www.paisaonsalary.com/repayloan";
     //$repayment_link = 'repay-loan';
     $type = "SMS_API";
     $api_sub_type = "SMS_NIBUS";
@@ -72,7 +72,7 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
 
     // $senderId = array("KASARC", "KASARL", "KASRCL", "KASARI", "KCREDT");
     // $senderId = array("AGRIMC", "AGRIML", "AGRMCL", "AGRIMI", "ACREDT");
-    $senderId = array("AMNFIN", "DNYFIN", "TJSLON");
+    $senderId = array("AMNFIN", "PSAONS");
 
 
     $hardcode_response = false;
@@ -138,39 +138,38 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
             if (empty($otp)) {
                 throw new Exception('Customer Name or OTP is blank.');
             }
-            $template_id = "1707174478693729870";
-            $headerId = "AMNFIN";
+            $template_id = "1707175050778121837";
+            $headerId = "PSAONS";
             // $input_message = "Dear customer, $otp is the OTP for your login at SalaryOnTime. In case you have not requested this, please contact us at info@speedoloan.com KASAR";
-            $input_message = "Dear Customer, $otp is the OTP for your login at Tejasloan. In case you have not requested this, please contact us at info@tejasloan.com Tejasloan";
+            $input_message = "Dear Customer, $otp is the OTP for your login at Paisa on Salary. In case you have not requested this, please contact us at info@paisaonsalary.in. Team Paisa on Salary";
 
         } else if ($sms_type_id == 2) {
 
             if (empty($cust_name)) {
                 throw new Exception('Customer Name is blank.');
             }
-
-            $template_id = "1707174479962608914";
-            $headerId = "TJSLON";
+            $template_id = "1707175050454439062";
+            $headerId = "PSAONS";
             // $input_message = "Dear $cust_name, Amount of Rs $repayment_amount due on $repayment_date against LAN $loan_no. Please pay using Link https://bit.ly/4dmIpMG & save on interest amount. Ignore if paid. Kasar";
-            $input_message = "Dear $cust_name, Amount of Rs. $repayment_amount due on $repayment_date against LAN $loan_no. Please pay using Link https://www.tejasloan.com/repay-now & save on interest amount. Ignore if paid. Tejasloan";
+            $input_message = "Dear $cust_name, Amount of Rs. $repayment_amount due on $repayment_date against Loan $loan_no. Please pay using Link https://www.paisaonsalary.com/repayloan & save on interest amount. Ignore if paid. Team Paisa on Salary";
             // $inputa_message = "Dear $cust_name, Amount of Rs $repayment_amount due on $repayment_date against LOAN $loan_no. Please pay using Link https://speedoloan.com/repay-now & save on interest amount. Ignore if paid. AGRIM";
             // $input_message = "Dear Mr/Ms $cust_name, you have defaulted in repayment of your Loan No. $loan_no. Please pay immediately by clicking on the link https://www.tejasloan.com/repay-now in order to avoid appropriate legal proceedings for recovery of loan including all interest and expenses by the company - Team Salarywalle";
         } else if ($sms_type_id == 3) {
             if (empty($cust_name)) {
                 throw new Exception('Customer Name is blank.');
             }
-            $template_id = "1707174480118950516";
-            $headerId = "TJSLON";
+            $template_id = "1707175049773670674";
+            $headerId = "PSAONS";
             // $input_message = "You are just 2 steps away from getting your loan amount disbursed to your account. Kindly complete your journey by clicking on https://tinyurl.com/5n8pnj6p Team KASAR";
-            $input_message = "You are just 2 steps away from getting your loan amount disbursed to your account. Kindly complete your journey by clicking on https://tejasloan.com/apply-now Team tejasloan";
+            $input_message = "You are just 2 steps away from getting your loan amount disbursed to your account. Kindly complete your journey by clicking on https://www.paisaonsalary.com/apply-now. Team Paisa on Salary";
         } else if (($sms_type_id == 4)) {
             if (empty($cust_name)) {
                 throw new Exception('Invalid Lead.');
             }
-            $template_id = "1707174478693729870";
-            $headerId = "AMNFIN";
+            $template_id = "1707175050778121837";
+            $headerId = "PSAONS";
             // $input_message = "Dear customer, 3456 is the OTP for your login at SalaryOnTime. In case you have not requested this, please contact us at info@speedoloan.com KASAR";
-            $input_message = "Dear customer, 3456 is the OTP for your login at Tejasloan. In case you have not requested this, please contact us at info@tejasloan.com Tejasloan";
+            $input_message = "Dear Customer, 3456 is the OTP for your login at Paisa on Salary. In case you have not requested this, please contact us at info@paisaonsalary.in. Team Paisa on Salary";
         }
         // print_r($template_id);
         // exit();
@@ -202,10 +201,10 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
         //     throw new Exception('Invalid sender ID.');
         // }
 
-        if ($headerId == 'AMNFIN') {
+        if ($headerId == 'PSAONS') {
             $apiData = "user=$sms_username&authkey=$sms_password&sender=$headerId&mobile=$mobile&text=$message&entityid=$entityid&templateid=$template_id&rpt=1";
             $new_url_sms = $apiUrl . $apiData;
-        } else if ($headerId == 'TJSLON') {
+        } else if ($headerId == 'AMNFIN') {
             $apiData = "user=$sms_username&authkey=$sms_password&sender=$headerId&mobile=$mobile&text=$message&entityid=$entityid&templateid=$template_id&rpt=1";
             $new_url_sms = $apiUrl . $apiData;
         } else {

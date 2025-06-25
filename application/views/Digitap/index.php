@@ -12,7 +12,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FB6900;
+            background-color: #278B65;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,7 +33,7 @@
         .container h1 {
             font-size: 24px;
             font-weight: bold;
-            color: #FB6900;
+            color: #278B65;
             margin-bottom: 15px;
         }
 
@@ -56,7 +56,7 @@
 
         .container button,
         .container a {
-            background-color: #FB6900;
+            background-color: #278B65;
             color: #fff;
             font-size: 14px;
             padding: 10px 30px;
@@ -111,9 +111,9 @@
     <!-- Aadhaar Form -->
     <div class="container" id="aadhaarForm">
         <div class="logo_container">
-            <a href="https://tejasloan.com/" target="_blank">
+            <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <h1>Fill Aadhaar Number</h1>
@@ -127,9 +127,9 @@
     <!-- OTP Form -->
     <div class="container" id="otpForm" style="display: none;">
         <div class="logo_container">
-            <a href="https://tejasloan.com/" target="_blank">
+            <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <p id="seccess_msg" style="color: green; font-weight: bold;"></p>
@@ -147,9 +147,9 @@
             <div class="tick-icon">✔</div> <!-- Green Tick -->
         </div>
         <div class="logo_container">
-            <a href="https://tejasloan.com/" target="_blank">
+            <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://crm.tejasloan.com/public/images/18-BK_kixu8.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <h1>Thank You!</h1>

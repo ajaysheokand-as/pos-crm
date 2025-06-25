@@ -1129,7 +1129,7 @@ function bre_rule_engine($lead_id, $request_array = array()) {
         $bureau_inquiry_rule_name = "Inquiries in last 30 days";
         $bureau_inquiry_rule_cutoff_value = "Inquiries <= 3";
         $bureau_inquiry_rule_actual_value = "";
-        $bureau_inquiry_rule_relevant_inputs = ["inquiries_last_1_months" => $inquiries_last_6_months];
+        $bureau_inquiry_rule_relevant_inputs = ["inquiries_last_6_months" => $inquiries_last_6_months];
         $bureau_inquiry_rule_system_decision_id = 0;
         $bureau_inquiry_rule_manual_decision_id = 0;
 

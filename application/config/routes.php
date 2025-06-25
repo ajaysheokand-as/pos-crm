@@ -374,7 +374,7 @@ $route['insert-lead-collection-followup'] = 'CollectionController/insert_loan_co
 $route['get-followup-template-lists'] = 'CollectionController/get_followup_template_lists';
 
 $route['get-visit-request-lists/(:any)'] = 'CollectionController/get_visit_request_lists/$1';
-$route['get-customer-feedback/(:any)'] = 'CollectionController/get_customer_feedback';
+$route['get-customer-feedback/(:any)'] = 'CollectionController/save_reloan_collection_feedback';
 $route['get-legal-notice/(:any)'] = 'CollectionController/get_legal_notice/$1';
 $route['send-legal-notice'] = 'TaskController/sendLegalnotice';
 $route['view-legal-notice/(:any)'] = 'TaskController/viewLegalnotice/$1';

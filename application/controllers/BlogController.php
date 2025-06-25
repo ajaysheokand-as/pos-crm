@@ -188,7 +188,7 @@ class BlogController extends CI_Controller {
                     $request_array['flag'] = 0;
                     $request_array['new_file_name'] = '';
                     // $request_array['bucket_name'] = 'sot-website';
-                    $request_array['bucket_name'] = 'tejasloanbucket';
+                    $request_array['bucket_name'] = 'paisaonsalarybucket';
 
                     if (!empty($_FILES['wb_thumb_image_url']['name'])) {
                         $request_array['file'] = $_FILES['wb_thumb_image_url'];
@@ -419,7 +419,7 @@ class BlogController extends CI_Controller {
                             $CommonComponent = new CommonComponent();
                             $request_array['flag'] = 0;
                             $request_array['new_file_name'] = '';
-                            $request_array['bucket_name'] = 'tejasloanbucket';
+                            $request_array['bucket_name'] = 'paisaonsalarybucket';
 
                             if (!empty($_FILES['wb_thumb_image_url']['name'])) {
                                 $request_array['file'] = $_FILES['wb_thumb_image_url'];

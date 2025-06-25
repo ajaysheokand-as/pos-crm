@@ -344,7 +344,7 @@ div.spinner {
     background : #35b7c4;
 
     color : #fff;
-    border: 1px solid #000080;
+    border: 1px solid #000;
 }
 
 
@@ -644,7 +644,7 @@ div.spinner {
     /*padding: 10px;*/
     /*border-radius: 100px;*/
     /*color: #ffffff;*/
-    color: #000080;
+    color: #000;
     /*height: 64px*/
     /*width: 64px;*/
     /*line-height: 48px;*/
@@ -652,7 +652,7 @@ div.spinner {
 }
 
 .lead-box:hover i {
-    color: #0063B9;
+    color: #278B65;
 }
 
 .lead-box span{
@@ -664,7 +664,7 @@ div.spinner {
     padding: 5px 0px;
     /*padding: 20px 0px;*/
     /*color: #000;*/
-    color: #000080;
+    color: #000;
     /* color: #FB6900; */
     /*border-radius: 9px 10px 0 0;*/
     /*height: 100px; */
@@ -1034,54 +1034,11 @@ div.spinner {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------- footer ------------------*/
 
 footer{
 
-    background: #0063B9;
+    background: #278B65;
     color: #a2abb7;
     position: fixed;
     left: 234px;
@@ -1278,10 +1235,10 @@ footer{
     position: relative;
     display: block;
     padding: 0px 2px !important;
-    background: #000080;
+    background: #000;
     margin-right: 1.22%;
     border-radius: 4px;
-    border: 1px solid #000080;
+    border: 1px solid #000;
 }
 li.borderList.active {
     background: #bababa;
@@ -1395,9 +1352,9 @@ li.borderList.active {
 
 {
 
-    background-color: #000080 !important;
+    background-color: #000 !important;
 
-    border-color: #000080  !important;
+    border-color: #000  !important;
 
     width:100%;
 
@@ -1618,7 +1575,7 @@ li.borderList.active {
 {
     float: left !important;
     padding: 8px 10px !important;
-    background: #000080 !important;
+    background: #000 !important;
     color: #fff !important;
     border-radius: 4px !important;
     width: 115px !important;
@@ -1626,7 +1583,7 @@ li.borderList.active {
     font-size: 16px !important;
     margin-top: 9px !important;
     margin-left: 6px !important;
-    border: 1px solid #000080 !important;
+    border: 1px solid #000 !important;
 }
 
 
@@ -1877,7 +1834,7 @@ input:checked + .slider:before {
 }
 .tooltip .fa
 {
-    color: #000080;
+    color: #000;
     font-size: 16px;
 }
 
@@ -1960,8 +1917,8 @@ input:checked + .slider:before {
 
 
 .drop-me .panel-default>.panel-heading {
-    background-color: #000080 !important;
-    border-color: #000080 !important;
+    background-color: #000 !important;
+    border-color: #000 !important;
     padding: 13px;
     min-width: 165px;
 }
@@ -2267,10 +2224,10 @@ ul.list-group li a:hover, ul li a:focus {
 .lead-box {
     /*background: #0a425a;*/
     /*color: #fff;*/
-    color: #000080;
+    color: #1a1a1a;
     padding: 0 8px;
     margin-bottom: 0;
-    border: 1px solid #000080;
+    border: 1px solid #1a1a1a;
     align-items: center;
     display: grid;
     /*box-shadow: 0 20px 20px -16px rgb(0 0 0 / 38%);*/
@@ -2281,7 +2238,7 @@ ul.list-group li a:hover, ul li a:focus {
     content: '';
     height: 80%;
     width: 1.1rem;
-    background-color: #000080;
+    background-color: #1a1a1a;
     position: absolute;
     right: 0%;
     top: 10%;
@@ -2950,9 +2907,9 @@ details[open] summary::before {
 }
 #userSaction{
     a {
-        color: blue !important;
+        color: black !important;
     }
 }
 .page-item a{
-    color: #000080 !important;
+    color: #000 !important;
 }

@@ -34,7 +34,7 @@ $config['verify_peer'] = TRUE;
 */
 
 // $config['access_key'] = 'AKIAXEVXYIVMRIOWP3MO';
-$config['access_key'] = 'AKIASE5KQZXHCBU65I6O';
+$config['access_key'] = 'AKIAV72EG5TGUPEWVYJC';
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ $config['access_key'] = 'AKIASE5KQZXHCBU65I6O';
 */
 
 // $config['secret_key'] = 'awlWUgbMYfWJFRe4ZqdHnrIcmZfMJuOorHT4ZXiS';
-$config['secret_key'] = 'CHd7MQF79xIi50vIP4G1A/BD52OF0+dyDmFp7xCd';
+$config['secret_key'] = 'yKAIpQgcgw2WGnpLPGcRnKRizHDMxpkcrO9kmkQr';
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +58,7 @@ $config['secret_key'] = 'CHd7MQF79xIi50vIP4G1A/BD52OF0+dyDmFp7xCd';
 */
 
 // $config['bucket_name'] = 'sot-documents';
-$config['bucket_name'] = 'tejasloanbucket';
+$config['bucket_name'] = 'paisaonsalarybucket';
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ $config['folder_name'] = 'upload';
 */
 
 // $config['s3_url'] = 's3://sot-documents/upload/';
-$config['s3_url'] = 's3://tejasloanbucket/upload/';
+$config['s3_url'] = 's3://paisaonsalarybucket/upload/';
 
 /*
 |--------------------------------------------------------------------------

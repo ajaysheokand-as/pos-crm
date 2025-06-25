@@ -20,8 +20,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Log In</title>
-        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/tejas-logo.png">
+		<title>Log In | CRM - Paisa On Salary</title>
+        <link rel="icon" type="image/*" href="<?= base_url('public'); ?>/images/final_fav.png">
        
 		<link rel="stylesheet preload" href="<?= base_url('public'); ?>/css/style.css">
 		<script src="<?= base_url('public/front'); ?>/js/jquery.3.5.1.min.js"></script>
@@ -97,7 +97,7 @@
                 <div class="toggle-panel toggle-right">
                     <div class="logo">
                         <!-- <img src="<?= base_url('public'); ?>/images/final_logo.png"> -->
-                        <img src="<?= base_url('public'); ?>/images/logo-white.svg">
+                        <img src="<?= base_url('public'); ?>/images/final_logo.png">
                     </div>
                     <h1>Welcome Back !</h1>
                     <p>Please log in using your credentials

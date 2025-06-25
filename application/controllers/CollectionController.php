@@ -1679,6 +1679,7 @@ class CollectionController extends CI_Controller {
             } else {
 
                 $lead_id = intval($this->encrypt->decode($this->input->post('enc_lead_id')));
+                
 
                 if (!empty($lead_id)) {
 
@@ -1690,15 +1691,7 @@ class CollectionController extends CI_Controller {
 
                         $remarks = $this->input->post('remarks');
                         $reloan_flag = $this->input->post('reloan_flag');
-
-                        $reloan_data = [
-                            'customer_executive_reloan_flag' => $reloan_flag,
-                            'customer_executive_reloan_remark' => addslashes($remarks),
-                            'customer_executive_reloan_user_id' => $user_id,
-                            'customer_executive_reloan_datetime' => date("Y-m-d H:i:s")
-                        ];
-
-                        $this->db->where('customer_lead_id', $lead_id)->update('lead_customer', $reloan_data);
+                        $reloan_flag = $reloan_flag == 'true' ? 1 : 0;
 
                         if (!empty($leadDetails['pancard'])) {
 
@@ -1706,10 +1699,23 @@ class CollectionController extends CI_Controller {
                                 'cif_executive_reloan_flag' => $reloan_flag,
                                 'cif_executive_reloan_remark' => $remarks,
                                 'cif_executive_reloan_user_id' => $user_id,
-                                'cif_executive_reloan_datetime' => date("Y-m-d H:i:s")
                             ];
 
                             $this->db->where('cif_pancard', $leadDetails['pancard'])->update('cif_customer', $cif_data);
+                        }
+                        
+                        $update_loan_array = [
+                        'loan_executive_reloan_flag'=> $reloan_flag,
+                        'loan_executive_reloan_remark'=> $remarks,
+                        'loan_executive_reloan_user_id'=> $_SESSION['isUserSession']['user_id']
+                        ];
+
+                        $result = $this->Tasks->globalUpdate(['lead_id' => $lead_id], $update_loan_array, 'loan');
+
+                        if(empty($result)) {
+                            $result['err'] = "Customer Feedback can not be added.";
+                            echo json_encode($result);
+                            exit;
                         }
 
                         $remarks = 'Eligible For Reloan : ' . ($reloan_flag == 1 ? "YES" : "NO") . '<br>Remarks : ' . $remarks;

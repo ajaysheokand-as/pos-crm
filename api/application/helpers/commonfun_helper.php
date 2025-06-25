@@ -324,7 +324,7 @@ if (!function_exists('lw_send_email')) {
         } else {
 
             if (empty($from_email)) {
-                $from_email = "noreply@tejasloan.com";
+                $from_email = "info@paisaonsalary.in";
             }
 
             $ci = &get_instance();
@@ -334,7 +334,7 @@ if (!function_exists('lw_send_email')) {
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.zeptomail.in";
                 $config['smtp_user'] = "emailapikey";
-                $config['smtp_pass'] = "PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==";
+                $config['smtp_pass'] = "PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==";
                 $config['smtp_port'] = 587;
                 $config['smtp_crypto'] = 'tls';
                 $config['mailtype'] = "html";
@@ -369,7 +369,7 @@ if (!function_exists('lw_send_email')) {
             } else if ($active_id == 2) {
 
                 if (empty($from_email)) {
-                    $from_email = "noreply@tejasloan.com";
+                    $from_email = "info@paisaonsalary.in";
                 }
 
                 $apiUrl = "https://api.zeptomail.in/v1.1/email";
@@ -377,7 +377,7 @@ if (!function_exists('lw_send_email')) {
                 $emailData = array(
                     "from" => [
                         "address" => $from_email,
-                        "name" => "Tajas Loan"
+                        "name" => "Paisa On Salary"
                     ],
                     "to" => [
                         ["email_address" => ["address" => $to_email]]
@@ -393,7 +393,7 @@ if (!function_exists('lw_send_email')) {
                 }
 
                 $apiHeaders = array(
-                    "Authorization:Zoho-enczapikey PHtE6r0OF+DjiWB59hlT46LpEc/1Y4wr/+NmLlETttkUW/QAHU1U/Y96xjTm+kwvU/hGF/+byo1subrOu+OAdG7pZ25EVGqyqK3sx/VYSPOZsbq6x00fuFsadEDVUoXpd95o1yXWs9neNA==",
+                    "Authorization:Zoho-enczapikey PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==",
                     "Content-Type: application/json",
                     "Accept: application/json",
                 );
@@ -421,10 +421,10 @@ if (!function_exists('lw_send_email')) {
             } else {
 
                 if (empty($from_email)) {
-                    $from_email = "noreply@tejasloan.com";
+                    $from_email = "info@paisaonsalary.in";
                 }
 
-                $domain = "fintechcloud.in";
+                $domain = "paisaonsalary.in";
 
                 $ip = gethostbyname($domain);
 
