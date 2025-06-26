@@ -236,7 +236,7 @@ class CAMController extends CI_Controller {
         $monthly_salary = doubleval($input['monthly_salary']);
         $eligible_foir_percentage = doubleval($input['eligible_foir_percentage']);
         $roi = ($input['roi'] ? doubleval($input['roi']) : 1);
-        $processing_fee_percent = ($input['processing_fee_percent']) ? doubleval($input['processing_fee_percent']) : 15;
+        $processing_fee_percent = ($input['processing_fee_percent']) ? doubleval($input['processing_fee_percent']) : 0;
         $disbursal_date = $input['disbursal_date'];
         $repayment_date = $input['repayment_date'];
 
@@ -249,23 +249,19 @@ class CAMController extends CI_Controller {
         }
 
         $admin_fee = round(($loan_recommended * $processing_fee_percent) / 100);
-        $adminFeeWithoutGst = round(($admin_fee / 1.18));
-        // $gst = round(($admin_fee * 18) / 100);
-        $gst = $admin_fee - $adminFeeWithoutGst;
-        // $total_admin_fee = round($admin_fee + $gst);
-        $total_admin_fee = round($admin_fee - $gst);
-
+        $gst = round(($admin_fee * 18) / 100);
+        $total_admin_fee = round($admin_fee + $gst);
 
         $repayment_amount = ($loan_recommended + ($loan_recommended * $roi * $tenure) / 100);
 
         $data['roi'] = $roi;
         $data['tenure'] = $tenure;
         $data['repayment_amount'] = round($repayment_amount);
-        $data['admin_fee'] = $admin_fee;
+        $data['admin_fee'] = $total_admin_fee;
         $data['adminFeeWithGST'] = $gst;
         $data['adminFeeGST'] = $gst;
-        $data['total_admin_fee'] = $total_admin_fee;
-        $data['net_disbursal_amount'] = $loan_recommended - $admin_fee;
+        $data['total_admin_fee'] = $admin_fee;
+        $data['net_disbursal_amount'] = $loan_recommended - $total_admin_fee;
         $data['final_foir_percentage'] = number_format((($loan_recommended + $obligations) / $monthly_salary) * 100, 2);
         $data['foir_enhanced_by'] = number_format($data['final_foir_percentage'] - $eligible_foir_percentage, 2);
 

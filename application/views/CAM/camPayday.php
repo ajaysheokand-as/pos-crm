@@ -162,7 +162,7 @@
 
             <div class="col-md-6">
                 <label class="labelField">Processing Fee (%)&nbsp;<strong class="required_Fields">*</strong></label>
-                <input type="text" class="form-control inputField" id="processing_fee_percent" name="processing_fee_percent" onchange="calculateAmount()" value="15.00" min="0" max="20.00" autocomplete="off">
+                <input type="text" class="form-control inputField" id="processing_fee_percent" name="processing_fee_percent" onchange="calculateAmount()" value="10.00" min="0" max="20.00" autocomplete="off">
             </div> 
 
             <div class="col-md-6">
@@ -172,11 +172,11 @@
                     </div>
 
                     <div class="col-md-2" style="padding-left: 0px;">
-                        <input type="text" class="form-control inputField" id="roi" name="roi" value="0.75" min="0.00" max="1.00" onchange="calculateAmount()" autocomplete="off" style="width:100% !important;">
+                        <input type="text" class="form-control inputField" id="roi" name="roi" value="1" min="0.00" max="1.00" onchange="calculateAmount()" autocomplete="off" style="width:100% !important;">
                     </div>
 
                     <div class="col-md-6">
-                        <label class="labelField">APR (%) :&nbsp;<span id="apr_percentage">182.5</span></label>
+                        <label class="labelField">APR (%) :&nbsp;<span id="apr_percentage">365</span></label>
                     </div>
                 </div>
             </div>
@@ -223,7 +223,7 @@
 
             <div class="col-md-6">
                 <label class="labelField">Penal ROI</label>
-                <input type="number" class="form-control inputField" id="panel_roi" name="panel_roi" autocomplete="off" value="1" readonly>
+                <input type="number" class="form-control inputField" id="panel_roi" name="panel_roi" autocomplete="off" value="2" readonly>
             </div>
 
             <div class="col-md-6">
