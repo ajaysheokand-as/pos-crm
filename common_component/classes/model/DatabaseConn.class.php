@@ -8,14 +8,20 @@ class DatabaseConn {
     var $auditFlg = false;
     var $file_log_active = false;
     var $file_database_logger_name = null;
-    var $database_server = 'tejasloan.cl0m6imso9v5.ap-south-1.rds.amazonaws.com';
-    var $database_username = 'admin';
-    var $database_password = 'Ane21092011!#';
-    var $database_name = 'tejasloan';
+
+    var $database_server;
+    var $database_username;
+    var $database_password;
+    var $database_name;
+
 
 
     public function __construct() {
 
+        $this->database_server = getenv('DB_HOST') ?: "localhost";
+        $this->database_username = getenv('DB_USER') ?: "root";
+        $this->database_password = getenv('DB_PASSWORD') ?: "";
+        $this->database_name = getenv('DB_NAME') ?: "pos-db";
         if ($this->file_log_active) {
             $this->file_database_logger_name = "system_db_query_" . date("YmdH") . ".log";
         }

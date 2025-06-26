@@ -317,7 +317,7 @@ if (!function_exists('lw_send_email')) {
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.zeptomail.in";
                 $config['smtp_user'] = "emailapikey";
-                $config['smtp_pass'] = "PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==";
+                $config['smtp_pass'] = getenv("ZEPTO_MAIL_PASS");
                 $config['smtp_port'] = 587;
                 $config['smtp_crypto'] = 'tls';
                 $config['mailtype'] = "html";
@@ -409,7 +409,7 @@ if (!function_exists('lw_send_email')) {
                 }
 
                 $apiHeaders = array(
-                    "Authorization:Zoho-enczapikey PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==",
+                    "Authorization:Zoho-enczapikey ".getenv("ZEPTO_MAIL_PASS"),
                     "Content-Type: application/json",
                     "Accept: application/json",
                 );
@@ -439,7 +439,7 @@ if (!function_exists('lw_send_email')) {
                 $config['protocol'] = "smtp";
                 $config['smtp_host'] = "smtp.zeptomail.in";
                 $config['smtp_user'] = "emailapikey";
-                $config['smtp_pass'] = "PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==";
+                $config['smtp_pass'] = getenv("ZEPTO_MAIL_PASS");
                 $config['smtp_port'] = 587;
                 $config['smtp_crypto'] = 'tls';
                 $config['mailtype'] = "html";
@@ -528,7 +528,7 @@ if (!function_exists('lw_send_email')) {
                 }
 
                 $apiHeaders = array(
-                    "Authorization:Zoho-enczapikey PHtE6r0FRri63WIm9hgE5vPtQ5H3PYop+b4yegIWtYsWAvMCH01dr94qlTHjr08jAfUWEvLIz95tsOue5uyGLGa+Mm1KWGqyqK3sx/VYSPOZsbq6x00fuFkddUzaVoHmdd9p0yzRudjbNA==",
+                    "Authorization:Zoho-enczapikey ".getenv("ZEPTO_MAIL_PASS"),
                     "Content-Type: application/json",
                     "Accept: application/json",
                 );

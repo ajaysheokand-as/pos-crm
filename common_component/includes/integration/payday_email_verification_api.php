@@ -177,7 +177,7 @@ function office_email_verification_api_call($method_id, $lead_id = 0, $request_a
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ObUb9uyt6VFVli8bFSw1BFiXMifComc43Djj8uflfXUjhfYd3uF9YgSIMQjEgmCo',
-                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
+                'Authorization: '.getenv('SIGNGY_API_KEY'),
                 'Content-Type: application/json'
               ),
             ));
@@ -441,7 +441,7 @@ function persional_email_verification_api_call($method_id, $lead_id = 0, $reques
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
+                'Authorization: '.getenv('SIGNGY_API_KEY'),
                 'Content-Type: application/json'
               ),
             ));
@@ -976,7 +976,7 @@ function signzy_email_verification_api_call($method_id, $lead_id = 0, $request_a
             }',
               CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
-                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
+                'Authorization: '.getenv('SIGNGY_API_KEY'),
                 'Content-Type: application/json'
               ),
             ));

@@ -103,32 +103,33 @@ defined('CC_DISBURSAL_WAIVE_EMAIL') or define('CC_DISBURSAL_WAIVE_EMAIL', 'info@
 
 defined('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL') or define('TO_KYC_DOCS_ZIP_DOWNLOAD_EMAIL', 'info@paisaonsalary.in');
 
-define("COMPONENT_PATH", "/var/www/html/common_component/");
-define("UPLOAD_PATH", "/var/www/html/uploads/");
-define("UPLOAD_LEGAL_PATH", "/var/www/html/uploads/");
-define("UPLOAD_SETTLEMENT_PATH", "/var/www/html/uploads/");
-define("UPLOAD_RECOVERY_PATH", "/var/www/html/uploads/");
-define("TEMP_UPLOAD_PATH", "/var/www/html/temp_upload/");
-define("UPLOAD_DISBURSAL_PATH", "/var/www/html/uploads/");
+define("WWW_PATH",getenv("WWW_PATH") ?? "/var/www/html/");
+define("COMPONENT_PATH", WWW_PATH."common_component/");
+define("UPLOAD_PATH", WWW_PATH."uploads/");
+define("UPLOAD_LEGAL_PATH", WWW_PATH."uploads/");
+define("UPLOAD_SETTLEMENT_PATH", WWW_PATH."uploads/");
+define("UPLOAD_RECOVERY_PATH", WWW_PATH."uploads/");
+define("TEMP_UPLOAD_PATH", WWW_PATH."temp_upload/");
+define("UPLOAD_DISBURSAL_PATH", WWW_PATH."uploads/");
 
 define("LMS_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical store.
 
 
 //define("LOANS_KYC_DOCS", "/kycdocs/loans/");
 
-define("FEEDBACK_WEB_PATH", "https://paisaonsalary.in/customer-feedback/");
+define("FEEDBACK_WEB_PATH", (getenv("WEBSITE_URL") ?? "http://localhost/pos1/")."customer-feedback/");
 
 // ********** API URL DEFINE *****
 
 // defined('SERVER_API_URL') or define('SERVER_API_URL', "https://api.sotcrm.in"); //SERVER API URL
-defined('SERVER_API_URL') or define('SERVER_API_URL', "https://lms.paisaonsalary.in/api/"); //SERVER API URL
+defined('SERVER_API_URL') or define('SERVER_API_URL',  getenv("SERVER_API_URL") ?? "http://localhost/pos1/api/"); //SERVER API URL
 
 // ********** LMS DEFINED VARIABLE *****
 
 // define("LMS_URL", "https://sotcrm.in/");
-define("LMS_URL", "https://lms.paisaonsalary.in/");
-define("WEBSITE_URL", "https://paisaonsalary.in/");
-define("WEBSITE", "paisaonsalary.com");
+define("LMS_URL", getenv("WEBSITE_URL"));
+define("WEBSITE_URL", getenv("WEBSITE_URL"));
+define("WEBSITE", getenv("WEBSITE"));
 define("WEBSITE_UTM_SOURCE", WEBSITE_URL . "apply-now?utm_source=");
 
 // define("LMS_COMPANY_LOGO", LMS_URL . "public/front/img/company_logo.png");
@@ -138,19 +139,19 @@ define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/final_logo.png");
 // define("LMS_BRAND_LOGO", LMS_URL . "public/front/img/brand_logo.jpg");
 define("LMS_BRAND_LOGO", LMS_URL . "public/images/final_logo.png");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
-define("COMPANY_NAME", "AMAN FINCAP LIMITED");
+define("COMPANY_NAME", getenv('COMPANY_NAME'));
 define("RBI_LICENCE_NUMBER", "B-14.01785");
-define('CONTACT_PERSON', 'Janvi');
+define('CONTACT_PERSON', 'Manish');
 define("REGISTED_ADDRESS", "88-E 2nd Floor Near Punjab and Sind Bank, Jindal Chowk Hisar, Haryana 125001");
 define("REGISTED_MOBILE", "+91-9588534824");
 define("BRAND_NAME", "Paisa On Salary");
 
-define("TECH_EMAIL", "tech@paisaonsalary.in");
-define("INFO_EMAIL", "info@paisaonsalary.in");
-define("CARE_EMAIL", "care@paisaonsalary.in");
-define("RECOVERY_EMAIL", "recovery@paisaonsalary.in");
-define("COLLECTION_EMAIL", "collection@paisaonsalary.in");
-define("CTO_EMAIL", "tech@paisaonsalary.in");
+define("TECH_EMAIL", getenv("TECH_EMAIL"));
+define("INFO_EMAIL", getenv("INFO_EMAIL"));
+define("CARE_EMAIL", getenv("CARE_EMAIL"));
+define("RECOVERY_EMAIL", getenv(getenv("RECOVERY_EMAIL")));
+define("COLLECTION_EMAIL", getenv("COLLECTION_EMAIL"));
+define("CTO_EMAIL", getenv("TECH_EMAIL"));
 
 // ********** TEMPLETE DEFINED VARIABLE *****
 
@@ -248,7 +249,7 @@ define("FESTIVAL_LINE", WEBSITE_URL . "public/paisaonsalary.in/emailimages/festi
 define("BLOG", WEBSITE_URL . "public/blog/");
 
 // define("WEBSITE_DOCUMENT_BASE_URL", "https://sot-website.s3.ap-south-1.amazonaws.in/upload/");
-define("WEBSITE_DOCUMENT_BASE_URL", "https://paisaonsalarybucket.s3.ap-south-1.amazonaws.in/upload/");
+define("WEBSITE_DOCUMENT_BASE_URL", "https://".getenv('S3_BUCKET_NAME').".s3.ap-south-1.amazonaws.in/".getenv("S3_BUCKET_FOLDER")."/");
 
 
 $xco_path = 'common_component';

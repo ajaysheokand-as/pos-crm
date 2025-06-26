@@ -75,10 +75,6 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 /* if ($_SERVER['HTTP_HOST']=='localhost') {
-  $server = 'localhost';
-  $username = 'root';
-  $password = '';
-  $database = 'fintechc_lms';
   }else{ */
 //$server = 'localhost';
 //$username = 'loan24sevenin_admin';
@@ -116,10 +112,10 @@ $query_builder = TRUE;
 // $password = '@168&6kjdfsfgbhh@#';
 // $database = 'lms_sotcrm';
 
-$server = 'tejasloan.cl0m6imso9v5.ap-south-1.rds.amazonaws.com';
-$username = 'admin';
-$password = 'Ane21092011!#';
-$database = 'tejasloan';
+$server   =   getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_NAME');
 
 $db['default'] = array(
     'dsn' => '',

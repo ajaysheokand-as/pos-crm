@@ -111,7 +111,7 @@ if (!function_exists('integration_config')) {
 
                 if ($envSet == "production") {
                     // $config_arr['ApiToken'] = "API://+zRrr3yyzbayo2Q4478Ji+y4YdY9MmlNPOKJx8WVP15Qb2bgwxFqrn7K0LgWIly1"; // New key
-                    $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb"; // New key
+                    $config_arr['ApiToken'] = getenv('CARTBI_API_TOKEN'); // New key
                 }
 
                 if ($api_sub_type == "UPLOAD_DOC") {
@@ -178,10 +178,10 @@ if (!function_exists('integration_config')) {
                 $config_arr['ApiPassword'] = "";
 
                 if ($api_sub_type == "NUPAY_AUTH_TOKEN") {
-                    $config_arr['ApiKey'] = "YzE2YTUzMjNmYTQ3NTUiMGQ5NTgzYzM0ZmQzNTZU";
+                    $config_arr['ApiKey'] = getenv('NUPAY_PENNY_DROP_API_KEY');
                     $config_arr['ApiUrl'] = "https://nupaybiz.com/Auth/token";
                 } else if ($api_sub_type == "NUPAY_PENNY_DROP") {
-                    $config_arr['ApiKey'] = "YzE2YTUzMjNmYTQ3NTUiMGQ5NTgzYzM0ZmQzNTZU";
+                    $config_arr['ApiKey'] = getenv('NUPAY_PENNY_DROP_API_KEY');
                     $config_arr['ApiUrl'] = "https://nupaybiz.com/api/Validate/getAccountVerificationWithIFSC";
                 }
                 break;

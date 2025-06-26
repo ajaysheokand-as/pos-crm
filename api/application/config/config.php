@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   |
  */
 
-$config['base_url'] = 'https://lms.paisaonsalary.in/';
+$config['base_url'] = defined('WEBSITE_URL') ? WEBSITE_URL :'https://lms.paisaonsalary.in/';
 // $config['base_url'] = 'https://api.sotcrm.com/';
 
 // define("UPLOAD_PATH", "/var/www/html/tejasloan-backend/uploads/");

@@ -45,7 +45,7 @@ $config['access_key'] = 'AKIAV72EG5TGUPEWVYJC';
 |
 */
 // $config['secret_key'] = 'awlWUgbMYfWJFRe4ZqdHnrIcmZfMJuOorHT4ZXiS';
-$config['secret_key'] = 'yKAIpQgcgw2WGnpLPGcRnKRizHDMxpkcrO9kmkQr';
+$config['secret_key'] = getenv('AWS_SECRET_KEY');
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ $config['secret_key'] = 'yKAIpQgcgw2WGnpLPGcRnKRizHDMxpkcrO9kmkQr';
 */
 
 // $config['bucket_name'] = 'sot-documents';
-$config['bucket_name'] = 'paisaonsalarybucket';
+$config['bucket_name'] = getenv('S3_BUCKET_NAME');
 
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ $config['bucket_name'] = 'paisaonsalarybucket';
 |
 */
 
-$config['folder_name'] = 'upload';
+$config['folder_name'] = getenv( 'S3_BUCKET_FOLDER');
 
 /*
 |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ $config['folder_name'] = 'upload';
 */
 
 // $config['s3_url'] = 's3://sot-documents/upload/';
-$config['s3_url'] = 's3://paisaonsalarybucket/upload/';
+$config['s3_url'] = 's3://'.$config['bucket_name']."/".$config['folder_name']."/";
 
 /*
 |--------------------------------------------------------------------------

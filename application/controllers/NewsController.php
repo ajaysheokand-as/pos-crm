@@ -126,7 +126,7 @@ class NewsController extends CI_Controller {
                     $CommonComponent = new CommonComponent();
                     $request_array['flag'] = 0;
                     $request_array['new_file_name'] = '';
-                    $request_array['bucket_name'] = 'paisaonsalarybucket';
+                    $request_array['bucket_name'] = getenv('S3_BUCKET_NAME');
 
                     if (!empty($_FILES['news_thumb_image_url']['name'])) {
                         $request_array['file'] = $_FILES['news_thumb_image_url'];
@@ -212,7 +212,7 @@ class NewsController extends CI_Controller {
                             $CommonComponent = new CommonComponent();
                             $request_array['flag'] = 0;
                             $request_array['new_file_name'] = '';
-                            $request_array['bucket_name'] = 'paisaonsalarybucket';
+                            $request_array['bucket_name'] =  getenv('S3_BUCKET_NAME');
 
                             if (!empty($_FILES['news_thumb_image_url']['name'])) {
                                 $request_array['file'] = $_FILES['news_thumb_image_url'];

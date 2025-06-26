@@ -24,10 +24,10 @@ function integration_config($api_type = "", $api_sub_type = "") {
             // $config_arr['ApiMemberId'] = "NBF0005339";
             // $config_arr['ApiSubMemberId'] = "AGRIM FINCAP PRIVATE LIMITED";
 
-            $config_arr['ApiUserId'] = "Ajaycirpro_prd@amanfincap.com";
-            $config_arr['ApiPassword'] = "B4724C9A8DCE18EB030902094FDD295CD5B50A91";
-            $config_arr['ApiMemberId'] = "NBF0001850";
-            $config_arr['ApiSubMemberId'] = "AMAN FINCAP LIMITED";
+            $config_arr['ApiUserId'] = getenv("CRIF_USER_ID");
+            $config_arr['ApiPassword'] = getenv("CRIF_PASSWORD");
+            $config_arr['ApiMemberId'] = getenv("CRIF_MEMBER_ID");
+            $config_arr['ApiSubMemberId'] = getenv("CRIF_MEMBER_NAME");
 
             // $config_arr['RPMiddleWareUrl'] = "";
             // if ($envSet == "production") {
@@ -41,7 +41,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
             if ($api_sub_type == "REQUEST_JSON") {
                 if ($envSet == "development") {
                     // $config_arr['ApiUrl'] = "https://hub.crifhighmark.com/Inquiry/doGet.service/requestResponseSync";
-                    $config_arr['ApiUrl'] = "https://hub.crifhighmark.com/Inquiry/doGet.service/requestResponseSync";
+                    $config_arr['ApiUrl'] = "https://test.crifhighmark.com/Inquiry/doGet.service/requestResponseSync";
                 } else if ($envSet == "production") {
                     // $config_arr['ApiUrl'] = "https://hub.crifhighmark.com/Inquiry/doGet.service/requestResponseSync";
                     $config_arr['ApiUrl'] = "https://hub.crifhighmark.com/Inquiry/doGet.serviceJson/CIRProServiceSynchJson";
@@ -60,8 +60,8 @@ function integration_config($api_type = "", $api_sub_type = "") {
                 // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
                 // $config_arr['ApiUserId'] = "amit@agrimfin.com";
                 // $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
-                $config_arr['ApiUserId'] = "vivek@salary4sure.com";
-                $config_arr['ApiPassword'] = "k6FAUrbcNyDJaWhTQqQR";
+                $config_arr['ApiUserId'] = getenv("SIGNGY_API_USER_ID");
+                $config_arr['ApiPassword'] = getenv('SIGNGY_API_PASSWORD');
                 $config_arr['RPMiddleWareUrl'] = "";
                 // $envSet = "production";
                 if ($envSet == "production") {
@@ -70,10 +70,10 @@ function integration_config($api_type = "", $api_sub_type = "") {
                     // $config_arr['ApiPassword'] = "A1UrUUHE3ezATzr2C3u0";
                     // $config_arr['ApiUserId'] = "amit@agrimfin.com";
                     // $config_arr['ApiPassword'] = "97j0rJp7CcqkzwWCwqhY";
-                    $config_arr['ApiUserId'] = "vivek@salary4sure.com";
-                    $config_arr['ApiPassword'] = "k6FAUrbcNyDJaWhTQqQR";
+                    $config_arr['ApiUserId'] = getenv("SIGNGY_API_USER_ID");
+                    $config_arr['ApiPassword'] = getenv('SIGNGY_API_PASSWORD');
                     // $config_arr['ApiKey'] = "ScTTTviEmhU1EPT79VM6QV9NUHImPkBm";
-                    $config_arr['ApiKey'] = "20YobI629zAm00OqQL3CVsbsJCYDAJu1";
+                    $config_arr['ApiKey'] = getenv('SIGNGY_API_KEY');
                 }
     
                 if ($api_sub_type == "GET_TOKEN") {
@@ -318,12 +318,12 @@ function integration_config($api_type = "", $api_sub_type = "") {
 
             // $config_arr['ApiToken'] = "API://ofbJDI/UjZYuUhxFOTYLsoxhi5Jy2OKz22hiKICrt2/88/NrejmPFWsdg4yYy1IC";
             // $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD";
-            $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb";
+            $config_arr['ApiToken'] = getenv('CARTBI_API_TOKEN');
 
             if ($envSet == "production") {
                 // $config_arr['ApiToken'] = "API://ofbJDI/UjZYuUhxFOTYLsoxhi5Jy2OKz22hiKICrt2/88/NrejmPFWsdg4yYy1IC"; // New key
                 // $config_arr['ApiToken'] = "API://ZA86NPP9OxWtsZag8sLwkymwnmMuk6XxEJ1LmZCT4GEY/7glhJhunUJvkL6/FlkD"; // New key
-                $config_arr['ApiToken'] = "API://2usi98zZoXygumUjqT8tzdfY16GwQi8Hdi6f9Euxz+91hbClpM5IdhK9KBc1pjLb"; // New key
+                $config_arr['ApiToken'] = getenv('CARTBI_API_TOKEN'); // New key
             }
 
             if ($api_sub_type == "UPLOAD_DOC") {
@@ -362,12 +362,12 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['use_ssl'] = '1';
             $config_arr['verify_peer'] = '1';
             $config_arr['version'] = 'latest';
-            $config_arr['region'] = 'ap-south-1';
-            $config_arr['access_key'] = 'AKIAV72EG5TGUPEWVYJC';
-            $config_arr['secret_key'] = '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';
-            $config_arr['bucket_name'] = 'paisaonsalarybucket';
-            $config_arr['folder_name'] = 'upload';
-            $config_arr['s3_url'] = 's3://paisaonsalarybucket/upload/';
+            $config_arr['region'] = getenv('AWS_REGION');
+            $config_arr['access_key'] = getenv('AWS_ACCESS_KEY');
+            $config_arr['secret_key'] = getenv('AWS_SECRET_KEY');
+            $config_arr['bucket_name'] = getenv('S3_BUCKET_NAME');
+            $config_arr['folder_name'] = getenv('S3_BUCKET_FOLDER');
+            $config_arr['s3_url'] = 's3://'.getenv('S3_BUCKET_NAME')."/".getenv('S3_BUCKET_FOLDER')."/";
             $config_arr['access_key_envname'] = 'S3_KEY';
             $config_arr['secret_key_envname'] = 'S3_SECRET';
             $config_arr['get_from_enviroment'] = '';
@@ -400,7 +400,7 @@ function integration_config($api_type = "", $api_sub_type = "") {
             $config_arr['ApiPassword'] = "";
 
             // $config_arr['ApiToken'] = "Basic MTExMzI0MzM6SWdUMXNZckJiQUlleVRJTUR6OEdtRU1zVXRrUEhmQ2s=";
-            $config_arr['ApiToken'] = "MTE2MzU3MjY6eFh2OTZlNGdoOW9OdHlxbXRLcmw1NFdTalFXOHVjQkQ=";
+            $config_arr['ApiToken'] = getenv("DIGITAP_ACCESS_KEY");
             // $config_arr['ApiToken'] = "Nzg4NTk1ODY6IEJjdnFaRThvS1lOZTcyMjMzZnIzWmZrcFJCSmxqZkhv";
 
             // if ($envSet == "production") {

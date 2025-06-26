@@ -324,7 +324,7 @@ function esign_document_upload_api_call($method_id, $lead_id = 0, $request_array
             CURLOPT_HTTPHEADER => array(
                 // 'Authorization: ScTTTviEmhU1EPT79VM6QV9NUHImPkBm',
                 // 'Authorization: n2SCMAhKmpqyDLzqd0B944ifZ4BbTZey',
-                'Authorization: 20YobI629zAm00OqQL3CVsbsJCYDAJu1',
+                'Authorization: '.getenv('SIGNGY_API_KEY'),
                 'Content-Type: application/json'
             ),
         ));
@@ -1492,7 +1492,7 @@ $apiRequestJson = preg_replace("!\s+!", " ", $apiRequestJson);
 
 $apiHeaders = array(
     // 'ent_authorization: ' . ltrim($apiToken, 'Basic '),
-    'ent_authorization: MTE2MzU3MjY6eFh2OTZlNGdoOW9OdHlxbXRLcmw1NFdTalFXOHVjQkQ=',
+    'ent_authorization: '.getenv('DIGITAP_ACCESS_KEY'),
     // 'authorization: ' . ltrim($apiToken, 'Basic '),
     'Content-Type: application/json'
 );

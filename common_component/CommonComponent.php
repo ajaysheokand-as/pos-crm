@@ -8,25 +8,23 @@ set_time_limit(0);
 
 date_default_timezone_set('Asia/Calcutta');
 
-// $xco_path = '/var/www/sot_lms/common_component';
-$xco_path = '/var/www/html/common_component';
-
-define("COMP_PATH", $xco_path);
-define("COMP_ENVIRONMENT", 'production'); // development
+$xco_path = getenv('WWW_PATH').'common_component';
+defined("COMP_PATH") ?? define("COMP_PATH", $xco_path);
+define("COMP_ENVIRONMENT",  getenv('env') ?? 'production'); // development
 // define("COMP_DOC_URL", 'https://sotcrm.com/direct-document-file/'); //production
-define("COMP_DOC_URL", 'https://lms.paisaonsalary.in/direct-document-file/'); //production
+define("COMP_DOC_URL", getenv('WEBSITE_URL').'direct-document-file/'); //production
 // define("COMP_CRM_URL", 'https://sotcrm.com/');
-define("COMP_CRM_URL", 'https://lms.paisaonsalary.in/');
-define("COMP_WEBSITE_URL", 'https://paisaonsalary.com/');
+define("COMP_CRM_URL", getenv('WEBSITE_URL'));
+define("COMP_WEBSITE_URL", getenv('WEBSITE_URL'));
 define("COMP_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical store.
 // define("COMP_DOC_PATH", "/var/www/sot_lms/upload/");
-define("COMP_DOC_PATH", "/var/www/html/upload/");
+define("COMP_DOC_PATH", getenv('WWW_PATH')."upload/");
 // define("COMP_TEMP_DOC_PATH", "/var/www/sot_lms/temp_upload/");
-define("COMP_TEMP_DOC_PATH", "/var/www/html/temp_upload/");
+define("COMP_TEMP_DOC_PATH", getenv('WWW_PATH')."temp_upload/");
 // define("COMP_APPLE_STORE_ID", "id6503283983");
 // define("COMP_ANDROID_STORE_ID", "com.speedoloan.speedoloan");
-define("WHATSAPP_LOAN_OFFER", "https://sot-website.s3.ap-south-1.amazonaws.com/whatsapp/whatsapp_loan_offer.jpg");
-define("WHATSAPP_BASE_URL", "https://paisaonsalarybucket.s3.ap-south-1.amazonaws.com/whatsapp/");
+define("WHATSAPP_LOAN_OFFER", "https://".getenv("S3_BUCKET_NAME").".s3.ap-south-1.amazonaws.com/whatsapp/whatsapp_loan_offer.jpg");
+define("WHATSAPP_BASE_URL", "https://".getenv("S3_BUCKET_NAME").".s3.ap-south-1.amazonaws.com/whatsapp/");
 
 require_once(COMP_PATH . "/includes/functions.inc.php");
 require_once(COMP_PATH . "/classes/model/BaseModel.class.php");

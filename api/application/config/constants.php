@@ -86,14 +86,14 @@ defined('EXIT__AUTO_MIN') or define('EXIT__AUTO_MIN', 9); // lowest automaticall
 defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 // cibil api key
 
-define("COLLEX_DOC_URL", 'https://lms.paisaonsalary.in/direct-document-file/'); //production
-define("LMS_URL", "https://lms.paisaonsalary.in/");
-define("WEBSITE_URL", "https://paisaonsalary.com/");
+define("COLLEX_DOC_URL", getenv('WEBSITE_URL').'direct-document-file/'); //production
+define("LMS_URL", getenv('WEBSITE_URL'));
+define("WEBSITE_URL", getenv('PUBLIC_WEBSITE_URL'));
 define("WEBSITE", "paisaonsalary.com");
-
-define("UPLOAD_PATH", "/var/www/html/upload/");
-define("TEMP_DOC_PATH", "/var/www/html/temp_upload/");
-define("COMPONENT_PATH", "/var/www/html/common_component/");
+define("WWW_PATH",getenv('WWW_PATH'));
+define("UPLOAD_PATH", WWW_PATH."upload/");
+define("TEMP_DOC_PATH", WWW_PATH."temp_upload/");
+define("COMPONENT_PATH", WWW_PATH."common_component/");
 
 define("API_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical store.
 
@@ -106,11 +106,11 @@ define("REGISTED_ADDRESS", "88-E 2nd Floor Near Punjab and Sind Bank, Jindal Cho
 define("REGISTED_MOBILE", "+91-9588534824");
 define("REGISTED_WHATSAPP_MOBILE", "+91-9588534824");
 
-define("TECH_EMAIL", "tech@paisaonsalary.in");
-define("INFO_EMAIL", "info@paisaonsalary.in");
-define("CARE_EMAIL", "care@paisaonsalary.in");
-define("RECOVERY_EMAIL", "recovery@paisaonsalary.in");
+define("TECH_EMAIL", getenv('TECH_EMAIL'));
+define("INFO_EMAIL", getenv('INFO_EMAIL'));
+define("CARE_EMAIL", getenv('CARE_EMAIL'));
+define("RECOVERY_EMAIL", getenv('RECOVERY_EMAIL'));
 
 // *****  TEMPLETE VARIABLES *******
 
-define("WEBSITE_DOCUMENT_BASE_URL", "https://paisaonsalrybucket.s3.ap-south-1.amazonaws.com/upload/");
+define("WEBSITE_DOCUMENT_BASE_URL", "https://".getenv('S3_BUCKET_NAME').".s3.ap-south-1.amazonaws.com/upload/");
