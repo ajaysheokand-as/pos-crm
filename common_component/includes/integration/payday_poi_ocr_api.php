@@ -780,8 +780,8 @@ function aadhaar_mask_api_call($method_id, $lead_id = 0, $request_array = array(
             $request_array['ocr_file_1'] = $aadhaar_front_doc_data['file'];
             $request_array['ocr_file_2'] = $aadhaar_back_doc_data['file'];
 
-            $front = "https://lms.paisaonsalary.in/direct-document-file/" . $request_array['ocr_file_1'];
-            $back = "https://lms.paisaonsalary.in/direct-document-file/" . $request_array['ocr_file_2'];
+            $front = (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/')."direct-document-file/" . $request_array['ocr_file_1'];
+            $back = (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/')."direct-document-file/" . $request_array['ocr_file_2'];
 
             $identity_return_array = signzy_identity_object_api_call('individualPan', $lead_id, $request_array);
 

@@ -7,7 +7,7 @@ $pan = $input['pancard'];
 print_r($pan);
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://lms.paisaonsalary.in/api/Api/CustomerDetails/SendOtp',
+  CURLOPT_URL => (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'api/Api/CustomerDetails/SendOtp',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

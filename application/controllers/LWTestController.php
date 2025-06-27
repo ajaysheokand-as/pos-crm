@@ -1064,7 +1064,7 @@ class LWTestController extends CI_Controller {
                                             <td width = "800" colspan = "2" style = "background:url(' . EKYC_HEADER_BACK . ');" >
                                                 <table width = "100%" border = "0" cellpadding = "0" cellspacing = "0">
                                                     <tr>
-                                                        <td width = "25%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src = "https://lms.paisaonsalary.in/public/images/final_logo.png" alt = "logo" width = "200" height = "50" style = "margin-top:10px;margin-left:12px;"></a></td>
+                                                        <td width = "25%" valign = "top"><a href = "' . WEBSITE_URL . '" target = "_blank"><img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" alt = "logo" width = "200" height = "50" style = "margin-top:10px;margin-left:12px;"></a></td>
                                                         <td width = "64%" align = "center" valign = "middle"><strong style = "color:#fff; font-size:20px;">DIGITAL E-KYC</strong></td>
                                                         <!-- <td width = "11%" align = "right"><img src = "' . EKYC_LINES . '" width = "26" height = "147" /></td> -->
                                                     </tr>
@@ -1187,17 +1187,17 @@ class LWTestController extends CI_Controller {
                                         </tr>
                                         <tr>
                                             <td colspan = "4" align = "center" valign = "middle" style = "border-top:solid 1px #ddd; padding-top:5px;">
-                                                <a href = "' . LINKEDIN_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/linkedin.png" alt = "linkdin" width = "32" height = "32" /></a>
-                                                <a href = "' . INSTAGRAM_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/instagram.png" alt = "instagram" width = "32" height = "32" /></a>
-                                                <a href = "' . FACEBOOK_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/facebook.png" alt = "facebook" width = "32" height = "32" /></a>
-                                                <a href = "' . TWITTER_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "https://lms.paisaonsalary.in/public/images/twitter.png" alt = "twitter" width = "32" height = "32" /> </a>
-                                                <a href = "' . YOUTUBE_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "https://lms.paisaonsalary.in/public/images/youtube.png" alt = "youtube" width = "32" height = "32" /> </a>
-                                                <!-- <a href = "' . APPLE_STORE_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/googleplay.png" alt = "google_play" width = "100" height = "30" style = "border-radius: 50px;"></a> -->
+                                                <a href = "' . LINKEDIN_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/linkedin.png" alt = "linkdin" width = "32" height = "32" /></a>
+                                                <a href = "' . INSTAGRAM_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/instagram.png" alt = "instagram" width = "32" height = "32" /></a>
+                                                <a href = "' . FACEBOOK_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/facebook.png" alt = "facebook" width = "32" height = "32" /></a>
+                                                <a href = "' . TWITTER_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/twitter.png" alt = "twitter" width = "32" height = "32" /> </a>
+                                                <a href = "' . YOUTUBE_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/youtube.png" alt = "youtube" width = "32" height = "32" /> </a>
+                                                <!-- <a href = "' . APPLE_STORE_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/googleplay.png" alt = "google_play" width = "100" height = "30" style = "border-radius: 50px;"></a> -->
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#8180e0" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://lms.paisaonsalary.in/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://lms.paisaonsalary.in/public/images/final_fav.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;margin-right:3px;"> ' . WEBSITE . ' </a> <img src = "https://lms.paisaonsalary.in/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
+                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#8180e0" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_fav.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;margin-right:3px;"> ' . WEBSITE . ' </a> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
                                         </tr>
                                     </table>
                                 </body>
@@ -1207,7 +1207,7 @@ class LWTestController extends CI_Controller {
         require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
         // common_send_email('info@tejasloan.com', $subject, $message);
-        common_send_email('info@paisaonsalary.in', $subject, $message, "", "", "", "", "https://lms.paisaonsalary.in/direct-document-file/3718078_lms_20241120105925275.jpeg");
+        common_send_email('info@paisaonsalary.in', $subject, $message, "", "", "", "", (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/')."direct-document-file/3718078_lms_20241120105925275.jpeg");
 
 
         // $curl = curl_init();

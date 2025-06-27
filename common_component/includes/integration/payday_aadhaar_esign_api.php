@@ -262,7 +262,7 @@ function esign_document_upload_api_call($method_id, $lead_id = 0, $request_array
             "pdf": "' . $base64String . '",
             "contractName": "Esign Letter",
             "contractExecuterName": "Signzy",
-            "successRedirectUrl": "https://lms.paisaonsalary.in/sanction-esign-response?lead_id=' . $lead_id . '",
+            "successRedirectUrl": "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'sanction-esign-response?lead_id=' . $lead_id . '",
             "failureRedirectUrl": "https://paisaonsalary.com/",
             "contractTtl": 86400,
             "eSignProvider": "eMudhra",

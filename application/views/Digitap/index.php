@@ -113,7 +113,7 @@
         <div class="logo_container">
             <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/') ?>public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <h1>Fill Aadhaar Number</h1>
@@ -129,7 +129,7 @@
         <div class="logo_container">
             <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/') ?>public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <p id="seccess_msg" style="color: green; font-weight: bold;"></p>
@@ -149,7 +149,7 @@
         <div class="logo_container">
             <a href="https://paisaonsalary.com/" target="_blank">
                 <!-- <img src="https://sot-website.s3.ap-south-1.amazonaws.com/upload/company_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;"> -->
-                <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
+                <img src="<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/') ?>public/images/final_logo.png" alt="logo" style="width: 50%; margin-bottom: 20px;">
             </a>
         </div>
         <h1>Thank You!</h1>

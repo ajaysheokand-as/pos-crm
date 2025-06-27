@@ -2338,7 +2338,7 @@ class TaskApi extends REST_Controller {
                     $encrypted_id = $this->encrypt->encode($lead_id);
                     $subject = "Agrim Fincap - Confirm your email on Agrim Fincap";
                     // $maillink = 'https://www.lms.sotcrm.com/subscribe-email-verify' . "/" . $encrypted_id;
-                    $maillink = 'https://lms.paisaonsalary.in/subscribe-email-verify' . "/" . $encrypted_id;
+                    $maillink = (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'subscribe-email-verify' . "/" . $encrypted_id;
 
                     $html = '<!DOCTYPE html>
                                     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -2349,12 +2349,12 @@ class TaskApi extends REST_Controller {
                                     <body>
                                     <table width="600" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif;border:solid 1px #ddd;padding:10px;background: #f9f9f9;">
                                     <tr>
-                                    <td width="975" align="center"><img src="https://lms.paisaonsalary.in/public/images/final_logo.png" style="width:150px;"></td>
+                                    <td width="975" align="center"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" style="width:150px;"></td>
                                     </tr>
                                     <tr>
                                     <td style="text-align:center;"><table width="618" border="0" style="text-align:center;padding:20px;background: #fff;">
                                     <tr>
-                                    <td width="auto" align="center"><img src="https://lms.paisaonsalary.in/public/emailimages/verification-email.png" style="width:auto;"></td>
+                                    <td width="auto" align="center"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/emailimages/verification-email.png" style="width:auto;"></td>
                                     </tr>
                                     <tr>
                                     <td width="612" style="font-size:16px;"><h1>Thank you for joining Agrim Fincap!</h1></td>
@@ -2379,11 +2379,11 @@ class TaskApi extends REST_Controller {
                                     <tr>
                                     <td align="center">
                                     <a href="#" target="_blank">
-                                    <img src="https://lms.paisaonsalary.in/public/new_images/images/facebook.png" class="socil-t" alt="pos-facebook" style="width:30px;"></a>
-                                    <a href="#" target="_blank"><img src="https://lms.paisaonsalary.in/public/new_images/images/twitter.png" class="socil-t" alt="pos-twitter" style="width:30px;"></a>
-                                    <a href="#" target="_blank"><img src="https://lms.paisaonsalary.in/public/new_images/images/linkedin.png" class="socil-t" alt="pos-linkdin" style="width:30px;"></a>
-                                    <a href="#" target="_blank"><img src="https://lms.paisaonsalary.in/public/new_images/images/instagram.png" class="socil-t" alt="pos-instagram" style="width:30px;"></a>
-                                    <a href="#" target="_blank"><img src="https://lms.paisaonsalary.in/public/new_images/images/youtube.png" class="socil-t" alt="pos-youtube" style="width:30px;"></a>
+                                    <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/facebook.png" class="socil-t" alt="pos-facebook" style="width:30px;"></a>
+                                    <a href="#" target="_blank"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/twitter.png" class="socil-t" alt="pos-twitter" style="width:30px;"></a>
+                                    <a href="#" target="_blank"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/linkedin.png" class="socil-t" alt="pos-linkdin" style="width:30px;"></a>
+                                    <a href="#" target="_blank"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/instagram.png" class="socil-t" alt="pos-instagram" style="width:30px;"></a>
+                                    <a href="#" target="_blank"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/youtube.png" class="socil-t" alt="pos-youtube" style="width:30px;"></a>
                                     </td>
                                     </tr>
                                     <tr>

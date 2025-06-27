@@ -2871,7 +2871,7 @@ class CronEmailerController extends CI_Controller {
                                         <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f3f4f6; color: #333;">
                                             <div style="max-width: 600px; margin: 20px auto; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
                                                 <div style="' . $style . '">
-                                                    <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" style="width: 30%;">
+                                                    <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" style="width: 30%;">
                                                 </div>
                                                 <div style="padding: 20px;">
                                                     <div style="text-align: center; margin-bottom: 20px;">
@@ -3815,7 +3815,7 @@ class CronEmailerController extends CI_Controller {
                                             <div class="container" style="width: 100%; max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                                                 <div style="text-align: center; padding: 20px; background-color: #007bff; color: #fff; border-radius: 8px 8px 0 0;">
                                                     <!-- Brand Logo -->
-                                                    <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="Brand Logo" style="max-width: 150px; height: auto;">
+                                                    <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" alt="Brand Logo" style="max-width: 150px; height: auto;">
                                                     <h1 style="font-size: 24px; margin: 0;">Dear ' . $name . ',</h1>
                                                     <p style="margin: 5px;">Looking for a quick and hassle-free loan? We\'re here to help! 😊</p>
                                                 </div>
@@ -3953,7 +3953,7 @@ class CronEmailerController extends CI_Controller {
                                         <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f3f4f6; color: #333;">
                                             <div style="max-width: 600px; margin: 20px auto; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
                                                 <div style="' . $style . '">
-                                                    <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" style="width: 30%;">
+                                                    <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" style="width: 30%;">
                                                 </div>
                                                 <div style="padding: 20px;">
                                                     <div style="text-align: center; margin-bottom: 20px;">

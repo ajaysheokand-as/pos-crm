@@ -1678,7 +1678,7 @@
                 success: function(response) {
 
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1701,7 +1701,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1723,7 +1723,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1745,7 +1745,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -1912,7 +1912,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3599,7 +3599,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3622,7 +3622,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);
@@ -3645,7 +3645,7 @@ $('#customer_ifsc_code').on('change', function() { // Changed to `.on()` for con
                 dataType: "json",
                 success: function(response) {
                     if (response.status) {
-                        window.open("https://lms.paisaonsalary.in/direct-document-file/" + response['file_name']);
+                        window.open("<?php echo (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/'); ?>direct-document-file/" + response['file_name']);
 
                     } else {
                         catchError(response.err);

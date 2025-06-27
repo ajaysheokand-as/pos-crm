@@ -1172,7 +1172,7 @@ where a.disb_trans_lead_id = " . $lead_id;
                     <p style="line-height: 107%; font-size:18pt;text-align: center;font-family: Arial, Helvetica, sans-serif;">FOR</p>
 <h1 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;color:#c9211e">FDSPL</h1>
                     <h2 style="line-height: 107%; text-align: center;font-family: Arial, Helvetica, sans-serif;">(Fintelligence Data Science Private Limited)</h2>
-                    <p style="text-align: center"><img style="width:25%" src="https://lms.paisaonsalary.in/public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
+                    <p style="text-align: center"><img style="width:25%" src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/rupee-circle-qdw99gwiqzbhbl8qonh304.webp" /></p>
                 </b>
 
             </p>
@@ -6008,7 +6008,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
         require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
         // $directSanctionLetter = "https://tejasloan.com/direct-document-file/" . $cam_sanction_letter_file_name;
-        $directSanctionLetter = "https://lms.paisaonsalary.in/direct-document-file/" . $cam_sanction_letter_file_name;
+        $directSanctionLetter = (getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/')."direct-document-file/" . $cam_sanction_letter_file_name;
         $return_array = common_send_email($email,  $subject, $message, "", "", "", "", $directSanctionLetter, 'sanction_letter.pdf', "");
         
 
@@ -12484,17 +12484,17 @@ Capitalized terms used herein but not defined shall have the same meanings given
                                         </tr>
                                         <tr>
                                             <td colspan = "4" align = "center" valign = "middle" style = "border-top:solid 1px #ddd; padding-top:5px;">
-                                                <a href = "' . LINKEDIN_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/linkedin.png" alt = "linkdin" width = "32" height = "32" /></a>
-                                                <a href = "' . INSTAGRAM_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/instagram.png" alt = "instagram" width = "32" height = "32" /></a>
-                                                <a href = "' . FACEBOOK_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/facebook.png" alt = "facebook" width = "32" height = "32" /></a>
-                                                <a href = "' . TWITTER_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "https://lms.paisaonsalary.in/public/images/twitter.png" alt = "twitter" width = "32" height = "32" /> </a>
-                                                <a href = "' . YOUTUBE_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "https://lms.paisaonsalary.in/public/images/youtube.png" alt = "youtube" width = "32" height = "32" /> </a>
-                                                <!-- <a href = "' . APPLE_STORE_LINK . '" target = "_blank"> <img src = "https://lms.paisaonsalary.in/public/images/googleplay.png" alt = "google_play" width = "100" height = "30" style = "border-radius: 50px;"></a> -->
+                                                <a href = "' . LINKEDIN_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/linkedin.png" alt = "linkdin" width = "32" height = "32" /></a>
+                                                <a href = "' . INSTAGRAM_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/instagram.png" alt = "instagram" width = "32" height = "32" /></a>
+                                                <a href = "' . FACEBOOK_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/facebook.png" alt = "facebook" width = "32" height = "32" /></a>
+                                                <a href = "' . TWITTER_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/twitter.png" alt = "twitter" width = "32" height = "32" /> </a>
+                                                <a href = "' . YOUTUBE_LINK . '" target = "_blank" style = "color:#fff;"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/youtube.png" alt = "youtube" width = "32" height = "32" /> </a>
+                                                <!-- <a href = "' . APPLE_STORE_LINK . '" target = "_blank"> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/googleplay.png" alt = "google_play" width = "100" height = "30" style = "border-radius: 50px;"></a> -->
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#00455E" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "https://lms.paisaonsalary.in/public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "https://lms.paisaonsalary.in/public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "https://lms.paisaonsalary.in/public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
+                                            <td colspan = "4" align = "center" valign = "middle" bgcolor = "#00455E" style = "padding:10px; color:#fff; font-weight:normal; font-size:16px;"><a href = "tel:' . REGISTED_MOBILE . '" style = "color:#fff; text-decoration:blink;"><img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/phone.jpg" width = "16" height = "16" alt = "phone-icon" style = "margin-bottom: -2px;margin-right:3px"> ' . REGISTED_MOBILE . ' </a> <a href = "' . WEBSITE_URL . '" target = "_blank" style = "color:#fff; text-decoration:blink;"><img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/favicon.png" width = "16" height = "16" alt = "web-icon" style = "margin-bottom: -2px;"> ' . WEBSITE . ' </a> <img src = "'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/email.jpg" width = "16" height = "16" alt = "email-icon" style = "margin-bottom: -2px;"><a href = "mailto:' . INFO_EMAIL . '" style = "color:#fff; text-decoration:blink;">' . INFO_EMAIL . ' </a></td>
                                         </tr>
                                     </table>
                                 </body>

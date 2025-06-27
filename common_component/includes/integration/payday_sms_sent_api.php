@@ -50,7 +50,6 @@ function routemobile_sms_sent_api_call($sms_type_id, $lead_id = 0, $request_arra
     $loan_no = "";
     $repayment_amount = "";
     $repayment_date = "";
-    // $repayment_link = "https://www.lms.sotcrm.com/repay-loan";
     $repayment_link = "https://www.paisaonsalary.com/repayloan";
     //$repayment_link = 'repay-loan';
     $type = "SMS_API";

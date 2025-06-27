@@ -134,7 +134,7 @@ class IciciCallbackController extends CI_Controller {
                             <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f3f4f6; color: #333;">
                                 <div style="max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; border: 1px solid #e5e7eb;">
                                     <div style="text-align: center; padding: 20px; background-color: #333;">
-                                        <img src="https://lms.paisaonsalary.in/public/images/final_logo.png" alt="Company Logo" style="width: 120px; margin-bottom: 15px;background: #000;border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                        <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" alt="Company Logo" style="width: 120px; margin-bottom: 15px;background: #000;border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                                     </div>
                                     <div style="background-color: #4CAF50; color: #ffffff; text-align: center; padding: 15px; font-size: 22px; font-weight: bold;">
                                         Payment Received

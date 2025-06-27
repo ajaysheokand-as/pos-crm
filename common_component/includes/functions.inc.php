@@ -587,13 +587,13 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                         style="font-family:Arial, Helvetica, sans-serif; border:solid 1px #ddd; padding:10px; background:#f9f9f9;">
                         <tr>
                             <td width="775" align="center" style="background: #00455E;"><img
-                                    src="https://lms.paisaonsalary.in/public/images/final_logo.png" width="40%"></td>
+                                    src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/images/final_logo.png" width="40%"></td>
                         </tr>
                         <tr>
                             <td style="text-align:center;">
                                 <table width="418" border="0" style="text-align:center; padding:20px; background:#fff;">
                                     <tr>
-                                        <td style="font-size:16px;"><img src="https://lms.paisaonsalary.in/public/emailimages/thank-you.gif"
+                                        <td style="font-size:16px;"><img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/emailimages/thank-you.gif"
                                                 width="auto" height="250" alt="thank-you"></td>
                                     </tr>
                                     <tr>
@@ -635,31 +635,31 @@ function common_lead_thank_you_email($lead_id, $email, $name, $reference_no) {
                             <!-- Facebook Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://lms.paisaonsalary.in/public/new_images/images/facebook.png" class="socil-t"
+                                <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/facebook.png" class="socil-t"
                                     alt="pos-facebook" style="width:30px;">
                             </a>
                             <!-- LinkedIn Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://lms.paisaonsalary.in/public/new_images/images/linkedin.png" class="socil-t"
+                                <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/linkedin.png" class="socil-t"
                                     alt="pos-linkedin" style="width:30px;">
                             </a>
                             <!-- Instagram Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://lms.paisaonsalary.in/public/new_images/images/instagram.png" class="socil-t"
+                                <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/instagram.png" class="socil-t"
                                     alt="pos-instagram" style="width:30px;">
                             </a>
                             <!-- YouTube Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://lms.paisaonsalary.in/public/new_images/images/youtube.png" class="socil-t"
+                                <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/youtube.png" class="socil-t"
                                     alt="pos-youtube" style="width:30px;">
                             </a>
                             <!-- Twitter Icon -->
                             <a href="#" target="_blank"
                                 style="margin: 0 10px; text-decoration: none;">
-                                <img src="https://lms.paisaonsalary.in/public/new_images/images/twitter.png" class="socil-t"
+                                <img src="'.(getenv("WEBSITE_URL") ?? 'https://cms.paisaonsalary.in/').'public/new_images/images/twitter.png" class="socil-t"
                                     alt="pos-twitter" style="width:30px;">
                             </a>
                         </td>
