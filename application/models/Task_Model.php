@@ -5458,7 +5458,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
         if (file_exists($file_path_with_name)) {
             require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-            $return_array = common_send_email($email, $subject, $message, "", "", "", "", $file_path_with_name, $file_disburse_name, 'disbursal_letter.pdf');
+            $return_array = common_send_email($email, $subject, $message, "", "", "", "", $file_path_with_name, $file_disburse_name, 'disbursal_letter.pdf',FALSE);
 
             // require_once(COMPONENT_PATH . "CommonComponent.php");
             // $CommonComponent = new CommonComponent();

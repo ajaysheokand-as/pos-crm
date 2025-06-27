@@ -152,6 +152,7 @@ define("CARE_EMAIL", getenv("CARE_EMAIL"));
 define("RECOVERY_EMAIL", getenv(getenv("RECOVERY_EMAIL")));
 define("COLLECTION_EMAIL", getenv("COLLECTION_EMAIL"));
 define("CTO_EMAIL", getenv("TECH_EMAIL"));
+define("SUPPORT_EMAIL", getenv("SUPPORT_EMAIL"));
 
 // ********** TEMPLETE DEFINED VARIABLE *****
 

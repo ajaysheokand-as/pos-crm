@@ -483,10 +483,13 @@ $config['csrf_protection'] = FALSE;
 // }
 
 if (isset($_SERVER["REQUEST_URI"])) {
-  $uri = strtolower($_SERVER["REQUEST_URI"]); // Normalize
+    $path = strtolower(trim(parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH), '/'));
 
-  // Remove index.php if present
-  $uri = str_replace('/index.php', '', $uri);
+    // Remove base segment (e.g., "pos")
+    $base_segment = 'pos1';
+    if (strpos($path, $base_segment . '/') === 0) {
+        $path = substr($path, strlen($base_segment) + 1);
+    }
 
   // CSRF exemption list
   $excluded_routes = array(
@@ -504,7 +507,7 @@ if (isset($_SERVER["REQUEST_URI"])) {
 
       $excluded_prefixes = array('p/api/');
 
-    if (in_array($path, $excluded_routes)) {
+    if (in_array( $path, $excluded_routes)) {
         $config['csrf_protection'] = FALSE;
     }
 

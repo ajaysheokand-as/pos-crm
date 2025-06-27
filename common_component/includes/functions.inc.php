@@ -91,10 +91,10 @@ function common_parse_name($full_name = "") {
     return array("first_name" => $first_name, "middle_name" => $middle_name, "last_name" => $last_name);
 }
 
-function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_email = "", $from_email = "", $reply_to = "", $attchement_path = "", $fileName = "", $file_move = "") {
+function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_email = "", $from_email = "", $reply_to = "", $attchement_path = "", $fileName = "", $file_move = "", $isTempUploadPath=true) {
     $status = 0;
     $error = "";
-    $active_id = 6;
+    $active_id = 7;
     // if (date("d") > 10 && date("d") <= 21) {
     //     $active_id = 5;
     // }
@@ -343,219 +343,291 @@ function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_e
             } else {
                 $error = "Some error occurred";
             }
-        } /*else if ($active_id == 6) {
-            $curl = curl_init();
-            if (strpos($message, 'DOCTYPE html') !== false) {
-                $from_email = empty($from_email) ? "info@tejasloan.com" : $from_email;
-                if (!empty($attchement_path)) {
-                    $apiRequestArray = array(
-                        'from' => 'Tejas Loan '.$from_email,
-                        'to' => $to_email,
-                        'html' => $message,
-                        'subject' => $subject,
-                        'attachment' => new CURLFile($attchement_path),
-                        'cc' => $cc_email
-                    );
+        }else if ($active_id == 7){
+             $apiKey = getenv('MAIL_GUN_API_KEY');
+                $domain = getenv('MAIL_GUN_DOMAIN');
+                $url = "https://api.mailgun.net/v3/{$domain}/messages";
+
+                $fields = [
+                    'from'    => $from_email,
+                    'to'      => $to_email,
+                    'subject' => $subject,
+                ];
+            
+                // Detect message type: HTML or plain text
+                if (stripos($message, 'DOCTYPE html') !== false || stripos($message, '<html') !== false) {
+                    $fields['html'] = $message;
                 } else {
-                    $apiRequestArray = array(
-                        'from' => 'Tejas Loan '.$from_email,
-                        'to' => $to_email,
-                        'html' => $message,
-                        'subject' => $subject,
-                        'cc' => $cc_email
-                    );
+                    $fields['text'] = $message;
                 }
-            } else {
-                if (!empty($attchement_path)) {
-                    $apiRequestArray = array(
-                        'from' => 'Tejas Loan '.$from_email,
-                        'to' => $to_email,
-                        'text' => $message,
-                        'subject' => $subject,
-                        'attachment' => new CURLFile($attchement_path),
-                        'cc' => $cc_email
-                    );
-                } else {
-                    $apiRequestArray = array(
-                        'from' => 'Tejas Loan '.$from_email,
-                        'to' => $to_email,
-                        'text' => $message,
-                        'subject' => $subject,
-                        'cc' => $cc_email
-                    );
+            
+                // Add CC if provided
+                if (!empty($cc_email)) {
+                    $fields['cc'] = $cc_email;
                 }
-            }
-            $url = "";
 
-            // if (strpos(strtolower($to_email), 'tejasloan.com') !== false) {
-            if (strpos(strtolower($to_email), 'info@tejasloan.com') !== false) {
-                // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
-                $url = 'https://api.zeptomail.in/v1.1/email';
-            // } else if (strpos(strtolower($cc_email), 'tejasloan.com') !== false) {
-            } else if (strpos(strtolower($cc_email), 'tech@telasloan.com') !== false) {
-
-                // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
-                $url = 'https://api.zeptomail.in/v1.1/email';
-            } else {
-                $url = 'https://api.zeptomail.in/v1.1/email';
-            }
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => $apiRequestArray,
-                CURLOPT_HTTPHEADER => array(
-                    "Authorization: Basic " . base64_encode("api:69cd62f6fad5577cd547b4b8c5760052-24bda9c7-ed7ced9c"),
-                    'Content-Type = multipart/form-data'
-                ),
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-            // echo $response;
-
-            if (!empty($response)) {
-                $status = 1;
-                $return_array = array("status" => $status, "error" => $error);
-            } else {
-                $return_array = json_decode($response, true);
-                $error = isset($return_array['errors'][0]['message']) ? $return_array['errors'][0]['message'] : "Some error occourred.";
-            }
-        } else if ($active_id == 5) {
-
-            // $apiUrl = "https://api.sendgrid.com/v3/mail/send";
-            $apiUrl = "https://api.mailgun.net/v3/tejasloan.com/messages";
-
-            $apiHeaders = array(
-                "Authorization: Basic " . base64_encode("api:69cd62f6fad5577cd547b4b8c5760052-24bda9c7-ed7ced9c"),
-                "Accept: application/json",
-                "Content-Type: application/json",
-            );
-
-            $apiRequestArray = [];
-
-            $send_email_array = [];
-
-            // Add recipient email
-            $send_email_array["to"] = [["email" => $to_email]];
-
-            // Add CC emails
-            if (!empty($cc_email)) {
-                $cc_email = explode(",", $cc_email);
-
-                $sent_cc_email = [];
-                foreach ($cc_email as $email_data) {
-                    if (trim(strtolower($to_email)) == trim(strtolower($email_data))) {
-                        continue;
+            
+                // Handle file attachment
+                if (!empty($attachment_path)) {
+                    if($isTempUploadPath === true){
+                        $full_path = realpath(TEMP_UPLOAD_PATH . $attachment_path);
+                    }else{
+                        $full_path = realpath($attachment_path);
                     }
-                    $sent_cc_email[] = ["email" => trim($email_data)];
-                }
-
-                if (!empty($sent_cc_email)) {
-                    $send_email_array["cc"] = $sent_cc_email;
-                }
-            }
-
-            // Add BCC emails
-            if (!empty($bcc_email)) {
-                $bcc_email = explode(",", $bcc_email);
-
-                $sent_bcc_email = [];
-                foreach ($bcc_email as $email_data) {
-                    if (trim(strtolower($to_email)) == trim(strtolower($email_data))) {
-                        continue;
+                    if ($full_path && file_exists($full_path)) {
+                        $mime_type = mime_content_type($full_path) ?: 'application/octet-stream';
+                        $fields['attachment'] = new CURLFile($full_path, $mime_type, $fileName ?? basename($full_path));
+                    } else {
+                        return ['success' => false, 'error' => 'Attachment file not found.'];
                     }
-                    $sent_bcc_email[] = ["email" => trim($email_data)];
                 }
-
-                if (!empty($sent_bcc_email)) {
-                    $send_email_array["bcc"] = $sent_bcc_email;
+            
+                // Initialize and send cURL request
+                $curl = curl_init();
+                curl_setopt_array($curl, [
+                    CURLOPT_URL            => $url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_POST           => true,
+                    CURLOPT_USERPWD        => "api:{$apiKey}",
+                    CURLOPT_POSTFIELDS     => $fields,
+                    CURLOPT_SAFE_UPLOAD    => true,
+                ]);
+            
+                $response = curl_exec($curl);
+            
+                // Handle cURL errors
+                if (curl_errno($curl)) {
+                    $error_msg = curl_error($curl);
+                    curl_close($curl);
+                    return ['success' => false, 'error' => $error_msg];
                 }
-            }
-
-            $apiRequestArray["personalizations"] = [$send_email_array];
-
-            // Add sender details
-            $apiRequestArray["from"] = ["email" => $from_email, "name" => "SalaryOnTime"];
-
-            // Add reply-to email
-            if (!empty($reply_to)) {
-                $apiRequestArray["reply_to"] = ["email" => $reply_to];
-            }
-
-            // Add email subject
-            $apiRequestArray["subject"] = $subject;
-
-            // Add email content
-            $apiRequestArray["content"] = [[
-                "type" => "text/html",
-                "value" => "$message"
-            ]];
-
-            // Add attachment if provided
-            if (!empty($attchement_path)) {
-
-                // Add attachment if provided
-                $attachment_file = @file_get_contents($attchement_path);
-
-                if ($attachment_file !== false) {
-                    $attachment_content = base64_encode($attachment_file);
-
-                    // Use a default MIME type
-                    $attachment_type = "application/octet-stream";
-
-                    // Extract filename from the S3 URL
-                    $attachment_filename = basename(parse_url($attchement_path, PHP_URL_PATH));
-
-                    $apiRequestArray['attachments'] = [
-                        [
-                            "content" => $attachment_content,
-                            "type" => $attachment_type,
-                            "filename" => empty($fileName) ? $attachment_filename : $fileName,
-                            "disposition" => "attachment"
-                        ]
-                    ];
+            
+                $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+            
+                $result = json_decode($response, true);
+            
+                if ($statusCode == 200 && isset($result['message']) && stripos($result['message'], "Queued") !== false) {
+                    return ['success' => true, "status"=>1];
                 } else {
-                    echo "Failed to download the file from the S3 URL.";
-                    exit;
+                    $error = $result['message'] ?? 'Unknown error sending email.';
+                    return ['success' => false, 'error' => $error];
                 }
-            }
+        }
 
-            // Encode the API request payload
-            $apiResponseJson = json_encode($apiRequestArray);
-            $apiResponseJson = preg_replace("!\s+!", " ", $apiResponseJson);
+            //  else if ($active_id == 6) {
+        //     $curl = curl_init();
+        //     if (strpos($message, 'DOCTYPE html') !== false) {
+        //         $from_email = empty($from_email) ? "info@tejasloan.com" : $from_email;
+        //         if (!empty($attchement_path)) {
+        //             $apiRequestArray = array(
+        //                 'from' => 'Tejas Loan '.$from_email,
+        //                 'to' => $to_email,
+        //                 'html' => $message,
+        //                 'subject' => $subject,
+        //                 'attachment' => new CURLFile($attchement_path),
+        //                 'cc' => $cc_email
+        //             );
+        //         } else {
+        //             $apiRequestArray = array(
+        //                 'from' => 'Tejas Loan '.$from_email,
+        //                 'to' => $to_email,
+        //                 'html' => $message,
+        //                 'subject' => $subject,
+        //                 'cc' => $cc_email
+        //             );
+        //         }
+        //     } else {
+        //         if (!empty($attchement_path)) {
+        //             $apiRequestArray = array(
+        //                 'from' => 'Tejas Loan '.$from_email,
+        //                 'to' => $to_email,
+        //                 'text' => $message,
+        //                 'subject' => $subject,
+        //                 'attachment' => new CURLFile($attchement_path),
+        //                 'cc' => $cc_email
+        //             );
+        //         } else {
+        //             $apiRequestArray = array(
+        //                 'from' => 'Tejas Loan '.$from_email,
+        //                 'to' => $to_email,
+        //                 'text' => $message,
+        //                 'subject' => $subject,
+        //                 'cc' => $cc_email
+        //             );
+        //         }
+        //     }
+        //     $url = "";
 
-            // Initialize cURL
-            $curl = curl_init($apiUrl);
-            curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, $apiHeaders);
-            curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $apiResponseJson);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 20);
-            curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        //     // if (strpos(strtolower($to_email), 'tejasloan.com') !== false) {
+        //     if (strpos(strtolower($to_email), 'info@tejasloan.com') !== false) {
+        //         // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
+        //         $url = 'https://api.zeptomail.in/v1.1/email';
+        //     // } else if (strpos(strtolower($cc_email), 'tejasloan.com') !== false) {
+        //     } else if (strpos(strtolower($cc_email), 'tech@telasloan.com') !== false) {
 
-            // Execute the cURL request and handle the response
-            $response = curl_exec($curl);
+        //         // $url = 'https://api.mailgun.net/v3/tejasloan.com/messages';
+        //         $url = 'https://api.zeptomail.in/v1.1/email';
+        //     } else {
+        //         $url = 'https://api.zeptomail.in/v1.1/email';
+        //     }
+        //     curl_setopt_array($curl, array(
+        //         CURLOPT_URL => $url,
+        //         CURLOPT_RETURNTRANSFER => true,
+        //         CURLOPT_ENCODING => '',
+        //         CURLOPT_MAXREDIRS => 10,
+        //         CURLOPT_TIMEOUT => 0,
+        //         CURLOPT_FOLLOWLOCATION => true,
+        //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //         CURLOPT_CUSTOMREQUEST => 'POST',
+        //         CURLOPT_POSTFIELDS => $apiRequestArray,
+        //         CURLOPT_HTTPHEADER => array(
+        //             "Authorization: Basic " . base64_encode("api:69cd62f6fad5577cd547b4b8c5760052-24bda9c7-ed7ced9c"),
+        //             'Content-Type = multipart/form-data'
+        //         ),
+        //     ));
 
-            if (empty($response)) {
-                $status = 1;
-                $return_array = array("status" => $status, "error" => $error);
-                return $return_array;
-            } else {
-                $return_array = json_decode($response, true);
-                $error = isset($return_array['errors'][0]['message']) ? $return_array['errors'][0]['message'] : "Some error occourred.";
-            }
-            curl_close($curl);
-        }*/
+        //     $response = curl_exec($curl);
+
+        //     curl_close($curl);
+        //     // echo $response;
+
+        //     if (!empty($response)) {
+        //         $status = 1;
+        //         $return_array = array("status" => $status, "error" => $error);
+        //     } else {
+        //         $return_array = json_decode($response, true);
+        //         $error = isset($return_array['errors'][0]['message']) ? $return_array['errors'][0]['message'] : "Some error occourred.";
+        //     }
+        // } else if ($active_id == 5) {
+
+        //     // $apiUrl = "https://api.sendgrid.com/v3/mail/send";
+        //     $apiUrl = "https://api.mailgun.net/v3/tejasloan.com/messages";
+
+        //     $apiHeaders = array(
+        //         "Authorization: Basic " . base64_encode("api:69cd62f6fad5577cd547b4b8c5760052-24bda9c7-ed7ced9c"),
+        //         "Accept: application/json",
+        //         "Content-Type: application/json",
+        //     );
+
+        //     $apiRequestArray = [];
+
+        //     $send_email_array = [];
+
+        //     // Add recipient email
+        //     $send_email_array["to"] = [["email" => $to_email]];
+
+        //     // Add CC emails
+        //     if (!empty($cc_email)) {
+        //         $cc_email = explode(",", $cc_email);
+
+        //         $sent_cc_email = [];
+        //         foreach ($cc_email as $email_data) {
+        //             if (trim(strtolower($to_email)) == trim(strtolower($email_data))) {
+        //                 continue;
+        //             }
+        //             $sent_cc_email[] = ["email" => trim($email_data)];
+        //         }
+
+        //         if (!empty($sent_cc_email)) {
+        //             $send_email_array["cc"] = $sent_cc_email;
+        //         }
+        //     }
+
+        //     // Add BCC emails
+        //     if (!empty($bcc_email)) {
+        //         $bcc_email = explode(",", $bcc_email);
+
+        //         $sent_bcc_email = [];
+        //         foreach ($bcc_email as $email_data) {
+        //             if (trim(strtolower($to_email)) == trim(strtolower($email_data))) {
+        //                 continue;
+        //             }
+        //             $sent_bcc_email[] = ["email" => trim($email_data)];
+        //         }
+
+        //         if (!empty($sent_bcc_email)) {
+        //             $send_email_array["bcc"] = $sent_bcc_email;
+        //         }
+        //     }
+
+        //     $apiRequestArray["personalizations"] = [$send_email_array];
+
+        //     // Add sender details
+        //     $apiRequestArray["from"] = ["email" => $from_email, "name" => "SalaryOnTime"];
+
+        //     // Add reply-to email
+        //     if (!empty($reply_to)) {
+        //         $apiRequestArray["reply_to"] = ["email" => $reply_to];
+        //     }
+
+        //     // Add email subject
+        //     $apiRequestArray["subject"] = $subject;
+
+        //     // Add email content
+        //     $apiRequestArray["content"] = [[
+        //         "type" => "text/html",
+        //         "value" => "$message"
+        //     ]];
+
+        //     // Add attachment if provided
+        //     if (!empty($attchement_path)) {
+
+        //         // Add attachment if provided
+        //         $attachment_file = @file_get_contents($attchement_path);
+
+        //         if ($attachment_file !== false) {
+        //             $attachment_content = base64_encode($attachment_file);
+
+        //             // Use a default MIME type
+        //             $attachment_type = "application/octet-stream";
+
+        //             // Extract filename from the S3 URL
+        //             $attachment_filename = basename(parse_url($attchement_path, PHP_URL_PATH));
+
+        //             $apiRequestArray['attachments'] = [
+        //                 [
+        //                     "content" => $attachment_content,
+        //                     "type" => $attachment_type,
+        //                     "filename" => empty($fileName) ? $attachment_filename : $fileName,
+        //                     "disposition" => "attachment"
+        //                 ]
+        //             ];
+        //         } else {
+        //             echo "Failed to download the file from the S3 URL.";
+        //             exit;
+        //         }
+        //     }
+
+        //     // Encode the API request payload
+        //     $apiResponseJson = json_encode($apiRequestArray);
+        //     $apiResponseJson = preg_replace("!\s+!", " ", $apiResponseJson);
+
+        //     // Initialize cURL
+        //     $curl = curl_init($apiUrl);
+        //     curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+        //     curl_setopt($curl, CURLOPT_HTTPHEADER, $apiHeaders);
+        //     curl_setopt($curl, CURLOPT_POST, true);
+        //     curl_setopt($curl, CURLOPT_POSTFIELDS, $apiResponseJson);
+        //     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        //     curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 20);
+        //     curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+        //     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        //     curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+
+        //     // Execute the cURL request and handle the response
+        //     $response = curl_exec($curl);
+
+        //     if (empty($response)) {
+        //         $status = 1;
+        //         $return_array = array("status" => $status, "error" => $error);
+        //         return $return_array;
+        //     } else {
+        //         $return_array = json_decode($response, true);
+        //         $error = isset($return_array['errors'][0]['message']) ? $return_array['errors'][0]['message'] : "Some error occourred.";
+        //     }
+        //     curl_close($curl);
+        // }
     }
 
     $return_array = array("status" => $status, "error" => $error);
