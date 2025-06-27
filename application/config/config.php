@@ -490,7 +490,7 @@ if (isset($_SERVER["REQUEST_URI"])) {
   $uri = str_replace('/index.php', '', $uri);
 
   // CSRF exemption list
-  $csrf_exempt_routes = array(
+  $excluded_routes = array(
       '/loanagreementletterresponse',
       '/api/taskapi/getcity',
       '/api/taskapi/getpincodebycityid',
@@ -503,12 +503,19 @@ if (isset($_SERVER["REQUEST_URI"])) {
       '/icici/deposit/callback'
   );
 
-  foreach ($csrf_exempt_routes as $route) {
-      if (strpos($uri, $route) !== false) {
-          $config['csrf_protection'] = FALSE;
-          break;
-      }
-  }
+      $excluded_prefixes = array('p/api/');
+
+    if (in_array($path, $excluded_routes)) {
+        $config['csrf_protection'] = FALSE;
+    }
+
+    foreach ($excluded_prefixes as $prefix) {
+        if (strpos($path, $prefix) === 0) {
+            $config['csrf_protection'] = FALSE;
+            break;
+        }
+    }
+
 }
 
 

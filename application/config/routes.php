@@ -681,3 +681,9 @@ $route['news/add-news'] = 'NewsController/addNews';
 $route['news/edit-news/(:any)'] = 'NewsController/editNews/$1';
 
 $route['instaloans/(:any)'] = 'CampaignController/index';
+
+/* * ****************** Public API ************************* */
+$route['p/api/generateLead'] = 'Api/ApiController/importSingleLead';
+$route['p/api/repayment'] = 'Api/ApiController/getLoan';
+
+/********************* Public API End***************************/
