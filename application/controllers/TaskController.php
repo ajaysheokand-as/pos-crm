@@ -2650,22 +2650,23 @@ class TaskController extends CI_Controller {
 
         $user_roles = $this->Tasks->checkUserHaveManyRoles($conditions_user_roles);
 
-        if (!empty($user_roles['status']) && in_array(3, $user_roles['user_roles'])) { // credit manager
-            $status = "APPLICATION-INPROCESS";
-            $stage = "S5";
-            $lead_status_id = 5;
+        // Every lead go in New Application
+        // if (!empty($user_roles['status']) && in_array(3, $user_roles['user_roles'])) { // credit manager
+        //     $status = "APPLICATION-INPROCESS";
+        //     $stage = "S5";
+        //     $lead_status_id = 5;
 
-            $update_lead_data['lead_credit_assign_user_id'] = $_SESSION['isUserSession']['user_id'];
-            $update_lead_data['lead_credit_assign_datetime'] = date("Y-m-d H:i:s");
+        //     $update_lead_data['lead_credit_assign_user_id'] = $_SESSION['isUserSession']['user_id'];
+        //     $update_lead_data['lead_credit_assign_datetime'] = date("Y-m-d H:i:s");
 
-            $login_user_name = $_SESSION['isUserSession']['name'];
-            $lead_remark .= "<br/>Application allocate by self - " . $login_user_name;
-            $lead_remark .= "<br/>Application moves to in-process as user have credit manager role.";
-        } else {
+        //     $login_user_name = $_SESSION['isUserSession']['name'];
+        //     $lead_remark .= "<br/>Application allocate by self - " . $login_user_name;
+        //     $lead_remark .= "<br/>Application moves to in-process as user have credit manager role.";
+        // } else {
             $status = "APPLICATION-NEW";
             $stage = "S4";
             $lead_status_id = 4;
-        }
+        // }
 
         if (!empty($leadDetails['lead_journey_type_id']) && $leadDetails['lead_journey_type_id'] == 5) {
             $update_lead_data['lead_doable_to_application_status'] = 2; // 0=>Customer, 1=>Campaign, 2=> Self Model, 3=> Assisted Model
