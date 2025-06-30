@@ -629,6 +629,9 @@
                                                                                         <th class="whitespace">
                                                                                             <b>Type</b>
                                                                                         </th>
+                                                                                        <th class="whitespace">
+                                                                                            <b>Blacklist</b>
+                                                                                        </th>
                                                                                         <!--<th class="whitespace"><b>Status</b></th>-->
                                                                                         <?php if (in_array($stage, array("S3", "S6"))) { ?>
                                                                                         <th class="whitespace">
@@ -737,6 +740,9 @@
                                                                                             }
                                                                                             if (isset($row->monthly_salary_amount) && $row->monthly_salary_amount >= 100000 && !in_array($stage, array("S13", "S20", "S21", "S22", "S25"))) {
                                                                                                 $row_class = 'style="background-color:#fff2cb !important"';
+                                                                                            }
+                                                                                            if ( $row->lead_black_list_flag == 1) {
+                                                                                                $row_class = 'style="background-color:#e221219c !important"';
                                                                                             }
                                                                                             if (isset($row->payment_mode_id) && $row->payment_mode_id == 13 && !in_array($stage, array("S13", "S20", "S21", "S22", "S25"))) {
                                                                                                 $row_class = 'style="background-color:#e2c80f !important"';
@@ -1028,6 +1034,7 @@
                                                                                         <td class="whitespace">
                                                                                             <?= ($row->user_type) ? strval(($row->user_type)) : 'NEW' ?>
                                                                                         </td>
+                                                                                        <td class="whitespace"><?= ($row->lead_black_list_flag) ? "Blacklisted" : 'No' ?></td>
 
                                                                                         <!--<td class="whitespace"><?= ($row->status) ? strval(($row->status)) : '-' ?></td>-->
                                                                                         <!--<?php if (in_array($stage, array("S3", "S6"))) { ?>-->

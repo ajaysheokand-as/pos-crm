@@ -128,7 +128,7 @@ class Task_Model extends CI_Model {
         if (!empty($search_input_array['scb'])) {
             $conditions['user_screener.name'] = $search_input_array['scb'];
         }
-        
+
         $fiveSecondsAgo = date('Y-m-d H:i:s', strtotime('-5 seconds'));
         if (isset($_SESSION['isUserSession']['labels']) && $_SESSION['isUserSession']['labels'] == 'CR1') {
             $twentySecondsAgo = date('Y-m-d H:i:s', strtotime('-15 minutes'));
@@ -136,7 +136,7 @@ class Task_Model extends CI_Model {
             $twentySecondsAgo = date('Y-m-d H:i:s', strtotime('-5 seconds'));
         }
 
-        $select = 'LD.lead_id, DATE_FORMAT(LD.lead_disbursal_recommend_datetime, "%d-%m-%Y %H:%i:%s") as disbursal_recommend,  LD.monthly_salary_amount, LD.loan_no, LD.customer_id, LD.application_no, LD.lead_reference_no, LD.lead_data_source_id, LD.first_name, C.middle_name, C.sur_name, CONCAT_WS(" ",LD.first_name, C.middle_name, C.sur_name) as cust_full_name,';
+        $select = 'LD.lead_id, DATE_FORMAT(LD.lead_disbursal_recommend_datetime, "%d-%m-%Y %H:%i:%s") as disbursal_recommend,  LD.monthly_salary_amount, LD.loan_no,  LD.lead_black_list_flag, LD.customer_id, LD.application_no, LD.lead_reference_no, LD.lead_data_source_id, LD.first_name, C.middle_name, C.sur_name, CONCAT_WS(" ",LD.first_name, C.middle_name, C.sur_name) as cust_full_name,';
         $select .= ' LD.email, C.alternate_email, C.gender, LD.mobile, C.alternate_mobile, LD.obligations, LD.promocode, LD.purpose, DATE_FORMAT(LD.lead_final_disbursed_date,"%d-%m-%Y") AS lead_final_disbursed_date,';
         $select .= ' LD.user_type, LD.pancard, LD.loan_amount, LD.tenure, LD.cibil, CE.income_type, CE.salary_mode, CE.monthly_income, LD.lead_is_mobile_verified, ';
         $select .= ' LOT.lot_otp_verify_flag, DATE_FORMAT(LD.created_on, "%i") as lead_generate_tm, ';

@@ -188,7 +188,13 @@ class ImportController extends CI_Controller {
                                         $state_id = $state_array['m_state_id'];
                                     }
                                 }
-
+                                $lead_black_list_flag = 0;
+                                if (!empty($pancard)) { //If pincode available in excel
+                                    $result = $this->db->select('*')->where(["pancard" => $pancard])->from("blacklisted_pan")->get();
+                                    if ($result->num_rows() > 0) {
+                                        $lead_black_list_flag = 1;
+                                    }
+                                }
 
                                 $insertDataLeads = array(
                                     'first_name' => $first_name,
@@ -215,6 +221,7 @@ class ImportController extends CI_Controller {
                                     'utm_source' => $utm_source,
                                     'utm_campaign' => $utm_campaign,
                                     'promocode' => $coupon,
+                                    'lead_black_list_flag' =>$lead_black_list_flag,
                                 );
 
                                 if (strtoupper(trim($utm_source)) == "C4C") {
