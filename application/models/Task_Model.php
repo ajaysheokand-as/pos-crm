@@ -128,7 +128,8 @@ class Task_Model extends CI_Model {
         if (!empty($search_input_array['scb'])) {
             $conditions['user_screener.name'] = $search_input_array['scb'];
         }
-
+        
+        $fiveSecondsAgo = date('Y-m-d H:i:s', strtotime('-5 seconds'));
         if (isset($_SESSION['isUserSession']['labels']) && $_SESSION['isUserSession']['labels'] == 'CR1') {
             $twentySecondsAgo = date('Y-m-d H:i:s', strtotime('-15 minutes'));
         } else {
@@ -243,7 +244,7 @@ class Task_Model extends CI_Model {
         $this->db->where('LD.lead_active', 1);
         $this->db->where('LD.lead_deleted', 0);
 
-        $this->db->where('LD.created_on <=', $twentySecondsAgo);
+        $this->db->where("(LD.source = 'Import' AND LD.created_on <= '$fiveSecondsAgo') OR (LD.source != 'Import' AND LD.created_on <= '$twentySecondsAgo')");
 
         $order_by_name = "LD.lead_id";
         $order_by_type = "DESC";
