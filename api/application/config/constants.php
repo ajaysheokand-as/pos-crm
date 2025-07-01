@@ -100,7 +100,7 @@ define("API_DOC_S3_FLAG", true); //true=> Store in S3 bucket , false=> Physical 
 define("LMS_COMPANY_LOGO", LMS_URL . "public/images/final_logo.png");
 define("LMS_BRAND_LOGO", LMS_URL . "public/images/final_logo.png");
 
-define("COMPANY_NAME", "AMAN FINCAP LIMITED");
+define("COMPANY_NAME", getenv("COMPANY_NAME") ?? "AMAN FINCAP LIMITED");
 define("BRAND_NAME", "Paisa On Salary");
 define("REGISTED_ADDRESS", "88-E 2nd Floor Near Punjab and Sind Bank, Jindal Chowk Hisar, Haryana 125001");
 define("REGISTED_MOBILE", "+91-9588534824");

@@ -6486,6 +6486,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
             // $letterfooter_url = SANCTION_LETTER_FOOTER;
             $letterhead_url = SANCTION_LETTER_NEW_HEADER;
             $letterfooter_url = SANCTION_LETTER_NEW_FOOTER;
+            $lsp_company_name = defined('LSP_COMPANY_NAME') ? LSP_COMPANY_NAME : "Credwise Fintech Private Limited";
 
             $html_string_new = "<html>
    <head>
@@ -6768,7 +6769,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
                      <span style='font-size:9.0pt;font-family:sans-serif;
-                        color:black'>Naman Finlease Private Limited</span>
+                        color:black'>$lsp_company_name</span>
                   </p>
                </td>
             </tr>
@@ -6798,7 +6799,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                   border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>
                      <span style='font-size:9.0pt;font-family:sans-serif;
-                        color:black'>Naman Finlease Private Limited</span>
+                        color:black'>$lsp_company_name</span>
                   </p>
                </td>
             </tr>
@@ -8873,7 +8874,8 @@ Capitalized terms used herein but not defined shall have the same meanings given
                color:black'>“Service Provider”</span>
             </b>
             <span style='font-size:9.0pt;
-               font-family:sans-serif;color:black'>&nbsp;shall mean Naman Finlease Private Limited trading as Paisa On Salary, a company incorporated under the provisions of Companies Act, 2013 and having its registered address at  S-370, BASEMENT PANCHSHEEL PARK , NEW DELHI, Delhi, India - 110017 which expression shall, unless it be repugnant to the subject or context thereof, include its successors and permitted assigns) and / or any agents / sub- contractors appointed by the Lender. The Service Provider acts as the authorized agent and representative of the Lender and shall undertake all requisite activities/services as mentioned in the Service Agreement executed between the Service Provider and Lender.</span>
+               font-family:sans-serif;color:black'>&nbsp;shall mean ".(LSP_COMPANY_NAME ?? "Credwise Fintech Private Limited")." trading as Paisa On Salary, a company incorporated under the provisions of Companies Act, 2013 and having its registered address at Shambhu tower,
+2nd Floor, Veer Savarkar Block, Block E, Laxmi Nagar, New Delhi - 110092 which expression shall, unless it be repugnant to the subject or context thereof, include its successors and permitted assigns) and / or any agents / sub- contractors appointed by the Lender. The Service Provider acts as the authorized agent and representative of the Lender and shall undertake all requisite activities/services as mentioned in the Service Agreement executed between the Service Provider and Lender.</span>
          </p>
          
          <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
@@ -9165,7 +9167,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
             <span style='font-size:9.0pt;font-family:sans-serif'>Appointment of Agent</span>
             </b>
             <span style='font-size:9.0pt;font-family:sans-serif'>
-            <br> The Borrower acknowledges and agrees that <b>Naman Finlease Private Limited</b> has been appointed by the Lender as its authorized agent (“Agent”) for purposes including, but not limited to, disbursement, collection, recovery, and all other incidental matters related to the Loan. The Agent shall act exclusively under the instructions of the Lender. </span>
+            <br> The Borrower acknowledges and agrees that <b>$lsp_company_name</b> has been appointed by the Lender as its authorized agent (“Agent”) for purposes including, but not limited to, disbursement, collection, recovery, and all other incidental matters related to the Loan. The Agent shall act exclusively under the instructions of the Lender. </span>
          </p>
          <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
             normal'>
@@ -10654,7 +10656,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
                   padding:6.0pt 6.0pt 6.0pt 6.0pt'>
                   <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
                      normal'>
-                     <span style='font-size:9.0pt;font-family:sans-serif'>Naman Finlease Pvt Ltd.</span>
+                     <span style='font-size:9.0pt;font-family:sans-serif'>$lsp_company_name</span>
                   </p>
                </td>
             </tr>

@@ -140,6 +140,7 @@ define("LMS_COMPANY_MIS_LOGO", LMS_URL . "public/images/final_logo.png");
 define("LMS_BRAND_LOGO", LMS_URL . "public/images/final_logo.png");
 define("BANK_STATEMENT_UPLOAD", "application/helpers/integration/");
 define("COMPANY_NAME", getenv('COMPANY_NAME'));
+define("LSP_COMPANY_NAME", getenv('LSP_COMPANY_NAME'));
 define("RBI_LICENCE_NUMBER", "B-14.01785");
 define('CONTACT_PERSON', 'Manish');
 define("REGISTED_ADDRESS", "88-E 2nd Floor Near Punjab and Sind Bank, Jindal Chowk Hisar, Haryana 125001");
