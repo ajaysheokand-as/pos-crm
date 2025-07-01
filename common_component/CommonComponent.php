@@ -9,7 +9,9 @@ set_time_limit(0);
 date_default_timezone_set('Asia/Calcutta');
 
 $xco_path = getenv('WWW_PATH').'common_component';
-defined("COMP_PATH") ?? define("COMP_PATH", $xco_path);
+if (!defined("COMP_PATH")) {
+    define("COMP_PATH", $xco_path);
+}
 define("COMP_ENVIRONMENT",  getenv('env') ?? 'production'); // development
 // define("COMP_DOC_URL", 'https://sotcrm.com/direct-document-file/'); //production
 define("COMP_DOC_URL", getenv('WEBSITE_URL').'direct-document-file/'); //production
