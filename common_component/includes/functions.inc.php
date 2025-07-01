@@ -94,7 +94,7 @@ function common_parse_name($full_name = "") {
 function common_send_email($to_email, $subject, $message, $bcc_email = "", $cc_email = "", $from_email = "", $reply_to = "", $attchement_path = "", $fileName = "", $file_move = "", $isTempUploadPath=true) {
     $status = 0;
     $error = "";
-    $active_id = 7;
+    $active_id = 6;
     // if (date("d") > 10 && date("d") <= 21) {
     //     $active_id = 5;
     // }
