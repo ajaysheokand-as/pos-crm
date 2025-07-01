@@ -12337,7 +12337,9 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
             $enc_lead_id = $this->encrypt->encode($lead_id);
 
-            $active_service = (date('d') % 2) > 0 ? 1 : 2;
+            // $active_service = (date('d') % 2) > 0 ? 1 : 2;
+            // TODO: Datewise service selector for uidai verification 
+            $active_service = 2;
 
             // $digital_ekyc_url = base_url("aadhaar-veri-request") . "?lead_id=" . $lead_id;
 
