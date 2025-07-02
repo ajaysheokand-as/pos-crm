@@ -9832,8 +9832,7 @@ class Report_Model extends CI_Model {
                     )
                 WHERE
                     UR.user_role_type_id = 3
-                    AND U3.user_id > 0
-                    AND U.user_id NOT IN(136, 1, 122, 5, 82, 18, 145,127)
+                    AND U.user_id NOT IN(1)
                 GROUP BY
                     U.user_id
                 ORDER BY
