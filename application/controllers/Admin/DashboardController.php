@@ -121,7 +121,7 @@ class DashboardController extends CI_Controller {
 	}
 
 	public function sanction_dashboard_view() {
-		if (!in_array($_SERVER['REMOTE_ADDR'], array("122.160.0.137", "125.63.105.237"))) {
+		if (!in_array($_SERVER['REMOTE_ADDR'], array("115.246.83.92"))) {
 			die("NO ACCESS");
 		}
 		$this->load->view('MIS/dashboard');
