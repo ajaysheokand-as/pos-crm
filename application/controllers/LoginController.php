@@ -225,12 +225,11 @@ class LoginController extends CI_Controller {
                     	          </tr>
                     	        </table></body></head></html>";
 
-                    // if (!empty($isValidUser['user_data']['email'])) {
+                    if (!empty($isValidUser['user_data']['email'])) {
                         require_once(COMPONENT_PATH . 'includes/functions.inc.php');
-                        common_send_email(SUPPORT_EMAIL || "support@paisaonsalary.in", $email_subject, $email_message, "");
+                        common_send_email(SUPPORT_EMAIL ?? "support@paisaonsalary.in", $email_subject, $email_message, "");
                         // common_send_email("nitinvaid2050@gmail.com", $email_subject, $email_message);
-                    // }
-
+                    }
                     $redirect_home_url = "home/";
 
                     if (isset($isValidUser['user_data']['labels']) && $isValidUser['user_data']['labels'] == "LD1") {
