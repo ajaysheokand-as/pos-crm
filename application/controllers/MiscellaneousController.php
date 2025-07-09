@@ -13,7 +13,7 @@ class MiscellaneousController extends CI_Controller {
     }   
     
       public function transferToFp(){
-        $user_ids = array(); // array of user ids from Fastpaise
+        $user_ids = array(244, 245); // array of user ids from Fastpaise
         $new_user_id = $user_ids[array_rand($user_ids)];   
         $new_lead_id = 0;
         $pancard = "";
