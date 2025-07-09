@@ -13,7 +13,7 @@ class MiscellaneousController extends CI_Controller {
     }   
     
       public function transferToFp(){
-        $user_ids = array(1,3,4);
+        $user_ids = array(244, 245); // array of user ids from Fastpaise
         $new_user_id = $user_ids[array_rand($user_ids)];   
         $new_lead_id = 0;
         $pancard = "";
@@ -88,7 +88,7 @@ class MiscellaneousController extends CI_Controller {
             $leadData['lead_screener_assign_user_id'] = $new_user_id;
             $leadData['lead_credit_assign_user_id'] = $new_user_id;
         }
-        $leadData['transfered_flag'] = 1;
+        $leadData['transfered_flag'] = 2;
         $insertLead = $this->insertIntoTable($leadData, 'leads');
 
         if (!$insertLead) {
