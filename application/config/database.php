@@ -115,29 +115,32 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
+$server2 = 'fastpaise-db.ct8q8ciy6u9o.ap-south-1.rds.amazonaws.com';
+$username2 = 'admin';
+$password2 = 'Ane21092011!#';
+$database2 = 'fastpaise';
+//}
+
 $db['second'] = array(
-	'dsn'	=> '',
-	'hostname' => '3.111.200.33:3306',
-	'username' => 'vin_lms_duniyafinance',
-	'password' => '!@#QET_13#13vin%24',
-	'database' => 'fintechc_prod_payday',
-  // 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'pos-db',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'active_r' => TRUE,
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-); 
+    'dsn' => '',
+    'hostname' => $server2,
+    'username' => $username2,
+    'password' => $password2,
+    'database' => $database2,
+    'dbdriver' => 'mysqli',
+    'dbprefix' => '',
+    'active_r' => TRUE,
+    'pconnect' => FALSE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt' => FALSE,
+    'compress' => FALSE,
+    'stricton' => FALSE,
+    'failover' => array(),
+    'save_queries' => TRUE
+);
+
