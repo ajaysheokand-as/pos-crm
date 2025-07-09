@@ -687,3 +687,7 @@ $route['p/api/generateLead'] = 'Api/ApiController/importSingleLead';
 $route['p/api/repayment'] = 'Api/ApiController/getLoan';
 
 /********************* Public API End***************************/
+
+
+/********************* Transfer Lead Route ***************************/
+$route['transferToFp'] = 'MiscellaneousController/transferToFp';
