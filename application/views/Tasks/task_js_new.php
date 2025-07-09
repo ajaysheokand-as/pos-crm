@@ -331,7 +331,9 @@
                                               <button class="btn btn-success reject-button" onclick="RejectedLoan()">Reject</button>
                                               <?php } */ 
                                               ?>
-                                                    
+<?php if((agent == "CA") && in_array($_SESSION['isUserSession']['user_id'],array(92,93))){?>
+   <button class="btn btn-warning lead-transfer-fp" style="background : #0a5e90 !important;" onclick="getTransferFp('<?=$leadDetails->lead_id ?>')" ?>Transfer To Fp</button>
+<?php } ?>
                                                     <?php if (agent == 'AU') { ?>
                                                         <button class="btn btn-success approval-button" style="display:none;" onclick="ApprovalLoan()">Approve</button>
                                                     <?php }

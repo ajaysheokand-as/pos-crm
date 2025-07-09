@@ -9,6 +9,38 @@
     }).css("float", 'left');
 </script>
 <script>
+    function getTransferFp(lead_id) {     
+        if(confirm("Are you sure to transfer lead!")) {
+			$.ajax({
+				url: '<?= base_url('transferToFp') ?>',
+				type: 'POST',
+				dataType: "json",
+				data: {
+					lead_id: lead_id,
+					csrf_token
+				},
+				beforeSend: function() {
+					$('.lead-transfer-fp').html('<span class="spinner-border spinner-border-sm mr-2" role="status"></span>Processing...').prop('disabled', true);
+				},
+				success: function(response) {
+					if (response.errSession) {
+						window.location.href = "<?= base_url() ?>";
+					} else if (response.message) {
+						catchSuccess(response.message);
+						window.location.href = "<?= base_url() ?>";
+					} else {
+						catchError(response.error);
+					}
+				},
+				complete: function() {
+					$('.lead-transfer-fp').html('Recommend').prop('disabled', false);
+				},
+			});
+		} else {
+            catchSuccess("Network Error, Try Again");
+        }
+    }
+    
     function sendAAconsentRequest(lead_id, btn) {
         $(btn).css('display', 'none');
         $(".btnLoading").css('display', 'inline-block');
