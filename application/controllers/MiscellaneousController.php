@@ -79,6 +79,7 @@ class MiscellaneousController extends CI_Controller {
         // Step 5: Insert lead into DB2
         $leadData['lead_id'] = ""; // unset primary key
         $leadData['lead_reference_no'] = ""; // unset lead_reference_no
+        $leadData['check_cibil_status'] = 0; // unset check_cibil_status
         if(in_array($lead_status_id, [2, 3])){
             $leadData['lead_screener_assign_user_id'] = $new_user_id;
             $leadData['lead_credit_assign_user_id'] = NULL;
@@ -113,6 +114,8 @@ class MiscellaneousController extends CI_Controller {
         if ($customer) {
             $custData = (array) $customer;
             $custData['customer_lead_id'] = $new_lead_id;
+            $custData['pancard_ocr_verified_status'] = 0;
+            $custData['aadhaar_ocr_verified_status'] = 0;
             $custData['customer_seq_id'] = '';
 
             if (!$this->insertIntoTable($custData, 'lead_customer')) {
