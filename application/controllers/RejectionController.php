@@ -116,12 +116,12 @@ class RejectionController extends CI_Controller {
                                 'created_on' => date('Y-m-d H:i:s')
                             );                       
 
-                            if ($sms_sent_flag) {
-                                $sms_type_id = 4;
-                                require_once (COMPONENT_PATH . 'CommonComponent.php');
-                                $CommonComponent = new CommonComponent();
-                                $CommonComponent->payday_sms_api($sms_type_id, $lead_id, ['lead_id' => $lead_id, 'mobile' => $leads->mobile]);
-                            }
+                            // if ($sms_sent_flag) {
+                            //     $sms_type_id = 4;
+                            //     require_once (COMPONENT_PATH . 'CommonComponent.php');
+                            //     $CommonComponent = new CommonComponent();
+                            //     $CommonComponent->payday_sms_api($sms_type_id, $lead_id, ['lead_id' => $lead_id, 'mobile' => $leads->mobile]);
+                            // }
 
                             if ($email_sent_flag) {
                                 $to_email = $leads->email;
