@@ -113,6 +113,8 @@ class MiscellaneousController extends CI_Controller {
         if ($customer) {
             $custData = (array) $customer;
             $custData['customer_lead_id'] = $new_lead_id;
+            $custData['pancard_ocr_verified_status'] = 0;
+            $custData['aadhaar_ocr_verified_status'] = 0;
             $custData['customer_seq_id'] = '';
 
             if (!$this->insertIntoTable($custData, 'lead_customer')) {
