@@ -996,6 +996,7 @@ class ExportController extends CI_Controller {
                 $toDate = date('Y-m-d', strtotime($toDate));
                 $lead_id = $res['lead_id'];
                 $loan_no = $res['loan_no'];
+                $remark ='';
                 // print_r($loan_no);
                 // exit;
                 $result1 = $this->db->select_sum('received_amount')->where("lead_id = '$lead_id' AND date_of_recived <= '$toDate' AND payment_verification = 1 AND collection_active = 1 AND collection_deleted = 0")->from('collection')->get();
@@ -1006,6 +1007,8 @@ class ExportController extends CI_Controller {
                 $last_payment = $result->row_array();
 
                 $repayment_type_id = $last_payment['repayment_type'];
+
+
                 $loan_amount = round($res['loan_recommended']);
                 $roi = $res['roi'];
                 $repay_date = strtotime($res['repayment_date']);
@@ -1016,6 +1019,18 @@ class ExportController extends CI_Controller {
                 $loan_closed_date = '';
                 if ($repayment_type_id == 16 || $repayment_type_id == 17) {
                     $loan_closed_date = !empty($last_payment['date_of_recived']) ? date("dmY", strtotime($last_payment['date_of_recived'])) : "";
+                }
+                $loan_closed_date2 = '';
+                if ($repayment_type_id == 16 || $repayment_type_id == 17) {
+                    $loan_closed_date2 = !empty($last_payment['date_of_recived']) ? date("d-m-Y", strtotime($last_payment['date_of_recived'])) : "";
+                }
+
+                $currentMonth = date('m', strtotime($fromDate));
+                $closedMonth = date('m',strtotime($loan_closed_date2));
+                if($closedMonth != $currentMonth && $repayment_type_id == 16){
+
+                    continue ;
+            
                 }
 
                 $setted_WO_status_id = '';
@@ -1090,7 +1105,6 @@ class ExportController extends CI_Controller {
                 if ($repayment_type_id == 16 || $repayment_type_id == 17) {
                     $repay_amount = 0;
                 }
-
                 $arrayAddress = $this->splitTextForCibil($res['Address']);
 
                 $export_data_array[] = array(
@@ -1123,13 +1137,23 @@ class ExportController extends CI_Controller {
                     'PIN Code' => $res['pincode'],
                     'Address Category1' => $residence_type,
                     'Residence Code1' => $residence_type,
-                    'Address2' => '',
-                    'State Code2' => '',
-                    'PIN Code2' => '',
-                    'Address Category2' => '',
-                    'Residence Code2' => '',
-                    'Current/New Member Code' => 'NB42350001',
-                    'Current/New Member Short Name' => 'NAMFINPL',
+                    'Address2' => $arrayAddress[1],
+                    'State Code2' => !empty($arrayAddress[1])?$res['state_id']:"",
+                    'PIN Code2' => !empty($arrayAddress[1])?$res['pincode']:"",
+                    'Address Category2' => !empty($arrayAddress[1])?$residence_type:"",
+                    'Residence Code2' => !empty($arrayAddress[1])?$residence_type:"",
+                    'Address3' => $arrayAddress[2],
+                    'State Code3' => !empty($arrayAddress[2])?$res['state_id']:"",
+                    'PIN Code3' => !empty($arrayAddress[2])?$res['pincode']:"",
+                    'Address Category3' => !empty($arrayAddress[2])?$residence_type:"",
+                    'Residence Code3' => !empty($arrayAddress[2])?$residence_type:"",                
+                    'Address4' => $arrayAddress[3],
+                    'State Code4' => !empty($arrayAddress[3])?$res['state_id']:"",
+                    'PIN Code4' => !empty($arrayAddress[3])?$res['pincode']:"",
+                    'Address Category4' => !empty($arrayAddress[3])?$residence_type:"",
+                    'Residence Code4' => !empty($arrayAddress[3])?$residence_type:"",                
+                    'Current/New Member Code' => 'NB4590002',
+                    'Current/New Member Short Name' => 'AMANFINCAP',
                     'Curr/New Account No' => $loan_no,
                     'Account Type' => '05',
                     'Ownership Indicator' => '1',
@@ -1166,9 +1190,6 @@ class ExportController extends CI_Controller {
                     'Net/Gross Income Indicator' => '',
                     'Monthly/Annual Income Indicator' => '',
                     'received_amount' => $totalReceivedAmount,
-                    'Address2' => $arrayAddress[1],
-                    'Address3' => $arrayAddress[2],
-                    'Address4' => $arrayAddress[3],
                 );
                 if (agent == "MR" || $user_id == 406) {
                     $export_data_array[$i]["Mobile No"] = 'XXXXXX1234';
