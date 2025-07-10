@@ -528,7 +528,7 @@ $stage = $this->uri->segment(2);
 
                                                                                         <td class="whitespace">
                                                                                             <?php if (in_array($stage, array("S1", "S4", "S20"))) { ?>
-                                                                                                <?php if (agent == 'CR1') { //&& in_array(strtoupper($row->utm_source), array("REPEATNF", "LWREPEATDB")) && in_array(user_id, array(55, 121, 48, 138))?>
+                                                                                                <?php if (agent == 'CR1' || agent == 'CA') { //&& in_array(strtoupper($row->utm_source), array("REPEATNF", "LWREPEATDB")) && in_array(user_id, array(55, 121, 48, 138))?>
                                                                                                     <input type="checkbox" name="duplicate_id[]" class="duplicate_id" id="duplicate_id" value="<?= intval($row->lead_id); ?>">&nbsp;</br>
                                                                                                     <input type="hidden" name="customer_id" id="customer_id" value="<?= strval($row->customer_id) ?>">
                                                                                                     <input type="hidden" name="user_id" id="user_id" value="<?= $_SESSION['isUserSession']['user_id'] ?>">
