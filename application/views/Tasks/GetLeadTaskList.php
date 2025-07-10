@@ -809,7 +809,7 @@
 
                                                                                         <td class="whitespace">
                                                                                             <?php if (in_array($stage, array("S1", "S4", "S20"))) { ?>
-                                                                                            <?php if (agent == 'CR1' && $row->user_type == "NEW") { //&& in_array(strtoupper($row->utm_source), array("REPEATNF", "LWREPEATDB")) && in_array(user_id, array(55, 121, 48, 138))
+                                                                                            <?php if ((agent == 'CR1' || agent == 'CA' ) && $row->user_type == "NEW") { //&& in_array(strtoupper($row->utm_source), array("REPEATNF", "LWREPEATDB")) && in_array(user_id, array(55, 121, 48, 138))
                                                                                                         ?>
                                                                                             <input type="checkbox"
                                                                                                 name="duplicate_id[]"
