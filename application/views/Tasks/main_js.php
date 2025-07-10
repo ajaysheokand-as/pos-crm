@@ -494,6 +494,56 @@
         });
     });
 
+    
+    $(function() {
+        $('#allocateToUsers').click(function() {
+            var checkList = [];
+            $('.duplicate_id:checked').each(function() {
+                checkList.push($(this).val());
+            });
+            console.log("leadAllocateSelectedUser: ", $('#leadAllocateSelectedUser').val());
+            var user_id = $('#leadAllocateSelectedUser').val();
+            if(!user_id){
+                catchError("Please select a user to allocate leads.");
+                return;
+            }
+            if (checkList.length > 0) {
+                var customer_id = $('#customer_id').val();
+                $.ajax({
+                    url: '<?= base_url("allocateLeadsToUser") ?>',
+                    type: 'POST',
+                    dataType: "json",
+                    data: {
+                        checkList: checkList,
+                        user_id: user_id,
+                        customer_id: customer_id,
+                        csrf_token
+                    },
+
+                    beforeSend: function() {
+                        $('#allocate').html('<span class="spinner-border spinner-border-sm" role="status"></span>Processing...').addClass('disabled');
+                    },
+                    success: function(response) {
+                        if (response.err) {
+                            catchError(response.err);
+                        } else {
+                            $('.duplicate_id,#selectAllDomainList').removeAttr('checked');
+                            catchSuccess("Leads added in Your Bucket.");
+                            window.location.reload();
+                        }
+                    },
+                    complete: function() {
+                        $('#allocate').html('Allocate').removeClass('disabled');
+                    }
+                });
+            } else {
+                $('#allocate').html('<span class="spinner-border spinner-border-sm" role="status"></span>Processing...').addClass('disabled');
+                catchError("Please select Leads to Assign.");
+                $('#allocate').html('Allocate').removeClass('disabled');
+            }
+        });
+    });
+
     $(function() {
         $('#sync_data').click(function() {
             var checkList = [];

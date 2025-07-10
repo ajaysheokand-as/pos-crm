@@ -13866,7 +13866,7 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
     public function getUserList($stage = "") {
 
-        if (in_array($stage, ["S2", "S3"])) {
+        if (in_array($stage, ["S1","S2", "S3"])) {
             $condition = "AND UR.user_role_type_id = 2";
         } elseif (in_array($stage, ["S5", "S6", "S10", "S11", "S12", "S14", "S16"])) {
             $condition = "AND UR.user_role_type_id = 3";
@@ -13897,6 +13897,12 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $userList_array[$user_data['user_id']] = $user_data['name'];
         }
         return $userList_array;
+    }
+    public function getUserById($user_id = "") {
+        $query = "SELECT U.user_id, U.name, U.mobile, U.email FROM users U WHERE U.user_id = $user_id";
+
+        $tempDetails = $this->db->query($query);
+        return $tempDetails->row();
     }
 
     public function getAAconsentLog($lead_id, $methodId, $fields = []) {

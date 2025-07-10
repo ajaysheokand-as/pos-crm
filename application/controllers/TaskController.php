@@ -1628,6 +1628,164 @@ class TaskController extends CI_Controller {
             }
         }
     }
+    public function allocateLeadsToUser() {
+
+    if (empty($_SESSION['isUserSession']['user_id'])) {
+        $json['err'] = "Session Expired";
+        echo json_encode($json);
+    } else if( agent != "CA" ) {
+        $json['err'] = "You are not authorized to perform this action";
+        echo json_encode($json);
+    }else {
+
+        if (!empty($_POST["checkList"])) {
+                $screener = $this->Tasks->getUserById($_POST["user_id"]);
+                    // echo $_POST["user_id"];
+                $screener_name = $screener->name;
+
+            foreach ($_POST["checkList"] as $lead_id) {
+
+                $empDetails = $this->Tasks->select(['lead_id' => $lead_id], 'lead_id, lead_status_id, first_name, email', 'leads');
+                $empDetails = $empDetails->row();
+
+                $label = $_SESSION['isUserSession']['labels'];
+                $login_user_name = $_SESSION['isUserSession']['name'];
+                $lead_remark = "Lead was assigned to {$screener_name} by {$login_user_name}";
+                if ( $label == 'CA') {
+
+                    if (!in_array($empDetails->lead_status_id, [41, 42, 1])) {
+                        continue;
+                    }
+
+                    $status = "LEAD-INPROCESS";
+                    $status_id = 2;
+                    $stage = "S2";
+
+                    $assign_user_id = 'lead_screener_assign_user_id';
+                    $assign_datetime = 'lead_screener_assign_datetime';
+                } else {
+                    continue;
+                }
+
+                $conditions = ['lead_id' => $lead_id];
+
+                $lead_details = $this->Tasks->select($conditions, "lead_id, $assign_user_id, user_type, lead_screener_assign_user_id, lead_data_source_id", 'leads');
+
+                if ($lead_details->num_rows() > 0) {
+
+
+                    $lead_details = $lead_details->row_array();
+
+                    $lead_data_source_id = $lead_details['lead_data_source_id'];
+
+                    if (!empty($lead_details['lead_id'])) {
+                        if (!empty($lead_details[$assign_user_id])) {
+                            continue;
+                        }
+                    } else {
+                        continue;
+                    }
+                } else {
+                    continue;
+                }
+
+                $update_lead_data = [
+                    'status' => $status,
+                    'lead_status_id' => $status_id,
+                    'stage' => $stage,
+                    $assign_user_id => $_POST['user_id'],
+                    $assign_datetime => date('Y-m-d H:i:s'),
+                    'updated_on' => date('Y-m-d H:i:s')
+                ];
+
+                if (empty($lead_details["lead_screener_assign_user_id"])) {
+                    $update_lead_data['lead_screener_assign_user_id'] = $_POST['user_id'];
+                    $update_lead_data['lead_screener_assign_datetime'] = date('Y-m-d H:i:s');
+                }
+
+                $insert_lead_followup = [
+                    'lead_id' => $lead_id,
+                    'user_id' => $_SESSION['isUserSession']['user_id'],
+                    'status' => $status,
+                    'stage' => $stage,
+                    'created_on' => date("Y-m-d H:i:s"),
+                    'lead_followup_status_id' => $status_id,
+                    'remarks' => $lead_remark
+                ];
+
+                $conditions = ['lead_id' => $lead_id];
+
+                $this->Tasks->updateLeads($conditions, $update_lead_data, $this->tbl_leads);
+
+                // if ($label == 'CR1' || $label == 'CA' || $label == 'SA') {
+                    // if ($label == 'CR1' && ENVIRONMENT == 'production') {
+                    //     $this->load->helper('integration/payday_runo_call_api');
+                    //     $method_name = 'LEAD_CAT_SANCTION';
+                    //     payday_call_management_api_call($method_name, $lead_id);
+                    // }
+                // }
+                $email_message = '<!DOCTYPE html>
+                                    <html>
+                                    <head>
+                                        <meta charset="UTF-8" />
+                                        <title>Lead Allocation - Paisa On Salary</title>
+                                    </head>
+                                    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f8f8; padding: 20px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <tr>
+                                            <td style="padding: 20px;">
+                                            <h2 style="color: #2a9d8f;">Paisa On Salary</h2>
+                                            <p>Dear <strong>'.$empDetails->first_name.'</strong>,</p>
+
+                                            <p>Thank you for showing interest in a loan with <strong>Paisa On Salary</strong>. We’re happy to inform you that your request has been assigned to one of our dedicated loan executives.</p>
+
+                                            <table style="margin: 20px 0; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f4f4f4;">
+                                                <tr>
+                                                <td>👉 <strong>Relationship Manager:</strong></td>
+                                                <td>'.$screener_name.'</td>
+                                                </tr>
+                                                <tr>
+                                                <td>📞 <strong>Contact Number:</strong></td>
+                                                <td>'.$screener->mobile.'</td>
+                                                </tr>
+                                            </table>
+
+                                            <p>Our executive will assist you with the entire process — from documentation to quick disbursal. You’re just a few steps away from getting your loan!</p>
+
+                                            <p>To speed things up, feel free to call or WhatsApp your executive directly.</p>
+
+                                            <p>If you have any questions or need help, we’re always here for you.</p>
+
+                                            <p>Warm regards,<br />
+                                            <strong>Team Paisa On Salary</strong><br />
+                                            📧 <a href="mailto:support@paisaonsalary.in">support@paisaonsalary.in</a><br />
+                                            🌐 <a href="https://www.paisaonsalary.in">www.paisaonsalary.in</a></p>
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </body>
+                                    </html>';
+                require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+
+                try{
+                    // print_r($empDetails);
+
+                    // echo "Sending email to: " . $empDetails->email . "\n";
+                    // echo "Email message: " . $email_message . "\n";
+                    // echo "Screener email: " . $screener->email . "\n";
+                    common_send_email($empDetails->email,"Your Paisa On Salary Loan Request – Executive Assigned",$email_message,"","credit@paisaonsalary.in");
+                }catch(Exception $e){
+                    echo('Error sending email: ' . $e->getMessage());
+                }
+                $this->Tasks->insert($insert_lead_followup, 'lead_followup');
+            }
+            echo "true";
+        } else {
+            $json['err'] = "Please select at least one record";
+            echo json_encode($json);
+        }
+    }
+    }
 
     public function rejectedLeadMoveToProcess() {
 

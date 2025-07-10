@@ -487,9 +487,25 @@
                                                                 <span
                                                                     class="counter inner-page-box" title="Total Outstanding"><?= $total_outstanding ?></span>
                                                                 <?php } else { ?>
+                                                                 <?php if($stage == "S1" && agent == 'CA') {  ?>
                                                                 <span
                                                                     class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
-                                                                <?php } ?>
+                                                                    <div class="col-md-2 col-sm-3" style="margin-top: 12px;">
+                                                                        <div class="">
+                                                                            <!-- <label>Docs Available?</label> -->
+                                                                            <select class="form-control" id="leadAllocateSelectedUser" name="scb">
+                                                                                <option value="">Select</option>
+
+                                                                                <?php foreach($user_list as $key => $data_user_list){ ?>
+
+                                                                                <option value="<?= $key; ?>"><?= $data_user_list; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="btn inner-page-box" id="allocateToUsers"
+                                                                    style="background: #278B65 !important;">Allocate</a>
+                                                                <?php } } ?>
                                                                 <?php if ((agent == 'CR1' && $stage == "S1") || (agent == 'CR2' && $stage == "S4")) { ?>
                                                                 <!-- <a class="btn inner-page-box checkDuplicateItem" id="checkDuplicateItem" style="background: #0d7ec0 !important;">Duplicate</a> -->
                                                                 <a class="btn inner-page-box" id="allocate"

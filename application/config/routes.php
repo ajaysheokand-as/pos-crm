@@ -181,6 +181,7 @@ $route['customer-upload-docs/(:any)'] = 'TaskController/saveCustomerDocs/$1';
 
 $route['resonForDuplicateLeads'] = 'TaskController/resonForDuplicateLeads';
 $route['allocateLeads'] = 'TaskController/allocateLeads';
+$route['allocateLeadsToUser'] = 'TaskController/allocateLeadsToUser';
 $route['applicationHold'] = 'TaskController/applicationHold';
 
 $route['saveApplication'] = 'LeadsController/saveApplication';
