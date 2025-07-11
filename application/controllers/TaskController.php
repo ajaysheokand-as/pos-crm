@@ -1725,46 +1725,67 @@ class TaskController extends CI_Controller {
                     // }
                 // }
                 $email_message = '<!DOCTYPE html>
-                                    <html>
-                                    <head>
-                                        <meta charset="UTF-8" />
-                                        <title>Lead Allocation - Paisa On Salary</title>
-                                    </head>
-                                    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f8f8; padding: 20px;">
-                                        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                                        <tr>
-                                            <td style="padding: 20px;">
-                                            <h2 style="color: #2a9d8f;">Paisa On Salary</h2>
-                                            <p>Dear <strong>'.$empDetails->first_name.'</strong>,</p>
+                    <html lang="en">
+                    <head>
+                    <meta charset="UTF-8" />
+                    <title>Your Loan Journey Begins Now!</title>
+                    </head>
+                    <body style="margin:0; font-family:Arial, sans-serif; background:#f4f6f8; color:#333; padding:20px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:auto; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+                        <tr>
+                        <td style="padding:30px;">
 
-                                            <p>Thank you for showing interest in a loan with <strong>Paisa On Salary</strong>. We’re happy to inform you that your request has been assigned to one of our dedicated loan executives.</p>
+                            <h2 style="color:#0a9396; font-size:24px; margin-bottom:10px;">Your Loan is One Step Away 🚀</h2>
+                            <p style="font-size:16px;">Dear <strong>'.$empDetails->first_name.'</strong>,</p>
 
-                                            <table style="margin: 20px 0; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f4f4f4;">
-                                                <tr>
-                                                <td>👉 <strong>Relationship Manager:</strong></td>
-                                                <td>'.$screener_name.'</td>
-                                                </tr>
-                                                <tr>
-                                                <td>📞 <strong>Contact Number:</strong></td>
-                                                <td>'.$screener->mobile.'</td>
-                                                </tr>
-                                            </table>
+                            <p style="font-size:15px; line-height:1.6;">
+                            Great news! You\'ve taken the first step toward getting instant financial support through <strong>Paisa On Salary</strong>. We\'ve assigned one of our top executives to guide you through the final process.
+                            </p>
 
-                                            <p>Our executive will assist you with the entire process — from documentation to quick disbursal. You’re just a few steps away from getting your loan!</p>
+                            <div style="background:#f1f5f9; border-left:4px solid #0a9396; padding:15px 20px; margin:20px 0; border-radius:6px;">
+                            <p style="margin:0;"><strong>👤 Executive Name:</strong> '.$screener_name.'</p>
+                            <p style="margin:0;"><strong>📞 Mobile:</strong> <a href="tel:'.$screener->mobile.'" style="color:#0a9396;">'.$screener->mobile.'</a></p>
+                            <p style="margin:0;"><strong>💬 WhatsApp:</strong> <a href="https://wa.me/91'.$screener->mobile.'" style="color:#0a9396;">Click to Chat</a></p>
+                            </div>
 
-                                            <p>To speed things up, feel free to call or WhatsApp your executive directly.</p>
+                            <p style="font-size:15px;">
+                            ✅ Get up to <strong>₹90,000</strong><br/>
+                            ✅ Same-day processing<br/>
+                            ✅ No hassle, just basic documents<br/>
+                            ✅ Personal support till disbursal
+                            </p>
 
-                                            <p>If you have any questions or need help, we’re always here for you.</p>
+                            <h3 style="margin-top:30px; font-size:18px; color:#333;">📄 Documents You’ll Need:</h3>
+                            <ul style="line-height:1.8; padding-left:20px;">
+                            <li>Aadhar Card (Front & Back)</li>
+                            <li>PAN Card (Original)</li>
+                            <li>Last 6 Months Bank Statement (PDF only)</li>
+                            <li>Last 3 Salary Slips / Certificate</li>
+                            <li>Proof of Address (Utility Bill and Rent Agreement)</li>
+                            <li>Official Email ID (if salary > ₹25,000)</li>
+                            </ul>
 
-                                            <p>Warm regards,<br />
-                                            <strong>Team Paisa On Salary</strong><br />
-                                            📧 <a href="mailto:support@paisaonsalary.in">support@paisaonsalary.in</a><br />
-                                            🌐 <a href="https://www.paisaonsalary.in">www.paisaonsalary.in</a></p>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </body>
-                                    </html>';
+                            <div style="margin:30px 0;">
+                            <a href="https://wa.me/91'.$screener->mobile.'" style="background:#0a9396; color:#fff; padding:12px 20px; text-decoration:none; border-radius:5px; font-weight:bold;">
+                                💬 Connect on WhatsApp Now
+                            </a>
+                            </div>
+
+                            <p style="font-size:15px;">
+                            Let’s fast-track your loan! Our executive is ready to assist you. Don’t miss this opportunity to get the funds you need—on your terms.
+                            </p>
+
+                            <p style="margin-top:30px;">
+                            Warm regards,<br/>
+                            <strong>Team Paisa On Salary</strong><br/>
+                            📧 <a href="mailto:support@paisaonsalary.in" style="color:#0a9396;">support@paisaonsalary.in</a><br/>
+                            🌐 <a href="https://www.paisaonsalary.in" style="color:#0a9396;">www.paisaonsalary.com</a>
+                            </p>
+                        </td>
+                        </tr>
+                    </table>
+                    </body>
+                    </html>';
                 require_once(COMPONENT_PATH . 'includes/functions.inc.php');
 
                 try{
