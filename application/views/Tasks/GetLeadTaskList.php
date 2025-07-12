@@ -487,9 +487,8 @@
                                                                 <span
                                                                     class="counter inner-page-box" title="Total Outstanding"><?= $total_outstanding ?></span>
                                                                 <?php } else { ?>
+                                                                    <span class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                  <?php if($stage == "S1" && agent == 'CA') {  ?>
-                                                                <span
-                                                                    class="counter inner-page-box" title="Total Leads"><?= $totalcount; ?></span>
                                                                     <div class="col-md-2 col-sm-3" style="margin-top: 12px;">
                                                                         <div class="">
                                                                             <!-- <label>Docs Available?</label> -->
