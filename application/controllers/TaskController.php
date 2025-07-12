@@ -1498,7 +1498,7 @@ class TaskController extends CI_Controller {
 
                 foreach ($_POST["checkList"] as $lead_id) {
 
-                    $empDetails = $this->Tasks->select(['lead_id' => $lead_id], 'lead_id, lead_status_id', 'leads');
+                    $empDetails = $this->Tasks->select(['lead_id' => $lead_id], 'lead_id, lead_status_id, first_name, email', 'leads');
                     $empDetails = $empDetails->row();
 
                     $label = $_SESSION['isUserSession']['labels'];
@@ -1598,13 +1598,13 @@ class TaskController extends CI_Controller {
 
                     $this->Tasks->updateLeads($conditions, $update_lead_data, $this->tbl_leads);
 
-                    if ($label == 'CR1' || $label == 'CA' || $label == 'SA') {
-                        if ($label == 'CR1' && ENVIRONMENT == 'production') {
-                            $this->load->helper('integration/payday_runo_call_api');
-                            $method_name = 'LEAD_CAT_SANCTION';
-                            payday_call_management_api_call($method_name, $lead_id);
-                        }
-                    }
+                    // if ($label == 'CR1' || $label == 'CA' || $label == 'SA') {
+                    //     if ($label == 'CR1' && ENVIRONMENT == 'production') {
+                    //         $this->load->helper('integration/payday_runo_call_api');
+                    //         $method_name = 'LEAD_CAT_SANCTION';
+                    //         payday_call_management_api_call($method_name, $lead_id);
+                    //     }
+                    // }
 
                     if ($label == 'DS1') {
 
@@ -1618,6 +1618,24 @@ class TaskController extends CI_Controller {
                         $this->Tasks->updateLeads($conditions, $dataLoan, 'loan');
                     }
 
+                    if($label== "CR1"){
+                        require_once(COMPONENT_PATH . 'includes/functions.inc.php');
+                       
+                        $email_message = $this->load->view(
+                            'templates/email/allocation_email_customer',
+                            [
+                                'empDetails' => $empDetails,
+                                'screener' => array(
+                                    'name' => $_SESSION['isUserSession']['name'],
+                                    'mobile' => $_SESSION['isUserSession']['mobile']
+                                ),
+                            ],
+                            true
+                        );
+
+                        // echo $email_message;
+                        common_send_email($empDetails->email,"Your Paisa On Salary Loan Request – Executive Assigned",$email_message,"","credit@paisaonsalary.in");
+                    }
 
                     $this->Tasks->insert($insert_lead_followup, 'lead_followup');
                 }
