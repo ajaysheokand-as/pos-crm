@@ -60,13 +60,11 @@ class TaskController extends CI_Controller {
 
         if ($stage == "S1" && $this->uri->segment(1) == "screeninLeads") {
             $where_in['LD.lead_status_id'] = array(1);
-            $this->db->join('master_city MC', 'MC.m_city_id = LD.city_id', 'left');
-            $this->db->where('MC.m_city_active =',1);
+            $conditions['CT.m_city_active ='] = 1;
         }
         if ($stage == "S1" && $this->uri->segment(1) == "negativeAreaLeads") {
             $where_in['LD.lead_status_id'] = array(1);
-            $this->db->join('master_city MC', 'MC.m_city_id = LD.city_id', 'left');
-            $this->db->where('MC.m_city_active !=',1);
+            $conditions['CT.m_city_active !='] = 1;
         }
 
         if ($stage == "S1" && $this->uri->segment(1) == "partialLeads") {

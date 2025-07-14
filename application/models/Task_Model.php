@@ -3911,6 +3911,9 @@ Capitalized terms used herein but not defined shall have the same meanings given
             unset($conditions["LD.stage"]);
             $this->db->join('loan_collection_visit LCV', 'LCV.col_lead_id = LD.lead_id AND LCV.col_visit_active=1', 'left');
         }
+        if(in_array($this->uri->segment(1), ["negativeAreaLeads","screeninLeads"]) && !empty($conditions['CT.m_city_active !=']) || !empty($conditions['CT.m_city_active ='])){
+             $this->db->join('master_city CT', 'CT.m_city_id = LD.city_id', 'left');
+        }
 
 
         if (!empty($conditions)) {
@@ -4100,6 +4103,10 @@ Capitalized terms used herein but not defined shall have the same meanings given
             $this->db->where('repayment_date BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 DAY)', NULL, FALSE);
         }
 
+        if(in_array($this->uri->segment(1), ["negativeAreaLeads","screeninLeads"]) && !empty($conditions['CT.m_city_active !=']) || !empty($conditions['CT.m_city_active ='])){
+            $this->db->join('master_city CT', 'CT.m_city_id = LD.city_id', 'left');
+        }
+
         if (!empty($conditions)) {
             $conditions['LD.lead_active'] = 1;
             $conditions['LD.lead_deleted'] = 0;
@@ -4277,6 +4284,10 @@ Capitalized terms used herein but not defined shall have the same meanings given
 
         if (!empty($where_in['LD.state_id'])) {
             $this->db->where_in('LD.state_id', $where_in['LD.state_id']);
+        }
+
+        if(in_array($this->uri->segment(1), ["negativeAreaLeads","screeninLeads"]) && !empty($conditions['CT.m_city_active !=']) || !empty($conditions['CT.m_city_active ='])){
+            $this->db->join('master_city CT', 'CT.m_city_id = LD.city_id', 'left');
         }
 
         //$this->db->distinct();
