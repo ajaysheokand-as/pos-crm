@@ -122,7 +122,8 @@ class ApiController extends CI_Controller
                     ->select('pancard, lead_id')
                     ->from('leads')
                     ->where('pancard', $pancard)
-                    ->where('stage !=', 'S9')
+                    // ->where('stage !=', 'S9')
+                    ->where('stage =', 'S1')
                     ->where('status !=', 'REJECT')
                     ->where('lead_status_id !=', 9)
                     ->get();
