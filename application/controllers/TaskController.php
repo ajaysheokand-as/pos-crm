@@ -61,10 +61,16 @@ class TaskController extends CI_Controller {
         if ($stage == "S1" && $this->uri->segment(1) == "screeninLeads") {
             $where_in['LD.lead_status_id'] = array(1);
             $conditions['CT.m_city_active ='] = 1;
+            $conditions['LD.lead_black_list_flag !='] = 1;
         }
         if ($stage == "S1" && $this->uri->segment(1) == "negativeAreaLeads") {
             $where_in['LD.lead_status_id'] = array(1);
             $conditions['CT.m_city_active !='] = 1;
+            $conditions['LD.lead_black_list_flag !='] = 1;
+        }
+        
+        if ($stage == "S1" && $this->uri->segment(1) == "blacklistLeads") {
+            $conditions['LD.lead_black_list_flag'] = 1;
         }
 
         if ($stage == "S1" && $this->uri->segment(1) == "partialLeads") {
