@@ -426,8 +426,7 @@ class ApiController extends CI_Controller
         try {
             $query = $this->db->select('lead_id, first_name, mobile, email, loan_amount, loan_no')
                 ->where('pancard', $post['pancard'])
-                ->where('status', 'DISBURSED')
-                ->where('stage', 'S14')
+                ->where_in('stage', ['S14', 'S16'])
                 ->from('leads')
                 ->order_by('lead_id', 'DESC')
                 ->limit(1)
