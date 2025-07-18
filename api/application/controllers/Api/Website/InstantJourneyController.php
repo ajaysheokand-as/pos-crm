@@ -1663,7 +1663,7 @@ class InstantJourneyController extends REST_Controller {
                         throw new RuntimeException("You are not eligible for a loan.");
                     }
 
-                    if ($monthly_income < 35000 && $user_type == "NEW") {
+                    if ($monthly_income < 26000 && $user_type == "NEW") {
 
                         $update_array = array();
                         $update_array['status'] = 'SYSTEM-REJECT';
@@ -1675,7 +1675,7 @@ class InstantJourneyController extends REST_Controller {
 
                         $this->Tasks->updateLeads($lead_id, $update_array);
 
-                        $this->Tasks->insertApplicationLog($lead_id, 8, "Salary < 35000 - Case System Rejected");
+                        $this->Tasks->insertApplicationLog($lead_id, 8, "Salary < 26000 - Case System Rejected");
 
                         $eligibility_reason = "You are a little below our salary criteria.";
                         throw new RuntimeException("You are not eligible for a loan.");
@@ -4483,7 +4483,7 @@ class InstantJourneyController extends REST_Controller {
             $return_array['status'] = 2;
             $return_array['message'] = "Unauthorized Request!";
         } else if (!in_array($page_name, $whitelisted_pages)) {
-            $token_verification = $this->Tasks->check_validationToken($headers['Authtoken']);
+            $token_verification = $this->Tasks->check_validationToken($headers['Authtoken'] ?? $headers['authtoken']);
             if (empty($token_verification['status'])) {
                 $return_array['status'] = 4;
                 $return_array['message'] = "Session Expired";

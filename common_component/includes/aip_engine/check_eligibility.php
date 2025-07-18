@@ -166,29 +166,29 @@ function check_customer_eligibility($lead_id) {
             $eligibility_remark .= "<br>DOB : Not available | Status : NA";
         }
 
-        if (!empty($state_data) && $state_data['m_state_is_sourcing'] == 1) {
-            $eligibility_remark .= "<br>State : " . $state_data['m_state_name'] . " | Status : Pass";
-            $state_flag = 1;
-        } else if (!empty($state_data)) {
-            $eligibility_status = false;
-            $eligibility_remark .= "<br>State : " . $state_data['m_state_name'] . " | Status : Fail";
-            $state_flag = 2;
-            $rejection_id = 2;
-        } else {
-            $eligibility_remark .= "<br>State : Not available | Status : NA";
-        }
-
-        if (!empty($city_data) && $city_data['m_city_is_sourcing'] == 1) {
-            $eligibility_remark .= "<br>City : " . $city_data['m_city_name'] . " | Status : Pass";
-            $city_flag = 1;
-        } else if (!empty($city_data)) {
-            $eligibility_status = false;
-            $eligibility_remark .= "<br>City : " . $city_data['m_city_name'] . " | Status : Fail";
-            $city_flag = 2;
-            $rejection_id = 2;
-        } else {
-            $eligibility_remark .= "<br>City : Not available | Status : NA";
-        }
+        $state_flag = 1; //by passing the state check for now
+        // if (!empty($state_data) && $state_data['m_state_is_sourcing'] == 1) {
+        //     $eligibility_remark .= "<br>State : " . $state_data['m_state_name'] . " | Status : Pass";
+        // } else if (!empty($state_data)) {
+        //     $eligibility_status = false;
+        //     $eligibility_remark .= "<br>State : " . $state_data['m_state_name'] . " | Status : Fail";
+        //     $state_flag = 2;
+        //     $rejection_id = 2;
+        // } else {
+        //     $eligibility_remark .= "<br>State : Not available | Status : NA";
+        // }
+        
+        $city_flag = 1;
+        // if (!empty($city_data) && $city_data['m_city_is_sourcing'] == 1) {
+        //     $eligibility_remark .= "<br>City : " . $city_data['m_city_name'] . " | Status : Pass";
+        // } else if (!empty($city_data)) {
+        //     $eligibility_status = false;
+        //     $eligibility_remark .= "<br>City : " . $city_data['m_city_name'] . " | Status : Fail";
+        //     $city_flag = 2;
+        //     $rejection_id = 2;
+        // } else {
+        //     $eligibility_remark .= "<br>City : Not available | Status : NA";
+        // }
 
         if (!empty($black_listed_data)) {
             $eligibility_status = false;
@@ -201,25 +201,26 @@ function check_customer_eligibility($lead_id) {
         }
 
 
-        if (!empty($rejected_listed_data)) {
-            $eligibility_status = false;
-            $eligibility_remark .= "<br>Rejected Customer : " . $rejected_listed_data;
-            $cust_reject_flag = 2;
-            $rejection_id = 1;
-        } else {
-            $cust_reject_flag = 1;
-            $eligibility_remark .= "<br>Rejected Customer : Not available | Status : Pass";
-        }
+        $cust_reject_flag = 1;
+        // if (!empty($rejected_listed_data)) {
+        //     $eligibility_status = false;
+        //     $eligibility_remark .= "<br>Rejected Customer : " . $rejected_listed_data;
+        //     $cust_reject_flag = 2;
+        //     $rejection_id = 1;
+        // } else {
+        //     $eligibility_remark .= "<br>Rejected Customer : Not available | Status : Pass";
+        // }
 
-        if (!empty($duplicate_listed_data) && COMP_ENVIRONMENT == 'production') {
-            $eligibility_status = false;
-            $eligibility_remark .= "<br>Duplicate Customer : " . $duplicate_listed_data;
-            $cust_duplicate_flag = 2;
-            $rejection_id = 1;
-        } else {
-            $cust_duplicate_flag = 1;
-            $eligibility_remark .= "<br>Duplicate Customer : Not available | Status : Pass";
-        }
+        $cust_duplicate_flag = 1;
+        // if (!empty($duplicate_listed_data) && COMP_ENVIRONMENT == 'production') {
+        //     $eligibility_status = false;
+        //     $eligibility_remark .= "<br>Duplicate Customer : " . $duplicate_listed_data;
+        //     $cust_duplicate_flag = 2;
+        //     $rejection_id = 1;
+        // } else {
+        //     $cust_duplicate_flag = 1;
+        //     $eligibility_remark .= "<br>Duplicate Customer : Not available | Status : Pass";
+        // }
 
         //        if (!empty($repeat_listed_data)) {
         //            $eligibility_status = false;

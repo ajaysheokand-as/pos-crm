@@ -74,7 +74,7 @@ class TaskController extends CI_Controller {
         }
 
         if ($stage == "S1" && $this->uri->segment(1) == "partialLeads") {
-            $where_in['LD.lead_status_id'] = array(42);
+            $where_in['LD.lead_status_id'] = array(41,42);
         }
 
         if (in_array($stage, ['S9'])) {
