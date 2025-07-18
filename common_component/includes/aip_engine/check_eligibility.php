@@ -120,7 +120,7 @@ function check_customer_eligibility($lead_id) {
             $eligibility_remark .= "<br>Employment Type : Not available | Status : NA";
         }
 
-        if (!empty($monthly_salary_amount) && $monthly_salary_amount >= 35000) {
+        if (!empty($monthly_salary_amount) && $monthly_salary_amount >= 26000) {
             $eligibility_remark .= "<br>Monthly Salary - $user_type : " . $monthly_salary_amount . " | Status : Pass";
             $cust_income_flag = 1;
         } else {
