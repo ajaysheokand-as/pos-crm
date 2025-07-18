@@ -2062,7 +2062,7 @@ class InstantJourneyController extends REST_Controller {
                     $loan_quote_accepted_id = 1;
                     $monthly_income = $leadDetails['monthly_salary_amount'];
 
-                    if (($loan_quote_accepted_id == 1 && $monthly_income > 35000) || $user_type == "REPEAT" || $user_type == "UNPAID-REPEAT") {
+                    if (($loan_quote_accepted_id == 1 && $monthly_income >= 26000) || $user_type == "REPEAT" || $user_type == "UNPAID-REPEAT") {
                         $get_loan_purpose_details = $this->Tasks->selectdata(['enduse_id' => $loan_purpose_id], 'enduse_name', 'master_enduse');
 
                         if ($get_loan_purpose_details->num_rows() > 0) {
@@ -2087,7 +2087,7 @@ class InstantJourneyController extends REST_Controller {
                         $lead_remarks = "Loan quote has been accepted.";
                         $lead_remarks .= "<br/>Applied Loan Amount : $loan_amount";
                         $lead_remarks .= "<br/>Applied Loan Tenure : $loan_tenure";
-                    } elseif ($loan_quote_accepted_id == 1 && $monthly_income <= 26000) {
+                    } elseif ($loan_quote_accepted_id == 1 && $monthly_income < 26000) {
                         $lead_status_id = 8;
                         $lead_stage = 'S8';
                         $lead_status = 'SYSTEM-REJECT';
